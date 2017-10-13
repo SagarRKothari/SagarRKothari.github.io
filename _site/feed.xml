@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-13T16:23:25+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Convert UnixTimeStamp Date</title><link href="http://localhost:4000/ios/objectivec/apple/2017/02/08/Convert-Unix-TimeStamp.html" rel="alternate" type="text/html" title="Convert UnixTimeStamp Date" /><published>2017-02-08T15:30:00+05:30</published><updated>2017-02-08T15:30:00+05:30</updated><id>http://localhost:4000/ios/objectivec/apple/2017/02/08/Convert-Unix-TimeStamp</id><content type="html" xml:base="http://localhost:4000/ios/objectivec/apple/2017/02/08/Convert-Unix-TimeStamp.html">&lt;p&gt;Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.&lt;/p&gt;
+
+&lt;p&gt;Example &lt;code class=&quot;highlighter-rouge&quot;&gt;Date&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/Date(1395486890000+0530)/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Objective-c&quot;&gt;// Convert UnixTimeStamp Date with specified Timezone. Example &quot;/Date(1395486890000+0530)/&quot; as a sample value.
++ (NSDate *)DateFromJSONString:(NSString *)string {
+    static NSRegularExpression *dateRegEx = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;amp;onceToken, ^{
+        dateRegEx = [[NSRegularExpression alloc] initWithPattern:@&quot;^\\/date\\((-?\\d++)(?:([+-])(\\d{2})(\\d{2}))?\\)\\/$&quot; options:NSRegularExpressionCaseInsensitive error:nil];
+    });
+    NSTextCheckingResult *regexResult = [dateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, [string length])];
+
+    if (regexResult) {
+        // milliseconds
+        NSTimeInterval seconds = [[string substringWithRange:[regexResult rangeAtIndex:1]] doubleValue] / 1000.0;
+        // timezone offset
+        if ([regexResult rangeAtIndex:2].location != NSNotFound) {
+            NSString *sign = [string substringWithRange:[regexResult rangeAtIndex:2]];
+            // hours
+            seconds += [[NSString stringWithFormat:@&quot;%@%@&quot;, sign, [string substringWithRange:[regexResult rangeAtIndex:3]]] doubleValue] * 60.0 * 60.0;
+            // minutes
+            seconds += [[NSString stringWithFormat:@&quot;%@%@&quot;, sign, [string substringWithRange:[regexResult rangeAtIndex:4]]] doubleValue] * 60.0;
+        }
+
+        return [NSDate dateWithTimeIntervalSince1970:seconds];
+    }
+    return nil;
+}
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.</summary></entry></feed>

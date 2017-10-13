@@ -1,18 +1,8 @@
 ---
 layout: page
-title: About
+title: "About"
+date:   2017-10-13 15:06:22 +0530
 permalink: /about/
 ---
+Hi, I am Sagar R Kothari & this is fake static website. I am still working on how to make it work.
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
