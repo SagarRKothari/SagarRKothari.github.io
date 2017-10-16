@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-13T16:41:19+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Hi! I'm Sagar R. Kothari. I'm a software engineer working at `mastercard, Pune, India` via vendor `Altimetrik India Pvt. Ltd., Pune, India` I've 7.5 years of experience in building native iOS applications.</subtitle><entry><title type="html">Convert Date To 2DaysAgo</title><link href="http://localhost:4000/ios/swift/apple/2017/03/11/Convert-Date-To-2DaysAgo.html" rel="alternate" type="text/html" title="Convert Date To 2DaysAgo" /><published>2017-03-11T16:30:00+05:30</published><updated>2017-03-11T16:30:00+05:30</updated><id>http://localhost:4000/ios/swift/apple/2017/03/11/Convert-Date-To-2DaysAgo</id><content type="html" xml:base="http://localhost:4000/ios/swift/apple/2017/03/11/Convert-Date-To-2DaysAgo.html">&lt;p&gt;Insert following date extension to your project.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-16T17:07:17+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Hi! I'm Sagar R. Kothari. I'm a software engineer working at `mastercard, Pune, India` via vendor `Altimetrik India Pvt. Ltd., Pune, India` I've 7.5 years of experience in building native iOS applications.</subtitle><entry><title type="html">Convert Date To 2DaysAgo</title><link href="http://localhost:4000/ios/swift/apple/2017/03/11/Convert-Date-To-2DaysAgo.html" rel="alternate" type="text/html" title="Convert Date To 2DaysAgo" /><published>2017-03-11T16:30:00+05:30</published><updated>2017-03-11T16:30:00+05:30</updated><id>http://localhost:4000/ios/swift/apple/2017/03/11/Convert-Date-To-2DaysAgo</id><content type="html" xml:base="http://localhost:4000/ios/swift/apple/2017/03/11/Convert-Date-To-2DaysAgo.html">&lt;p&gt;Insert following date extension to your project.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;years&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -95,4 +95,35 @@
     }
     return nil;
 }
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.</summary></entry><entry><title type="html">Format XML Pretty Print</title><link href="http://localhost:4000/ios/objectivec/apple/2017/02/08/FormatXML-Pretty-Print.html" rel="alternate" type="text/html" title="Format XML Pretty Print" /><published>2017-02-08T14:30:00+05:30</published><updated>2017-02-08T14:30:00+05:30</updated><id>http://localhost:4000/ios/objectivec/apple/2017/02/08/FormatXML-Pretty-Print</id><content type="html" xml:base="http://localhost:4000/ios/objectivec/apple/2017/02/08/FormatXML-Pretty-Print.html">&lt;p&gt;Put following code snippet for XML Pretty Print&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;#import &amp;lt;libxml/tree.h&amp;gt;
+
++ (NSString *)prettyPrintXML:(NSString *)rawXML {
+    const char *utf8Str = [rawXML UTF8String];
+    xmlDocPtr doc = xmlReadMemory(utf8Str, (int)strlen(utf8Str), NULL, NULL, XML_PARSE_NOCDATA | XML_PARSE_NOBLANKS);
+    xmlNodePtr root = xmlDocGetRootElement(doc);
+    xmlNodePtr xmlNode = xmlCopyNode(root, 1);
+    xmlFreeDoc(doc);
+
+    NSString *str = nil;
+
+    xmlBufferPtr buff = xmlBufferCreate();
+    doc = NULL;
+    int level = 0;
+    int format = 1;
+
+    int result = xmlNodeDump(buff, doc, xmlNode, level, format);
+
+    if (result &amp;gt; -1) {
+        str = [[NSString alloc] initWithBytes:(xmlBufferContent(buff))
+                                       length:(NSUInteger)(xmlBufferLength(buff))
+                                     encoding:NSUTF8StringEncoding];
+    }
+    xmlBufferFree(buff);
+
+    NSCharacterSet *ws = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *trimmed = [str stringByTrimmingCharactersInSet:ws];
+    return trimmed;
+}
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Put following code snippet for XML Pretty Print</summary></entry></feed>
