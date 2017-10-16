@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "Implementing Reachability with Singleton"
+date:   2017-02-05 10:00:00
+categories: iOS Swift Apple Reachability
+---
+
+#### Download Reachability class
+
+[Click to download](https://raw.githubusercontent.com/sag333ar/sagarrkothari.com/master/Reachability.swift)
+
+#### Rechability Checker
+
+```swift
+import Foundation
+
+public class ReachabilityChkr: NSObject {
+    
+    let reachability = Reachability()!
+    
+    override init() {
+        super.init()
+        reachability.whenReachable = { reachability in
+            performUIUpdatesOnMain({
+                if reachability.isReachableViaWiFi {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+            })
+        }
+
+        reachability.whenUnreachable = { reachability in
+            performUIUpdatesOnMain({
+                print("Not reachable")
+            })
+        }
+
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+    }
+
+    public class var shared: Reachability {
+        get {
+            struct Single {
+                static var shared = ReachabilityChkr()
+            }
+            return Single.shared.reachability
+        }
+    }
+
+}
+```
+
+#### Use above class
+
+```
+if ReachabilityChkr.shared.isReachableViaWiFi == true || ReachabilityChkr.shared.isReachableViaWWAN == true {
+    print("Connected to Internet")    
+} else {
+    print("=== NOT Connected to Internet ===")
+}
+```

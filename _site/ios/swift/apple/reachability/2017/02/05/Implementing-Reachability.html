@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Hi! I&#39;m Sagar R. Kothari. I&#39;m a software engineer working at `mastercard, Pune, India` via vendor `Altimetrik India Pvt. Ltd., Pune, India` I&#39;ve 7.5 years of...">
+  <title>Implementing Reachability with Singleton</title>
+  <meta name="description" content="Download Reachability class">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/about/">
+  <link rel="canonical" href="http://localhost:4000/ios/swift/apple/reachability/2017/02/05/Implementing-Reachability.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -67,21 +67,82 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Implementing Reachability with Singleton</h1>
+    <p class="post-meta">
+      <time datetime="2017-02-05T15:30:00+05:30" itemprop="datePublished">
+        
+        Feb 5, 2017
+      </time>
+      </p>
   </header>
 
-  <div class="post-content">
-    <p>Hi, I am Sagar R Kothari. I recently have started this blog with help of Github pages.
-I’ll be updating this page soon.</p>
+  <div class="post-content" itemprop="articleBody">
+    <h4 id="download-reachability-class">Download Reachability class</h4>
 
-<p>I’m a software engineer working at <code class="highlighter-rouge">mastercard, Pune, India</code> via vendor <code class="highlighter-rouge">Altimetrik India Pvt. Ltd., Pune, India</code>.
-I’ve 8 years of experience in building native iOS applications.</p>
+<p><a href="https://raw.githubusercontent.com/sag333ar/sagarrkothari.com/master/Reachability.swift">Click to download</a></p>
+
+<h4 id="rechability-checker">Rechability Checker</h4>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">ReachabilityChkr</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">reachability</span> <span class="o">=</span> <span class="kt">Reachability</span><span class="p">()</span><span class="o">!</span>
+    
+    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+        <span class="n">reachability</span><span class="o">.</span><span class="n">whenReachable</span> <span class="o">=</span> <span class="p">{</span> <span class="n">reachability</span> <span class="k">in</span>
+            <span class="nf">performUIUpdatesOnMain</span><span class="p">({</span>
+                <span class="k">if</span> <span class="n">reachability</span><span class="o">.</span><span class="n">isReachableViaWiFi</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"Reachable via WiFi"</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"Reachable via Cellular"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+
+        <span class="n">reachability</span><span class="o">.</span><span class="n">whenUnreachable</span> <span class="o">=</span> <span class="p">{</span> <span class="n">reachability</span> <span class="k">in</span>
+            <span class="nf">performUIUpdatesOnMain</span><span class="p">({</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Not reachable"</span><span class="p">)</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="n">reachability</span><span class="o">.</span><span class="nf">startNotifier</span><span class="p">()</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Unable to start notifier"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">shared</span><span class="p">:</span> <span class="kt">Reachability</span> <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span>
+            <span class="kd">struct</span> <span class="kt">Single</span> <span class="p">{</span>
+                <span class="kd">static</span> <span class="k">var</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">ReachabilityChkr</span><span class="p">()</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="kt">Single</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">reachability</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="use-above-class">Use above class</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if ReachabilityChkr.shared.isReachableViaWiFi == true || ReachabilityChkr.shared.isReachableViaWWAN == true {
+    print("Connected to Internet")    
+} else {
+    print("=== NOT Connected to Internet ===")
+}
+</code></pre>
+</div>
 
   </div>
 
+  
 </article>
 
       </div>
