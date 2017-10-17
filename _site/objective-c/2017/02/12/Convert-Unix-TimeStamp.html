@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>Convert UnixTimeStamp Date</title>
+  <meta name="description" content="Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/404.html">
+  <link rel="canonical" href="http://localhost:4000/objective-c/2017/02/12/Convert-Unix-TimeStamp.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -129,26 +129,60 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Convert UnixTimeStamp Date</h1>
+    <p class="post-meta">
+      <time datetime="2017-02-12T15:30:00+05:30" itemprop="datePublished">
+        
+        Feb 12, 2017
+      </time>
+      </p>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.</p>
+
+<p>Example <code class="highlighter-rouge">Date</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/Date(1395486890000+0530)/
+</code></pre>
 </div>
+
+<pre><code class="language-Objective-c">// Convert UnixTimeStamp Date with specified Timezone. Example "/Date(1395486890000+0530)/" as a sample value.
++ (NSDate *)DateFromJSONString:(NSString *)string {
+    static NSRegularExpression *dateRegEx = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        dateRegEx = [[NSRegularExpression alloc] initWithPattern:@"^\\/date\\((-?\\d++)(?:([+-])(\\d{2})(\\d{2}))?\\)\\/$" options:NSRegularExpressionCaseInsensitive error:nil];
+    });
+    NSTextCheckingResult *regexResult = [dateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, [string length])];
+
+    if (regexResult) {
+        // milliseconds
+        NSTimeInterval seconds = [[string substringWithRange:[regexResult rangeAtIndex:1]] doubleValue] / 1000.0;
+        // timezone offset
+        if ([regexResult rangeAtIndex:2].location != NSNotFound) {
+            NSString *sign = [string substringWithRange:[regexResult rangeAtIndex:2]];
+            // hours
+            seconds += [[NSString stringWithFormat:@"%@%@", sign, [string substringWithRange:[regexResult rangeAtIndex:3]]] doubleValue] * 60.0 * 60.0;
+            // minutes
+            seconds += [[NSString stringWithFormat:@"%@%@", sign, [string substringWithRange:[regexResult rangeAtIndex:4]]] doubleValue] * 60.0;
+        }
+
+        return [NSDate dateWithTimeIntervalSince1970:seconds];
+    }
+    return nil;
+}
+</code></pre>
+
+<p><em><strong>Categories:</strong></em> Objective-C | <em><strong>Tags:</strong></em> Date, Format, and UnixTimeStamp</p>
+
+  </div>
+
+  
+</article>
 
       </div>
     </main>

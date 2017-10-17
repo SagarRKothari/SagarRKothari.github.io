@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-17T14:38:28+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Example of Lazy Computed Properties</title><link href="http://localhost:4000/ios/swift/apple/properties/computed/lazy/2017/02/15/Swift-Lazy-Computed-Properties.html" rel="alternate" type="text/html" title="Example of Lazy Computed Properties" /><published>2017-02-15T14:30:00+05:30</published><updated>2017-02-15T14:30:00+05:30</updated><id>http://localhost:4000/ios/swift/apple/properties/computed/lazy/2017/02/15/Swift-Lazy-Computed-Properties</id><content type="html" xml:base="http://localhost:4000/ios/swift/apple/properties/computed/lazy/2017/02/15/Swift-Lazy-Computed-Properties.html">&lt;h4 id=&quot;example-of-lazy-properties-with-tuples&quot;&gt;Example of Lazy properties with tuples&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-17T19:38:27+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Example of Lazy Computed Properties</title><link href="http://localhost:4000/swift/2017/02/15/Swift-Lazy-Computed-Properties.html" rel="alternate" type="text/html" title="Example of Lazy Computed Properties" /><published>2017-02-15T14:30:00+05:30</published><updated>2017-02-15T14:30:00+05:30</updated><id>http://localhost:4000/swift/2017/02/15/Swift-Lazy-Computed-Properties</id><content type="html" xml:base="http://localhost:4000/swift/2017/02/15/Swift-Lazy-Computed-Properties.html">&lt;h3 id=&quot;example-of-lazy-properties-with-tuples&quot;&gt;Example of Lazy properties with tuples&lt;/h3&gt;
 
 &lt;p&gt;In this wiki-page, I have illustrated Lazy property, tuples and computed properties.&lt;/p&gt;
 
-&lt;h4 id=&quot;lazy-property&quot;&gt;Lazy Property&lt;/h4&gt;
+&lt;h3 id=&quot;lazy-property&quot;&gt;Lazy Property&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-Swift&quot;&gt;class MyViewController: UIViewController {
 
@@ -12,7 +12,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&quot;computed-property-returning-array-of-tuples&quot;&gt;Computed property returning array of tuples&lt;/h4&gt;
+&lt;h3 id=&quot;computed-property-returning-array-of-tuples&quot;&gt;Computed property returning array of tuples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-Swift&quot;&gt;extension MyViewController {
 	var names: [(name: String, fullName: String)] {
@@ -22,9 +22,11 @@
 			(&quot;Vishal&quot;, &quot;Vishal Rajesh Kothari&quot;)
 		]
 	}
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Example of Lazy properties with tuples</summary></entry><entry><title type="html">Implementing Reachability with Singleton</title><link href="http://localhost:4000/ios/swift/apple/reachability/2017/02/14/Implementing-Reachability.html" rel="alternate" type="text/html" title="Implementing Reachability with Singleton" /><published>2017-02-14T15:30:00+05:30</published><updated>2017-02-14T15:30:00+05:30</updated><id>http://localhost:4000/ios/swift/apple/reachability/2017/02/14/Implementing-Reachability</id><content type="html" xml:base="http://localhost:4000/ios/swift/apple/reachability/2017/02/14/Implementing-Reachability.html">&lt;h4 id=&quot;download-reachability-class&quot;&gt;Download Reachability class&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/SagarRKothari/SagarRKothari.github.io/master/contents/2017-02-14-Implementing-Reachability/Reachability.swift&quot;&gt;Click to download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Swift | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; computed, lazy, and properties&lt;/p&gt;</content><author><name></name></author><category term="computed" /><category term="lazy" /><category term="properties" /><summary type="html">Example of Lazy properties with tuples</summary></entry><entry><title type="html">Implementing Reachability with Singleton</title><link href="http://localhost:4000/swift/2017/02/14/Implementing-Reachability.html" rel="alternate" type="text/html" title="Implementing Reachability with Singleton" /><published>2017-02-14T15:30:00+05:30</published><updated>2017-02-14T15:30:00+05:30</updated><id>http://localhost:4000/swift/2017/02/14/Implementing-Reachability</id><content type="html" xml:base="http://localhost:4000/swift/2017/02/14/Implementing-Reachability.html">&lt;h4 id=&quot;download-reachability-class&quot;&gt;Download Reachability class&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/2017-02-14-Implementing-Reachability/Reachability.swift&quot;&gt;Click to download&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;rechability-checker&quot;&gt;Rechability Checker&lt;/h4&gt;
 
@@ -80,7 +82,9 @@
     print(&quot;=== NOT Connected to Internet ===&quot;)
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Download Reachability class</summary></entry><entry><title type="html">Generate with URL Components like host, path, params</title><link href="http://localhost:4000/ios/objectivec/apple/2017/02/13/Generate-URL.html" rel="alternate" type="text/html" title="Generate with URL Components like host, path, params" /><published>2017-02-13T15:30:00+05:30</published><updated>2017-02-13T15:30:00+05:30</updated><id>http://localhost:4000/ios/objectivec/apple/2017/02/13/Generate-URL</id><content type="html" xml:base="http://localhost:4000/ios/objectivec/apple/2017/02/13/Generate-URL.html">&lt;p&gt;Code snippet for generating URL using scheme, host, path, parameters and path extension&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Swift | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; Reachability and WiFi&lt;/p&gt;</content><author><name></name></author><category term="Reachability" /><category term="WiFi" /><summary type="html">Download Reachability class</summary></entry><entry><title type="html">Generate with URL Components like host, path, params</title><link href="http://localhost:4000/swift/2017/02/13/Generate-URL.html" rel="alternate" type="text/html" title="Generate with URL Components like host, path, params" /><published>2017-02-13T15:30:00+05:30</published><updated>2017-02-13T15:30:00+05:30</updated><id>http://localhost:4000/swift/2017/02/13/Generate-URL</id><content type="html" xml:base="http://localhost:4000/swift/2017/02/13/Generate-URL.html">&lt;p&gt;Code snippet for generating URL using scheme, host, path, parameters and path extension&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;formURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
                &lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -114,7 +118,9 @@
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Code snippet for generating URL using scheme, host, path, parameters and path extension</summary></entry><entry><title type="html">Convert UnixTimeStamp Date</title><link href="http://localhost:4000/ios/objectivec/apple/2017/02/12/Convert-Unix-TimeStamp.html" rel="alternate" type="text/html" title="Convert UnixTimeStamp Date" /><published>2017-02-12T15:30:00+05:30</published><updated>2017-02-12T15:30:00+05:30</updated><id>http://localhost:4000/ios/objectivec/apple/2017/02/12/Convert-Unix-TimeStamp</id><content type="html" xml:base="http://localhost:4000/ios/objectivec/apple/2017/02/12/Convert-Unix-TimeStamp.html">&lt;p&gt;Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Swift | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; URL, Components, and Generator&lt;/p&gt;</content><author><name></name></author><category term="URL" /><category term="Components" /><category term="Generator" /><summary type="html">Code snippet for generating URL using scheme, host, path, parameters and path extension</summary></entry><entry><title type="html">Convert UnixTimeStamp Date</title><link href="http://localhost:4000/objective-c/2017/02/12/Convert-Unix-TimeStamp.html" rel="alternate" type="text/html" title="Convert UnixTimeStamp Date" /><published>2017-02-12T15:30:00+05:30</published><updated>2017-02-12T15:30:00+05:30</updated><id>http://localhost:4000/objective-c/2017/02/12/Convert-Unix-TimeStamp</id><content type="html" xml:base="http://localhost:4000/objective-c/2017/02/12/Convert-Unix-TimeStamp.html">&lt;p&gt;Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.&lt;/p&gt;
 
 &lt;p&gt;Example &lt;code class=&quot;highlighter-rouge&quot;&gt;Date&lt;/code&gt;&lt;/p&gt;
 
@@ -147,7 +153,9 @@
     }
     return nil;
 }
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.</summary></entry><entry><title type="html">Format JSON Pretty Print</title><link href="http://localhost:4000/ios/objectivec/apple/2017/02/11/Format-JSON-Pretty-Print.html" rel="alternate" type="text/html" title="Format JSON Pretty Print" /><published>2017-02-11T16:30:00+05:30</published><updated>2017-02-11T16:30:00+05:30</updated><id>http://localhost:4000/ios/objectivec/apple/2017/02/11/Format-JSON-Pretty-Print</id><content type="html" xml:base="http://localhost:4000/ios/objectivec/apple/2017/02/11/Format-JSON-Pretty-Print.html">&lt;p&gt;Put following code-snippet for formatting a JSON string to pretty print JSON.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Objective-C | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; Date, Format, and UnixTimeStamp&lt;/p&gt;</content><author><name></name></author><category term="Date" /><category term="Format" /><category term="UnixTimeStamp" /><summary type="html">Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.</summary></entry><entry><title type="html">Format JSON Pretty Print</title><link href="http://localhost:4000/objective-c/2017/02/11/Format-JSON-Pretty-Print.html" rel="alternate" type="text/html" title="Format JSON Pretty Print" /><published>2017-02-11T16:30:00+05:30</published><updated>2017-02-11T16:30:00+05:30</updated><id>http://localhost:4000/objective-c/2017/02/11/Format-JSON-Pretty-Print</id><content type="html" xml:base="http://localhost:4000/objective-c/2017/02/11/Format-JSON-Pretty-Print.html">&lt;p&gt;Put following code-snippet for formatting a JSON string to pretty print JSON.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;+ (NSString*) formatJSONPretty:(NSData *)data {
     id obj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
@@ -158,7 +166,9 @@
         return nil;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Put following code-snippet for formatting a JSON string to pretty print JSON.</summary></entry><entry><title type="html">Format XML Pretty Print</title><link href="http://localhost:4000/ios/objectivec/apple/2017/02/10/FormatXML-Pretty-Print.html" rel="alternate" type="text/html" title="Format XML Pretty Print" /><published>2017-02-10T14:30:00+05:30</published><updated>2017-02-10T14:30:00+05:30</updated><id>http://localhost:4000/ios/objectivec/apple/2017/02/10/FormatXML-Pretty-Print</id><content type="html" xml:base="http://localhost:4000/ios/objectivec/apple/2017/02/10/FormatXML-Pretty-Print.html">&lt;p&gt;Put following code snippet for XML Pretty Print&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Objective-C | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; String, JSON, and Format&lt;/p&gt;</content><author><name></name></author><category term="String" /><category term="JSON" /><category term="Format" /><summary type="html">Put following code-snippet for formatting a JSON string to pretty print JSON.</summary></entry><entry><title type="html">Format XML Pretty Print</title><link href="http://localhost:4000/objective-c/2017/02/10/FormatXML-Pretty-Print.html" rel="alternate" type="text/html" title="Format XML Pretty Print" /><published>2017-02-10T14:30:00+05:30</published><updated>2017-02-10T14:30:00+05:30</updated><id>http://localhost:4000/objective-c/2017/02/10/FormatXML-Pretty-Print</id><content type="html" xml:base="http://localhost:4000/objective-c/2017/02/10/FormatXML-Pretty-Print.html">&lt;p&gt;Put following code snippet for XML Pretty Print&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;#import &amp;lt;libxml/tree.h&amp;gt;
 
@@ -189,14 +199,18 @@
     NSString *trimmed = [str stringByTrimmingCharactersInSet:ws];
     return trimmed;
 }
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Put following code snippet for XML Pretty Print</summary></entry><entry><title type="html">Validate Email</title><link href="http://localhost:4000/ios/objectivec/apple/2017/02/09/Validate-Email.html" rel="alternate" type="text/html" title="Validate Email" /><published>2017-02-09T15:30:00+05:30</published><updated>2017-02-09T15:30:00+05:30</updated><id>http://localhost:4000/ios/objectivec/apple/2017/02/09/Validate-Email</id><content type="html" xml:base="http://localhost:4000/ios/objectivec/apple/2017/02/09/Validate-Email.html">&lt;p&gt;Code snippet to validate an email&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Objective-C | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; XML, Format, and String&lt;/p&gt;</content><author><name></name></author><category term="XML" /><category term="Format" /><category term="String" /><summary type="html">Put following code snippet for XML Pretty Print</summary></entry><entry><title type="html">Validate Email</title><link href="http://localhost:4000/objective-c/2017/02/09/Validate-Email.html" rel="alternate" type="text/html" title="Validate Email" /><published>2017-02-09T15:30:00+05:30</published><updated>2017-02-09T15:30:00+05:30</updated><id>http://localhost:4000/objective-c/2017/02/09/Validate-Email</id><content type="html" xml:base="http://localhost:4000/objective-c/2017/02/09/Validate-Email.html">&lt;p&gt;Code snippet to validate an email&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-Objective-C&quot;&gt;- (BOOL) validateEmail: (NSString *) candidate {
     NSString *emailRegex = @&quot;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}&quot;;
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@&quot;SELF MATCHES %@&quot;, emailRegex];
     return [emailTest evaluateWithObject:candidate];
 }
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Code snippet to validate an email</summary></entry><entry><title type="html">Convert Date To 2DaysAgo</title><link href="http://localhost:4000/ios/swift/apple/2017/02/08/Convert-Date-To-2DaysAgo.html" rel="alternate" type="text/html" title="Convert Date To 2DaysAgo" /><published>2017-02-08T16:30:00+05:30</published><updated>2017-02-08T16:30:00+05:30</updated><id>http://localhost:4000/ios/swift/apple/2017/02/08/Convert-Date-To-2DaysAgo</id><content type="html" xml:base="http://localhost:4000/ios/swift/apple/2017/02/08/Convert-Date-To-2DaysAgo.html">&lt;p&gt;Insert following date extension to your project.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Objective-C | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; Email, Validation, String, Regex, and Predicate&lt;/p&gt;</content><author><name></name></author><category term="Email" /><category term="Validation" /><category term="String" /><category term="Regex" /><category term="Predicate" /><summary type="html">Code snippet to validate an email</summary></entry><entry><title type="html">Convert Date To 2DaysAgo</title><link href="http://localhost:4000/swift/2017/02/08/Convert-Date-To-2DaysAgo.html" rel="alternate" type="text/html" title="Convert Date To 2DaysAgo" /><published>2017-02-08T16:30:00+05:30</published><updated>2017-02-08T16:30:00+05:30</updated><id>http://localhost:4000/swift/2017/02/08/Convert-Date-To-2DaysAgo</id><content type="html" xml:base="http://localhost:4000/swift/2017/02/08/Convert-Date-To-2DaysAgo.html">&lt;p&gt;Insert following date extension to your project.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;years&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -249,4 +263,6 @@
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Insert following date extension to your project.</summary></entry></feed>
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Categories:&lt;/strong&gt;&lt;/em&gt; Swift | &lt;em&gt;&lt;strong&gt;Tags:&lt;/strong&gt;&lt;/em&gt; extension, Date, String, and Format&lt;/p&gt;</content><author><name></name></author><category term="extension" /><category term="Date" /><category term="String" /><category term="Format" /><summary type="html">Insert following date extension to your project.</summary></entry></feed>

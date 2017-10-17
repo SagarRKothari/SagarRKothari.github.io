@@ -2,7 +2,8 @@
 layout: post
 title:  "Validate Email"
 date:   2017-02-09 10:00:00
-categories: iOS ObjectiveC Apple
+categories: Objective-C
+tags: Email Validation String Regex Predicate
 ---
 
 Code snippet to validate an email
@@ -14,3 +15,5 @@ Code snippet to validate an email
     return [emailTest evaluateWithObject:candidate];
 }
 ```
+
+_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

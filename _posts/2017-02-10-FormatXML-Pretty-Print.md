@@ -2,7 +2,8 @@
 layout: post
 title:  "Format XML Pretty Print"
 date:   2017-02-10 09:00:00
-categories: iOS ObjectiveC Apple
+categories: Objective-C
+tags: XML Format String
 ---
 
 Put following code snippet for XML Pretty Print
@@ -38,3 +39,5 @@ Put following code snippet for XML Pretty Print
     return trimmed;
 }
 ```
+
+_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

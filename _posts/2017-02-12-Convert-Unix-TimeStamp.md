@@ -2,7 +2,8 @@
 layout: post
 title:  "Convert UnixTimeStamp Date"
 date:   2017-02-12 10:00:00
-categories: iOS ObjectiveC Apple
+categories: Objective-C
+tags: Date Format UnixTimeStamp
 ---
 
 Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.
@@ -40,3 +41,5 @@ Example `Date`
     return nil;
 }
 ```
+
+_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

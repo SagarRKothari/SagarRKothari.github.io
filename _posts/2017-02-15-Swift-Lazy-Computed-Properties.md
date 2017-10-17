@@ -2,14 +2,15 @@
 layout: post
 title:  "Example of Lazy Computed Properties"
 date:   2017-02-15 09:00:00
-categories: iOS Swift Apple Properties Computed Lazy
+categories: Swift
+tags: computed lazy properties
 ---
 
-#### Example of Lazy properties with tuples
+### Example of Lazy properties with tuples
 
 In this wiki-page, I have illustrated Lazy property, tuples and computed properties.
 
-#### Lazy Property
+### Lazy Property
 
 ```Swift
 class MyViewController: UIViewController {
@@ -20,7 +21,7 @@ class MyViewController: UIViewController {
 }
 ```
 
-#### Computed property returning array of tuples
+### Computed property returning array of tuples
 
 ```Swift
 extension MyViewController {
@@ -32,3 +33,5 @@ extension MyViewController {
 		]
 	}
 ```
+
+_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

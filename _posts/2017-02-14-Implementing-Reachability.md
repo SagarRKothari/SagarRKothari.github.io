@@ -2,12 +2,13 @@
 layout: post
 title:  "Implementing Reachability with Singleton"
 date:   2017-02-14 10:00:00
-categories: iOS Swift Apple Reachability
+categories: Swift
+tags: Reachability WiFi
 ---
 
 #### Download Reachability class
 
-[Click to download](https://raw.githubusercontent.com/SagarRKothari/SagarRKothari.github.io/master/contents/2017-02-14-Implementing-Reachability/Reachability.swift)
+[Click to download]({{"assets/2017-02-14-Implementing-Reachability/Reachability.swift" | absolute_url }})
 
 #### Rechability Checker
 
@@ -64,3 +65,5 @@ if ReachabilityChkr.shared.isReachableViaWiFi == true || ReachabilityChkr.shared
     print("=== NOT Connected to Internet ===")
 }
 ```
+
+_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}
