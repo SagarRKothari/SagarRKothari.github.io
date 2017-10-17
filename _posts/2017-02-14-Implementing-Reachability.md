@@ -1,14 +1,13 @@
 ---
 layout: post
 title:  "Implementing Reachability with Singleton"
-date:   2017-02-05 10:00:00
+date:   2017-02-14 10:00:00
 categories: iOS Swift Apple Reachability
 ---
 
 #### Download Reachability class
 
-[Click to download](https://raw.githubusercontent.com/sag333ar/sagarrkothari.com/master/Reachability.swift)
-
+[Click to download](https://raw.githubusercontent.com/SagarRKothari/SagarRKothari.github.io/master/_posts/2017-02-14-Implementing-Reachability/Reachability.swift)
 #### Rechability Checker
 
 ```swift

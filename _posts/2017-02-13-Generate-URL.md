@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Generate with URL Components like host, path, params"
-date:   2017-02-06 10:00:00
+date:   2017-02-13 10:00:00
 categories: iOS ObjectiveC Apple
 ---
 
