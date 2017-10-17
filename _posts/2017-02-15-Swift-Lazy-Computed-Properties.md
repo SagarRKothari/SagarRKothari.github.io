@@ -5,7 +5,6 @@ date:   2017-02-15 09:00:00
 categories: iOS Swift Apple Properties Computed Lazy
 ---
 
-
 #### Example of Lazy properties with tuples
 
 In this wiki-page, I have illustrated Lazy property, tuples and computed properties.

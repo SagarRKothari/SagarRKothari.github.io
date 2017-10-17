@@ -7,7 +7,8 @@ categories: iOS Swift Apple Reachability
 
 #### Download Reachability class
 
-[Click to download](https://raw.githubusercontent.com/SagarRKothari/SagarRKothari.github.io/master/_posts/2017-02-14-Implementing-Reachability/Reachability.swift)
+[Click to download](https://raw.githubusercontent.com/SagarRKothari/SagarRKothari.github.io/master/contents/2017-02-14-Implementing-Reachability/Reachability.swift)
+
 #### Rechability Checker
 
 ```swift

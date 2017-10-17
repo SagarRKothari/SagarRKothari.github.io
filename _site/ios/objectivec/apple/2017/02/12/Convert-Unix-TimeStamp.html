@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Format XML Pretty Print</title>
-  <meta name="description" content="Put following code snippet for XML Pretty Print">
+  <title>Convert UnixTimeStamp Date</title>
+  <meta name="description" content="Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/ios/objectivec/apple/2017/02/08/FormatXML-Pretty-Print.html">
+  <link rel="canonical" href="http://localhost:4000/ios/objectivec/apple/2017/02/12/Convert-Unix-TimeStamp.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -70,46 +70,48 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Format XML Pretty Print</h1>
+    <h1 class="post-title" itemprop="name headline">Convert UnixTimeStamp Date</h1>
     <p class="post-meta">
-      <time datetime="2017-02-08T14:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-02-12T15:30:00+05:30" itemprop="datePublished">
         
-        Feb 8, 2017
+        Feb 12, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Put following code snippet for XML Pretty Print</p>
+    <p>Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.</p>
 
-<pre><code class="language-Objective-C">#import &lt;libxml/tree.h&gt;
+<p>Example <code class="highlighter-rouge">Date</code></p>
 
-+ (NSString *)prettyPrintXML:(NSString *)rawXML {
-    const char *utf8Str = [rawXML UTF8String];
-    xmlDocPtr doc = xmlReadMemory(utf8Str, (int)strlen(utf8Str), NULL, NULL, XML_PARSE_NOCDATA | XML_PARSE_NOBLANKS);
-    xmlNodePtr root = xmlDocGetRootElement(doc);
-    xmlNodePtr xmlNode = xmlCopyNode(root, 1);
-    xmlFreeDoc(doc);
+<div class="highlighter-rouge"><pre class="highlight"><code>/Date(1395486890000+0530)/
+</code></pre>
+</div>
 
-    NSString *str = nil;
+<pre><code class="language-Objective-c">// Convert UnixTimeStamp Date with specified Timezone. Example "/Date(1395486890000+0530)/" as a sample value.
++ (NSDate *)DateFromJSONString:(NSString *)string {
+    static NSRegularExpression *dateRegEx = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        dateRegEx = [[NSRegularExpression alloc] initWithPattern:@"^\\/date\\((-?\\d++)(?:([+-])(\\d{2})(\\d{2}))?\\)\\/$" options:NSRegularExpressionCaseInsensitive error:nil];
+    });
+    NSTextCheckingResult *regexResult = [dateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, [string length])];
 
-    xmlBufferPtr buff = xmlBufferCreate();
-    doc = NULL;
-    int level = 0;
-    int format = 1;
+    if (regexResult) {
+        // milliseconds
+        NSTimeInterval seconds = [[string substringWithRange:[regexResult rangeAtIndex:1]] doubleValue] / 1000.0;
+        // timezone offset
+        if ([regexResult rangeAtIndex:2].location != NSNotFound) {
+            NSString *sign = [string substringWithRange:[regexResult rangeAtIndex:2]];
+            // hours
+            seconds += [[NSString stringWithFormat:@"%@%@", sign, [string substringWithRange:[regexResult rangeAtIndex:3]]] doubleValue] * 60.0 * 60.0;
+            // minutes
+            seconds += [[NSString stringWithFormat:@"%@%@", sign, [string substringWithRange:[regexResult rangeAtIndex:4]]] doubleValue] * 60.0;
+        }
 
-    int result = xmlNodeDump(buff, doc, xmlNode, level, format);
-
-    if (result &gt; -1) {
-        str = [[NSString alloc] initWithBytes:(xmlBufferContent(buff))
-                                       length:(NSUInteger)(xmlBufferLength(buff))
-                                     encoding:NSUTF8StringEncoding];
+        return [NSDate dateWithTimeIntervalSince1970:seconds];
     }
-    xmlBufferFree(buff);
-
-    NSCharacterSet *ws = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    NSString *trimmed = [str stringByTrimmingCharactersInSet:ws];
-    return trimmed;
+    return nil;
 }
 </code></pre>
 
@@ -162,7 +164,7 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>Hi! I&#39;m Sagar R. Kothari. I&#39;m a software engineer working at `mastercard, Pune, India` via vendor `Altimetrik India Pvt. Ltd., Pune, India` I&#39;ve 7.5 years of experience in building native iOS applications.</p>
+        <p>Passionate and enthusiastic iOS application developer having 8 years of experience.</p>
       </div>
     </div>
 
