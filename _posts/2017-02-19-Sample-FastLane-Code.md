@@ -2,7 +2,7 @@
 layout: post
 title:  "Sample Fastlane File with crashlytics and slack integration"
 date:   2017-02-19 11:00:00
-categories: Swift
+categories: CodeSnippet Tools
 tags: Fabric Crashlytics Fastlane Beta Slack CI Continuous Integration
 ---
 

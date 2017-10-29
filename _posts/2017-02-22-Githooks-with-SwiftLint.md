@@ -2,7 +2,7 @@
 layout: post
 title:  "GitHooks with SwiftLint"
 date:   2017-02-22 11:00:00
-categories: Swift
+categories: Tools CodeSnippet
 tags: Code Lint Syntax Correction Valid Language Git GitHooks Hooks
 ---
 

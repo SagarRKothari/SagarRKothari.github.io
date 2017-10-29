@@ -2,7 +2,7 @@
 layout: post
 title:  "Convert UnixTimeStamp Date"
 date:   2017-02-12 10:00:00
-categories: Objective-C
+categories: CodeSnippet
 tags: Date Format UnixTimeStamp
 ---
 
@@ -42,4 +42,3 @@ Example `Date`
 }
 ```
 
-_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

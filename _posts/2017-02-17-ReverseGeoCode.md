@@ -2,7 +2,7 @@
 layout: post
 title:  "Reverse Geo-coding"
 date:   2017-02-17 11:00:00
-categories: Swift
+categories: CodeSnippet
 tags: placemarks CLGeocoder reverse geocoding
 ---
 

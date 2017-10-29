@@ -2,7 +2,7 @@
 layout: post
 title:  "Convert Date To 2DaysAgo"
 date:   2017-02-08 11:00:00
-categories: Swift
+categories: CodeSnippet
 tags: extension Date String Format
 ---
 
@@ -61,4 +61,3 @@ extension Date {
 }
 ```
 
-_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

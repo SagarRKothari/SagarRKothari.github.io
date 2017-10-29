@@ -3,7 +3,7 @@ layout: default
 ---
 
 <style>
-ul {
+ul.mymenu {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,11 +11,11 @@ ul {
     background-color: #333;
 }
 
-li {
+li.mymenu {
     float: left;
 }
 
-li a, .dropbtn {
+li.mymenu a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -23,7 +23,7 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+li.mymenu a:hover, .dropdown:hover .dropbtn {
     background-color: gray;
 }
 
@@ -55,11 +55,11 @@ li.dropdown {
 }
 </style>
 
-<ul class="tag-box" style="list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333333">
+<ul class="mymenu">
 {% assign tags_list = site.categories %}  
   {% if tags_list.first[0] == null %}
     {% for tag in tags_list %} 
-      <li style="border-right: 1px solid #bbb;">
+      <li style="border-right: 1px solid #bbb;" class="mymenu">
         <a href="{{ site.url }}/Archive.html#{{ tag }}">
           {{ tag }} <span>{{ site.tags[tag].size }}</span>
         </a>
@@ -67,7 +67,7 @@ li.dropdown {
     {% endfor %}
   {% else %}
     {% for tag in tags_list %} 
-      <li style="border-right: 1px solid #bbb;" class="dropdown">
+      <li style="border-right: 1px solid #bbb;" class="dropdown" class="mymenu">
         <a href="javascript:void(0)" class="dropbtn">{{ tag[0] }}</a>
         <div class="dropdown-content">
           {% assign pages_list = tag[1] %}  
@@ -90,13 +90,20 @@ li.dropdown {
 {% assign tags_list = nil %}
 </ul>
 
+<br>
+<hr>
+<br>
 
+<h1>Recent Posts</h1>
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
   {{ post.date | date: '%b %d, %Y' }}
   <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 {% endfor %}
 
+<br>
+<hr>
+<br>
 <!-- Pagination links -->
 {% if paginator.total_pages > 1 %}
 <div class="pagination">

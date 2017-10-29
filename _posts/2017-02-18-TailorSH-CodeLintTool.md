@@ -2,8 +2,8 @@
 layout: post
 title:  "Tailor.sh installing and using"
 date:   2017-02-18 11:00:00
-categories: Swift
-tags: IBAction email MessageUI MFMailComposeViewController canSendMail
+categories: Tools
+tags: Tailor CodeLint Syntax Installation Usage
 ---
 
 ### Installation

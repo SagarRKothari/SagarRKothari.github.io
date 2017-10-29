@@ -2,7 +2,7 @@
 layout: post
 title:  "Implementing Reachability with Singleton"
 date:   2017-02-14 10:00:00
-categories: Swift
+categories: Illustration
 tags: Reachability WiFi
 ---
 
@@ -66,4 +66,3 @@ if ReachabilityChkr.shared.isReachableViaWiFi == true || ReachabilityChkr.shared
 }
 ```
 
-_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

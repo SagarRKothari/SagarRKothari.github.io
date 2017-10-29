@@ -2,7 +2,7 @@
 layout: post
 title:  "Singleton for obtaining device location"
 date:   2017-02-16 11:00:00
-categories: Swift
+categories: CodeSnippet
 tags: CoreLocation LocationManager CLLocation CLLocationManager
 ---
 

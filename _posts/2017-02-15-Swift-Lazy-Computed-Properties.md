@@ -2,7 +2,7 @@
 layout: post
 title:  "Example of Lazy Computed Properties"
 date:   2017-02-15 09:00:00
-categories: Swift
+categories: CodeSnippet
 tags: computed lazy properties
 ---
 
@@ -34,4 +34,3 @@ extension MyViewController {
 	}
 ```
 
-_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

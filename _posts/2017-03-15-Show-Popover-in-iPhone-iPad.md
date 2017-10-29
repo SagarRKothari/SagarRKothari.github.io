@@ -2,8 +2,8 @@
 layout: post
 title:  "Show Popover in iPhone or iPad without any third party library"
 date:   2017-03-15 10:00:00
-categories: Swift
-tags: Reachability WiFi
+categories: Illustration
+tags: UIKit Popover iPad iPhone
 ---
 
 ## Show Popover in iPhone-iPad

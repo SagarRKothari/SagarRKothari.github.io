@@ -2,7 +2,7 @@
 layout: post
 title:  "Format JSON Pretty Print"
 date:   2017-02-11 11:00:00
-categories: Objective-C
+categories: CodeSnippet
 tags: String JSON Format
 ---
 
@@ -20,4 +20,3 @@ Put following code-snippet for formatting a JSON string to pretty print JSON.
 }
 ```
 
-_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}

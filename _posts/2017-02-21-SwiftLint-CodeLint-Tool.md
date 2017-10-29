@@ -2,7 +2,7 @@
 layout: post
 title:  "Swiftlint - Installation, Usage, Examples"
 date:   2017-02-21 11:00:00
-categories: Swift
+categories: Tools
 tags: Code Lint Syntax Correction Valid Language
 ---
 

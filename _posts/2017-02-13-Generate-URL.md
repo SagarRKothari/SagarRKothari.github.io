@@ -2,7 +2,7 @@
 layout: post
 title:  "Generate with URL Components like host, path, params"
 date:   2017-02-13 10:00:00
-categories: Swift
+categories: CodeSnippet
 tags: URL Components Generator
 ---
 
@@ -42,4 +42,3 @@ func formURL(scheme: String,
 }
 ```
 
-_**Categories:**_ {{ page.categories | array_to_sentence_string }} \| _**Tags:**_ {{ page.tags | array_to_sentence_string }}
