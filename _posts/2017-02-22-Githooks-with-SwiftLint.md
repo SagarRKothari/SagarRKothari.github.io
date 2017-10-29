@@ -6,9 +6,9 @@ categories: Swift
 tags: Code Lint Syntax Correction Valid Language Git GitHooks Hooks
 ---
 
-#### Pre-commit script for iOS projects for automated code review
+### Pre-commit script for iOS projects for automated code review
 
-##### Step 1. Navigate to project directory using terminal
+#### Step 1. Navigate to project directory using terminal
 
 Example
 
@@ -16,7 +16,7 @@ Example
 cd ~/myProjectsFolder/XYZProjectGitCheckout/
 ```
 
-##### Step 2. Further navigate to `.git` folders
+#### Step 2. Further navigate to `.git` folders
 
 Example
 
@@ -26,7 +26,7 @@ cd .git/
 
 You must have `.git` folder inside your local check-out. If it's not there, you must be at wrong place.
 
-##### Step 3. Check if `hooks` folder exists or not. If not create one and move inside that folder.
+#### Step 3. Check if `hooks` folder exists or not. If not create one and move inside that folder.
 
 
 
@@ -35,7 +35,7 @@ mkdir .hooks # optional step
 cd .hooks
 ```
 
-##### Step 4. Make sure that you're at valid directory.
+#### Step 4. Make sure that you're at valid directory.
 
 ```sh
 pwd
@@ -43,7 +43,7 @@ pwd
 # ~/myProjectsFolder/XYZProjectGitCheckout/.git/hooks
 ```
 
-##### Step 5. Create a file named `pre-commit`
+#### Step 5. Create a file named `pre-commit`
 
 (Yes. Without any extension)
 and put following contents inside that file.
@@ -65,10 +65,10 @@ else
 fi
 ```
 
-##### Step 6. Apply executable permissions.
+#### Step 6. Apply executable permissions.
 
 ```sh
-chown 777 pre-commit
+chmod 777 pre-commit
 
 # Example output
 # total 16
@@ -78,7 +78,7 @@ chown 777 pre-commit
 # -rwxrwxrwx   1 sagar  Other Users	300 Apr  4 12:29 pre-commit
 ```
 
-##### Step 7. Try to commit the code. In my case it shows following errors because code in not well organized.
+#### Step 7. Try to commit the code. In my case it shows following errors because code in not well organized.
 
 ```sh
 sagar (master +) ADemoProject $ git commit -m "Removing files a b c"
