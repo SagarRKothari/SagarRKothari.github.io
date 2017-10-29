@@ -14,7 +14,7 @@ In this post, I'll explain how to show pop-over on iPhone/iPad without using any
 
 Open your project & make sure you've one class from where you would like to show the pop-over and another class for the pop-over.
 
-![Step 1]({{assets/2017-03-15/Classes.png}})
+![Step 1]({{ "assets/2017-03-15/Classes.png" | absolute_url }})
 
 ### Step 2.
 
