@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>Change UISearchBar Keyboard Appearance</title>
+  <meta name="description" content="How to change UISearchBar Keyboard Appearance?">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/page2/">
+  <link rel="canonical" href="http://localhost:4000/swift/uikit/2017/02/23/Change-UISearchBar-Appearance.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -75,54 +75,65 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- This loops through the paginated posts -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  Feb 13, 2017
-  <h3><a href="/swift/2017/02/13/Generate-URL.html">Generate with URL Components like host, path, params</a></h3>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Change UISearchBar Keyboard Appearance</h1>
+    <p class="post-meta">
+      <time datetime="2017-02-23T16:30:00+05:30" itemprop="datePublished">
+        
+        Feb 23, 2017
+      </time>
+      </p>
+  </header>
 
-  Feb 12, 2017
-  <h3><a href="/objective-c/2017/02/12/Convert-Unix-TimeStamp.html">Convert UnixTimeStamp Date</a></h3>
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="how-to-change-uisearchbar-keyboard-appearance">How to change UISearchBar Keyboard Appearance?</h2>
 
-  Feb 11, 2017
-  <h3><a href="/objective-c/2017/02/11/Format-JSON-Pretty-Print.html">Format JSON Pretty Print</a></h3>
+<p>Just paste following code snip &amp; call function</p>
 
-  Feb 10, 2017
-  <h3><a href="/objective-c/2017/02/10/FormatXML-Pretty-Print.html">Format XML Pretty Print</a></h3>
+<h3 id="swift-code">Swift code</h3>
 
-  Feb 09, 2017
-  <h3><a href="/objective-c/2017/02/09/Validate-Email.html">Validate Email</a></h3>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UISearchBarDelegate</span> <span class="p">{</span>
 
-  Feb 08, 2017
-  <h3><a href="/swift/2017/02/08/Convert-Date-To-2DaysAgo.html">Convert Date To 2DaysAgo</a></h3>
+    <span class="kd">func</span> <span class="nf">searchBarTextDidBeginEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">searchBar</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">ViewController</span><span class="o">.</span><span class="nf">changeSearchBarKeyboardColor</span><span class="p">(</span><span class="n">searchBar</span><span class="p">)</span>
+    <span class="p">}</span>
 
-  Feb 07, 2017
-  <h3><a href="/swift/2017/02/07/Swift-dial-phone-number.html">Swift dial phone number</a></h3>
-
-  Feb 06, 2017
-  <h3><a href="/swift/2017/02/06/Swift-open-email-composer.html">Swift open email composer</a></h3>
-
-
-<!-- Pagination links -->
-
-<div class="pagination">
-  
-    <a href="/">&laquo; Prev</a>
-  
-
-  
-    
-      <a href="/">1</a>
-    
-  
-    
-      <em>2</em>
-    
-  
-
-  
-    <span>Next &raquo;</span>
-  
+    <span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">changeSearchBarKeyboardColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">searchBar</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">subview</span> <span class="k">in</span> <span class="n">searchBar</span><span class="o">.</span><span class="n">subviews</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="n">innerView</span> <span class="k">in</span> <span class="n">subview</span><span class="o">.</span><span class="n">subviews</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">innerView</span> <span class="k">as?</span> <span class="kt">UITextInputTraits</span><span class="p">,</span>
+                    <span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="n">innerView</span> <span class="k">as?</span> <span class="kt">UITextField</span> <span class="p">{</span>
+                    <span class="n">textField</span><span class="o">.</span><span class="n">keyboardAppearance</span> <span class="o">=</span> <span class="o">.</span><span class="n">alert</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 </div>
+
+<h3 id="objective-c-code">Objective-C code</h3>
+
+<pre><code class="language-objective-c">+ (void)changeSearchBarColor:(UISearchBar *)searchBar {
+   for (UIView *subview in searchBar.subviews) {
+       for (UIView *subSubview in subview.subviews) {
+           if ([subSubview conformsToProtocol:@protocol(UITextInputTraits)]) {
+               UITextField *textField = (UITextField *)subSubview;
+               [textField setKeyboardAppearance: UIKeyboardAppearanceAlert];
+               break;
+           }
+       }
+   }
+}
+</code></pre>
+
+
+  </div>
+
+  
+</article>
 
       </div>
     </main>

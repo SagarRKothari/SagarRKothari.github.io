@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>Swiftlint - Installation, Usage, Examples</title>
+  <meta name="description" content="Installation">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/page2/">
+  <link rel="canonical" href="http://localhost:4000/swift/2017/02/21/SwiftLint-CodeLint-Tool.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -75,54 +75,90 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- This loops through the paginated posts -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  Feb 13, 2017
-  <h3><a href="/swift/2017/02/13/Generate-URL.html">Generate with URL Components like host, path, params</a></h3>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Swiftlint - Installation, Usage, Examples</h1>
+    <p class="post-meta">
+      <time datetime="2017-02-21T16:30:00+05:30" itemprop="datePublished">
+        
+        Feb 21, 2017
+      </time>
+      </p>
+  </header>
 
-  Feb 12, 2017
-  <h3><a href="/objective-c/2017/02/12/Convert-Unix-TimeStamp.html">Convert UnixTimeStamp Date</a></h3>
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="installation">Installation</h3>
 
-  Feb 11, 2017
-  <h3><a href="/objective-c/2017/02/11/Format-JSON-Pretty-Print.html">Format JSON Pretty Print</a></h3>
+<p>Using Homebrew</p>
 
-  Feb 10, 2017
-  <h3><a href="/objective-c/2017/02/10/FormatXML-Pretty-Print.html">Format XML Pretty Print</a></h3>
-
-  Feb 09, 2017
-  <h3><a href="/objective-c/2017/02/09/Validate-Email.html">Validate Email</a></h3>
-
-  Feb 08, 2017
-  <h3><a href="/swift/2017/02/08/Convert-Date-To-2DaysAgo.html">Convert Date To 2DaysAgo</a></h3>
-
-  Feb 07, 2017
-  <h3><a href="/swift/2017/02/07/Swift-dial-phone-number.html">Swift dial phone number</a></h3>
-
-  Feb 06, 2017
-  <h3><a href="/swift/2017/02/06/Swift-open-email-composer.html">Swift open email composer</a></h3>
-
-
-<!-- Pagination links -->
-
-<div class="pagination">
-  
-    <a href="/">&laquo; Prev</a>
-  
-
-  
-    
-      <a href="/">1</a>
-    
-  
-    
-      <em>2</em>
-    
-  
-
-  
-    <span>Next &raquo;</span>
-  
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install swiftlint
+</code></pre>
 </div>
+
+<p>You can also install SwiftLint by downloading SwiftLint.pkg from the latest “GitHub release and running it.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>https://github.com/realm/SwiftLint/releases/latest
+</code></pre>
+</div>
+
+<h3 id="usage">Usage</h3>
+
+<p>Xcode</p>
+
+<ul>
+  <li>Integrate SwiftLint into an Xcode scheme to get warnings and errors displayed in the IDE.</li>
+  <li>Just add a new “Run Script Phase” with:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if which swiftlint &gt;/dev/null; then
+  swiftlint
+else
+  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+fi
+</code></pre>
+</div>
+
+<h3 id="ignore-some-rules">Ignore some rules</h3>
+
+<ul>
+  <li>Navigate to your project directory in finder.</li>
+  <li>Create a file named <code class="highlighter-rouge">.swiftlint.yml</code></li>
+  <li>Put contents as follows.</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">disabled_rules</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">line_length</span>
+<span class="s">excluded</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">Carthage</span>
+  <span class="pi">-</span> <span class="s">Pods</span>
+</code></pre>
+</div>
+
+<h3 id="auto-correct-code--auto-format-code">Auto-correct code / auto-format code</h3>
+
+<ul>
+  <li>Open terminal</li>
+  <li>Navigate to your project directory in terminal.</li>
+  <li>Run following command</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>swiftlint autocorrect
+</code></pre>
+</div>
+
+<h3 id="more-info">More info</h3>
+
+<ul>
+  <li><a href="https://github.com/realm/SwiftLint">Github</a></li>
+</ul>
+
+<p><img src="https://github.com/realm/SwiftLint/raw/master/assets/screenshot.png" alt="Sample Image" /></p>
+
+  </div>
+
+  
+</article>
 
       </div>
     </main>

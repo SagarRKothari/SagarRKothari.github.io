@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>Swift open email composer</title>
+  <meta name="description" content="Following is code snippet for opening email composer.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/page2/">
+  <link rel="canonical" href="http://localhost:4000/swift/2017/02/06/Swift-open-email-composer.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -75,54 +75,48 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- This loops through the paginated posts -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  Feb 13, 2017
-  <h3><a href="/swift/2017/02/13/Generate-URL.html">Generate with URL Components like host, path, params</a></h3>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Swift open email composer</h1>
+    <p class="post-meta">
+      <time datetime="2017-02-06T16:30:00+05:30" itemprop="datePublished">
+        
+        Feb 6, 2017
+      </time>
+      </p>
+  </header>
 
-  Feb 12, 2017
-  <h3><a href="/objective-c/2017/02/12/Convert-Unix-TimeStamp.html">Convert UnixTimeStamp Date</a></h3>
+  <div class="post-content" itemprop="articleBody">
+    <p>Following is code snippet for opening email composer.</p>
 
-  Feb 11, 2017
-  <h3><a href="/objective-c/2017/02/11/Format-JSON-Pretty-Print.html">Format JSON Pretty Print</a></h3>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">MessageUI</span>
 
-  Feb 10, 2017
-  <h3><a href="/objective-c/2017/02/10/FormatXML-Pretty-Print.html">Format XML Pretty Print</a></h3>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnOpenEmail</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">sendEmail</span><span class="p">()</span>
+<span class="p">}</span>
 
-  Feb 09, 2017
-  <h3><a href="/objective-c/2017/02/09/Validate-Email.html">Validate Email</a></h3>
+<span class="kd">func</span> <span class="nf">sendEmail</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kt">MFMailComposeViewController</span><span class="o">.</span><span class="nf">canSendMail</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">mail</span> <span class="o">=</span> <span class="kt">MFMailComposeViewController</span><span class="p">()</span>
+        <span class="n">mail</span><span class="o">.</span><span class="n">mailComposeDelegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">mail</span><span class="o">.</span><span class="nf">setToRecipients</span><span class="p">([</span><span class="k">self</span><span class="o">.</span><span class="n">lblEmail</span><span class="o">.</span><span class="n">text</span><span class="o">!.</span><span class="nf">trimmingCharacters</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="kt">CharacterSet</span><span class="o">.</span><span class="n">whitespaces</span><span class="p">)])</span>
+        <span class="nf">present</span><span class="p">(</span><span class="n">mail</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// show failure alert</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-  Feb 08, 2017
-  <h3><a href="/swift/2017/02/08/Convert-Date-To-2DaysAgo.html">Convert Date To 2DaysAgo</a></h3>
-
-  Feb 07, 2017
-  <h3><a href="/swift/2017/02/07/Swift-dial-phone-number.html">Swift dial phone number</a></h3>
-
-  Feb 06, 2017
-  <h3><a href="/swift/2017/02/06/Swift-open-email-composer.html">Swift open email composer</a></h3>
-
-
-<!-- Pagination links -->
-
-<div class="pagination">
-  
-    <a href="/">&laquo; Prev</a>
-  
-
-  
-    
-      <a href="/">1</a>
-    
-  
-    
-      <em>2</em>
-    
-  
-
-  
-    <span>Next &raquo;</span>
-  
+<span class="kd">func</span> <span class="nf">mailComposeController</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">MFMailComposeViewController</span><span class="p">,</span> <span class="n">didFinishWith</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">MFMailComposeResult</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="n">controller</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
 </div>
+
+  </div>
+
+  
+</article>
 
       </div>
     </main>

@@ -14,13 +14,13 @@ In this post, I'll explain how to show pop-over on iPhone/iPad without using any
 
 Open your project & make sure you've one class from where you would like to show the pop-over and another class for the pop-over.
 
-![Step 1]({{ "assets/2017-03-15/Classes.png" | absolute_url }})
+![Step 1]({{ "/assets/2017-03-15/Classes.png" | absolute_url }})
 
 ### Step 2.
 
 Open Storyboard & add a new view controller for pop-over & resize as per your need. Make sure you also apply the class name to view-controller.
 
-![Step 2]({{assets/2017-03-15/HowToShowPopOver-1.gif}})
+![Step 2]({{ "/assets/2017-03-15/HowToShowPopOver-1.gif" | absolute_url }})
 
 ### Step 3.
 
@@ -28,7 +28,7 @@ In your view-controller, add bar-button from where you can drag & drop segue to 
 
 **Make sure you give the name to the segue.**
 
-![Step 3]({{assets/2017-03-15/HowToShowPopOver-2.gif}})
+![Step 3]({{ "/assets/2017-03-15/HowToShowPopOver-2.gif" | absolute_url }})
 
 ### Step 4.
 
@@ -86,11 +86,11 @@ From some action, when you wish to dismiss pop-over, under your pop-over-control
 
 Example output is as follows.
 
-![Output]({{assets/2017-03-15/HowToShowPopOver-3.gif}})
+![Output]({{ "/assets/2017-03-15/HowToShowPopOver-3.gif" | absolute_url }})
 
 
 ## Download Source code
 
 Run following command.
 
-[Download]({{assets/2017-03-15/ShowPopover" | absolute_url }})
+[Download]({{ "/assets/2017-03-15/ShowPopover" | absolute_url }})
