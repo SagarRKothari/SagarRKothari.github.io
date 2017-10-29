@@ -91,6 +91,4 @@ Example output is as follows.
 
 ## Download Source code
 
-Run following command.
-
-[Download]({{ "/assets/2017-03-15/ShowPopover" | absolute_url }})
+[Download]({{ "/assets/2017-03-15/ShowPopover.zip" | absolute_url }})
