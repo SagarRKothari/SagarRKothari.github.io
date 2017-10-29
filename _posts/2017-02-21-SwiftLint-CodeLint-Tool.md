@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Swiftling - Installation, Usage, Examples"
+title:  "Swiftlint - Installation, Usage, Examples"
 date:   2017-02-21 11:00:00
 categories: Swift
 tags: Code Lint Syntax Correction Valid Language
