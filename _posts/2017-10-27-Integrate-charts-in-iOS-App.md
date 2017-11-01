@@ -134,11 +134,21 @@ public class BarChartFormatter: NSObject, IAxisValueFormatter {
 Supply Chart Data to `ChartView`.
 
 ```swift
+// Supply chart data to Bar Chart
 barChartView.data = chartData // From Step 7
+
+// Create Formatter
 let formato = BarChartFormatter() // From Step 8
+
+// Apply customization to createdFormatter for X Axis
 formato.xAxisData = months 
 let xaxis:XAxis = XAxis()
 xaxis.valueFormatter = formato
-self.barChartView.xAxis.valueFormatter = xaxis.valueFormatter
-self.updateData(profitInfo)
+
+// Apply Formatter to BarChart
+barChartView.xAxis.valueFormatter = xaxis.valueFormatter
 ```
+
+### Sample Code
+
+[Check out this repository for sample code for above](https://github.com/sag333ar/TMEStockExchange).
