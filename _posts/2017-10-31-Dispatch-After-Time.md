@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dispatch After Time using "
+title:  "Dispatch After Time using DispatchQueue"
 date:   2017-10-31 10:00:00
 categories: CodeSnippet
 tags: DispatchQueue main async
@@ -26,10 +26,10 @@ dispatch_after(dispatchTime, dispatch_get_main_queue(), {
 ### Example
 
 ```swift
-	func fetchStockData(_ handler: @escaping (([Stock]) -> Void)) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-      let stocks = StockManagerSDK.stockData()
-      handler(stocks)
+func fetchStockData(_ handler: @escaping (([Stock]) -> Void)) {
+	DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+		let stocks = StockManagerSDK.stockData()
+		handler(stocks)
     }
-	}
+}
 ```
