@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using Localization Tables for supporting internationalization"
-date:   2017-10-31 10:00:00
+date:   2017-11-01 10:00:00
 categories: CodeSnippet
 tags: internationalization Localization Swift
 ---
