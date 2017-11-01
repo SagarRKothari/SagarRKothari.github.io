@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>Generating Archive - list of Articles</title>
+  <meta name="description" content="Step 1.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/page2/">
+  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/28/Jekyll-Generating-Archive.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -83,69 +83,57 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1>Recent Posts</h1>
-<!-- This loops through the paginated posts -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  Feb 18, 2017
-  <h3><a href="/tools/2017/02/18/TailorSH-CodeLintTool.html">Tailor.sh installing and using</a></h3>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Generating Archive - list of Articles</h1>
+    <p class="post-meta">
+      <time datetime="2017-10-28T15:30:00+05:30" itemprop="datePublished">
+        
+        Oct 28, 2017
+      </time>
+      </p>
+  </header>
 
-  Feb 17, 2017
-  <h3><a href="/codesnippet/2017/02/17/ReverseGeoCode.html">Reverse Geo-coding</a></h3>
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="step-1">Step 1.</h3>
 
-  Feb 16, 2017
-  <h3><a href="/codesnippet/2017/02/16/Swift-Device-Location.html">Singleton for obtaining device location</a></h3>
+<p>Create <code class="highlighter-rouge">Archive.html</code> under root folder of your web-site.</p>
 
-  Feb 15, 2017
-  <h3><a href="/codesnippet/2017/02/15/Swift-Lazy-Computed-Properties.html">Example of Lazy Computed Properties</a></h3>
+<hr />
 
-  Feb 14, 2017
-  <h3><a href="/illustration/2017/02/14/Implementing-Reachability.html">Implementing Reachability with Singleton</a></h3>
+<h3 id="step-2">Step 2.</h3>
 
-  Feb 13, 2017
-  <h3><a href="/codesnippet/2017/02/13/Generate-URL.html">Generate with URL Components like host, path, params</a></h3>
+<p>Copy And Paste following Code into <code class="highlighter-rouge">html</code> file which you just created.</p>
 
-  Feb 12, 2017
-  <h3><a href="/codesnippet/2017/02/12/Convert-Unix-TimeStamp.html">Convert UnixTimeStamp Date</a></h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+layout: default
+title: Archive
+---
 
-  Feb 11, 2017
-  <h3><a href="/codesnippet/2017/02/11/Format-JSON-Pretty-Print.html">Format JSON Pretty Print</a></h3>
-
-  Feb 10, 2017
-  <h3><a href="/codesnippet/2017/02/10/FormatXML-Pretty-Print.html">Format XML Pretty Print</a></h3>
-
-  Feb 09, 2017
-  <h3><a href="/codesnippet/2017/02/09/Validate-Email.html">Validate Email</a></h3>
-
-
-<br>
-<hr>
-<br>
-<!-- Pagination links -->
-
-<div class="pagination">
-  
-    <a href="/">&laquo; Prev</a>
-  
-
-  
-    
-      <a href="/">1</a>
-    
-  
-    
-      <em>2</em>
-    
-  
-    
-      <a href="/page3/">3</a>
-    
-  
-
-  
-    <a href="/page3/">Next &raquo;</a>
-  
+&lt;div id="home"&gt;
+  &lt;h1&gt;Archive ( { { site.posts | size } } posts)&lt;/h1&gt;
+  &lt;ul class="posts"&gt;
+    { % for post in site.posts % }
+      &lt;li&gt;&lt;span&gt; { { post.date | date_to_string } } &lt;/span&gt; &amp;raquo; &lt;a href=" { { post.url } }"&gt; { { post.title } } &lt;/a&gt;&lt;/li&gt;
+    { % endfor % }
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 </div>
 
+<h3 id="step-3">Step 3.</h3>
+
+<p>Run following command to start server.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre>
+</div>
+
+  </div>
+
+  
+</article>
 
       </div>
     </main>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-01T13:20:12+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Dispatch After Time using DispatchQueue</title><link href="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html" rel="alternate" type="text/html" title="Dispatch After Time using DispatchQueue" /><published>2017-10-31T15:30:00+05:30</published><updated>2017-10-31T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html">&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-01T14:08:10+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Dispatch After Time using DispatchQueue</title><link href="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html" rel="alternate" type="text/html" title="Dispatch After Time using DispatchQueue" /><published>2017-10-31T15:30:00+05:30</published><updated>2017-10-31T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html">&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;DispatchQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;asyncAfter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;deadline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// your code here&lt;/span&gt;
@@ -110,7 +110,39 @@ title: Categories
 
 &lt;p&gt;Select one of the strings file, open file inspector &amp;amp; Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;localize&lt;/code&gt; button to enable localization.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-01/Localization.png&quot; alt=&quot;LocalizationDemo&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="internationalization" /><category term="Localization" /><category term="Swift" /><summary type="html">Step 1.</summary></entry><entry><title type="html">Show Popover in iPhone or iPad without any third party library</title><link href="http://localhost:4000/illustration/2017/03/15/Show-Popover-in-iPhone-iPad.html" rel="alternate" type="text/html" title="Show Popover in iPhone or iPad without any third party library" /><published>2017-03-15T15:30:00+05:30</published><updated>2017-03-15T15:30:00+05:30</updated><id>http://localhost:4000/illustration/2017/03/15/Show-Popover-in-iPhone-iPad</id><content type="html" xml:base="http://localhost:4000/illustration/2017/03/15/Show-Popover-in-iPhone-iPad.html">&lt;h2 id=&quot;show-popover-in-iphone-ipad&quot;&gt;Show Popover in iPhone-iPad&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-01/Localization.png&quot; alt=&quot;LocalizationDemo&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="internationalization" /><category term="Localization" /><category term="Swift" /><summary type="html">Step 1.</summary></entry><entry><title type="html">Generating Archive - list of Articles</title><link href="http://localhost:4000/codesnippet/2017/10/28/Jekyll-Generating-Archive.html" rel="alternate" type="text/html" title="Generating Archive - list of Articles" /><published>2017-10-28T15:30:00+05:30</published><updated>2017-10-28T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/10/28/Jekyll-Generating-Archive</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/10/28/Jekyll-Generating-Archive.html">&lt;h3 id=&quot;step-1&quot;&gt;Step 1.&lt;/h3&gt;
+
+&lt;p&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;Archive.html&lt;/code&gt; under root folder of your web-site.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-2&quot;&gt;Step 2.&lt;/h3&gt;
+
+&lt;p&gt;Copy And Paste following Code into &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; file which you just created.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: default
+title: Archive
+---
+
+&amp;lt;div id=&quot;home&quot;&amp;gt;
+  &amp;lt;h1&amp;gt;Archive ( { { site.posts | size } } posts)&amp;lt;/h1&amp;gt;
+  &amp;lt;ul class=&quot;posts&quot;&amp;gt;
+    { % for post in site.posts % }
+      &amp;lt;li&amp;gt;&amp;lt;span&amp;gt; { { post.date | date_to_string } } &amp;lt;/span&amp;gt; &amp;amp;raquo; &amp;lt;a href=&quot; { { post.url } }&quot;&amp;gt; { { post.title } } &amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    { % endfor % }
+  &amp;lt;/ul&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;step-3&quot;&gt;Step 3.&lt;/h3&gt;
+
+&lt;p&gt;Run following command to start server.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="Jekyll" /><category term="Customization" /><category term="Github" /><category term="Pages" /><summary type="html">Step 1.</summary></entry><entry><title type="html">Show Popover in iPhone or iPad without any third party library</title><link href="http://localhost:4000/illustration/2017/03/15/Show-Popover-in-iPhone-iPad.html" rel="alternate" type="text/html" title="Show Popover in iPhone or iPad without any third party library" /><published>2017-03-15T15:30:00+05:30</published><updated>2017-03-15T15:30:00+05:30</updated><id>http://localhost:4000/illustration/2017/03/15/Show-Popover-in-iPhone-iPad</id><content type="html" xml:base="http://localhost:4000/illustration/2017/03/15/Show-Popover-in-iPhone-iPad.html">&lt;h2 id=&quot;show-popover-in-iphone-ipad&quot;&gt;Show Popover in iPhone-iPad&lt;/h2&gt;
 
 &lt;p&gt;In this post, I’ll explain how to show pop-over on iPhone/iPad without using any third party library.&lt;/p&gt;
 
@@ -438,31 +470,4 @@ fi
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Fabric" /><category term="Crashlytics" /><category term="Fastlane" /><category term="Beta" /><category term="Slack" /><category term="CI" /><category term="Continuous" /><category term="Integration" /><summary type="html">```ruby fastlane_version “1.106.2”</summary></entry><entry><title type="html">Tailor.sh installing and using</title><link href="http://localhost:4000/tools/2017/02/18/TailorSH-CodeLintTool.html" rel="alternate" type="text/html" title="Tailor.sh installing and using" /><published>2017-02-18T16:30:00+05:30</published><updated>2017-02-18T16:30:00+05:30</updated><id>http://localhost:4000/tools/2017/02/18/TailorSH-CodeLintTool</id><content type="html" xml:base="http://localhost:4000/tools/2017/02/18/TailorSH-CodeLintTool.html">&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install tailor
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;or&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -fsSL https://tailor.sh/install.sh | sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;usage-guide&quot;&gt;Usage Guide&lt;/h3&gt;
-
-&lt;p&gt;Run following command to integrate tailor&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tailor --xcode /path/to/demo.xcodeproj/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;find-more-details&quot;&gt;Find more details&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/sleekbyte/tailor&quot;&gt;On github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://tailor.sh/&quot;&gt;Tailor.sh&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tailor.sh/assets/images/colour-console.png&quot; alt=&quot;Sample output&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Tailor" /><category term="CodeLint" /><category term="Syntax" /><category term="Installation" /><category term="Usage" /><summary type="html">Installation</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="Fabric" /><category term="Crashlytics" /><category term="Fastlane" /><category term="Beta" /><category term="Slack" /><category term="CI" /><category term="Continuous" /><category term="Integration" /><summary type="html">```ruby fastlane_version “1.106.2”</summary></entry></feed>
