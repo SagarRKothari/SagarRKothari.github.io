@@ -1,4 +1,206 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-01T19:51:41+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Dispatch After Time using DispatchQueue</title><link href="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html" rel="alternate" type="text/html" title="Dispatch After Time using DispatchQueue" /><published>2017-10-31T15:30:00+05:30</published><updated>2017-10-31T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html">&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-02T17:01:22+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Setting up SonarQube for swift on Mac OSX</title><link href="http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift.html" rel="alternate" type="text/html" title="Setting up SonarQube for swift on Mac OSX" /><published>2017-11-01T15:30:00+05:30</published><updated>2017-11-01T15:30:00+05:30</updated><id>http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift</id><content type="html" xml:base="http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift.html">&lt;h3 id=&quot;step-1-download-and-setup-sonarcube&quot;&gt;Step 1. Download and setup &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarCube&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sonarqube.org/downloads/&quot;&gt;Download SonarQube&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Unzip downloaded file.&lt;/li&gt;
+  &lt;li&gt;Move downloaded file under &lt;code class=&quot;highlighter-rouge&quot;&gt;/Applications/&lt;/code&gt; folder. (I prefer it to keep it that way)&lt;/li&gt;
+  &lt;li&gt;Rename it to &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarQube&lt;/code&gt; and delete version suffix.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-2-downloading-and-setting-up-sonar-scanner&quot;&gt;Step 2. Downloading and setting up &lt;code class=&quot;highlighter-rouge&quot;&gt;Sonar Scanner&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner&quot;&gt;Open download SonarScanner page&lt;/a&gt; and click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Mac OS X 64 bit&lt;/code&gt; to download Mac OS X specific &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarScanner&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Unzip downloaded file.&lt;/li&gt;
+  &lt;li&gt;Move downloaded file under &lt;code class=&quot;highlighter-rouge&quot;&gt;/Applications/&lt;/code&gt; folder. (I prefer it to keep it that way)&lt;/li&gt;
+  &lt;li&gt;Rename it to &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarScanner&lt;/code&gt; and delete version suffix.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-3-updating-bash_profile-with-new-path&quot;&gt;Step 3. Updating &lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_profile&lt;/code&gt; with new &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Start &lt;code class=&quot;highlighter-rouge&quot;&gt;Terminal&lt;/code&gt; and run following command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/
+vi .bash_profile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Above commands will open your &lt;code class=&quot;highlighter-rouge&quot;&gt;bas_profile&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;vi&lt;/code&gt; editor.&lt;/li&gt;
+  &lt;li&gt;Use down-arrow key to jump to last line.&lt;/li&gt;
+  &lt;li&gt;Use left-right arrows to navigate to last character.&lt;/li&gt;
+  &lt;li&gt;Press &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; to enable insert mode.&lt;/li&gt;
+  &lt;li&gt;Copy &amp;amp; paste following lines.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export PATH=$PATH:/Applications/SonarScanner/bin
+export PATH=$PATH:/Applications/SonarQube/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Press &lt;code class=&quot;highlighter-rouge&quot;&gt;esc&lt;/code&gt; key and &lt;code class=&quot;highlighter-rouge&quot;&gt;:&lt;/code&gt; will appear at bottom-left corner in &lt;code class=&quot;highlighter-rouge&quot;&gt;vi&lt;/code&gt; editor.&lt;/li&gt;
+  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;wq&lt;/code&gt; to save &amp;amp; quit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-4-setting-up-sonarswift-from-backelite&quot;&gt;Step 4. Setting up &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarSwift&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Backelite&lt;/code&gt;.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Backelite/sonar-swift/releases&quot;&gt;Open downloads page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Download jar. In my case, I downloaded &lt;code class=&quot;highlighter-rouge&quot;&gt;backelite-sonar-swift-plugin-0.3.5.jar&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Move this jar file under following folder.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/Applications/SonarQube/extensions/plugins/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-5-starting-up-sonarqube&quot;&gt;Step 5. Starting up &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarQube&lt;/code&gt;.&lt;/h3&gt;
+
+&lt;p&gt;Run following command to start &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarQube&lt;/code&gt; server.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sh /Applications/SonarQube/bin/macosx-universal-64/sonar.sh console
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You should see console as follows if everything goes well.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Running SonarQube...
+wrapper  | --&amp;gt; Wrapper Started as Console
+wrapper  | Launching a JVM...
+jvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+jvm 1    |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+jvm 1    | 
+jvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory /Applications/SonarQube/temp
+jvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.es.EsSettings] Elasticsearch listening on /127.0.0.1:9001
+jvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.p.ProcessLauncherImpl] Launch process[[key='es', ipcIndex=1, logFilenamePrefix=es]] from [/Applications/SonarQube/elasticsearch]: /Applications/SonarQube/elasticsearch/bin/elasticsearch -Epath.conf=/Applications/SonarQube/temp/conf/es
+jvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.SchedulerImpl] Waiting for Elasticsearch to be up and running
+jvm 1    | 2017.11.02 16:23:18 INFO  app[][o.e.p.PluginsService] no modules loaded
+jvm 1    | 2017.11.02 16:23:18 INFO  app[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But once you see following message under console, you should start brownser.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jvm 1    | 2017.11.02 16:23:40 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up
+jvm 1    | 2017.11.02 16:23:40 INFO  app[][o.s.a.SchedulerImpl] SonarQube is up
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-6-logging-in&quot;&gt;Step 6. Logging in&lt;/h3&gt;
+
+&lt;p&gt;Go to browser. Open following URL.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://localhost:9000/about
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click on Log in&lt;/li&gt;
+  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; as username, &lt;code class=&quot;highlighter-rouge&quot;&gt;admin&lt;/code&gt; as password.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-7-setting-swiftlint-as-default-profile-for-swift&quot;&gt;Step 7. Setting &lt;code class=&quot;highlighter-rouge&quot;&gt;SwiftLint&lt;/code&gt; as default profile for &lt;code class=&quot;highlighter-rouge&quot;&gt;Swift&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Open following URL.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://localhost:9000/profiles
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Backelite/sonar-swift/raw/develop/SwitchProfiles.png&quot; alt=&quot;Set SwiftLint as Default&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Scroll down to &lt;code class=&quot;highlighter-rouge&quot;&gt;Swift&lt;/code&gt; section.&lt;/p&gt;
+
+&lt;p&gt;Set &lt;code class=&quot;highlighter-rouge&quot;&gt;SwiftLint&lt;/code&gt; as default profile.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;step-8-setting-up-the-project&quot;&gt;Step 8. Setting up the project&lt;/h3&gt;
+
+&lt;p&gt;Navigate to following URL.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://localhost:9000/admin/projects_management
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Create Project&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Enter Project name&lt;/li&gt;
+  &lt;li&gt;Enter project key&lt;/li&gt;
+  &lt;li&gt;Click &lt;code class=&quot;highlighter-rouge&quot;&gt;Create&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-9-performing-analysis-on-your-project&quot;&gt;Step 9. Performing Analysis on your project.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Start &lt;code class=&quot;highlighter-rouge&quot;&gt;Terminal&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Navigate to your project’s root directory where you’ve your &lt;code class=&quot;highlighter-rouge&quot;&gt;project.xcodeProject&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For Example,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/Projects/iOSApplications/myProject
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To Start analysis, run following command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sonar-scanner -Dsonar.projectKey=MyProjectKey -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;NOTE: Make sure you replace &lt;code class=&quot;highlighter-rouge&quot;&gt;MyProjectKey&lt;/code&gt; with your project key.&lt;/p&gt;
+
+&lt;p&gt;Analysis will begin with following console log.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INFO: Scanner configuration file: /Applications/SonarScanner/conf/sonar-scanner.properties
+INFO: Project root configuration file: NONE
+INFO: SonarQube Scanner 3.0.3.778
+INFO: Java 1.8.0_121 Oracle Corporation (64-bit)
+INFO: Mac OS X 10.12.6 x86_64
+INFO: User cache: /Users/e070190/.sonar/cache
+INFO: Publish mode
+INFO: Load global settings
+INFO: Load global settings (done) | time=56ms
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And, analysis will end with following console log.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INFO: Task total time: 21.407 s
+INFO: ------------------------------------------------------------------------
+INFO: EXECUTION SUCCESS
+INFO: ------------------------------------------------------------------------
+INFO: Total time: 22.791s
+INFO: Final Memory: 57M/1531M
+INFO: ------------------------------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;step-10-viewing-the-reports&quot;&gt;Step 10. Viewing the reports.&lt;/h3&gt;
+
+&lt;p&gt;Navigate to following URL.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://localhost:9000/dashboard?id=MyProjectKey
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;NOTE: Make sure you replace &lt;code class=&quot;highlighter-rouge&quot;&gt;MyProjectKey&lt;/code&gt; with your project key.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Backelite/sonar-swift/raw/develop/screenshot.png&quot; alt=&quot;Sample Report&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="SonarCube" /><category term="Swift" /><category term="CodeCoverage" /><summary type="html">Step 1. Download and setup SonarCube</summary></entry><entry><title type="html">Dispatch After Time using DispatchQueue</title><link href="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html" rel="alternate" type="text/html" title="Dispatch After Time using DispatchQueue" /><published>2017-10-31T15:30:00+05:30</published><updated>2017-10-31T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/10/31/Dispatch-After-Time.html">&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;DispatchQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;asyncAfter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;deadline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// your code here&lt;/span&gt;
@@ -512,69 +714,4 @@ Please correct swift-lint errors
 /Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:23: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;vertical_whitespace&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 /Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:25: warning: Trailing Newline Violation: Files should have a single trailing newline. &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;trailing_newline&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Code" /><category term="Lint" /><category term="Syntax" /><category term="Correction" /><category term="Valid" /><category term="Language" /><category term="Git" /><category term="GitHooks" /><category term="Hooks" /><summary type="html">Pre-commit script for iOS projects for automated code review</summary></entry><entry><title type="html">Swiftlint - Installation, Usage, Examples</title><link href="http://localhost:4000/tools/2017/02/21/SwiftLint-CodeLint-Tool.html" rel="alternate" type="text/html" title="Swiftlint - Installation, Usage, Examples" /><published>2017-02-21T16:30:00+05:30</published><updated>2017-02-21T16:30:00+05:30</updated><id>http://localhost:4000/tools/2017/02/21/SwiftLint-CodeLint-Tool</id><content type="html" xml:base="http://localhost:4000/tools/2017/02/21/SwiftLint-CodeLint-Tool.html">&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
-
-&lt;p&gt;Using Homebrew&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install swiftlint
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You can also install SwiftLint by downloading SwiftLint.pkg from the latest “GitHub release and running it.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://github.com/realm/SwiftLint/releases/latest
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-
-&lt;p&gt;Xcode&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Integrate SwiftLint into an Xcode scheme to get warnings and errors displayed in the IDE.&lt;/li&gt;
-  &lt;li&gt;Just add a new “Run Script Phase” with:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if which swiftlint &amp;gt;/dev/null; then
-  swiftlint
-else
-  echo &quot;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&quot;
-fi
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;ignore-some-rules&quot;&gt;Ignore some rules&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Navigate to your project directory in finder.&lt;/li&gt;
-  &lt;li&gt;Create a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;.swiftlint.yml&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Put contents as follows.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;disabled_rules&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;line_length&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;excluded&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Carthage&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Pods&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;auto-correct-code--auto-format-code&quot;&gt;Auto-correct code / auto-format code&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Open terminal&lt;/li&gt;
-  &lt;li&gt;Navigate to your project directory in terminal.&lt;/li&gt;
-  &lt;li&gt;Run following command&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;swiftlint autocorrect
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;more-info&quot;&gt;More info&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/realm/SwiftLint&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/realm/SwiftLint/raw/master/assets/screenshot.png&quot; alt=&quot;Sample Image&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Code" /><category term="Lint" /><category term="Syntax" /><category term="Correction" /><category term="Valid" /><category term="Language" /><summary type="html">Installation</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="Code" /><category term="Lint" /><category term="Syntax" /><category term="Correction" /><category term="Valid" /><category term="Language" /><category term="Git" /><category term="GitHooks" /><category term="Hooks" /><summary type="html">Pre-commit script for iOS projects for automated code review</summary></entry></feed>
