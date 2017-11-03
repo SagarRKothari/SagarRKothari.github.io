@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>UIView Flip Animation Code</title>
+  <meta name="description" content="Swift Code Snippet">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/11/02/UIView-Flip-Animation-Code.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -88,69 +88,31 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1>Recent Posts</h1>
-<!-- This loops through the paginated posts -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  Nov 02, 2017
-  <h3><a href="/codesnippet/2017/11/02/UIView-Flip-Animation-Code.html">UIView Flip Animation Code</a></h3>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">UIView Flip Animation Code</h1>
+    <p class="post-meta">
+      <time datetime="2017-11-02T15:30:00+05:30" itemprop="datePublished">
+        
+        Nov 2, 2017
+      </time>
+      </p>
+  </header>
 
-  Nov 01, 2017
-  <h3><a href="/illustration/2017/11/01/SettingUpSonarForSwift.html">Setting up SonarQube for swift on Mac OSX</a></h3>
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="swift-code-snippet">Swift Code Snippet</h3>
 
-  Oct 31, 2017
-  <h3><a href="/codesnippet/2017/10/31/Dispatch-After-Time.html">Dispatch After Time using DispatchQueue</a></h3>
-
-  Oct 30, 2017
-  <h3><a href="/codesnippet/2017/10/30/Jekyll-Generating-Categorywise-list.html">Generating Category wise article list</a></h3>
-
-  Oct 29, 2017
-  <h3><a href="/codesnippet/2017/10/29/Using-Localization-Tables.html">Using Localization Tables for supporting internationalization</a></h3>
-
-  Oct 28, 2017
-  <h3><a href="/codesnippet/2017/10/28/Jekyll-Generating-Archive.html">Generating Archive - list of Articles</a></h3>
-
-  Oct 27, 2017
-  <h3><a href="/illustration/2017/10/27/Integrate-charts-in-iOS-App.html">Integrating Charts in iOS Application</a></h3>
-
-  Mar 15, 2017
-  <h3><a href="/illustration/2017/03/15/Show-Popover-in-iPhone-iPad.html">Show Popover in iPhone or iPad without any third party library</a></h3>
-
-  Feb 24, 2017
-  <h3><a href="/illustration/2017/02/24/Starting-Jekyll-Server.html">Starting Jekyll Server with Github Pages</a></h3>
-
-  Feb 23, 2017
-  <h3><a href="/codesnippet/2017/02/23/Change-UISearchBar-Appearance.html">Change UISearchBar Keyboard Appearance</a></h3>
-
-
-<br>
-<hr>
-<br>
-<!-- Pagination links -->
-
-<div class="pagination">
-  
-    <span>&laquo; Prev</span>
-  
-
-  
-    
-      <em>1</em>
-    
-  
-    
-      <a href="/page2/">2</a>
-    
-  
-    
-      <a href="/page3/">3</a>
-    
-  
-
-  
-    <a href="/page2/">Next &raquo;</a>
-  
+<div class="highlighter-rouge"><pre class="highlight"><code>UIView.transition(with: view, duration: 0.5, options: .transitionFlipFromRight, animations: {
+  self.flipSideView.isHidden = !self.flipSideView.isHidden
+}, completion: nil)
+</code></pre>
 </div>
 
+  </div>
+
+  
+</article>
 
       </div>
     </main>

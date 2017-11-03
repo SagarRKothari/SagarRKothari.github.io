@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-02T17:01:22+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Setting up SonarQube for swift on Mac OSX</title><link href="http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift.html" rel="alternate" type="text/html" title="Setting up SonarQube for swift on Mac OSX" /><published>2017-11-01T15:30:00+05:30</published><updated>2017-11-01T15:30:00+05:30</updated><id>http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift</id><content type="html" xml:base="http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift.html">&lt;h3 id=&quot;step-1-download-and-setup-sonarcube&quot;&gt;Step 1. Download and setup &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarCube&lt;/code&gt;&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-03T20:14:55+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">UIView Flip Animation Code</title><link href="http://localhost:4000/codesnippet/2017/11/02/UIView-Flip-Animation-Code.html" rel="alternate" type="text/html" title="UIView Flip Animation Code" /><published>2017-11-02T15:30:00+05:30</published><updated>2017-11-02T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/11/02/UIView-Flip-Animation-Code</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/11/02/UIView-Flip-Animation-Code.html">&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UIView.transition(with: view, duration: 0.5, options: .transitionFlipFromRight, animations: {
+  self.flipSideView.isHidden = !self.flipSideView.isHidden
+}, completion: nil)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="UIView" /><category term="Flip" /><category term="Animation" /><category term="Code" /><summary type="html">Swift Code Snippet</summary></entry><entry><title type="html">Setting up SonarQube for swift on Mac OSX</title><link href="http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift.html" rel="alternate" type="text/html" title="Setting up SonarQube for swift on Mac OSX" /><published>2017-11-01T15:30:00+05:30</published><updated>2017-11-01T15:30:00+05:30</updated><id>http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift</id><content type="html" xml:base="http://localhost:4000/illustration/2017/11/01/SettingUpSonarForSwift.html">&lt;h3 id=&quot;step-1-download-and-setup-sonarcube&quot;&gt;Step 1. Download and setup &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarCube&lt;/code&gt;&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.sonarqube.org/downloads/&quot;&gt;Download SonarQube&lt;/a&gt;&lt;/li&gt;
@@ -633,85 +639,4 @@ public class BarChartFormatter: NSObject, IAxisValueFormatter {
        }
    }
 }
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="Code" /><category term="ObjectiveC" /><category term="UIKit" /><category term="UISearchBar" /><category term="UIKeyboardAppearance" /><category term="Alert" /><summary type="html">How to change UISearchBar Keyboard Appearance?</summary></entry><entry><title type="html">GitHooks with SwiftLint</title><link href="http://localhost:4000/tools/codesnippet/2017/02/22/Githooks-with-SwiftLint.html" rel="alternate" type="text/html" title="GitHooks with SwiftLint" /><published>2017-02-22T16:30:00+05:30</published><updated>2017-02-22T16:30:00+05:30</updated><id>http://localhost:4000/tools/codesnippet/2017/02/22/Githooks-with-SwiftLint</id><content type="html" xml:base="http://localhost:4000/tools/codesnippet/2017/02/22/Githooks-with-SwiftLint.html">&lt;h3 id=&quot;pre-commit-script-for-ios-projects-for-automated-code-review&quot;&gt;Pre-commit script for iOS projects for automated code review&lt;/h3&gt;
-
-&lt;h4 id=&quot;step-1-navigate-to-project-directory-using-terminal&quot;&gt;Step 1. Navigate to project directory using terminal&lt;/h4&gt;
-
-&lt;p&gt;Example&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/myProjectsFolder/XYZProjectGitCheckout/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;step-2-further-navigate-to-git-folders&quot;&gt;Step 2. Further navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt; folders&lt;/h4&gt;
-
-&lt;p&gt;Example&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; .git/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You must have &lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt; folder inside your local check-out. If it’s not there, you must be at wrong place.&lt;/p&gt;
-
-&lt;h4 id=&quot;step-3-check-if-hooks-folder-exists-or-not-if-not-create-one-and-move-inside-that-folder&quot;&gt;Step 3. Check if &lt;code class=&quot;highlighter-rouge&quot;&gt;hooks&lt;/code&gt; folder exists or not. If not create one and move inside that folder.&lt;/h4&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir .hooks &lt;span class=&quot;c&quot;&gt;# optional step&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; .hooks
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;step-4-make-sure-that-youre-at-valid-directory&quot;&gt;Step 4. Make sure that you’re at valid directory.&lt;/h4&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# output should be as follows&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ~/myProjectsFolder/XYZProjectGitCheckout/.git/hooks&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;step-5-create-a-file-named-pre-commit&quot;&gt;Step 5. Create a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;pre-commit&lt;/code&gt;&lt;/h4&gt;
-
-&lt;p&gt;(Yes. Without any extension)
-and put following contents inside that file.&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;swiftlint lint --enable-all-rules --quiet | wc -l | awk &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | bc&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt; -gt 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;then
-        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Please correct swift-lint errors&quot;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;--------------------------------&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-        swiftlint lint --quiet
-        &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
-&lt;span class=&quot;k&quot;&gt;else
-        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Code quality check done.&quot;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Thank you for keeping the code clean.&quot;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Commiting code&quot;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;0
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;step-6-apply-executable-permissions&quot;&gt;Step 6. Apply executable permissions.&lt;/h4&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod 777 pre-commit
-
-&lt;span class=&quot;c&quot;&gt;# Example output&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# total 16&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# drwxr-xr-x   4 sagar  Other Users	136 Apr  4 12:29 .&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# drwxr-xr-x  12 sagar  Other Users	408 Apr  4 12:19 ..&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# -rwxr-xr-x   1 sagar  Other Users	177 Apr  4 11:42 README.sample&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# -rwxrwxrwx   1 sagar  Other Users	300 Apr  4 12:29 pre-commit&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;step-7-try-to-commit-the-code-in-my-case-it-shows-following-errors-because-code-in-not-well-organized&quot;&gt;Step 7. Try to commit the code. In my case it shows following errors because code in not well organized.&lt;/h4&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sagar &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master +&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ADemoProject &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s2&quot;&gt;&quot;Removing files a b c&quot;&lt;/span&gt;
-
-Please correct swift-lint errors
-
---------------------------------
-
-/Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:23: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;vertical_whitespace&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-/Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:25: warning: Trailing Newline Violation: Files should have a single trailing newline. &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;trailing_newline&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Code" /><category term="Lint" /><category term="Syntax" /><category term="Correction" /><category term="Valid" /><category term="Language" /><category term="Git" /><category term="GitHooks" /><category term="Hooks" /><summary type="html">Pre-commit script for iOS projects for automated code review</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="Code" /><category term="ObjectiveC" /><category term="UIKit" /><category term="UISearchBar" /><category term="UIKeyboardAppearance" /><category term="Alert" /><summary type="html">How to change UISearchBar Keyboard Appearance?</summary></entry></feed>
