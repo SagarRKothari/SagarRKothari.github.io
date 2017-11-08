@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Using Localization Tables for supporting internationalization</title>
-  <meta name="description" content="Step 1.">
+  <title>Get Tomorrow Date or add a date to given date</title>
+  <meta name="description" content="func getTomorrowDate() -&amp;gt; Date { let cal = NSCalendar.current let now = Date() let compSet = Set(arrayLiteral:Calendar.Component.day, Calendar.Component.m...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/29/Using-Localization-Tables.html">
+  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/20/Get-Tomorrow-Date.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -97,54 +97,29 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Using Localization Tables for supporting internationalization</h1>
+    <h1 class="post-title" itemprop="name headline">Get Tomorrow Date or add a date to given date</h1>
     <p class="post-meta">
-      <time datetime="2017-10-29T15:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-10-20T18:30:00+05:30" itemprop="datePublished">
         
-        Oct 29, 2017
+        Oct 20, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h4 id="step-1">Step 1.</h4>
-
-<p>Swift Code Snippet</p>
-
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">helloWorld</span> <span class="o">=</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="s">"KeyForHelloWorld"</span><span class="p">,</span> <span class="c1">// Key of the value</span>
-	<span class="nv">tableName</span><span class="p">:</span> <span class="s">"LoginModule"</span><span class="p">,</span> <span class="c1">// value to be stored in a table</span>
-	<span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="c1">// using main bundle</span>
-	<span class="nv">value</span><span class="p">:</span> <span class="s">"Hello World!"</span><span class="p">,</span> <span class="c1">// Default value to be assigned to the key</span>
-	<span class="nv">comment</span><span class="p">:</span> <span class="s">"LoginModule - Hello World! This comment is useful for translator."</span><span class="p">)</span> 
-	<span class="c1">// comment to provide help to translator</span>
+    <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getTomorrowDate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Date</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">cal</span> <span class="o">=</span> <span class="kt">NSCalendar</span><span class="o">.</span><span class="n">current</span>
+  <span class="k">let</span> <span class="nv">now</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+  <span class="k">let</span> <span class="nv">compSet</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">(</span><span class="nv">arrayLiteral</span><span class="p">:</span><span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">.</span><span class="n">day</span><span class="p">,</span>
+                    <span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">.</span><span class="n">month</span><span class="p">,</span>
+                    <span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+  <span class="k">var</span> <span class="nv">comp</span> <span class="o">=</span> <span class="n">cal</span><span class="o">.</span><span class="nf">dateComponents</span><span class="p">(</span><span class="n">compSet</span> <span class="k">as</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">now</span><span class="p">)</span>
+  <span class="n">comp</span><span class="o">.</span><span class="n">timeZone</span> <span class="o">=</span> <span class="kt">TimeZone</span><span class="o">.</span><span class="n">current</span>
+  <span class="n">comp</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">day</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">cal</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">comp</span><span class="p">)</span><span class="o">!</span>
+<span class="p">}</span>
 </code></pre>
 </div>
-
-<hr />
-
-<h4 id="step-2">Step 2.</h4>
-
-<p>Go to terminal &amp; run following command.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>xcrun extractLocStrings *.swift
-</code></pre>
-</div>
-
-<p>Above command will generate multiple strings file based on the different tables you’ve specified in code.</p>
-
-<hr />
-
-<h4 id="step-3">Step 3.</h4>
-
-<p>Drag &amp; drop those strings file in your project.</p>
-
-<hr />
-
-<h4 id="step-4">Step 4.</h4>
-
-<p>Select one of the strings file, open file inspector &amp; Click on <code class="highlighter-rouge">localize</code> button to enable localization.</p>
-
-<p><img src="http://localhost:4000/assets/2017-11-01/Localization.png" alt="LocalizationDemo" /></p>
 
   </div>
 

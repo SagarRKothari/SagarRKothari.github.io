@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Get Tomorrow Date or add a date to given date</title>
-  <meta name="description" content="func getTomorrowDate() -&amp;gt; Date { let cal = NSCalendar.current let now = Date() let compSet = Set(arrayLiteral:Calendar.Component.day, Calendar.Component.m...">
+  <title>Sagar R Kothari</title>
+  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/11/08/Get-Tomorrow-Date.html">
+  <link rel="canonical" href="http://localhost:4000/page5/">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -82,6 +82,9 @@
             
             
           
+            
+            
+          
         </div>
       </nav>
     
@@ -91,37 +94,50 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1>Recent Posts</h1>
+<!-- This loops through the paginated posts -->
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Get Tomorrow Date or add a date to given date</h1>
-    <p class="post-meta">
-      <time datetime="2017-11-08T18:30:00+05:30" itemprop="datePublished">
-        
-        Nov 8, 2017
-      </time>
-      </p>
-  </header>
+  Feb 06, 2017
+  <h3><a href="/codesnippet/2017/02/06/Swift-open-email-composer.html">Swift open email composer</a></h3>
 
-  <div class="post-content" itemprop="articleBody">
-    <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getTomorrowDate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Date</span> <span class="p">{</span>
-  <span class="k">let</span> <span class="nv">cal</span> <span class="o">=</span> <span class="kt">NSCalendar</span><span class="o">.</span><span class="n">current</span>
-  <span class="k">let</span> <span class="nv">now</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
-  <span class="k">let</span> <span class="nv">compSet</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">(</span><span class="nv">arrayLiteral</span><span class="p">:</span><span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">.</span><span class="n">day</span><span class="p">,</span>
-                    <span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">.</span><span class="n">month</span><span class="p">,</span>
-                    <span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
-  <span class="k">var</span> <span class="nv">comp</span> <span class="o">=</span> <span class="n">cal</span><span class="o">.</span><span class="nf">dateComponents</span><span class="p">(</span><span class="n">compSet</span> <span class="k">as</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">now</span><span class="p">)</span>
-  <span class="n">comp</span><span class="o">.</span><span class="n">timeZone</span> <span class="o">=</span> <span class="kt">TimeZone</span><span class="o">.</span><span class="n">current</span>
-  <span class="n">comp</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">day</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span>
-  <span class="k">return</span> <span class="n">cal</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">comp</span><span class="p">)</span><span class="o">!</span>
-<span class="p">}</span>
-</code></pre>
-</div>
 
-  </div>
+<br>
+<hr>
+<br>
+<!-- Pagination links -->
+
+<div class="pagination">
+  
+    <a href="/page4/">&laquo; Prev</a>
+  
 
   
-</article>
+    
+      <a href="/page4/">1</a>
+    
+  
+    
+      <a href="/page2/">2</a>
+    
+  
+    
+      <a href="/page3/">3</a>
+    
+  
+    
+      <a href="/page4/">4</a>
+    
+  
+    
+      <em>5</em>
+    
+  
+
+  
+    <span>Next &raquo;</span>
+  
+</div>
+
 
       </div>
     </main>

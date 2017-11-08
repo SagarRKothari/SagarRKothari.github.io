@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Using Localization Tables for supporting internationalization</title>
-  <meta name="description" content="Step 1.">
+  <title>Get Count of Swift Enum Values</title>
+  <meta name="description" content="In following enum example, I have added a static variable named count which calculates and returns count of the given enum.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/29/Using-Localization-Tables.html">
+  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/21/Get-Count-Of-Enum-Values.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -97,54 +97,40 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Using Localization Tables for supporting internationalization</h1>
+    <h1 class="post-title" itemprop="name headline">Get Count of Swift Enum Values</h1>
     <p class="post-meta">
-      <time datetime="2017-10-29T15:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-10-21T18:30:00+05:30" itemprop="datePublished">
         
-        Oct 29, 2017
+        Oct 21, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h4 id="step-1">Step 1.</h4>
+    <p>In following enum example, I have added a static variable named <code class="highlighter-rouge">count</code> which calculates and returns count of the given enum.</p>
 
-<p>Swift Code Snippet</p>
-
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">helloWorld</span> <span class="o">=</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="s">"KeyForHelloWorld"</span><span class="p">,</span> <span class="c1">// Key of the value</span>
-	<span class="nv">tableName</span><span class="p">:</span> <span class="s">"LoginModule"</span><span class="p">,</span> <span class="c1">// value to be stored in a table</span>
-	<span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="c1">// using main bundle</span>
-	<span class="nv">value</span><span class="p">:</span> <span class="s">"Hello World!"</span><span class="p">,</span> <span class="c1">// Default value to be assigned to the key</span>
-	<span class="nv">comment</span><span class="p">:</span> <span class="s">"LoginModule - Hello World! This comment is useful for translator."</span><span class="p">)</span> 
-	<span class="c1">// comment to provide help to translator</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">ToDoPriority</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="kt">High</span>
+  <span class="k">case</span> <span class="kt">Medium</span>
+  <span class="k">case</span> <span class="kt">Low</span>
+  <span class="k">var</span> <span class="nv">stringValue</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="kt">High</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s">"High"</span>
+    <span class="k">case</span> <span class="o">.</span><span class="kt">Medium</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s">"Medium"</span>
+    <span class="k">case</span> <span class="o">.</span><span class="kt">Low</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s">"Low"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">max</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="kt">ToDoPriority</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span> <span class="n">max</span> <span class="o">+=</span> <span class="mi">1</span> <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max</span>
+  <span class="p">}()</span>
+<span class="p">}</span>
 </code></pre>
 </div>
-
-<hr />
-
-<h4 id="step-2">Step 2.</h4>
-
-<p>Go to terminal &amp; run following command.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>xcrun extractLocStrings *.swift
-</code></pre>
-</div>
-
-<p>Above command will generate multiple strings file based on the different tables you’ve specified in code.</p>
-
-<hr />
-
-<h4 id="step-3">Step 3.</h4>
-
-<p>Drag &amp; drop those strings file in your project.</p>
-
-<hr />
-
-<h4 id="step-4">Step 4.</h4>
-
-<p>Select one of the strings file, open file inspector &amp; Click on <code class="highlighter-rouge">localize</code> button to enable localization.</p>
-
-<p><img src="http://localhost:4000/assets/2017-11-01/Localization.png" alt="LocalizationDemo" /></p>
 
   </div>
 
