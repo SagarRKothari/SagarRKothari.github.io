@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>Animate view on updating constraint values</title>
+  <meta name="description" content="Add following method inside your view controller.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/11/08/Animate-on-update-constraints.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -91,73 +91,36 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1>Recent Posts</h1>
-<!-- This loops through the paginated posts -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  Nov 08, 2017
-  <h3><a href="/codesnippet/2017/11/08/Get-Tomorrow-Date.html">Get Tomorrow Date or add a date to given date</a></h3>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Animate view on updating constraint values</h1>
+    <p class="post-meta">
+      <time datetime="2017-11-08T17:30:00+05:30" itemprop="datePublished">
+        
+        Nov 8, 2017
+      </time>
+      </p>
+  </header>
 
-  Nov 08, 2017
-  <h3><a href="/codesnippet/2017/11/08/Animate-on-update-constraints.html">Animate view on updating constraint values</a></h3>
+  <div class="post-content" itemprop="articleBody">
+    <p>Add following method inside your <code class="highlighter-rouge">view controller</code>.</p>
 
-  Nov 08, 2017
-  <h3><a href="/scripts/2017/11/08/Generating-Table-of-Contents-for-Markdown.html">Generating Table of Contents for Markdown</a></h3>
-
-  Nov 07, 2017
-  <h3><a href="/scripts/2017/11/07/Generate-AppIcons-From-1024.html">Shellscript to generate AppIcons from 1024x1024.png Image</a></h3>
-
-  Nov 07, 2017
-  <h3><a href="/codesnippet/2017/11/07/Writing-test-case-for-UIAlertController.html">Writing Test case for UIAlertController</a></h3>
-
-  Nov 06, 2017
-  <h3><a href="/codesnippet/2017/11/06/UIImage-Flip-rotate.html">UIImage Rotate Flip - code snippet</a></h3>
-
-  Nov 05, 2017
-  <h3><a href="/codesnippet/2017/11/05/Taking-Screen-shot.html">Taking Screenshot programmatically</a></h3>
-
-  Nov 04, 2017
-  <h3><a href="/illustration/2017/11/04/CoreData-For-iOS10-And-Above.html">Step by Step Core Data Implementation for iOS 10 and above</a></h3>
-
-  Nov 03, 2017
-  <h3><a href="/codesnippet/2017/11/03/Local-Authentication.html">Code Snippet for Local Authentication</a></h3>
-
-  Nov 02, 2017
-  <h3><a href="/codesnippet/2017/11/02/UIView-Flip-Animation-Code.html">UIView Flip Animation Code</a></h3>
-
-
-<br>
-<hr>
-<br>
-<!-- Pagination links -->
-
-<div class="pagination">
-  
-    <span>&laquo; Prev</span>
-  
-
-  
-    
-      <em>1</em>
-    
-  
-    
-      <a href="/page2/">2</a>
-    
-  
-    
-      <a href="/page3/">3</a>
-    
-  
-    
-      <a href="/page4/">4</a>
-    
-  
-
-  
-    <a href="/page2/">Next &raquo;</a>
-  
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">animateListView</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">view</span><span class="o">.</span><span class="nf">setNeedsUpdateConstraints</span><span class="p">()</span>
+  <span class="kt">UIView</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">withDuration</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">layoutIfNeeded</span><span class="p">()</span>
+  <span class="p">},</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
 </div>
 
+<p>After updating constraint value, invoke above method.</p>
+
+  </div>
+
+  
+</article>
 
       </div>
     </main>
