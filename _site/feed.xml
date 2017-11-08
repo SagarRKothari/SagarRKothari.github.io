@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-08T15:27:24+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Shellscript to generate AppIcons from 1024x1024.png Image</title><link href="http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024.html" rel="alternate" type="text/html" title="Shellscript to generate AppIcons from 1024x1024.png Image" /><published>2017-11-07T17:30:00+05:30</published><updated>2017-11-07T17:30:00+05:30</updated><id>http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024</id><content type="html" xml:base="http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024.html">&lt;h2 id=&quot;download-shellscript&quot;&gt;Download Shellscript&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-08T18:15:17+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Generating Table of Contents for Markdown</title><link href="http://localhost:4000/scripts/2017/11/08/Generating-Table-of-Contents-for-Markdown.html" rel="alternate" type="text/html" title="Generating Table of Contents for Markdown" /><published>2017-11-08T15:30:00+05:30</published><updated>2017-11-08T15:30:00+05:30</updated><id>http://localhost:4000/scripts/2017/11/08/Generating-Table-of-Contents-for-Markdown</id><content type="html" xml:base="http://localhost:4000/scripts/2017/11/08/Generating-Table-of-Contents-for-Markdown.html">&lt;h3 id=&quot;installing-utility-which-generates-markdown&quot;&gt;Installing Utility which generates markdown&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g doctoc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;generating-toc&quot;&gt;Generating TOC&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;doctoc about.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It will generate toc as follows.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&amp;gt;
+&amp;lt;!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&amp;gt;
+**Table of Contents**
+
+- [Professional Synopsis](#professional-synopsis)
+- [Experience](#experience)
+  - [Mentor &amp;amp; Lead for iOS Apps Dev @ Altimetrik (Aug-2015)](#mentor--lead-for-ios-apps-dev--altimetrik-aug-2015)
+  - [System Analyst in Mobile Apps (May-2014 to Aug-2015)](#system-analyst-in-mobile-apps-may-2014-to-aug-2015)
+  - [iOS Lead App Developer (Feb-2013 to Apr-2014)](#ios-lead-app-developer-feb-2013-to-apr-2014)
+  - [iOS App Developer (October 2011 – July 2012)](#ios-app-developer-october-2011--july-2012)
+  - [iOS App Devloper (Feb 2010 – Oct-2011)](#ios-app-devloper-feb-2010--oct-2011)
+- [Skills](#skills)
+
+&amp;lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="Script" /><category term="NPM" /><category term="TOC" /><category term="TableOfContents" /><category term="Markdown" /><category term="doctoc" /><summary type="html">Installing Utility which generates markdown</summary></entry><entry><title type="html">Shellscript to generate AppIcons from 1024x1024.png Image</title><link href="http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024.html" rel="alternate" type="text/html" title="Shellscript to generate AppIcons from 1024x1024.png Image" /><published>2017-11-07T17:30:00+05:30</published><updated>2017-11-07T17:30:00+05:30</updated><id>http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024</id><content type="html" xml:base="http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024.html">&lt;h2 id=&quot;download-shellscript&quot;&gt;Download Shellscript&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/2017-11-08/GenerateAppIcons.sh&quot;&gt;Click here to download&lt;/a&gt;&lt;/p&gt;
 
@@ -727,54 +756,4 @@ dispatch_after(dispatchTime, dispatch_get_main_queue(), {
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="DispatchQueue" /><category term="main" /><category term="async" /><summary type="html">Swift Code Snippet</summary></entry><entry><title type="html">Generating Category wise article list</title><link href="http://localhost:4000/scripts/2017/10/30/Jekyll-Generating-Categorywise-list.html" rel="alternate" type="text/html" title="Generating Category wise article list" /><published>2017-10-30T15:30:00+05:30</published><updated>2017-10-30T15:30:00+05:30</updated><id>http://localhost:4000/scripts/2017/10/30/Jekyll-Generating-Categorywise-list</id><content type="html" xml:base="http://localhost:4000/scripts/2017/10/30/Jekyll-Generating-Categorywise-list.html">&lt;h3 id=&quot;step-1&quot;&gt;Step 1.&lt;/h3&gt;
-
-&lt;p&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;Categories.html&lt;/code&gt; under root folder of your web-site.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;step-2&quot;&gt;Step 2.&lt;/h3&gt;
-
-&lt;p&gt;Copy And Paste following Code into &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; file which you just created.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-layout: default
-title: Categories
----
-
-&amp;lt;h1&amp;gt;Category wise articles&amp;lt;/h1&amp;gt;
-
-&amp;lt;ul&amp;gt;
-{ % assign tags list = site.categories  % }  
-   { %  if tags list.first[0] != null  % } 
-     { %  for tag in tags list  % }  
-      &amp;lt;li&amp;gt;
-         { { tag[0] } } 
-        &amp;lt;ul&amp;gt;
-           { %  assign pages list = tag[1]  % }   
-           { %  for post in pages list  % } 
-             { %  if post.title != null  % } 
-               { %  if group == null or group == post.group  % } 
-                &amp;lt;li&amp;gt;&amp;lt;a href=&quot; { { site.url } }  { { post.url } } &quot;&amp;gt; { { post.title } } 
-                  (&amp;lt;span class=&quot;entry-date&quot;&amp;gt;&amp;lt;time datetime=&quot; { { post.date | date to xmlschema } } &quot; itemprop=&quot;datePublished&quot;&amp;gt; { { post.date | date: &quot; % B  % d,  % Y&quot; } } )&amp;lt;/time&amp;gt;
-                &amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
-               { %  endif  % } 
-             { %  endif  % } 
-           { %  endfor  % } 
-           { %  assign pages list = nil  % } 
-        &amp;lt;/ul&amp;gt;
-      &amp;lt;/li&amp;gt;
-     { %  endfor  % } 
-   { %  endif  % } 
- { %  assign tags list = nil  % } 
-&amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;step-3&quot;&gt;Step 3.&lt;/h3&gt;
-
-&lt;p&gt;Run following command to start server.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Jekyll" /><category term="Customization" /><category term="Github" /><category term="Pages" /><summary type="html">Step 1.</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="DispatchQueue" /><category term="main" /><category term="async" /><summary type="html">Swift Code Snippet</summary></entry></feed>
