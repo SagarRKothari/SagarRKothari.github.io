@@ -14,7 +14,7 @@ Example `Date`
 /Date(1395486890000+0530)/
 ```
 
-```Objective-c
+```objc
 // Convert UnixTimeStamp Date with specified Timezone. Example "/Date(1395486890000+0530)/" as a sample value.
 + (NSDate *)DateFromJSONString:(NSString *)string {
     static NSRegularExpression *dateRegEx = nil;

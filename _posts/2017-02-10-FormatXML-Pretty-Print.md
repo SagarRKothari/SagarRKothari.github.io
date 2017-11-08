@@ -8,7 +8,7 @@ tags: XML Format String
 
 Put following code snippet for XML Pretty Print
 
-```Objective-C
+```objc
 #import <libxml/tree.h>
 
 + (NSString *)prettyPrintXML:(NSString *)rawXML {

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GitHooks with SwiftLint</title>
-  <meta name="description" content="Pre-commit script for iOS projects for automated code review">
+  <title>XCode Shortcuts - CheetSheet</title>
+  <meta name="description" content="">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/tools/codesnippet/2017/02/22/Githooks-with-SwiftLint.html">
+  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/23/XCode-Shortcuts-CheetSheet.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -94,98 +94,17 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">GitHooks with SwiftLint</h1>
+    <h1 class="post-title" itemprop="name headline">XCode Shortcuts - CheetSheet</h1>
     <p class="post-meta">
-      <time datetime="2017-02-22T16:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-10-23T15:30:00+05:30" itemprop="datePublished">
         
-        Feb 22, 2017
+        Oct 23, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h3 id="pre-commit-script-for-ios-projects-for-automated-code-review">Pre-commit script for iOS projects for automated code review</h3>
-
-<h4 id="step-1-navigate-to-project-directory-using-terminal">Step 1. Navigate to project directory using terminal</h4>
-
-<p>Example</p>
-
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/myProjectsFolder/XYZProjectGitCheckout/
-</code></pre>
-</div>
-
-<h4 id="step-2-further-navigate-to-git-folders">Step 2. Further navigate to <code class="highlighter-rouge">.git</code> folders</h4>
-
-<p>Example</p>
-
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> .git/
-</code></pre>
-</div>
-
-<p>You must have <code class="highlighter-rouge">.git</code> folder inside your local check-out. If it’s not there, you must be at wrong place.</p>
-
-<h4 id="step-3-check-if-hooks-folder-exists-or-not-if-not-create-one-and-move-inside-that-folder">Step 3. Check if <code class="highlighter-rouge">hooks</code> folder exists or not. If not create one and move inside that folder.</h4>
-
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>mkdir .hooks <span class="c"># optional step</span>
-<span class="nb">cd</span> .hooks
-</code></pre>
-</div>
-
-<h4 id="step-4-make-sure-that-youre-at-valid-directory">Step 4. Make sure that you’re at valid directory.</h4>
-
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">pwd</span>
-<span class="c"># output should be as follows</span>
-<span class="c"># ~/myProjectsFolder/XYZProjectGitCheckout/.git/hooks</span>
-</code></pre>
-</div>
-
-<h4 id="step-5-create-a-file-named-pre-commit">Step 5. Create a file named <code class="highlighter-rouge">pre-commit</code></h4>
-
-<p>(Yes. Without any extension)
-and put following contents inside that file.</p>
-
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nv">count</span><span class="o">=</span><span class="sb">`</span>swiftlint lint --enable-all-rules --quiet | wc -l | awk <span class="s1">'{print $1}'</span> | bc<span class="sb">`</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$count</span> -gt 0 <span class="o">]</span>
-<span class="k">then
-        </span><span class="nb">echo</span> <span class="s2">"Please correct swift-lint errors"</span>
-        <span class="nb">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">--------------------------------</span><span class="se">\n</span><span class="s2">"</span>
-        swiftlint lint --quiet
-        <span class="nb">exit </span>1
-<span class="k">else
-        </span><span class="nb">echo</span> <span class="s2">"Code quality check done."</span>
-        <span class="nb">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Thank you for keeping the code clean."</span>
-        <span class="nb">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Commiting code"</span>
-        <span class="nb">exit </span>0
-<span class="k">fi</span>
-</code></pre>
-</div>
-
-<h4 id="step-6-apply-executable-permissions">Step 6. Apply executable permissions.</h4>
-
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>chmod 777 pre-commit
-
-<span class="c"># Example output</span>
-<span class="c"># total 16</span>
-<span class="c"># drwxr-xr-x   4 sagar  Other Users	136 Apr  4 12:29 .</span>
-<span class="c"># drwxr-xr-x  12 sagar  Other Users	408 Apr  4 12:19 ..</span>
-<span class="c"># -rwxr-xr-x   1 sagar  Other Users	177 Apr  4 11:42 README.sample</span>
-<span class="c"># -rwxrwxrwx   1 sagar  Other Users	300 Apr  4 12:29 pre-commit</span>
-</code></pre>
-</div>
-
-<h4 id="step-7-try-to-commit-the-code-in-my-case-it-shows-following-errors-because-code-in-not-well-organized">Step 7. Try to commit the code. In my case it shows following errors because code in not well organized.</h4>
-
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sagar <span class="o">(</span>master +<span class="o">)</span> ADemoProject <span class="nv">$ </span>git commit -m <span class="s2">"Removing files a b c"</span>
-
-Please correct swift-lint errors
-
---------------------------------
-
-/Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:23: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. <span class="o">(</span>vertical_whitespace<span class="o">)</span>
-/Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:25: warning: Trailing Newline Violation: Files should have a single trailing newline. <span class="o">(</span>trailing_newline<span class="o">)</span>
-</code></pre>
-</div>
+    <p><img src="http://localhost:4000/assets/2017-10-23/XCode_Shortcuts.jpg" alt="Xcode Shortcuts" /></p>
 
 
   </div>

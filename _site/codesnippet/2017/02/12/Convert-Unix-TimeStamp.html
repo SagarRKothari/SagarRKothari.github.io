@@ -112,32 +112,33 @@
 </code></pre>
 </div>
 
-<pre><code class="language-Objective-c">// Convert UnixTimeStamp Date with specified Timezone. Example "/Date(1395486890000+0530)/" as a sample value.
-+ (NSDate *)DateFromJSONString:(NSString *)string {
-    static NSRegularExpression *dateRegEx = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&amp;onceToken, ^{
-        dateRegEx = [[NSRegularExpression alloc] initWithPattern:@"^\\/date\\((-?\\d++)(?:([+-])(\\d{2})(\\d{2}))?\\)\\/$" options:NSRegularExpressionCaseInsensitive error:nil];
-    });
-    NSTextCheckingResult *regexResult = [dateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, [string length])];
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// Convert UnixTimeStamp Date with specified Timezone. Example "/Date(1395486890000+0530)/" as a sample value.
+</span><span class="k">+</span> <span class="p">(</span><span class="n">NSDate</span> <span class="o">*</span><span class="p">)</span><span class="nf">DateFromJSONString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="n">NSRegularExpression</span> <span class="o">*</span><span class="n">dateRegEx</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="k">static</span> <span class="n">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
+    <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+        <span class="n">dateRegEx</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSRegularExpression</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithPattern</span><span class="p">:</span><span class="s">@"^</span><span class="se">\\</span><span class="s">/date</span><span class="se">\\</span><span class="s">((-?</span><span class="se">\\</span><span class="s">d++)(?:([+-])(</span><span class="se">\\</span><span class="s">d{2})(</span><span class="se">\\</span><span class="s">d{2}))?</span><span class="se">\\</span><span class="s">)</span><span class="se">\\</span><span class="s">/$"</span> <span class="nf">options</span><span class="p">:</span><span class="n">NSRegularExpressionCaseInsensitive</span> <span class="n">error</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+    <span class="p">});</span>
+    <span class="n">NSTextCheckingResult</span> <span class="o">*</span><span class="n">regexResult</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateRegEx</span> <span class="nf">firstMatchInString</span><span class="p">:</span><span class="n">string</span> <span class="nf">options</span><span class="p">:</span><span class="mi">0</span> <span class="n">range</span><span class="o">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="n">string</span> <span class="nf">length</span><span class="p">])];</span>
 
-    if (regexResult) {
-        // milliseconds
-        NSTimeInterval seconds = [[string substringWithRange:[regexResult rangeAtIndex:1]] doubleValue] / 1000.0;
-        // timezone offset
-        if ([regexResult rangeAtIndex:2].location != NSNotFound) {
-            NSString *sign = [string substringWithRange:[regexResult rangeAtIndex:2]];
-            // hours
-            seconds += [[NSString stringWithFormat:@"%@%@", sign, [string substringWithRange:[regexResult rangeAtIndex:3]]] doubleValue] * 60.0 * 60.0;
-            // minutes
-            seconds += [[NSString stringWithFormat:@"%@%@", sign, [string substringWithRange:[regexResult rangeAtIndex:4]]] doubleValue] * 60.0;
-        }
+    <span class="k">if</span> <span class="p">(</span><span class="n">regexResult</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// milliseconds
+</span>        <span class="n">NSTimeInterval</span> <span class="n">seconds</span> <span class="o">=</span> <span class="p">[[</span><span class="n">string</span> <span class="nf">substringWithRange</span><span class="p">:[</span><span class="n">regexResult</span> <span class="nf">rangeAtIndex</span><span class="p">:</span><span class="mi">1</span><span class="p">]]</span> <span class="nf">doubleValue</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+        <span class="c1">// timezone offset
+</span>        <span class="k">if</span> <span class="p">([</span><span class="n">regexResult</span> <span class="nf">rangeAtIndex</span><span class="p">:</span><span class="mi">2</span><span class="p">].</span><span class="n">location</span> <span class="o">!=</span> <span class="n">NSNotFound</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">sign</span> <span class="o">=</span> <span class="p">[</span><span class="n">string</span> <span class="nf">substringWithRange</span><span class="p">:[</span><span class="n">regexResult</span> <span class="nf">rangeAtIndex</span><span class="p">:</span><span class="mi">2</span><span class="p">]];</span>
+            <span class="c1">// hours
+</span>            <span class="n">seconds</span> <span class="o">+=</span> <span class="p">[[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"%@%@"</span><span class="p">,</span> <span class="n">sign</span><span class="p">,</span> <span class="p">[</span><span class="n">string</span> <span class="nf">substringWithRange</span><span class="p">:[</span><span class="n">regexResult</span> <span class="nf">rangeAtIndex</span><span class="p">:</span><span class="mi">3</span><span class="p">]]]</span> <span class="nf">doubleValue</span><span class="p">]</span> <span class="o">*</span> <span class="mi">60</span><span class="p">.</span><span class="mi">0</span> <span class="o">*</span> <span class="mi">60</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+            <span class="c1">// minutes
+</span>            <span class="n">seconds</span> <span class="o">+=</span> <span class="p">[[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"%@%@"</span><span class="p">,</span> <span class="n">sign</span><span class="p">,</span> <span class="p">[</span><span class="n">string</span> <span class="nf">substringWithRange</span><span class="p">:[</span><span class="n">regexResult</span> <span class="nf">rangeAtIndex</span><span class="p">:</span><span class="mi">4</span><span class="p">]]]</span> <span class="nf">doubleValue</span><span class="p">]</span> <span class="o">*</span> <span class="mi">60</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        return [NSDate dateWithTimeIntervalSince1970:seconds];
-    }
-    return nil;
-}
+        <span class="k">return</span> <span class="p">[</span><span class="n">NSDate</span> <span class="nf">dateWithTimeIntervalSince1970</span><span class="p">:</span><span class="n">seconds</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">nil</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 
   </div>

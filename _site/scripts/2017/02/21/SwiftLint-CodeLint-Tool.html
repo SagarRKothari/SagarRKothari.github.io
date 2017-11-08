@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Generating Category wise article list</title>
-  <meta name="description" content="Step 1.">
+  <title>Swiftlint - Installation, Usage, Examples</title>
+  <meta name="description" content="Installation">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/30/Jekyll-Generating-Categorywise-list.html">
+  <link rel="canonical" href="http://localhost:4000/scripts/2017/02/21/SwiftLint-CodeLint-Tool.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -94,67 +94,82 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Generating Category wise article list</h1>
+    <h1 class="post-title" itemprop="name headline">Swiftlint - Installation, Usage, Examples</h1>
     <p class="post-meta">
-      <time datetime="2017-10-30T15:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-02-21T16:30:00+05:30" itemprop="datePublished">
         
-        Oct 30, 2017
+        Feb 21, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h3 id="step-1">Step 1.</h3>
+    <h3 id="installation">Installation</h3>
 
-<p>Create <code class="highlighter-rouge">Categories.html</code> under root folder of your web-site.</p>
+<p>Using Homebrew</p>
 
-<hr />
-
-<h3 id="step-2">Step 2.</h3>
-
-<p>Copy And Paste following Code into <code class="highlighter-rouge">html</code> file which you just created.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>---
-layout: default
-title: Categories
----
-
-&lt;h1&gt;Category wise articles&lt;/h1&gt;
-
-&lt;ul&gt;
-{ % assign tags list = site.categories  % }  
-   { %  if tags list.first[0] != null  % } 
-     { %  for tag in tags list  % }  
-      &lt;li&gt;
-         { { tag[0] } } 
-        &lt;ul&gt;
-           { %  assign pages list = tag[1]  % }   
-           { %  for post in pages list  % } 
-             { %  if post.title != null  % } 
-               { %  if group == null or group == post.group  % } 
-                &lt;li&gt;&lt;a href=" { { site.url } }  { { post.url } } "&gt; { { post.title } } 
-                  (&lt;span class="entry-date"&gt;&lt;time datetime=" { { post.date | date to xmlschema } } " itemprop="datePublished"&gt; { { post.date | date: " % B  % d,  % Y" } } )&lt;/time&gt;
-                &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-               { %  endif  % } 
-             { %  endif  % } 
-           { %  endfor  % } 
-           { %  assign pages list = nil  % } 
-        &lt;/ul&gt;
-      &lt;/li&gt;
-     { %  endfor  % } 
-   { %  endif  % } 
- { %  assign tags list = nil  % } 
-&lt;/ul&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install swiftlint
 </code></pre>
 </div>
 
-<h3 id="step-3">Step 3.</h3>
+<p>You can also install SwiftLint by downloading SwiftLint.pkg from the latest “GitHub release and running it.</p>
 
-<p>Run following command to start server.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll serve
+<div class="highlighter-rouge"><pre class="highlight"><code>https://github.com/realm/SwiftLint/releases/latest
 </code></pre>
 </div>
+
+<h3 id="usage">Usage</h3>
+
+<p>Xcode</p>
+
+<ul>
+  <li>Integrate SwiftLint into an Xcode scheme to get warnings and errors displayed in the IDE.</li>
+  <li>Just add a new “Run Script Phase” with:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if which swiftlint &gt;/dev/null; then
+  swiftlint
+else
+  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+fi
+</code></pre>
+</div>
+
+<h3 id="ignore-some-rules">Ignore some rules</h3>
+
+<ul>
+  <li>Navigate to your project directory in finder.</li>
+  <li>Create a file named <code class="highlighter-rouge">.swiftlint.yml</code></li>
+  <li>Put contents as follows.</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">disabled_rules</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">line_length</span>
+<span class="s">excluded</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">Carthage</span>
+  <span class="pi">-</span> <span class="s">Pods</span>
+</code></pre>
+</div>
+
+<h3 id="auto-correct-code--auto-format-code">Auto-correct code / auto-format code</h3>
+
+<ul>
+  <li>Open terminal</li>
+  <li>Navigate to your project directory in terminal.</li>
+  <li>Run following command</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>swiftlint autocorrect
+</code></pre>
+</div>
+
+<h3 id="more-info">More info</h3>
+
+<ul>
+  <li><a href="https://github.com/realm/SwiftLint">Github</a></li>
+</ul>
+
+<p><img src="https://github.com/realm/SwiftLint/raw/master/assets/screenshot.png" alt="Sample Image" /></p>
 
   </div>
 

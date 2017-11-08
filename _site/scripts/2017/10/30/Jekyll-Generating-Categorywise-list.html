@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Generating Archive - list of Articles</title>
+  <title>Generating Category wise article list</title>
   <meta name="description" content="Step 1.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/codesnippet/2017/10/28/Jekyll-Generating-Archive.html">
+  <link rel="canonical" href="http://localhost:4000/scripts/2017/10/30/Jekyll-Generating-Categorywise-list.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -94,11 +94,11 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Generating Archive - list of Articles</h1>
+    <h1 class="post-title" itemprop="name headline">Generating Category wise article list</h1>
     <p class="post-meta">
-      <time datetime="2017-10-28T15:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-10-30T15:30:00+05:30" itemprop="datePublished">
         
-        Oct 28, 2017
+        Oct 30, 2017
       </time>
       </p>
   </header>
@@ -106,7 +106,7 @@
   <div class="post-content" itemprop="articleBody">
     <h3 id="step-1">Step 1.</h3>
 
-<p>Create <code class="highlighter-rouge">Archive.html</code> under root folder of your web-site.</p>
+<p>Create <code class="highlighter-rouge">Categories.html</code> under root folder of your web-site.</p>
 
 <hr />
 
@@ -116,17 +116,35 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>---
 layout: default
-title: Archive
+title: Categories
 ---
 
-&lt;div id="home"&gt;
-  &lt;h1&gt;Archive ( { { site.posts | size } } posts)&lt;/h1&gt;
-  &lt;ul class="posts"&gt;
-    { % for post in site.posts % }
-      &lt;li&gt;&lt;span&gt; { { post.date | date_to_string } } &lt;/span&gt; &amp;raquo; &lt;a href=" { { post.url } }"&gt; { { post.title } } &lt;/a&gt;&lt;/li&gt;
-    { % endfor % }
-  &lt;/ul&gt;
-&lt;/div&gt;
+&lt;h1&gt;Category wise articles&lt;/h1&gt;
+
+&lt;ul&gt;
+{ % assign tags list = site.categories  % }  
+   { %  if tags list.first[0] != null  % } 
+     { %  for tag in tags list  % }  
+      &lt;li&gt;
+         { { tag[0] } } 
+        &lt;ul&gt;
+           { %  assign pages list = tag[1]  % }   
+           { %  for post in pages list  % } 
+             { %  if post.title != null  % } 
+               { %  if group == null or group == post.group  % } 
+                &lt;li&gt;&lt;a href=" { { site.url } }  { { post.url } } "&gt; { { post.title } } 
+                  (&lt;span class="entry-date"&gt;&lt;time datetime=" { { post.date | date to xmlschema } } " itemprop="datePublished"&gt; { { post.date | date: " % B  % d,  % Y" } } )&lt;/time&gt;
+                &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+               { %  endif  % } 
+             { %  endif  % } 
+           { %  endfor  % } 
+           { %  assign pages list = nil  % } 
+        &lt;/ul&gt;
+      &lt;/li&gt;
+     { %  endfor  % } 
+   { %  endif  % } 
+ { %  assign tags list = nil  % } 
+&lt;/ul&gt;
 </code></pre>
 </div>
 

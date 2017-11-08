@@ -106,12 +106,13 @@
   <div class="post-content" itemprop="articleBody">
     <p>Code snippet to validate an email</p>
 
-<pre><code class="language-Objective-C">- (BOOL) validateEmail: (NSString *) candidate {
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:candidate];
-}
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span> <span class="nf">validateEmail</span><span class="p">:</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="n">candidate</span> <span class="p">{</span>
+  <span class="n">NSString</span> <span class="o">*</span><span class="n">emailRegex</span> <span class="o">=</span> <span class="s">@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span class="se">\\</span><span class="s">.[A-Za-z]{2,4}"</span><span class="p">;</span>
+  <span class="n">NSPredicate</span> <span class="o">*</span><span class="n">emailTest</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="nf">predicateWithFormat</span><span class="p">:</span><span class="s">@"SELF MATCHES %@"</span><span class="p">,</span> <span class="n">emailRegex</span><span class="p">];</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">emailTest</span> <span class="nf">evaluateWithObject</span><span class="p">:</span><span class="n">candidate</span><span class="p">];</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 
   </div>

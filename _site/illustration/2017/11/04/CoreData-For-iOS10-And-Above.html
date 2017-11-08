@@ -125,64 +125,69 @@ In my case, it is “CoreDataDemo”.</p>
 <span class="kd">@UIApplicationMain</span>
 <span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
 
-	<span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
+  <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
 
-	<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> 
-		<span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-		
-		
-	<span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> 
+    <span class="n">didFinishLaunchingWithOptions</span> 
+    <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="c1">// application launched</span>
+  <span class="p">}</span>
 
-	<span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-	<span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// application is going to go in background</span>
+  <span class="p">}</span>
 
-	<span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-	<span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// application is in background</span>
+  <span class="p">}</span>
 
-	<span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-	<span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// application is about to become active</span>
+  <span class="p">}</span>
 
-	<span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-	<span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// application came to forground</span>
+  <span class="p">}</span>
 
-	<span class="kd">func</span> <span class="nf">applicationWillTerminate</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">self</span><span class="o">.</span><span class="nf">saveContext</span><span class="p">()</span>
-	<span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">applicationWillTerminate</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// application will be killed</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">saveContext</span><span class="p">()</span>
+  <span class="p">}</span>
 
-	<span class="c1">// MARK: - Core Data stack</span>
+  <span class="c1">// MARK: - Core Data stack</span>
 
-	<span class="kd">lazy</span> <span class="k">var</span> <span class="nv">persistentContainer</span><span class="p">:</span> <span class="kt">NSPersistentContainer</span> <span class="o">=</span> <span class="p">{</span>
-	    <span class="k">let</span> <span class="nv">container</span> <span class="o">=</span> <span class="kt">NSPersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"CoreDataDemo"</span><span class="p">)</span>
-	    <span class="n">container</span><span class="o">.</span><span class="nf">loadPersistentStores</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">storeDescription</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
-	        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span><span class="p">?</span> <span class="p">{</span>
-	            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-	        <span class="p">}</span>
-	    <span class="p">})</span>
-	    <span class="k">return</span> <span class="n">container</span>
-	<span class="p">}()</span>
+  <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">persistentContainer</span><span class="p">:</span> <span class="kt">NSPersistentContainer</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">container</span> <span class="o">=</span> <span class="kt">NSPersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"CoreDataDemo"</span><span class="p">)</span>
+      <span class="n">container</span><span class="o">.</span><span class="nf">loadPersistentStores</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">storeDescription</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+          <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span><span class="p">?</span> <span class="p">{</span>
+              <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">})</span>
+      <span class="k">return</span> <span class="n">container</span>
+  <span class="p">}()</span>
 
-	<span class="k">var</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span> <span class="p">{</span>
-		<span class="k">get</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">persistentContainer</span><span class="o">.</span><span class="n">viewContext</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="c1">// MARK: - Core Data Saving support</span>
+  <span class="k">var</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span> <span class="p">{</span>
+    <span class="k">get</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">persistentContainer</span><span class="o">.</span><span class="n">viewContext</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-	<span class="kd">func</span> <span class="nf">saveContext</span> <span class="p">()</span> <span class="p">{</span>
-	    <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">persistentContainer</span><span class="o">.</span><span class="n">viewContext</span>
-	    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">hasChanges</span> <span class="p">{</span>
-	        <span class="k">do</span> <span class="p">{</span>
-	            <span class="k">try</span> <span class="n">context</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
-	        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-	            <span class="c1">// Replace this implementation with code to handle the error appropriately.</span>
-	            <span class="c1">// fatalError() causes the application to generate a crash log and terminate. </span>
-	            <span class="c1">// You should not use this function in a shipping application, </span>
-	            <span class="c1">// although it may be useful during development.</span>
-	            <span class="k">let</span> <span class="nv">nserror</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span>
-	            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">nserror</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">nserror</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-	        <span class="p">}</span>
-	    <span class="p">}</span>
-	<span class="p">}</span>
+  <span class="c1">// MARK: - Core Data Saving support</span>
+  <span class="kd">func</span> <span class="nf">saveContext</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">persistentContainer</span><span class="o">.</span><span class="n">viewContext</span>
+      <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">hasChanges</span> <span class="p">{</span>
+          <span class="k">do</span> <span class="p">{</span>
+              <span class="k">try</span> <span class="n">context</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
+          <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+              <span class="c1">// Replace this implementation with code to handle the error appropriately.</span>
+              <span class="c1">// fatalError() causes the application to generate a crash log and terminate. </span>
+              <span class="c1">// You should not use this function in a shipping application, </span>
+              <span class="c1">// although it may be useful during development.</span>
+              <span class="k">let</span> <span class="nv">nserror</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span>
+              <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">nserror</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">nserror</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -192,10 +197,10 @@ In my case, it is “CoreDataDemo”.</p>
 <p>Following function is an example of adding an object</p>
 
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">addOffice</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">let</span> <span class="nv">entity</span> <span class="o">=</span> <span class="kt">NSEntityDescription</span><span class="o">.</span><span class="nf">entity</span><span class="p">(</span><span class="nv">forEntityName</span><span class="p">:</span> <span class="s">"Office"</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
-	<span class="k">let</span> <span class="nv">newOffice</span> <span class="o">=</span> <span class="kt">NSManagedObject</span><span class="p">(</span><span class="nv">entity</span><span class="p">:</span> <span class="n">entity</span><span class="o">!</span><span class="p">,</span> <span class="nv">insertInto</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
-	<span class="n">newOffice</span><span class="o">.</span><span class="nf">setValue</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"name"</span><span class="p">)</span>
-	<span class="k">self</span><span class="o">.</span><span class="nf">saveContext</span><span class="p">()</span>
+  <span class="k">let</span> <span class="nv">entity</span> <span class="o">=</span> <span class="kt">NSEntityDescription</span><span class="o">.</span><span class="nf">entity</span><span class="p">(</span><span class="nv">forEntityName</span><span class="p">:</span> <span class="s">"Office"</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
+  <span class="k">let</span> <span class="nv">newOffice</span> <span class="o">=</span> <span class="kt">NSManagedObject</span><span class="p">(</span><span class="nv">entity</span><span class="p">:</span> <span class="n">entity</span><span class="o">!</span><span class="p">,</span> <span class="nv">insertInto</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
+  <span class="n">newOffice</span><span class="o">.</span><span class="nf">setValue</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"name"</span><span class="p">)</span>
+  <span class="k">self</span><span class="o">.</span><span class="nf">saveContext</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -205,14 +210,14 @@ In my case, it is “CoreDataDemo”.</p>
 <p>Following function is an example of fetching objects</p>
 
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getOffices</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Office</span><span class="p">]</span> <span class="p">{</span>
-	<span class="k">let</span> <span class="nv">fetchRequest</span><span class="p">:</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">Office</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">Office</span><span class="o">.</span><span class="nf">fetchRequest</span><span class="p">()</span>
-	<span class="k">do</span> <span class="p">{</span>
-		<span class="c1">//go get the results</span>
-		<span class="k">let</span> <span class="nv">searchResults</span> <span class="o">=</span> <span class="k">try</span> <span class="n">appDel</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fetchRequest</span><span class="p">)</span>
-		<span class="k">return</span> <span class="n">searchResults</span>
-	<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="p">[]</span>
-	<span class="p">}</span>
+  <span class="k">let</span> <span class="nv">fetchRequest</span><span class="p">:</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">Office</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">Office</span><span class="o">.</span><span class="nf">fetchRequest</span><span class="p">()</span>
+  <span class="k">do</span> <span class="p">{</span>
+    <span class="c1">//go get the results</span>
+    <span class="k">let</span> <span class="nv">searchResults</span> <span class="o">=</span> <span class="k">try</span> <span class="n">appDel</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fetchRequest</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">searchResults</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[]</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -220,8 +225,8 @@ In my case, it is “CoreDataDemo”.</p>
 <h4 id="step-5-delete-object">Step 5: Delete Object</h4>
 
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">deleteOffice</span><span class="p">(</span><span class="nv">office</span><span class="p">:</span> <span class="kt">Office</span><span class="p">)</span> <span class="p">{</span>
-	<span class="n">appDel</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">office</span><span class="p">)</span>
-	<span class="n">appDel</span><span class="o">.</span><span class="nf">saveContext</span><span class="p">()</span>
+  <span class="n">appDel</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">office</span><span class="p">)</span>
+  <span class="n">appDel</span><span class="o">.</span><span class="nf">saveContext</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -229,15 +234,15 @@ In my case, it is “CoreDataDemo”.</p>
 <h4 id="sample-code-to-use-above-methods">Sample code to use above methods.</h4>
 
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-	<span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Sagar"</span><span class="p">)</span>
-	<span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Kothari"</span><span class="p">)</span>
-	<span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Pune"</span><span class="p">)</span>
-	<span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Mumbai"</span><span class="p">)</span>
-	<span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="n">appDel</span><span class="o">.</span><span class="nf">getOffices</span><span class="p">()</span>
-	<span class="k">for</span> <span class="n">office</span> <span class="k">in</span> <span class="n">array</span> <span class="p">{</span>
-		<span class="nf">print</span><span class="p">(</span><span class="s">"Office name is </span><span class="se">\(</span><span class="n">office</span><span class="o">.</span><span class="n">name</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-	<span class="p">}</span>
+  <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+  <span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Sagar"</span><span class="p">)</span>
+  <span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Kothari"</span><span class="p">)</span>
+  <span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Pune"</span><span class="p">)</span>
+  <span class="n">appDel</span><span class="o">.</span><span class="nf">addOffice</span><span class="p">(</span><span class="s">"Mumbai"</span><span class="p">)</span>
+  <span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="n">appDel</span><span class="o">.</span><span class="nf">getOffices</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">office</span> <span class="k">in</span> <span class="n">array</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Office name is </span><span class="se">\(</span><span class="n">office</span><span class="o">.</span><span class="n">name</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 </div>

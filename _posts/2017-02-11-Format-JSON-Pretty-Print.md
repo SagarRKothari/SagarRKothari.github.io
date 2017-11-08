@@ -8,7 +8,7 @@ tags: String JSON Format
 
 Put following code-snippet for formatting a JSON string to pretty print JSON.
 
-```Objective-C
+```objc
 + (NSString*) formatJSONPretty:(NSData *)data {
     id obj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     if (obj) {

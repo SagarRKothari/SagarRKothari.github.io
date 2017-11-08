@@ -106,16 +106,17 @@
   <div class="post-content" itemprop="articleBody">
     <p>Put following code-snippet for formatting a JSON string to pretty print JSON.</p>
 
-<pre><code class="language-Objective-C">+ (NSString*) formatJSONPretty:(NSData *)data {
-    id obj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    if (obj) {
-        NSData* d = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:nil];
-        return [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
-    } else {
-        return nil;
-    }
-}
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span> <span class="nf">formatJSONPretty</span><span class="p">:(</span><span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span> <span class="p">{</span>
+    <span class="n">id</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSJSONSerialization</span> <span class="nf">JSONObjectWithData</span><span class="p">:</span><span class="n">data</span> <span class="nf">options</span><span class="p">:</span><span class="n">NSJSONReadingAllowFragments</span> <span class="n">error</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSData</span><span class="o">*</span> <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSJSONSerialization</span> <span class="nf">dataWithJSONObject</span><span class="p">:</span><span class="n">obj</span> <span class="nf">options</span><span class="p">:</span><span class="n">NSJSONWritingPrettyPrinted</span> <span class="n">error</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[[</span><span class="n">NSString</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithData</span><span class="p">:</span><span class="n">d</span> <span class="nf">encoding</span><span class="p">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 
   </div>

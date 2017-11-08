@@ -107,9 +107,9 @@
     <p>Following is a code snippet for dialing phone number through code in iOS Swift</p>
 
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnDialPhone</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="p">{</span>
-     <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"tel://123456789"</span><span class="p">),</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">canOpenURL</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="p">{</span>
-               <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">openURL</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-     <span class="p">}</span>
+  <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"tel://123456789"</span><span class="p">),</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">canOpenURL</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">openURL</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 </div>

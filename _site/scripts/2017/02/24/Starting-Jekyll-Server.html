@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sample Fastlane File with crashlytics and slack integration</title>
-  <meta name="description" content="```ruby fastlane_version “1.106.2”">
+  <title>Starting Jekyll Server with Github Pages</title>
+  <meta name="description" content="Article to follow">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/codesnippet/tools/2017/02/19/Sample-FastLane-Code.html">
+  <link rel="canonical" href="http://localhost:4000/scripts/2017/02/24/Starting-Jekyll-Server.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -94,55 +94,35 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Sample Fastlane File with crashlytics and slack integration</h1>
+    <h1 class="post-title" itemprop="name headline">Starting Jekyll Server with Github Pages</h1>
     <p class="post-meta">
-      <time datetime="2017-02-19T16:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-02-24T15:30:00+05:30" itemprop="datePublished">
         
-        Feb 19, 2017
+        Feb 24, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">fastlane_version</span> <span class="s2">"1.106.2"</span>
+    <h3 id="article-to-follow">Article to follow</h3>
 
-<span class="n">default_platform</span> <span class="ss">:ios</span>
+<p>I followed article given below to setup &amp; start <code class="highlighter-rouge">Jekyll</code> server</p>
 
-<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
-  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">values</span><span class="o">|</span>
-    <span class="n">ensure_git_status_clean</span>
-    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"myApplication.xcodeproj"</span><span class="p">)</span>
-    <span class="n">commit_version_bump</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"myApplication.xcodeproj"</span><span class="p">)</span>
-    <span class="n">gym</span><span class="p">(</span><span class="ss">scheme: </span><span class="s1">'myApplication'</span><span class="p">,</span> <span class="ss">export_method: </span><span class="s1">'ad-hoc'</span><span class="p">)</span>
+<p><a href="https://devblast.com/b/create-a-static-websiteblog-with-jekyll-and-github-pages/">Create Static Site using Jekyll and Github Pages</a></p>
 
-    <span class="n">emails</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="ss">:test_email</span><span class="p">]</span> <span class="p">?</span> <span class="n">values</span><span class="p">[</span><span class="ss">:test_email</span><span class="p">]</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'sag333ar@gmail.com'</span><span class="p">,</span> <span class="s1">'sagar.digicorp@gmail.com'</span><span class="p">]</span> <span class="c1"># You can list more emails here</span>
-    <span class="n">groups</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="ss">:test_email</span><span class="p">]</span> <span class="p">?</span> <span class="kp">nil</span> <span class="p">:</span> <span class="kp">nil</span> <span class="c1"># You can define groups on the web and reference them here</span>
+<h3 id="after-installing-jekyll">After installing Jekyll</h3>
 
-    <span class="n">crashlytics</span><span class="p">(</span><span class="ss">api_token: </span><span class="s1">'crashlytics_api_token'</span><span class="p">,</span>
-             <span class="ss">build_secret: </span><span class="s1">'crashlytics_build_secret'</span><span class="p">,</span>
-                   <span class="ss">emails: </span><span class="n">emails</span><span class="p">,</span>
-                   <span class="ss">groups: </span><span class="n">groups</span><span class="p">,</span>
-                    <span class="ss">notes: </span><span class="s1">'Distributed with fastlane'</span><span class="p">,</span> <span class="c1"># Check out the changelog_from_git_commits action</span>
-            <span class="ss">notifications: </span><span class="kp">true</span><span class="p">)</span> <span class="c1"># Should this distribution notify your testers via email?</span>
+<p>After installing <code class="highlighter-rouge">Jekyll</code> &amp; <code class="highlighter-rouge">Ruby</code>, I make sure to run following command to ensure I’m using valid <code class="highlighter-rouge">Ruby</code> version.</p>
 
-    <span class="c1"># for all available options run `fastlane action crashlytics`</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>source ~/.rvm/scripts/rvm
+</code></pre>
+</div>
 
-    <span class="c1"># You can notify your team in chat that a beta build has been uploaded</span>
+<h3 id="starting-jekyll-server">Starting Jekyll Server</h3>
 
-    <span class="n">slack</span><span class="p">(</span>
-      <span class="ss">slack_url: </span><span class="s2">"https://hooks.slack.com/services/SOME/SLACK/HOOKID"</span><span class="p">,</span>
-      <span class="ss">message: </span><span class="s2">"Successfully uploaded a beta release For myApplication - see it at https://fabric.io/_/beta"</span><span class="p">,</span>
-      <span class="ss">channel: </span><span class="s2">"#my_slack_Channel"</span><span class="p">,</span> 
-      <span class="ss">payload: </span><span class="p">{</span>
-        <span class="s2">"Build Date"</span> <span class="o">=&gt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">to_s</span><span class="p">,</span>
-        <span class="s2">"Built by"</span> <span class="o">=&gt;</span> <span class="s2">"Fastlane, Fabric &amp; Crashlytics"</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="ss">default_payloads: </span><span class="p">[</span><span class="ss">:git_branch</span><span class="p">,</span> <span class="ss">:git_author</span><span class="p">,</span> <span class="ss">:last_git_commit_message</span><span class="p">]</span>
-    <span class="p">)</span>    
+<p>Run following command to start Jekyll Server</p>
 
-    <span class="n">push_to_git_remote</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll serve
 </code></pre>
 </div>
 

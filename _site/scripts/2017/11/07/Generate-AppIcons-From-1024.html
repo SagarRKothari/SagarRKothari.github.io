@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Starting Jekyll Server with Github Pages</title>
-  <meta name="description" content="Article to follow">
+  <title>Shellscript to generate AppIcons from 1024x1024.png Image</title>
+  <meta name="description" content="Download Shellscript">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/illustration/2017/02/24/Starting-Jekyll-Server.html">
+  <link rel="canonical" href="http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -94,35 +94,200 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Starting Jekyll Server with Github Pages</h1>
+    <h1 class="post-title" itemprop="name headline">Shellscript to generate AppIcons from 1024x1024.png Image</h1>
     <p class="post-meta">
-      <time datetime="2017-02-24T15:30:00+05:30" itemprop="datePublished">
+      <time datetime="2017-11-07T17:30:00+05:30" itemprop="datePublished">
         
-        Feb 24, 2017
+        Nov 7, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h3 id="article-to-follow">Article to follow</h3>
+    <h2 id="download-shellscript">Download Shellscript</h2>
 
-<p>I followed article given below to setup &amp; start <code class="highlighter-rouge">Jekyll</code> server</p>
+<p><a href="http://localhost:4000/assets/2017-11-08/GenerateAppIcons.sh">Click here to download</a></p>
 
-<p><a href="https://devblast.com/b/create-a-static-websiteblog-with-jekyll-and-github-pages/">Create Static Site using Jekyll and Github Pages</a></p>
+<h2 id="manually-manage-shellscript">Manually manage Shellscript</h2>
 
-<h3 id="after-installing-jekyll">After installing Jekyll</h3>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>cp 1024x1024.png AppIcon-20.png
+sips -Z 20 AppIcon-20.png
 
-<p>After installing <code class="highlighter-rouge">Jekyll</code> &amp; <code class="highlighter-rouge">Ruby</code>, I make sure to run following command to ensure I’m using valid <code class="highlighter-rouge">Ruby</code> version.</p>
+cp 1024x1024.png AppIcon-20@2x.png
+sips -Z 40 AppIcon-20@2x.png
 
-<div class="highlighter-rouge"><pre class="highlight"><code>source ~/.rvm/scripts/rvm
-</code></pre>
-</div>
+cp 1024x1024.png AppIcon-20@3x.png
+sips -Z 60 AppIcon-20@3x.png
 
-<h3 id="starting-jekyll-server">Starting Jekyll Server</h3>
+cp 1024x1024.png AppIcon-29.png
+sips -Z 29 AppIcon-29.png
 
-<p>Run following command to start Jekyll Server</p>
+cp 1024x1024.png AppIcon-29@2x.png
+sips -Z 58 AppIcon-29@2x.png
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll serve
+cp 1024x1024.png AppIcon-29@3x.png
+sips -Z 87 AppIcon-29@3x.png
+
+cp 1024x1024.png AppIcon-40.png
+sips -Z 40 AppIcon-40.png
+
+cp 1024x1024.png AppIcon-40@2x.png
+sips -Z 80 AppIcon-40@2x.png
+
+cp 1024x1024.png AppIcon-40@3x.png
+sips -Z 120 AppIcon-40@3x.png
+
+cp 1024x1024.png AppIcon-60@3x.png
+sips -Z 180 AppIcon-60@3x.png
+
+cp 1024x1024.png AppIcon-76.png
+sips -Z 76 AppIcon-76.png
+
+cp 1024x1024.png AppIcon-76@2x.png
+sips -Z 152 AppIcon-76@2x.png
+
+cp 1024x1024.png AppIcon-83.5@2x.png
+sips -Z 167 AppIcon-83.5@2x.png
+
+cp 1024x1024.png AppIcon-512@2x.png
+
+rm 1024x1024.png
+
+mkdir AppIcon.appiconset
+
+mv AppIcon-20.png AppIcon.appiconset/AppIcon-20.png
+mv AppIcon-20@2x.png AppIcon.appiconset/AppIcon-20@2x.png
+mv AppIcon-20@3x.png AppIcon.appiconset/AppIcon-20@3x.png
+mv AppIcon-29.png AppIcon.appiconset/AppIcon-29.png
+mv AppIcon-29@2x.png AppIcon.appiconset/AppIcon-29@2x.png
+mv AppIcon-29@3x.png AppIcon.appiconset/AppIcon-29@3x.png
+mv AppIcon-40.png AppIcon.appiconset/AppIcon-40.png
+mv AppIcon-40@2x.png AppIcon.appiconset/AppIcon-40@2x.png
+mv AppIcon-40@3x.png AppIcon.appiconset/AppIcon-40@3x.png
+mv AppIcon-60@3x.png AppIcon.appiconset/AppIcon-60@3x.png
+mv AppIcon-76.png AppIcon.appiconset/AppIcon-76.png
+mv AppIcon-76@2x.png AppIcon.appiconset/AppIcon-76@2x.png
+mv AppIcon-83.5@2x.png AppIcon.appiconset/AppIcon-83.5@2x.png
+mv AppIcon-512@2x.png AppIcon.appiconset/AppIcon-512@2x.png
+
+<span class="nb">echo</span> <span class="s1">'{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "size" : "20x20",
+    "filename" : "AppIcon-20@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "size" : "20x20",
+    "filename" : "AppIcon-20@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "AppIcon-29@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "AppIcon-29@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "AppIcon-40@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "AppIcon-40@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "AppIcon-40@3x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "AppIcon-60@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "20x20",
+    "filename" : "AppIcon-20.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "20x20",
+    "filename" : "AppIcon-20@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "AppIcon-29.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "AppIcon-29@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "AppIcon-40.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "AppIcon-40@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "AppIcon-76.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "AppIcon-76@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "83.5x83.5",
+      "filename" : "AppIcon-83.5@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "AppIcon-512@2x.png",
+      "scale" : "1x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}'</span> &gt; Contents.json
+
+mv Contents.json AppIcon.appiconset/Contents.json
 </code></pre>
 </div>
 

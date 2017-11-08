@@ -2,7 +2,7 @@
 layout: post
 title:  "Starting Jekyll Server with Github Pages"
 date:   2017-02-24 10:00:00
-categories: Illustration
+categories: Scripts
 tags: Jekyll Server Github Pages
 ---
 

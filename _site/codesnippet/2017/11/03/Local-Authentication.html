@@ -107,39 +107,39 @@
     <p>Insert following code snippet for local authentication.</p>
 
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">buttonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">self</span><span class="o">.</span><span class="nf">userAuthenticationRequired</span><span class="p">()</span>
+ <span class="k">self</span><span class="o">.</span><span class="nf">userAuthenticationRequired</span><span class="p">()</span>
 <span class="p">}</span>
 
 <span class="c1">// MARK: Touch ID</span>
 <span class="kd">func</span> <span class="nf">userAuthenticationRequired</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">let</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">LAContext</span> <span class="o">=</span> <span class="kt">LAContext</span><span class="p">()</span>
-	
-	<span class="c1">// Reference the error codes listed in the tutorial</span>
-	<span class="k">var</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?</span>
-	
-	<span class="c1">// What the customer will see in the alert view</span>
-	<span class="k">let</span> <span class="nv">description</span> <span class="o">=</span> <span class="s">"Authenticate To Access this application."</span>
-	<span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="nf">canEvaluatePolicy</span><span class="p">(</span><span class="kt">LAPolicy</span><span class="o">.</span><span class="n">deviceOwnerAuthenticationWithBiometrics</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-		<span class="n">context</span><span class="o">.</span><span class="nf">evaluatePolicy</span><span class="p">(</span><span class="kt">LAPolicy</span><span class="o">.</span><span class="n">deviceOwnerAuthenticationWithBiometrics</span><span class="p">,</span> <span class="nv">localizedReason</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span> <span class="nv">reply</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
-			
-			<span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-				<span class="k">self</span><span class="o">.</span><span class="nf">success</span><span class="p">()</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-				<span class="nf">print</span><span class="p">(</span><span class="s">"Something went wrong! </span><span class="se">\(</span><span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-				<span class="c1">// Observe the error code to see what went wrong &amp;amp; guide the user to the</span>
-				<span class="c1">// appropriate area. For now we assume cancelation and let them proceed</span>
-				<span class="c1">// with entering a code.</span>
-			<span class="p">}</span>
-		<span class="p">})</span>
-	<span class="p">}</span>
-	
-	<span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nf">print</span><span class="p">(</span><span class="s">"Something went wrong! </span><span class="se">\(</span><span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-	<span class="p">}</span>
+ <span class="k">let</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">LAContext</span> <span class="o">=</span> <span class="kt">LAContext</span><span class="p">()</span>
+ 
+ <span class="c1">// Reference the error codes listed in the tutorial</span>
+ <span class="k">var</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?</span>
+ 
+ <span class="c1">// What the customer will see in the alert view</span>
+ <span class="k">let</span> <span class="nv">description</span> <span class="o">=</span> <span class="s">"Authenticate To Access this application."</span>
+ <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="nf">canEvaluatePolicy</span><span class="p">(</span><span class="kt">LAPolicy</span><span class="o">.</span><span class="n">deviceOwnerAuthenticationWithBiometrics</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">context</span><span class="o">.</span><span class="nf">evaluatePolicy</span><span class="p">(</span><span class="kt">LAPolicy</span><span class="o">.</span><span class="n">deviceOwnerAuthenticationWithBiometrics</span><span class="p">,</span> <span class="nv">localizedReason</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span> <span class="nv">reply</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
+   
+   <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">success</span><span class="p">()</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Something went wrong! </span><span class="se">\(</span><span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="c1">// Observe the error code to see what went wrong &amp;amp; guide the user to the</span>
+    <span class="c1">// appropriate area. For now we assume cancelation and let them proceed</span>
+    <span class="c1">// with entering a code.</span>
+   <span class="p">}</span>
+  <span class="p">})</span>
+ <span class="p">}</span>
+ 
+ <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"Something went wrong! </span><span class="se">\(</span><span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+ <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">success</span><span class="p">()</span> <span class="p">{</span>
-	
+ 
 <span class="p">}</span>
 </code></pre>
 </div>

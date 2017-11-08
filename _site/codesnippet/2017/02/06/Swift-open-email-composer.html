@@ -109,22 +109,22 @@
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">MessageUI</span>
 
 <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnOpenEmail</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">self</span><span class="o">.</span><span class="nf">sendEmail</span><span class="p">()</span>
+  <span class="k">self</span><span class="o">.</span><span class="nf">sendEmail</span><span class="p">()</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">sendEmail</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="kt">MFMailComposeViewController</span><span class="o">.</span><span class="nf">canSendMail</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">mail</span> <span class="o">=</span> <span class="kt">MFMailComposeViewController</span><span class="p">()</span>
-        <span class="n">mail</span><span class="o">.</span><span class="n">mailComposeDelegate</span> <span class="o">=</span> <span class="k">self</span>
-        <span class="n">mail</span><span class="o">.</span><span class="nf">setToRecipients</span><span class="p">([</span><span class="k">self</span><span class="o">.</span><span class="n">lblEmail</span><span class="o">.</span><span class="n">text</span><span class="o">!.</span><span class="nf">trimmingCharacters</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="kt">CharacterSet</span><span class="o">.</span><span class="n">whitespaces</span><span class="p">)])</span>
-        <span class="nf">present</span><span class="p">(</span><span class="n">mail</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// show failure alert</span>
-    <span class="p">}</span>
+  <span class="k">if</span> <span class="kt">MFMailComposeViewController</span><span class="o">.</span><span class="nf">canSendMail</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">mail</span> <span class="o">=</span> <span class="kt">MFMailComposeViewController</span><span class="p">()</span>
+    <span class="n">mail</span><span class="o">.</span><span class="n">mailComposeDelegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="n">mail</span><span class="o">.</span><span class="nf">setToRecipients</span><span class="p">([</span><span class="k">self</span><span class="o">.</span><span class="n">lblEmail</span><span class="o">.</span><span class="n">text</span><span class="o">!.</span><span class="nf">trimmingCharacters</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="kt">CharacterSet</span><span class="o">.</span><span class="n">whitespaces</span><span class="p">)])</span>
+    <span class="nf">present</span><span class="p">(</span><span class="n">mail</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// show failure alert</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">mailComposeController</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">MFMailComposeViewController</span><span class="p">,</span> <span class="n">didFinishWith</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">MFMailComposeResult</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="n">controller</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+  <span class="n">controller</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 </div>
