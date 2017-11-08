@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sagar R Kothari</title>
-  <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+  <title>Setting up .bash_profile for Git Terminal Mac OSX</title>
+  <meta name="description" content="Step 1. Download">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/page5/">
+  <link rel="canonical" href="http://localhost:4000/scripts/2017/10/19/Setting-up-bash-profile-for-git.html">
   <link rel="alternate" type="application/rss+xml" title="Sagar R Kothari" href="/feed.xml">
   
   
@@ -94,53 +94,63 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1>Recent Posts</h1>
-<!-- This loops through the paginated posts -->
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  Feb 07, 2017
-  <h3><a href="/codesnippet/2017/02/07/Swift-dial-phone-number.html">Swift dial phone number</a></h3>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Setting up .bash_profile for Git Terminal Mac OSX</h1>
+    <p class="post-meta">
+      <time datetime="2017-10-19T15:30:00+05:30" itemprop="datePublished">
+        
+        Oct 19, 2017
+      </time>
+      </p>
+  </header>
 
-  Feb 06, 2017
-  <h3><a href="/codesnippet/2017/02/06/Swift-open-email-composer.html">Swift open email composer</a></h3>
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="step-1-download">Step 1. Download</h3>
 
+<p>Download following files.</p>
 
-<br>
-<hr>
-<br>
-<!-- Pagination links -->
+<ul>
+  <li><a href="http://localhost:4000/assets/2017-10-19/git-completion.bash">git-completion</a></li>
+  <li><a href="http://localhost:4000/assets/2017-10-19/git-prompt.sh">git-prompt</a></li>
+</ul>
 
-<div class="pagination">
-  
-    <a href="/page4/">&laquo; Prev</a>
-  
+<h3 id="step-2-move">Step 2. Move</h3>
 
-  
-    
-      <a href="/page4/">1</a>
-    
-  
-    
-      <a href="/page2/">2</a>
-    
-  
-    
-      <a href="/page3/">3</a>
-    
-  
-    
-      <a href="/page4/">4</a>
-    
-  
-    
-      <em>5</em>
-    
-  
+<p>Move this files under your user’s root directory.</p>
 
-  
-    <span>Next &raquo;</span>
-  
+<p>In my case it is <code class="highlighter-rouge">/Users/sagar</code></p>
+
+<h3 id="step-3-edit-your-bash_profile">Step 3. Edit your <code class="highlighter-rouge">.bash_profile</code></h3>
+
+<p>This file is usually located under user’s root directory. In my case it is <code class="highlighter-rouge">/Users/sagar</code>.
+Open <code class="highlighter-rouge">.bash_profile</code> with editor of your preference. I prefer <code class="highlighter-rouge">vi</code> editor. 
+Insert following lines.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="c"># Enable tab completion</span>
+<span class="nb">source</span> ~/git-completion.bash
+
+<span class="c"># colors!</span>
+<span class="nv">green</span><span class="o">=</span><span class="s2">"</span><span class="se">\[\0</span><span class="s2">33[0;32m</span><span class="se">\]</span><span class="s2">"</span>
+<span class="nv">blue</span><span class="o">=</span><span class="s2">"</span><span class="se">\[\0</span><span class="s2">33[0;34m</span><span class="se">\]</span><span class="s2">"</span>
+<span class="nv">purple</span><span class="o">=</span><span class="s2">"</span><span class="se">\[\0</span><span class="s2">33[0;35m</span><span class="se">\]</span><span class="s2">"</span>
+<span class="nv">reset</span><span class="o">=</span><span class="s2">"</span><span class="se">\[\0</span><span class="s2">33[0m</span><span class="se">\]</span><span class="s2">"</span>
+
+<span class="c"># Change command prompt</span>
+<span class="nb">source</span> ~/git-prompt.sh
+<span class="nb">export </span><span class="nv">GIT_PS1_SHOWDIRTYSTATE</span><span class="o">=</span>1
+<span class="c"># '\u' adds the name of the current user to the prompt</span>
+<span class="c"># '\$(__git_ps1)' adds git-related stuff</span>
+<span class="c"># '\W' adds the name of the current directory</span>
+<span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"</span><span class="nv">$purple</span><span class="se">\u</span><span class="nv">$green</span><span class="se">\$</span><span class="s2">(__git_ps1)</span><span class="nv">$blue</span><span class="s2"> </span><span class="se">\W</span><span class="s2"> </span><span class="nv">$ $reset</span><span class="s2">"</span>
+</code></pre>
 </div>
 
+  </div>
+
+  
+</article>
 
       </div>
     </main>
