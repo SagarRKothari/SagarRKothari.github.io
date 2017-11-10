@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Header: begin -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        
+            Play video inside UIView &#8211;
+        
+        Sagar R Kothari
+    </title>
+
+    <!-- Meta information for search engines -->
+    <meta name="author" content="">
+    <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+    
+        <meta name="keywords" content="CodeSnippet">
+    
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:creator" content="@sag333ar" />
+    
+    <meta name="twitter:title" content="Play video inside UIView" />
+    <meta name="twitter:description" content="In this case, SagarRKothari.mp4 is the video which is part of Application.
+Here, I’m going to play video in an UIImageView named ‘imgV’
+
+" />
+    <meta name="twitter:url" content="http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Play video inside UIView" />
+    <meta property="og:description" content="In this case, SagarRKothari.mp4 is the video which is part of Application.
+Here, I’m going to play video in an UIImageView named ‘imgV’
+
+" />
+    <meta property="og:url" content="http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/" />
+    <meta property="og:site_name" content="Sagar R Kothari">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://localhost:4000/css/trio.css">
+
+    <!-- Social buttons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Set the canonical URL for search engines -->
+    <link rel="canonical" href="http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Sagar R Kothari" href="http://localhost:4000/feed.xml" />
+
+    <!-- Icons -->
+    <!-- The ?v=8jjamLzmpR simply forces the browser to reload the favicon. Remove after a long time. -->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/apple-touch-icon-57x57.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/apple-touch-icon-60x60.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/apple-touch-icon-72x72.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/apple-touch-icon-76x76.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/apple-touch-icon-114x114.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/apple-touch-icon-120x120.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/apple-touch-icon-144x144.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/apple-touch-icon-152x152.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/apple-touch-icon-180x180.png?v=8jjamLzmpR">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-32x32.png?v=8jjamLzmpR" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-194x194.png?v=8jjamLzmpR" sizes="194x194">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-96x96.png?v=8jjamLzmpR" sizes="96x96">
+    <link rel="icon" type="image/png" href="http://localhost:4000/android-chrome-192x192.png?v=8jjamLzmpR" sizes="192x192">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-16x16.png?v=8jjamLzmpR" sizes="16x16">
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=8jjamLzmpR">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="http://localhost:4000/mstile-144x144.png?v=8jjamLzmpR">
+</head>
+<!-- Header: end -->
+
+<body>
+<div class="wrapper-for-content-outside-of-footer">
+    <div class="site-title">
+        <a href="http://localhost:4000">Sagar R Kothari</a>
+    </div>
+    <div class = "container">
+        <br/>
+
+<div class="post-title">
+    <div class="logo">
+        
+            <i class="fa fa-question-circle fa-fw"></i>
+        
+    </div>
+    <div class="title">
+        <h2>Play video inside UIView</h2>
+        
+        <span>
+            <time datetime="2017-10-26T15:30:00+05:30">
+                October 26, 2017
+                
+                    &middot;
+                    <a href="http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/index.html#disqus_thread" data-disqus-identifier="/2017/10/26/Play-Video-Inside-UIView/"></a>
+                    
+                
+            </time>
+        </span>
+        
+    </div>
+</div>
+
+<div>
+    <br/>
+</div>
+
+<p>In this case, <code class="highlighter-rouge">SagarRKothari.mp4</code> is the video which is part of Application.
+Here, I’m going to play video in an UIImageView named ‘imgV’</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">playVideo</span> <span class="p">{</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">videoPath</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSBundle</span> <span class="nf">mainBundle</span><span class="p">]</span> <span class="nf">pathForResource</span><span class="p">:</span><span class="s">@"SagarRKothari"</span> <span class="nf">ofType</span><span class="p">:</span><span class="s">@"mp4"</span><span class="p">];</span>
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">videoURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="nf">fileURLWithPath</span><span class="p">:</span><span class="n">videoPath</span><span class="p">];</span>
+
+    <span class="n">AVPlayer</span> <span class="o">*</span><span class="n">player</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVPlayer</span> <span class="nf">playerWithURL</span><span class="p">:</span><span class="n">videoURL</span><span class="p">];</span>
+    <span class="n">AVPlayerLayer</span> <span class="o">*</span><span class="n">layer</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVPlayerLayer</span> <span class="nf">layer</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">layer</span> <span class="nf">setPlayer</span><span class="p">:</span><span class="n">player</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">layer</span> <span class="nf">setFrame</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">imgV</span><span class="p">.</span><span class="n">bounds</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">layer</span> <span class="nf">setBackgroundColor</span><span class="p">:[</span><span class="n">UIColor</span> <span class="nf">clearColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">layer</span> <span class="nf">setVideoGravity</span><span class="p">:</span><span class="n">AVLayerVideoGravityResizeAspect</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">imgV</span><span class="p">.</span><span class="n">layer</span> <span class="nf">addSublayer</span><span class="p">:</span><span class="n">layer</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="n">player</span> <span class="nf">play</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">playVideo</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="k">let</span> <span class="nv">moviePath</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">path</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"SagarRKothari"</span><span class="p">,</span> <span class="nv">ofType</span><span class="p">:</span> <span class="s">"mov"</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">let</span> <span class="nv">movieURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="n">moviePath</span><span class="p">)</span>
+		<span class="k">let</span> <span class="nv">player</span> <span class="o">=</span> <span class="kt">AVPlayer</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">movieURL</span><span class="p">)</span>
+		<span class="k">let</span> <span class="nv">playerLayer</span> <span class="o">=</span> <span class="kt">AVPlayerLayer</span><span class="p">()</span>
+		<span class="n">playerLayer</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">player</span>
+		<span class="n">playerLayer</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">imgV</span><span class="o">.</span><span class="n">bounds</span>
+		<span class="n">playerLayer</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">clear</span><span class="o">.</span><span class="n">cgColor</span>
+		<span class="n">playerLayer</span><span class="o">.</span><span class="n">videoGravity</span> <span class="o">=</span> <span class="kt">AVLayerVideoGravityResizeAspect</span>
+		<span class="k">self</span><span class="o">.</span><span class="n">imgV</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="nf">addSublayer</span><span class="p">(</span><span class="n">playerLayer</span><span class="p">)</span>
+		<span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+<div class="sharing">
+    <br/>
+    <br/>
+<!-- Make an animated slide out drawer later -->
+    <ul>
+        <li><i class="fa fa-share-square-o"></i></li>
+        
+        <li><a href="https://twitter.com/intent/tweet?text=Play video inside UIView&url=http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="fa fa-twitter-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="http://www.linkedin.com/shareArticle?url=http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/&title=Play video inside UIView" rel="nofollow" target="_blank" title="Share on LinkedIn">
+                <i class="fa fa-linkedin-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="https://facebook.com/sharer.php?u=http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="fa fa-facebook-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="https://plus.google.com/share?url=http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/" rel="nofollow" target="_blank" title="Share on Google+">
+                <i class="fa fa-google-plus-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="http://reddit.com/submit?url=http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/&title=Play video inside UIView" rel="nofollow" target="_blank" title="Share on Reddit">
+                <i class="fa fa-reddit-square"></i>
+        </a></li>
+        
+    </ul>
+</div>
+
+<br/>
+<br/>
+
+<div id="disqus_thread"></div>
+<!-- Add Disqus comments (not comment count) -->
+<script type="text/javascript">
+    var disqus_shortname  = 'sagarrkothari-com';
+    var disqus_identifier = '/2017/10/26/Play-Video-Inside-UIView/';
+    var disqus_title      = 'Play video inside UIView';
+    var disqus_url        = 'http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/';
+    // var disqus_developer = 1; // Comment out when the site is live
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<!-- Add Disqus comment count (not the comments) -->
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES * * */
+  var disqus_shortname  = 'sagarrkothari-com';
+  // var disqus_developer = 1; // Comment out when the site is live
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+
+<noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+
+    </div>
+</div>
+
+
+<!-- Some empty space between the page counter and footer -->
+<div>
+    <br/><br/><br/><br/>
+</div>
+
+
+<!-- Footer: begin -->
+<footer class="stickyfooter" role="contentinfo">
+  <div class="footer-logo">
+    <a href="http://localhost:4000"><i class="fa fa-cog fa-spin"></i></a>
+  </div>
+    <ul>
+      <li><a href="http://localhost:4000/about/">About</a></li>
+      <li><a href="http://localhost:4000/contact/">Contact</a></li>
+      <li><a href="http://localhost:4000/search/">Search</a></li>
+      <li><a href="http://localhost:4000/Categories/">Categories</a></li>
+      <li><a href="http://localhost:4000/Tags/">Tags</a></li>
+      <li><a href="http://localhost:4000/Archive/">Archive</a></li>
+    </ul>
+
+    <div class="footer-secondary-links">
+        <!--
+      <ul>
+        <li>Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+        using the <a href="http://localhost:4000">Trio</a> theme
+        </li>
+      </ul>
+        -->
+
+      <ul class="footer-social">
+        <li><a href="http://localhost:4000/feed.xml">
+                <i class="fa fa-rss-square"></i>
+        </a></li>
+        
+            <li><a href="http://github.com/sag333ar">
+                <i class="fa fa-github-square"></i>
+            </a></li>
+        
+
+        
+            <li><a href="http://twitter.com/sag333ar">
+                <i class="fa fa-twitter-square"></i>
+            </a></li>
+        
+
+        
+            <li><a href="http://linkedin.com/in/sagar-kothari-65a59047">
+                <i class="fa fa-linkedin-square"></i>
+            </a></li>
+        
+
+        
+
+        
+
+        
+            <li><a href="http://github.com/sag333ar">
+                <i class="fa fa-youtube-square"></i>
+            </a></li>
+        
+      </ul>
+    </div>
+    <!-- This removes the small sliver of whitespace at the end of the page -->
+    <br/>
+</footer>
+<!-- Footer: end -->
+
+</body>
+</html>

@@ -1,9 +1,0 @@
-<h2>Posts by Category</h2>
-<ul>
- {% for category in site.categories %}
-<li><a href="#{{ category | first | remove:' ' }}"><strong>{{ category | first }}</strong></a></li>
-{% if forloop.last %}
-    {% else %}  
-    {% endif %}
-    {% endfor %}
-</ul>

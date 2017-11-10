@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Header: begin -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        
+            Sample Fastlane File with crashlytics and slack integration &#8211;
+        
+        Sagar R Kothari
+    </title>
+
+    <!-- Meta information for search engines -->
+    <meta name="author" content="">
+    <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+    
+        <meta name="keywords" content="Scripts, Tools">
+    
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:creator" content="@sag333ar" />
+    
+    <meta name="twitter:title" content="Sample Fastlane File with crashlytics and slack integration" />
+    <meta name="twitter:description" content="```ruby
+fastlane_version “1.106.2”
+
+" />
+    <meta name="twitter:url" content="http://localhost:4000/2017/02/19/Sample-FastLane-Code/" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Sample Fastlane File with crashlytics and slack integration" />
+    <meta property="og:description" content="```ruby
+fastlane_version “1.106.2”
+
+" />
+    <meta property="og:url" content="http://localhost:4000/2017/02/19/Sample-FastLane-Code/" />
+    <meta property="og:site_name" content="Sagar R Kothari">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://localhost:4000/css/trio.css">
+
+    <!-- Social buttons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Set the canonical URL for search engines -->
+    <link rel="canonical" href="http://localhost:4000/2017/02/19/Sample-FastLane-Code/">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Sagar R Kothari" href="http://localhost:4000/feed.xml" />
+
+    <!-- Icons -->
+    <!-- The ?v=8jjamLzmpR simply forces the browser to reload the favicon. Remove after a long time. -->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/apple-touch-icon-57x57.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/apple-touch-icon-60x60.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/apple-touch-icon-72x72.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/apple-touch-icon-76x76.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/apple-touch-icon-114x114.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/apple-touch-icon-120x120.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/apple-touch-icon-144x144.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/apple-touch-icon-152x152.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/apple-touch-icon-180x180.png?v=8jjamLzmpR">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-32x32.png?v=8jjamLzmpR" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-194x194.png?v=8jjamLzmpR" sizes="194x194">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-96x96.png?v=8jjamLzmpR" sizes="96x96">
+    <link rel="icon" type="image/png" href="http://localhost:4000/android-chrome-192x192.png?v=8jjamLzmpR" sizes="192x192">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-16x16.png?v=8jjamLzmpR" sizes="16x16">
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=8jjamLzmpR">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="http://localhost:4000/mstile-144x144.png?v=8jjamLzmpR">
+</head>
+<!-- Header: end -->
+
+<body>
+<div class="wrapper-for-content-outside-of-footer">
+    <div class="site-title">
+        <a href="http://localhost:4000">Sagar R Kothari</a>
+    </div>
+    <div class = "container">
+        <br/>
+
+<div class="post-title">
+    <div class="logo">
+        
+            <i class="fa fa-question-circle fa-fw"></i>
+        
+    </div>
+    <div class="title">
+        <h2>Sample Fastlane File with crashlytics and slack integration</h2>
+        
+        <span>
+            <time datetime="2017-02-19T16:30:00+05:30">
+                February 19, 2017
+                
+                    &middot;
+                    <a href="http://localhost:4000/2017/02/19/Sample-FastLane-Code/index.html#disqus_thread" data-disqus-identifier="/2017/02/19/Sample-FastLane-Code/"></a>
+                    
+                
+            </time>
+        </span>
+        
+    </div>
+</div>
+
+<div>
+    <br/>
+</div>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">fastlane_version</span> <span class="s2">"1.106.2"</span>
+
+<span class="n">default_platform</span> <span class="ss">:ios</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span> <span class="k">do</span>
+  <span class="n">lane</span> <span class="ss">:beta</span> <span class="k">do</span> <span class="o">|</span><span class="n">values</span><span class="o">|</span>
+    <span class="n">ensure_git_status_clean</span>
+    <span class="n">increment_build_number</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"myApplication.xcodeproj"</span><span class="p">)</span>
+    <span class="n">commit_version_bump</span><span class="p">(</span><span class="ss">xcodeproj: </span><span class="s2">"myApplication.xcodeproj"</span><span class="p">)</span>
+    <span class="n">gym</span><span class="p">(</span><span class="ss">scheme: </span><span class="s1">'myApplication'</span><span class="p">,</span> <span class="ss">export_method: </span><span class="s1">'ad-hoc'</span><span class="p">)</span>
+
+    <span class="n">emails</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="ss">:test_email</span><span class="p">]</span> <span class="p">?</span> <span class="n">values</span><span class="p">[</span><span class="ss">:test_email</span><span class="p">]</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'sag333ar@gmail.com'</span><span class="p">,</span> <span class="s1">'sagar.digicorp@gmail.com'</span><span class="p">]</span> <span class="c1"># You can list more emails here</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="ss">:test_email</span><span class="p">]</span> <span class="p">?</span> <span class="kp">nil</span> <span class="p">:</span> <span class="kp">nil</span> <span class="c1"># You can define groups on the web and reference them here</span>
+
+    <span class="n">crashlytics</span><span class="p">(</span><span class="ss">api_token: </span><span class="s1">'crashlytics_api_token'</span><span class="p">,</span>
+             <span class="ss">build_secret: </span><span class="s1">'crashlytics_build_secret'</span><span class="p">,</span>
+                   <span class="ss">emails: </span><span class="n">emails</span><span class="p">,</span>
+                   <span class="ss">groups: </span><span class="n">groups</span><span class="p">,</span>
+                    <span class="ss">notes: </span><span class="s1">'Distributed with fastlane'</span><span class="p">,</span> <span class="c1"># Check out the changelog_from_git_commits action</span>
+            <span class="ss">notifications: </span><span class="kp">true</span><span class="p">)</span> <span class="c1"># Should this distribution notify your testers via email?</span>
+
+    <span class="c1"># for all available options run `fastlane action crashlytics`</span>
+
+    <span class="c1"># You can notify your team in chat that a beta build has been uploaded</span>
+
+    <span class="n">slack</span><span class="p">(</span>
+      <span class="ss">slack_url: </span><span class="s2">"https://hooks.slack.com/services/SOME/SLACK/HOOKID"</span><span class="p">,</span>
+      <span class="ss">message: </span><span class="s2">"Successfully uploaded a beta release For myApplication - see it at https://fabric.io/_/beta"</span><span class="p">,</span>
+      <span class="ss">channel: </span><span class="s2">"#my_slack_Channel"</span><span class="p">,</span> 
+      <span class="ss">payload: </span><span class="p">{</span>
+        <span class="s2">"Build Date"</span> <span class="o">=&gt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">to_s</span><span class="p">,</span>
+        <span class="s2">"Built by"</span> <span class="o">=&gt;</span> <span class="s2">"Fastlane, Fabric &amp; Crashlytics"</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="ss">default_payloads: </span><span class="p">[</span><span class="ss">:git_branch</span><span class="p">,</span> <span class="ss">:git_author</span><span class="p">,</span> <span class="ss">:last_git_commit_message</span><span class="p">]</span>
+    <span class="p">)</span>    
+
+    <span class="n">push_to_git_remote</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+
+<div class="sharing">
+    <br/>
+    <br/>
+<!-- Make an animated slide out drawer later -->
+    <ul>
+        <li><i class="fa fa-share-square-o"></i></li>
+        
+        <li><a href="https://twitter.com/intent/tweet?text=Sample Fastlane File with crashlytics and slack integration&url=http://localhost:4000/2017/02/19/Sample-FastLane-Code/" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="fa fa-twitter-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="http://www.linkedin.com/shareArticle?url=http://localhost:4000/2017/02/19/Sample-FastLane-Code/&title=Sample Fastlane File with crashlytics and slack integration" rel="nofollow" target="_blank" title="Share on LinkedIn">
+                <i class="fa fa-linkedin-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="https://facebook.com/sharer.php?u=http://localhost:4000/2017/02/19/Sample-FastLane-Code/" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="fa fa-facebook-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="https://plus.google.com/share?url=http://localhost:4000/2017/02/19/Sample-FastLane-Code/" rel="nofollow" target="_blank" title="Share on Google+">
+                <i class="fa fa-google-plus-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="http://reddit.com/submit?url=http://localhost:4000/2017/02/19/Sample-FastLane-Code/&title=Sample Fastlane File with crashlytics and slack integration" rel="nofollow" target="_blank" title="Share on Reddit">
+                <i class="fa fa-reddit-square"></i>
+        </a></li>
+        
+    </ul>
+</div>
+
+<br/>
+<br/>
+
+<div id="disqus_thread"></div>
+<!-- Add Disqus comments (not comment count) -->
+<script type="text/javascript">
+    var disqus_shortname  = 'sagarrkothari-com';
+    var disqus_identifier = '/2017/02/19/Sample-FastLane-Code/';
+    var disqus_title      = 'Sample Fastlane File with crashlytics and slack integration';
+    var disqus_url        = 'http://localhost:4000/2017/02/19/Sample-FastLane-Code/';
+    // var disqus_developer = 1; // Comment out when the site is live
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<!-- Add Disqus comment count (not the comments) -->
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES * * */
+  var disqus_shortname  = 'sagarrkothari-com';
+  // var disqus_developer = 1; // Comment out when the site is live
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+
+<noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+
+    </div>
+</div>
+
+
+<!-- Some empty space between the page counter and footer -->
+<div>
+    <br/><br/><br/><br/>
+</div>
+
+
+<!-- Footer: begin -->
+<footer class="stickyfooter" role="contentinfo">
+  <div class="footer-logo">
+    <a href="http://localhost:4000"><i class="fa fa-cog fa-spin"></i></a>
+  </div>
+    <ul>
+      <li><a href="http://localhost:4000/about/">About</a></li>
+      <li><a href="http://localhost:4000/contact/">Contact</a></li>
+      <li><a href="http://localhost:4000/search/">Search</a></li>
+      <li><a href="http://localhost:4000/Categories/">Categories</a></li>
+      <li><a href="http://localhost:4000/Tags/">Tags</a></li>
+      <li><a href="http://localhost:4000/Archive/">Archive</a></li>
+    </ul>
+
+    <div class="footer-secondary-links">
+        <!--
+      <ul>
+        <li>Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+        using the <a href="http://localhost:4000">Trio</a> theme
+        </li>
+      </ul>
+        -->
+
+      <ul class="footer-social">
+        <li><a href="http://localhost:4000/feed.xml">
+                <i class="fa fa-rss-square"></i>
+        </a></li>
+        
+            <li><a href="http://github.com/sag333ar">
+                <i class="fa fa-github-square"></i>
+            </a></li>
+        
+
+        
+            <li><a href="http://twitter.com/sag333ar">
+                <i class="fa fa-twitter-square"></i>
+            </a></li>
+        
+
+        
+            <li><a href="http://linkedin.com/in/sagar-kothari-65a59047">
+                <i class="fa fa-linkedin-square"></i>
+            </a></li>
+        
+
+        
+
+        
+
+        
+            <li><a href="http://github.com/sag333ar">
+                <i class="fa fa-youtube-square"></i>
+            </a></li>
+        
+      </ul>
+    </div>
+    <!-- This removes the small sliver of whitespace at the end of the page -->
+    <br/>
+</footer>
+<!-- Footer: end -->
+
+</body>
+</html>

@@ -1,0 +1,583 @@
+[
+  
+    {
+      "title"    : "Using Radio buttons in iOS application Swift - SKRadioButton",
+      "category" : "",
+      "tags"     : "Radio, Button",
+      "url"      : "http://localhost:4000/2017/11/10/Using-Radio-Buttons-iOS-Swift/",
+      "date"     : "November 10, 2017",
+      "content"  : "Installation\n\nCocoaPods\nYou can use CocoaPods to install SKRadioButton by adding it to your Podfile:\n\nplatform :ios, '9.0'\nuse_frameworks!\npod 'SKRadioButton'\n\n\n\nTo get the full benefits import SKRadioButton wherever you import UIKit\n\nimport UIKit\nimport SKRadioButton\n\n\n\nManually\n\n\n  Download and drop SKRadioButton.swift in your project.\n  Congratulations!\n\n\nUsage example\n\nStep 1: Open Storyboard, Drag and drop a UIButton inside your view of ViewController.\n\n\n\nStep 2: Change the Class and Module from Class inspector for UIbuttons which you want to convert to Radio button.\n\n\n\nStep 3: Select your buttons, Change Type to Custom, remove button Title + Image + Background. Apply Radio buttons customization.\n\n\n\n\n\nStep 4: Place your Radio buttons inside a stack view (recommended) &amp; apply necessary constraints as per your needs.\n\n\n\nStep 5: One by one, select your Radio buttons &amp; connect with Outlet Collection to your viewController as indicated below.\n\n\n\nStep 6: One by one, select your Radio buttons &amp; connect same Action to your viewControllers IBAction as indicated below.\n\n\n\nStep 7: Add following piece of code &amp; you’re done.\n\nimport UIKit\nimport SKRadioButton // Step 1. Import SKRadioButton\n\nclass ViewController: UIViewController {\n\n  // Step 2. collection of radio buttons\n  @IBOutlet var genderRadioButtons: [SKRadioButton]!\n\n  override func viewDidLoad() {\n    super.viewDidLoad()\n  }\n\n  // Step 3. On tap update 'isSelected' attributes\n  @IBAction func genderRadioButtonsTapped(_ sender: SKRadioButton) {\n    genderRadioButtons.forEach { (button) in\n      button.isSelected = false\n    }\n    sender.isSelected = true\n  }\n\n }\n\n\n\nCheers.\n",
+      "snippet"  : "Installation"
+    } ,
+  
+    {
+      "title"    : "Generating Table of Contents for Markdown",
+      "category" : "",
+      "tags"     : "Script, NPM, TOC, TableOfContents, Markdown, doctoc",
+      "url"      : "http://localhost:4000/2017/11/09/Generating-Table-of-Contents-for-Markdown/",
+      "date"     : "November 09, 2017",
+      "content"  : "Installing Utility which generates markdown\n\nnpm install -g doctoc\n\n\n\nGenerating TOC\n\ndoctoc about.md\n\n\n\nIt will generate toc as follows.\n\n&lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;\n&lt;!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;\n**Table of Contents**\n\n- [Professional Synopsis](#professional-synopsis)\n- [Experience](#experience)\n  - [Mentor &amp; Lead for iOS Apps Dev @ Altimetrik (Aug-2015)](#mentor--lead-for-ios-apps-dev--altimetrik-aug-2015)\n  - [System Analyst in Mobile Apps (May-2014 to Aug-2015)](#system-analyst-in-mobile-apps-may-2014-to-aug-2015)\n  - [iOS Lead App Developer (Feb-2013 to Apr-2014)](#ios-lead-app-developer-feb-2013-to-apr-2014)\n  - [iOS App Developer (October 2011 – July 2012)](#ios-app-developer-october-2011--july-2012)\n  - [iOS App Devloper (Feb 2010 – Oct-2011)](#ios-app-devloper-feb-2010--oct-2011)\n- [Skills](#skills)\n\n&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;\n\n\n",
+      "snippet"  : "Installing Utility which generates markdown"
+    } ,
+  
+    {
+      "title"    : "Animate view on updating constraint values",
+      "category" : "",
+      "tags"     : "UIView, Animation, Animate, Constraint",
+      "url"      : "http://localhost:4000/2017/11/08/Animate-on-update-constraints/",
+      "date"     : "November 08, 2017",
+      "content"  : "Add following method inside your view controller.\n\nfunc animateListView() {\n  view.setNeedsUpdateConstraints()\n  UIView.animate(withDuration: 0.25, animations: {\n    self.view.layoutIfNeeded()\n  }, completion: nil)\n}\n\n\n\nAfter updating constraint value, invoke above method.\n",
+      "snippet"  : "Add following method inside your view controller."
+    } ,
+  
+    {
+      "title"    : "Writing Test case for UIAlertController",
+      "category" : "",
+      "tags"     : "UIAlertView, UIAlertController, Test, Testing, XCTest, TestCase",
+      "url"      : "http://localhost:4000/2017/11/08/Writing-test-case-for-UIAlertController/",
+      "date"     : "November 08, 2017",
+      "content"  : "Code Snippet to show view controller\n\nclass MyCustomViewController: UIViewController {\n  func showAlertView() {\n    let title = \"Title of the Alert\"\n    let message = \"Message for Alert\"\n    let actions = [\n      UIAlertAction(title: \"Yes\", style: UIAlertActionStyle.default, handler: { (action) in\n        // piece of code if user taps on yes.\n      }),\n      UIAlertAction(title: \"no\", style: UIAlertActionStyle.default, handler: { (action) in\n        // piece of code if user taps on no.\n      }),\n    ]\n    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)\n      for action in actions {\n        alert.addAction(action)\n      }\n      viewController.present(alert, animated: true, completion: nil)\n  }\n}\n\n\n\nCode Snippet to test above code\n\nfunc testshowAlertView_DidShowValidAlert() {\n  // SUT is System under test\n  // here, SUT is an instance of 'MyCustomViewController'\n  sut?.showAlertView()\n  let exp = expectation(description: \"Show AlertView Controller Expectation\")\n  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {\n    // access root view controller\n    let root = UIApplication.shared.keyWindow?.rootViewController\n\n    // check if it presented AlertController or not\n      XCTAssertTrue(root!.presentedViewController! is UIAlertController)\n\n      // access alertController\n      let alertController = root!.presentedViewController as! UIAlertController\n\n      // Check if it has valid title or not\n      XCTAssertEqual(alertController.title, \"Title of the Alert\")\n\n      // Check if it has valid message or nots\n      XCTAssertEqual(alertController.message, \"Message for Alert\")\n\n      // Check if it has valid number of actions or not\n      let actions = alertController.actions\n      XCTAssertTrue(actions.count == 2)\n\n      // Check if actions has valid titles or not\n      XCTAssertEqual(actions[0].title, \"Yes\")\n      XCTAssertEqual(actions[1].title, \"No\")\n      exp.fulfill()\n  }\n  waitForExpectations(timeout: 5, handler: nil)\n}\n\n\n",
+      "snippet"  : "Code Snippet to show view controller"
+    } ,
+  
+    {
+      "title"    : "Shellscript to generate AppIcons from 1024x1024.png Image",
+      "category" : "",
+      "tags"     : "Xcode, ShellScript, Automated, generate, AppIcon, Icons",
+      "url"      : "http://localhost:4000/2017/11/07/Generate-AppIcons-From-1024/",
+      "date"     : "November 07, 2017",
+      "content"  : "Download Shellscript\n\nClick here to download\n\nManually manage Shellscript\n\ncp 1024x1024.png AppIcon-20.png\nsips -Z 20 AppIcon-20.png\n\ncp 1024x1024.png AppIcon-20@2x.png\nsips -Z 40 AppIcon-20@2x.png\n\ncp 1024x1024.png AppIcon-20@3x.png\nsips -Z 60 AppIcon-20@3x.png\n\ncp 1024x1024.png AppIcon-29.png\nsips -Z 29 AppIcon-29.png\n\ncp 1024x1024.png AppIcon-29@2x.png\nsips -Z 58 AppIcon-29@2x.png\n\ncp 1024x1024.png AppIcon-29@3x.png\nsips -Z 87 AppIcon-29@3x.png\n\ncp 1024x1024.png AppIcon-40.png\nsips -Z 40 AppIcon-40.png\n\ncp 1024x1024.png AppIcon-40@2x.png\nsips -Z 80 AppIcon-40@2x.png\n\ncp 1024x1024.png AppIcon-40@3x.png\nsips -Z 120 AppIcon-40@3x.png\n\ncp 1024x1024.png AppIcon-60@3x.png\nsips -Z 180 AppIcon-60@3x.png\n\ncp 1024x1024.png AppIcon-76.png\nsips -Z 76 AppIcon-76.png\n\ncp 1024x1024.png AppIcon-76@2x.png\nsips -Z 152 AppIcon-76@2x.png\n\ncp 1024x1024.png AppIcon-83.5@2x.png\nsips -Z 167 AppIcon-83.5@2x.png\n\ncp 1024x1024.png AppIcon-512@2x.png\n\nrm 1024x1024.png\n\nmkdir AppIcon.appiconset\n\nmv AppIcon-20.png AppIcon.appiconset/AppIcon-20.png\nmv AppIcon-20@2x.png AppIcon.appiconset/AppIcon-20@2x.png\nmv AppIcon-20@3x.png AppIcon.appiconset/AppIcon-20@3x.png\nmv AppIcon-29.png AppIcon.appiconset/AppIcon-29.png\nmv AppIcon-29@2x.png AppIcon.appiconset/AppIcon-29@2x.png\nmv AppIcon-29@3x.png AppIcon.appiconset/AppIcon-29@3x.png\nmv AppIcon-40.png AppIcon.appiconset/AppIcon-40.png\nmv AppIcon-40@2x.png AppIcon.appiconset/AppIcon-40@2x.png\nmv AppIcon-40@3x.png AppIcon.appiconset/AppIcon-40@3x.png\nmv AppIcon-60@3x.png AppIcon.appiconset/AppIcon-60@3x.png\nmv AppIcon-76.png AppIcon.appiconset/AppIcon-76.png\nmv AppIcon-76@2x.png AppIcon.appiconset/AppIcon-76@2x.png\nmv AppIcon-83.5@2x.png AppIcon.appiconset/AppIcon-83.5@2x.png\nmv AppIcon-512@2x.png AppIcon.appiconset/AppIcon-512@2x.png\n\necho '{\n  \"images\" : [\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"20x20\",\n    \"filename\" : \"AppIcon-20@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"20x20\",\n    \"filename\" : \"AppIcon-20@3x.png\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"size\" : \"29x29\",\n      \"idiom\" : \"iphone\",\n      \"filename\" : \"AppIcon-29@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"size\" : \"29x29\",\n      \"idiom\" : \"iphone\",\n      \"filename\" : \"AppIcon-29@3x.png\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"size\" : \"40x40\",\n      \"idiom\" : \"iphone\",\n      \"filename\" : \"AppIcon-40@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"size\" : \"40x40\",\n      \"idiom\" : \"iphone\",\n      \"filename\" : \"AppIcon-40@3x.png\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"size\" : \"60x60\",\n      \"idiom\" : \"iphone\",\n      \"filename\" : \"AppIcon-40@3x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"size\" : \"60x60\",\n      \"idiom\" : \"iphone\",\n      \"filename\" : \"AppIcon-60@3x.png\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"idiom\" : \"ipad\",\n      \"size\" : \"20x20\",\n    \"filename\" : \"AppIcon-20.png\",\n      \"scale\" : \"1x\"\n    },\n    {\n      \"idiom\" : \"ipad\",\n      \"size\" : \"20x20\",\n    \"filename\" : \"AppIcon-20@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"size\" : \"29x29\",\n      \"idiom\" : \"ipad\",\n      \"filename\" : \"AppIcon-29.png\",\n      \"scale\" : \"1x\"\n    },\n    {\n      \"size\" : \"29x29\",\n      \"idiom\" : \"ipad\",\n      \"filename\" : \"AppIcon-29@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"size\" : \"40x40\",\n      \"idiom\" : \"ipad\",\n      \"filename\" : \"AppIcon-40.png\",\n      \"scale\" : \"1x\"\n    },\n    {\n      \"size\" : \"40x40\",\n      \"idiom\" : \"ipad\",\n      \"filename\" : \"AppIcon-40@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"size\" : \"76x76\",\n      \"idiom\" : \"ipad\",\n      \"filename\" : \"AppIcon-76.png\",\n      \"scale\" : \"1x\"\n    },\n    {\n      \"size\" : \"76x76\",\n      \"idiom\" : \"ipad\",\n      \"filename\" : \"AppIcon-76@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"idiom\" : \"ipad\",\n      \"size\" : \"83.5x83.5\",\n      \"filename\" : \"AppIcon-83.5@2x.png\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"size\" : \"1024x1024\",\n      \"idiom\" : \"ios-marketing\",\n      \"filename\" : \"AppIcon-512@2x.png\",\n      \"scale\" : \"1x\"\n    }\n  ],\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  }\n}' &gt; Contents.json\n\nmv Contents.json AppIcon.appiconset/Contents.json\n\n\n",
+      "snippet"  : "Download Shellscript"
+    } ,
+  
+    {
+      "title"    : "UIImage Rotate Flip - code snippet",
+      "category" : "",
+      "tags"     : "Swift",
+      "url"      : "http://localhost:4000/2017/11/06/UIImage-Flip-rotate/",
+      "date"     : "November 06, 2017",
+      "content"  : "Put following swift extension of UIImage class in project\n\nextension UIImage {\n  \n  public func imageRotatedByDegrees(degrees: CGFloat, flip: Bool) -&gt; UIImage? {\n    let radiansToDegrees: (CGFloat) -&gt; CGFloat = {\n      return $0 * (180.0 / CGFloat(M_PI))\n    }\n    let degreesToRadians: (CGFloat) -&gt; CGFloat = {\n      return $0 / 180.0 * CGFloat(M_PI)\n    }\n    \n    // calculate the size of the rotated view's containing box for our drawing space\n    let rotatedViewBox = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: size))\n    let t = CGAffineTransform(rotationAngle: degreesToRadians(degrees));\n    rotatedViewBox.transform = t\n    let rotatedSize = rotatedViewBox.frame.size\n    \n    // Create the bitmap context\n    UIGraphicsBeginImageContext(rotatedSize)\n    let bitmap = UIGraphicsGetCurrentContext()\n    \n    // Move the origin to the middle of the image so we will rotate and scale around the center.\n    bitmap!.translateBy(x: rotatedSize.width / 2.0, y: rotatedSize.height / 2.0);\n    \n    //   // Rotate the image context\n    bitmap!.rotate(by: degreesToRadians(degrees));\n    \n    // Now, draw the rotated/scaled image into the context\n    var yFlip: CGFloat\n    \n    if(flip){\n      yFlip = CGFloat(-1.0)\n    } else {\n      yFlip = CGFloat(1.0)\n    }\n    \n    bitmap!.scaleBy(x: yFlip, y: -1.0)\n    let rect = CGRect(x: -size.width / 2, y: -size.height / 2, width: size.width, height: size.height)\n    bitmap!.draw(cgImage!, in: rect)\n    \n    let newImage = UIGraphicsGetImageFromCurrentImageContext()\n    UIGraphicsEndImageContext()\n    \n    return newImage\n  }\n}\n\n\n\n",
+      "snippet"  : "Put following swift extension of UIImage class in project"
+    } ,
+  
+    {
+      "title"    : "Taking Screenshot programmatically",
+      "category" : "",
+      "tags"     : "Swift, UIScreen, ScreenShot",
+      "url"      : "http://localhost:4000/2017/11/05/Taking-Screen-shot/",
+      "date"     : "November 05, 2017",
+      "content"  : "Please find the code snippet as follows for taking screenshot programmatically.\n\nfunc screenShotMethod() {\n    //Create the UIImage\n    UIGraphicsBeginImageContext(view.frame.size)\n    view.layer.renderInContext(UIGraphicsGetCurrentContext())\n    let image = UIGraphicsGetImageFromCurrentImageContext()\n    UIGraphicsEndImageContext()\n    //Save it to the camera roll\n    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)\n}\n\n\n",
+      "snippet"  : "Please find the code snippet as follows for taking screenshot programmatically."
+    } ,
+  
+    {
+      "title"    : "Step by Step Core Data Implementation for iOS 10 and above",
+      "category" : "",
+      "tags"     : "CoreData, Data, Storage, iOS, SQLite",
+      "url"      : "http://localhost:4000/2017/11/04/CoreData-For-iOS10-And-Above/",
+      "date"     : "November 04, 2017",
+      "content"  : "Please find steps for core Data implementation as follows.\n\nStep 1: Create Data model\n\nCreate Data model as specified below.\n\n\n\nStep 2: Put following Code in AppDelegate\n\nMake sure you change name of Data Model as per your project’s data-model file.\nIn my case, it is “CoreDataDemo”.\n\nimport UIKit\nimport CoreData\n\nlet appDel = (UIApplication.shared.delegate as? AppDelegate)!\n\n@UIApplicationMain\nclass AppDelegate: UIResponder, UIApplicationDelegate {\n\n  var window: UIWindow?\n\n  func application(_ application: UIApplication, \n    didFinishLaunchingWithOptions \n    launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {\n    // application launched\n  }\n\n  func applicationWillResignActive(_ application: UIApplication) {\n    // application is going to go in background\n  }\n\n  func applicationDidEnterBackground(_ application: UIApplication) {\n    // application is in background\n  }\n\n  func applicationWillEnterForeground(_ application: UIApplication) {\n    // application is about to become active\n  }\n\n  func applicationDidBecomeActive(_ application: UIApplication) {\n    // application came to forground\n  }\n\n  func applicationWillTerminate(_ application: UIApplication) {\n    // application will be killed\n    self.saveContext()\n  }\n\n  // MARK: - Core Data stack\n\n  lazy var persistentContainer: NSPersistentContainer = {\n      let container = NSPersistentContainer(name: \"CoreDataDemo\")\n      container.loadPersistentStores(completionHandler: { (storeDescription, error) in\n          if let error = error as NSError? {\n              fatalError(\"Unresolved error \\(error), \\(error.userInfo)\")\n          }\n      })\n      return container\n  }()\n\n  var context: NSManagedObjectContext {\n    get {\n      return self.persistentContainer.viewContext\n    }\n  }\n\n  // MARK: - Core Data Saving support\n  func saveContext () {\n      let context = persistentContainer.viewContext\n      if context.hasChanges {\n          do {\n              try context.save()\n          } catch {\n              // Replace this implementation with code to handle the error appropriately.\n              // fatalError() causes the application to generate a crash log and terminate. \n              // You should not use this function in a shipping application, \n              // although it may be useful during development.\n              let nserror = error as NSError\n              fatalError(\"Unresolved error \\(nserror), \\(nserror.userInfo)\")\n          }\n      }\n  }\n}\n\n\n\nStep 3: Add Object\n\nFollowing function is an example of adding an object\n\nfunc addOffice(_ name: String) {\n  let entity = NSEntityDescription.entity(forEntityName: \"Office\", in: self.context)\n  let newOffice = NSManagedObject(entity: entity!, insertInto: self.context)\n  newOffice.setValue(name, forKey: \"name\")\n  self.saveContext()\n}\n\n\n\nStep 4: Fetch Objects\n\nFollowing function is an example of fetching objects\n\nfunc getOffices() -&gt; [Office] {\n  let fetchRequest: NSFetchRequest&lt;Office&gt; = Office.fetchRequest()\n  do {\n    //go get the results\n    let searchResults = try appDel.context.fetch(fetchRequest)\n    return searchResults\n  } catch {\n    return []\n  }\n}\n\n\n\nStep 5: Delete Object\n\nfunc deleteOffice(office: Office) {\n  appDel.context.delete(office)\n  appDel.saveContext()\n}\n\n\n\nSample code to use above methods.\n\noverride func viewDidLoad() {\n  super.viewDidLoad()\n  appDel.addOffice(\"Sagar\")\n  appDel.addOffice(\"Kothari\")\n  appDel.addOffice(\"Pune\")\n  appDel.addOffice(\"Mumbai\")\n  let array = appDel.getOffices()\n  for office in array {\n    print(\"Office name is \\(office.name!)\")\n  }\n}\n\n\n\nOutput is as follows.\n\nOffice name is Sagar\nOffice name is Kothari\nOffice name is Pune\nOffice name is Mumbai\n\n\n\nDownload Source code\n\nDownload Source Code\n",
+      "snippet"  : "Please find steps for core Data implementation as follows."
+    } ,
+  
+    {
+      "title"    : "Code Snippet for Local Authentication",
+      "category" : "",
+      "tags"     : "LAContext, Authentication, Auth, Device, FingerPrint",
+      "url"      : "http://localhost:4000/2017/11/03/Local-Authentication/",
+      "date"     : "November 03, 2017",
+      "content"  : "Insert following code snippet for local authentication.\n\n@IBAction func buttonTapped(_ sender: AnyObject) {\n self.userAuthenticationRequired()\n}\n\n// MARK: Touch ID\nfunc userAuthenticationRequired() {\n let context: LAContext = LAContext()\n \n // Reference the error codes listed in the tutorial\n var error: NSError?\n \n // What the customer will see in the alert view\n let description = \"Authenticate To Access this application.\"\n if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &amp;error) {\n  context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: description, reply: { (success, error) -&gt; Void in\n   \n   if success {\n    self.success()\n   } else {\n    print(\"Something went wrong! \\(error?.localizedDescription)\")\n    // Observe the error code to see what went wrong &amp;amp; guide the user to the\n    // appropriate area. For now we assume cancelation and let them proceed\n    // with entering a code.\n   }\n  })\n }\n \n if error != nil {\n  print(\"Something went wrong! \\(error?.localizedDescription)\")\n }\n}\n\nfunc success() {\n \n}\n\n\n",
+      "snippet"  : "Insert following code snippet for local authentication."
+    } ,
+  
+    {
+      "title"    : "UIView Flip Animation Code",
+      "category" : "",
+      "tags"     : "UIView, Flip, Animation, Code",
+      "url"      : "http://localhost:4000/2017/11/02/UIView-Flip-Animation-Code/",
+      "date"     : "November 02, 2017",
+      "content"  : "Swift Code Snippet\n\nUIView.transition(with: view, duration: 0.5, options: .transitionFlipFromRight, animations: {\n  self.flipSideView.isHidden = !self.flipSideView.isHidden\n}, completion: nil)\n\n\n",
+      "snippet"  : "Swift Code Snippet"
+    } ,
+  
+    {
+      "title"    : "Setting up SonarQube for swift on Mac OSX",
+      "category" : "",
+      "tags"     : "SonarCube, Swift, CodeCoverage",
+      "url"      : "http://localhost:4000/2017/11/01/SettingUpSonarForSwift/",
+      "date"     : "November 01, 2017",
+      "content"  : "Step 1. Download and setup SonarCube\n\n\n  Download SonarQube\n  Unzip downloaded file.\n  Move downloaded file under /Applications/ folder. (I prefer it to keep it that way)\n  Rename it to SonarQube and delete version suffix.\n\n\n\n\nStep 2. Downloading and setting up Sonar Scanner\n\n\n  Open download SonarScanner page and click on Mac OS X 64 bit to download Mac OS X specific SonarScanner\n  Unzip downloaded file.\n  Move downloaded file under /Applications/ folder. (I prefer it to keep it that way)\n  Rename it to SonarScanner and delete version suffix.\n\n\n\n\nStep 3. Updating .bash_profile with new PATH\n\nStart Terminal and run following command.\n\ncd ~/\nvi .bash_profile\n\n\n\n\n  Above commands will open your bas_profile in vi editor.\n  Use down-arrow key to jump to last line.\n  Use left-right arrows to navigate to last character.\n  Press i to enable insert mode.\n  Copy &amp; paste following lines.\n\n\nexport PATH=$PATH:/Applications/SonarScanner/bin\nexport PATH=$PATH:/Applications/SonarQube/bin\n\n\n\n\n  Press esc key and : will appear at bottom-left corner in vi editor.\n  Enter wq to save &amp; quit.\n\n\n\n\nStep 4. Setting up SonarSwift from Backelite.\n\n\n  Open downloads page\n  Download jar. In my case, I downloaded backelite-sonar-swift-plugin-0.3.5.jar\n  Move this jar file under following folder.\n\n\n/Applications/SonarQube/extensions/plugins/\n\n\n\n\n\nStep 5. Starting up SonarQube.\n\nRun following command to start SonarQube server.\n\nsh /Applications/SonarQube/bin/macosx-universal-64/sonar.sh console\n\n\n\nYou should see console as follows if everything goes well.\n\nRunning SonarQube...\nwrapper  | --&gt; Wrapper Started as Console\nwrapper  | Launching a JVM...\njvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org\njvm 1    |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.\njvm 1    | \njvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory /Applications/SonarQube/temp\njvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.es.EsSettings] Elasticsearch listening on /127.0.0.1:9001\njvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.p.ProcessLauncherImpl] Launch process[[key='es', ipcIndex=1, logFilenamePrefix=es]] from [/Applications/SonarQube/elasticsearch]: /Applications/SonarQube/elasticsearch/bin/elasticsearch -Epath.conf=/Applications/SonarQube/temp/conf/es\njvm 1    | 2017.11.02 16:23:18 INFO  app[][o.s.a.SchedulerImpl] Waiting for Elasticsearch to be up and running\njvm 1    | 2017.11.02 16:23:18 INFO  app[][o.e.p.PluginsService] no modules loaded\njvm 1    | 2017.11.02 16:23:18 INFO  app[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]\n\n\n\nBut once you see following message under console, you should start brownser.\n\njvm 1    | 2017.11.02 16:23:40 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up\njvm 1    | 2017.11.02 16:23:40 INFO  app[][o.s.a.SchedulerImpl] SonarQube is up\n\n\n\n\n\nStep 6. Logging in\n\nGo to browser. Open following URL.\n\nhttp://localhost:9000/about\n\n\n\n\n  Click on Log in\n  Use admin as username, admin as password.\n\n\n\n\nStep 7. Setting SwiftLint as default profile for Swift\n\nOpen following URL.\n\nhttp://localhost:9000/profiles\n\n\n\n\n\nScroll down to Swift section.\n\nSet SwiftLint as default profile.\n\n\n\nStep 8. Setting up the project\n\nNavigate to following URL.\n\nhttp://localhost:9000/admin/projects_management\n\n\n\n\n  Click on Create Project.\n  Enter Project name\n  Enter project key\n  Click Create\n\n\nStep 9. Performing Analysis on your project.\n\n\n  Start Terminal\n  Navigate to your project’s root directory where you’ve your project.xcodeProject file.\n\n\nFor Example,\n\ncd ~/Projects/iOSApplications/myProject\n\n\n\nTo Start analysis, run following command.\n\nsonar-scanner -Dsonar.projectKey=MyProjectKey -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000\n\n\n\nNOTE: Make sure you replace MyProjectKey with your project key.\n\nAnalysis will begin with following console log.\n\nINFO: Scanner configuration file: /Applications/SonarScanner/conf/sonar-scanner.properties\nINFO: Project root configuration file: NONE\nINFO: SonarQube Scanner 3.0.3.778\nINFO: Java 1.8.0_121 Oracle Corporation (64-bit)\nINFO: Mac OS X 10.12.6 x86_64\nINFO: User cache: /Users/e070190/.sonar/cache\nINFO: Publish mode\nINFO: Load global settings\nINFO: Load global settings (done) | time=56ms\n\n\n\nAnd, analysis will end with following console log.\n\nINFO: Task total time: 21.407 s\nINFO: ------------------------------------------------------------------------\nINFO: EXECUTION SUCCESS\nINFO: ------------------------------------------------------------------------\nINFO: Total time: 22.791s\nINFO: Final Memory: 57M/1531M\nINFO: ------------------------------------------------------------------------\n\n\n\nStep 10. Viewing the reports.\n\nNavigate to following URL.\n\nhttp://localhost:9000/dashboard?id=MyProjectKey\n\n\n\nNOTE: Make sure you replace MyProjectKey with your project key.\n\n\n",
+      "snippet"  : "Step 1. Download and setup SonarCube"
+    } ,
+  
+    {
+      "title"    : "Dispatch After Time using DispatchQueue",
+      "category" : "",
+      "tags"     : "DispatchQueue, main, async",
+      "url"      : "http://localhost:4000/2017/10/31/Dispatch-After-Time/",
+      "date"     : "October 31, 2017",
+      "content"  : "Swift Code Snippet\n\nDispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {\n  // your code here\n}\n\n\n\nObjective-C Code Snippet\n\nvar dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC)))\ndispatch_after(dispatchTime, dispatch_get_main_queue(), {\n  // your function here\n})\n\n\nExample\n\nfunc fetchStockData(_ handler: @escaping (([Stock]) -&gt; Void)) {\n\tDispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {\n\t\tlet stocks = StockManagerSDK.stockData()\n\t\thandler(stocks)\n    }\n}\n\n\n",
+      "snippet"  : "Swift Code Snippet"
+    } ,
+  
+    {
+      "title"    : "Generating Category wise article list",
+      "category" : "",
+      "tags"     : "Jekyll, Customization, Github, Pages",
+      "url"      : "http://localhost:4000/2017/10/30/Jekyll-Generating-Categorywise-list/",
+      "date"     : "October 30, 2017",
+      "content"  : "Step 1.\n\nCreate Categories.html under root folder of your web-site.\n\n\n\nStep 2.\n\nCopy And Paste following Code into html file which you just created.\n\n---\nlayout: default\ntitle: Categories\n---\n\n&lt;h1&gt;Category wise articles&lt;/h1&gt;\n\n&lt;ul&gt;\n{ % assign tags list = site.categories  % }  \n   { %  if tags list.first[0] != null  % } \n     { %  for tag in tags list  % }  \n      &lt;li&gt;\n         { { tag[0] } } \n        &lt;ul&gt;\n           { %  assign pages list = tag[1]  % }   \n           { %  for post in pages list  % } \n             { %  if post.title != null  % } \n               { %  if group == null or group == post.group  % } \n                &lt;li&gt;&lt;a href=\" { { site.url } }  { { post.url } } \"&gt; { { post.title } } \n                  (&lt;span class=\"entry-date\"&gt;&lt;time datetime=\" { { post.date | date to xmlschema } } \" itemprop=\"datePublished\"&gt; { { post.date | date: \" % B  % d,  % Y\" } } )&lt;/time&gt;\n                &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;\n               { %  endif  % } \n             { %  endif  % } \n           { %  endfor  % } \n           { %  assign pages list = nil  % } \n        &lt;/ul&gt;\n      &lt;/li&gt;\n     { %  endfor  % } \n   { %  endif  % } \n { %  assign tags list = nil  % } \n&lt;/ul&gt;\n\n\n\nStep 3.\n\nRun following command to start server.\n\nbundle exec jekyll serve\n\n\n",
+      "snippet"  : "Step 1."
+    } ,
+  
+    {
+      "title"    : "Using Localization Tables for supporting internationalization",
+      "category" : "",
+      "tags"     : "internationalization, Localization, Swift",
+      "url"      : "http://localhost:4000/2017/10/29/Using-Localization-Tables/",
+      "date"     : "October 29, 2017",
+      "content"  : "Step 1.\n\nSwift Code Snippet\n\nlet helloWorld = NSLocalizedString(\"KeyForHelloWorld\", // Key of the value\n\ttableName: \"LoginModule\", // value to be stored in a table\n\tbundle: Bundle.main, // using main bundle\n\tvalue: \"Hello World!\", // Default value to be assigned to the key\n\tcomment: \"LoginModule - Hello World! This comment is useful for translator.\") \n\t// comment to provide help to translator\n\n\n\n\n\nStep 2.\n\nGo to terminal &amp; run following command.\n\nxcrun extractLocStrings *.swift\n\n\n\nAbove command will generate multiple strings file based on the different tables you’ve specified in code.\n\n\n\nStep 3.\n\nDrag &amp; drop those strings file in your project.\n\n\n\nStep 4.\n\nSelect one of the strings file, open file inspector &amp; Click on localize button to enable localization.\n\n\n",
+      "snippet"  : "Step 1."
+    } ,
+  
+    {
+      "title"    : "Generating Archive - list of Articles",
+      "category" : "",
+      "tags"     : "Jekyll, Customization, Github, Pages",
+      "url"      : "http://localhost:4000/2017/10/28/Jekyll-Generating-Archive/",
+      "date"     : "October 28, 2017",
+      "content"  : "Step 1.\n\nCreate Archive.html under root folder of your web-site.\n\n\n\nStep 2.\n\nCopy And Paste following Code into html file which you just created.\n\n---\nlayout: default\ntitle: Archive\n---\n\n&lt;div id=\"home\"&gt;\n  &lt;h1&gt;Archive ( { { site.posts | size } } posts)&lt;/h1&gt;\n  &lt;ul class=\"posts\"&gt;\n    { % for post in site.posts % }\n      &lt;li&gt;&lt;span&gt; { { post.date | date_to_string } } &lt;/span&gt; &amp;raquo; &lt;a href=\" { { post.url } }\"&gt; { { post.title } } &lt;/a&gt;&lt;/li&gt;\n    { % endfor % }\n  &lt;/ul&gt;\n&lt;/div&gt;\n\n\n\nStep 3.\n\nRun following command to start server.\n\nbundle exec jekyll serve\n\n\n",
+      "snippet"  : "Step 1."
+    } ,
+  
+    {
+      "title"    : "Integrating Charts in iOS Application",
+      "category" : "",
+      "tags"     : "Charts, Library, iOS, Swift, Customization, UserInterface",
+      "url"      : "http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/",
+      "date"     : "October 27, 2017",
+      "content"  : "Step 1.\n\nOpen your project’s Podfile and add following line.\n\npod 'Charts'\n\n\n\n\n\nStep 2.\n\nOpen terminal and jump to your project directory.\nRun following command.\n\npod install\n\n\n\n\n\nStep 3.\n\nOpen your viewController.swift and make sure you import chart library.\n\nimport Charts\n\n\n\n\n\nStep 4.\n\n\n  Open your storyboard file\n  Drag-drop an object of UIView.\n  Select it\n  Go to Identity Inspector\n  Change class to your chart you want.\n\n\nIn this article, I’ll show using BarChartView.\n\n\n\nStep 5.\n\nSet up chart on viewDidLoad.\n\nimport UIKit\nimport Charts\n\nclass MyViewController: UIViewController {\n\n  // MARK:- IBOutlets\n  @IBOutlet weak var barChartView: BarChartView!\n\n  override func viewDidLoad() {\n    super.viewDidLoad()\n    barChartView.noDataText = \"You need to provide data for the chart.\"\n    barChartView.xAxis.labelPosition = .bottom // position of xAxis labels\n    barChartView.chartDescription?.text = \"Provide chart description here.\"\n  }\n\n}\n\n\n\n\n\nStep 6.\n\nMake sure you have valid data array.\n\n// Labels\nvar months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]\n\n// Values\nvar soldUnits = [10, 15, 20, 18, 17, 22, 16, 19, 21, 22, 25, 27]\n\n// Colors array if you want to colorize \nvar colors = [UIColor.red, UIColor.gray, UIColor.black,\n\tUIColor.blue, UIColor.brown, UIColor.green,\n\tUIColor.yellow, UIColor.lightGray, UIColor.magenta,\n\tUIColor.orange, UIColor.purple, UIColor.darkGray]\n\n\n\n\n\nStep 7.\n\nCreate Chart Data. In this case, we’ll be creating bar chart data.\n\nvar dataEntries: [BarChartDataEntry] = []\nfor i in 0..&lt;soldUnits.count {\n  let dataEntry = BarChartDataEntry(x: Double(i), yValues: [Double(soldUnits[i])])\n  dataEntries.append(dataEntry)\n}\nlet chartDataSet = BarChartDataSet(values: dataEntries, label: \"Sold Units\")\nlet chartColorsData = colors\nlet chartData = BarChartData(dataSet: chartDataSet)\n\n\n\n\n\nStep 8.\n\nCreate Bar Chart Formatter. This formatter will apply X-Axis values to Chart.\nIMPORTANT: If we don’t do this, chart will not show anything on X-Axis.\n\nimport UIKit\nimport Charts\n\n@objc(BarChartFormatter)\npublic class BarChartFormatter: NSObject, IAxisValueFormatter {\n  var xAxisData: [String] = []\n  public func stringForValue(_ value: Double, axis: AxisBase?) -&gt; String {\n    return xAxisData[Int(value)]\n  }\n}\n\n\n\nStep 9.\n\nSupply Chart Data to ChartView.\n\n// Supply chart data to Bar Chart\nbarChartView.data = chartData // From Step 7\n\n// Create Formatter\nlet formato = BarChartFormatter() // From Step 8\n\n// Apply customization to createdFormatter for X Axis\nformato.xAxisData = months \nlet xaxis:XAxis = XAxis()\nxaxis.valueFormatter = formato\n\n// Apply Formatter to BarChart\nbarChartView.xAxis.valueFormatter = xaxis.valueFormatter\n\n\n\nSample Code\n\nCheck out this repository for sample code for above.\n",
+      "snippet"  : "Step 1."
+    } ,
+  
+    {
+      "title"    : "Play video inside UIView",
+      "category" : "",
+      "tags"     : "Swift, Video, UIView, Play",
+      "url"      : "http://localhost:4000/2017/10/26/Play-Video-Inside-UIView/",
+      "date"     : "October 26, 2017",
+      "content"  : "In this case, SagarRKothari.mp4 is the video which is part of Application.\nHere, I’m going to play video in an UIImageView named ‘imgV’\n\n- (void)playVideo {\n    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@\"SagarRKothari\" ofType:@\"mp4\"];\n    NSURL *videoURL = [NSURL fileURLWithPath:videoPath];\n\n    AVPlayer *player = [AVPlayer playerWithURL:videoURL];\n    AVPlayerLayer *layer = [AVPlayerLayer layer];\n    [layer setPlayer:player];\n    [layer setFrame:self.imgV.bounds];\n    [layer setBackgroundColor:[UIColor clearColor].CGColor];\n    [layer setVideoGravity:AVLayerVideoGravityResizeAspect];\n\n    [self.imgV.layer addSublayer:layer];\n\n    [player play];\n}\n\n\n\nfunc playVideo() {\n\tif let moviePath = Bundle.main.path(forResource: \"SagarRKothari\", ofType: \"mov\") {\n\t\tlet movieURL = URL(fileURLWithPath: moviePath)\n\t\tlet player = AVPlayer(url: movieURL)\n\t\tlet playerLayer = AVPlayerLayer()\n\t\tplayerLayer.player = player\n\t\tplayerLayer.frame = self.imgV.bounds\n\t\tplayerLayer.backgroundColor = UIColor.clear.cgColor\n\t\tplayerLayer.videoGravity = AVLayerVideoGravityResizeAspect\n\t\tself.imgV.layer.addSublayer(playerLayer)\n\t\tplayer.play()\n\t}\n}\n\n\n",
+      "snippet"  : "In this case, SagarRKothari.mp4 is the video which is part of Application. Here, I’m going to play video in an..."
+    } ,
+  
+    {
+      "title"    : "Disabling App Transport Security",
+      "category" : "",
+      "tags"     : "Application, Transport, Security",
+      "url"      : "http://localhost:4000/2017/10/25/Disable-App-Transport-Security/",
+      "date"     : "October 25, 2017",
+      "content"  : "Step 1.\n\nOpen your project.\n\nStep 2.\n\nOpen Info.plist as source code (right click on Info.plist).\n\nStep 3.\n\nBefore (look for end of file)\n\n&lt;/dict&gt;\n&lt;/plist&gt;\n\n\n\nInsert following\n\n&lt;code class=\"xml\"&gt;\n&lt;dict&gt;\n    &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;\n    &lt;true/&gt;\n&lt;/dict&gt;\n&lt;/code&gt;\n\n\n",
+      "snippet"  : "Step 1."
+    } ,
+  
+    {
+      "title"    : "Writing Test cases to test web service",
+      "category" : "",
+      "tags"     : "XCTest, testing, test, expectation, fulfill",
+      "url"      : "http://localhost:4000/2017/10/24/Writing-Test-Case-to-test-webservice/",
+      "date"     : "October 24, 2017",
+      "content"  : "Put following swift test function and replace with your web-service call code.\n\nfunc testSomeWebService() {\n  // create expectation\n  let exp = expectation(description: \"Some web service expectation\")\n  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {\n    // got response\n    exp.fulfill()\n  }\n  waitForExpectations(timeout: 30, handler: nil)\n}\n\n\n\n",
+      "snippet"  : "Put following swift test function and replace with your web-service call code."
+    } ,
+  
+    {
+      "title"    : "XCode Shortcuts - CheetSheet",
+      "category" : "",
+      "tags"     : "Shortcuts, Xcode, CheetSheet",
+      "url"      : "http://localhost:4000/2017/10/23/XCode-Shortcuts-CheetSheet/",
+      "date"     : "October 23, 2017",
+      "content"  : "\n\n",
+      "snippet"  : ""
+    } ,
+  
+    {
+      "title"    : "iOS Application Register for Apple Push Notification",
+      "category" : "",
+      "tags"     : "iOS, Application, Register, APNS, Push, Notification",
+      "url"      : "http://localhost:4000/2017/10/22/RegisterForAPNS/",
+      "date"     : "October 22, 2017",
+      "content"  : "Following function will help you to registering for Push notification on an iOS Application.\n\nfunc registerForNotification(_ application: UIApplication) {\n\tif #available(iOS 10.0, *) {\n\t\tlet authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]\n\t\tUNUserNotificationCenter.current().requestAuthorization(\n\t\t\toptions: authOptions,\n\t\t\tcompletionHandler: { _, _ in }\n\t\t)\n\t\t// For iOS 10 display notification (sent via APNS)\n\t\tUNUserNotificationCenter.current().delegate = self\n\t} else {\n\t\tlet setting = UIUserNotificationSettings(\n\t\t\ttypes: [.alert, .badge, .sound], \n\t\t\tcategories: nil\n\t\t)\n\t\tapplication.registerUserNotificationSettings(setting)\n\t}\n\tapplication.registerForRemoteNotifications()\n}\n\n\n\nStep 1. Copy and Paste above function and place it under AppDelegate.swift file of your project.\n\nStep 2. Now under method, make sure you invoke above method.\n\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions \n\t\t\tlaunchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {\n\t// Register for push notification\n\tself.registerForNotification(application)\n\t// Override point for customization after application launch.\n\treturn true\n}\n\n\n\nStep 3. Also add following delegate methods to AppDelegate.swift\n\nfunc application(_ application: UIApplication, \n\t\tdidRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {\n\tprint(\"Need something to be done when success registring for APNS \")\t\n}\n\t\nfunc application(_ application: UIApplication, \n\tdidFailToRegisterForRemoteNotificationsWithError error: Error) {\n\tprint(\"Need something to be done when registring for APNS fails\")\t\t\n}\n\n\n\nStep 4. Make sure that you’ve enabled Push notification settings from Target Settings.\n\n\n\nYep. That’s it. Your app is all set for registering for push notifications.\n",
+      "snippet"  : "Following function will help you to registering for Push notification on an iOS Application."
+    } ,
+  
+    {
+      "title"    : "Get Count of Swift Enum Values",
+      "category" : "",
+      "tags"     : "Enum, Enumeration, Count, Total",
+      "url"      : "http://localhost:4000/2017/10/21/Get-Count-Of-Enum-Values/",
+      "date"     : "October 21, 2017",
+      "content"  : "In following enum example, I have added a static variable named count which calculates and returns count of the given enum.\n\nenum ToDoPriority: Int {\n  case High\n  case Medium\n  case Low\n  var stringValue: String {\n    switch self {\n    case .High:\n      return \"High\"\n    case .Medium:\n      return \"Medium\"\n    case .Low:\n      return \"Low\"\n    }\n  }\n  static let count: Int = {\n    var max: Int = 0\n    while let _ = ToDoPriority(rawValue: max) { max += 1 }\n    return max\n  }()\n}\n\n\n",
+      "snippet"  : "In following enum example, I have added a static variable named count which calculates and returns count of the given..."
+    } ,
+  
+    {
+      "title"    : "Get Tomorrow Date or add a date to given date",
+      "category" : "",
+      "tags"     : "NSDate, Date, Tomorrow",
+      "url"      : "http://localhost:4000/2017/10/20/Get-Tomorrow-Date/",
+      "date"     : "October 20, 2017",
+      "content"  : "func getTomorrowDate() -&gt; Date {\n  let cal = NSCalendar.current\n  let now = Date()\n  let compSet = Set(arrayLiteral:Calendar.Component.day,\n                    Calendar.Component.month,\n                    Calendar.Component.year)\n  var comp = cal.dateComponents(compSet as Set&lt;Calendar.Component&gt;, from: now)\n  comp.timeZone = TimeZone.current\n  comp.day = comp.day! + 1\n  return cal.date(from: comp)!\n}\n\n\n",
+      "snippet"  : "func getTomorrowDate() -&gt; Date { let cal = NSCalendar.current let now = Date() let compSet = Set(arrayLiteral:Calendar.Component.day, Calendar.Component.month, Calendar.Component.year) var..."
+    } ,
+  
+    {
+      "title"    : "Setting up .bash_profile for Git Terminal Mac OSX",
+      "category" : "",
+      "tags"     : "bash, profile, git, mac, osx",
+      "url"      : "http://localhost:4000/2017/10/19/Setting-up-bash-profile-for-git/",
+      "date"     : "October 19, 2017",
+      "content"  : "Step 1. Download\n\nDownload following files.\n\n\n  git-completion\n  git-prompt\n\n\nStep 2. Move\n\nMove this files under your user’s root directory.\n\nIn my case it is /Users/sagar\n\nStep 3. Edit your .bash_profile\n\nThis file is usually located under user’s root directory. In my case it is /Users/sagar.\nOpen .bash_profile with editor of your preference. I prefer vi editor. \nInsert following lines.\n\n# Enable tab completion\nsource ~/git-completion.bash\n\n# colors!\ngreen=\"\\[\\033[0;32m\\]\"\nblue=\"\\[\\033[0;34m\\]\"\npurple=\"\\[\\033[0;35m\\]\"\nreset=\"\\[\\033[0m\\]\"\n\n# Change command prompt\nsource ~/git-prompt.sh\nexport GIT_PS1_SHOWDIRTYSTATE=1\n# '\\u' adds the name of the current user to the prompt\n# '\\$(__git_ps1)' adds git-related stuff\n# '\\W' adds the name of the current directory\nexport PS1=\"$purple\\u$green\\$(__git_ps1)$blue \\W $ $reset\"\n\n\n",
+      "snippet"  : "Step 1. Download"
+    } ,
+  
+    {
+      "title"    : "Show Popover in iPhone or iPad without any third party library",
+      "category" : "",
+      "tags"     : "UIKit, Popover, iPad, iPhone",
+      "url"      : "http://localhost:4000/2017/03/15/Show-Popover-in-iPhone-iPad/",
+      "date"     : "March 15, 2017",
+      "content"  : "Show Popover in iPhone-iPad\n\nIn this post, I’ll explain how to show pop-over on iPhone/iPad without using any third party library.\n\nStep 1.\n\nOpen your project &amp; make sure you’ve one class from where you would like to show the pop-over and another class for the pop-over.\n\n\n\nStep 2.\n\nOpen Storyboard &amp; add a new view controller for pop-over &amp; resize as per your need. Make sure you also apply the class name to view-controller.\n\n\n\nStep 3.\n\nIn your view-controller, add bar-button from where you can drag &amp; drop segue to pop-over-controller.\n\nMake sure you give the name to the segue.\n\n\n\nStep 4.\n\nIn your view-controller, you make sure to extend UIPopoverPresentationControllerDelegate\n\nStep 5.\n\nPut following delegate method in your-view-controller.\n\nfunc adaptivePresentationStyle(for controller: UIPresentationController) \n    -&gt; UIModalPresentationStyle {\n    return UIModalPresentationStyle.none\n}\n\n\n\nStep 6.\n\nPut following method in your-view-controller &amp; identify segue.\n\noverride func prepare(for segue: UIStoryboardSegue, sender: Any?) {\n    if segue.identifier == \"from_home_to_popover\" {\n        if let vctr = segue.destination as? MyPopOverViewController {\n            vctr.modalPresentationStyle = .popover\n            vctr.popoverPresentationController?.delegate = self\n            vctr.popoverPresentationController?.sourceView = self.view\n            vctr.popoverPresentationController?.sourceRect = self.btn.frame\n        }\n    }\n}\n\n\n\nStep 7.\n\nPut following code in your pop-over-controller under viewDidLoad.\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n    self.preferredContentSize = CGSize(width: 300, height: 300)\n}\n\n\n\nStep 8.\n\nFrom some action, when you wish to dismiss pop-over, under your pop-over-controller put following code.\n\n@IBAction func btnDoneTapped(btn: UIButton) {\n    self.dismissViewControllerAnimated(true, completion: nil)\n}\n\n\n\nExample output is as follows.\n\n\n\nDownload Source code\n\nDownload\n",
+      "snippet"  : "Show Popover in iPhone-iPad"
+    } ,
+  
+    {
+      "title"    : "Starting Jekyll Server with Github Pages",
+      "category" : "",
+      "tags"     : "Jekyll, Server, Github, Pages",
+      "url"      : "http://localhost:4000/2017/02/24/Starting-Jekyll-Server/",
+      "date"     : "February 24, 2017",
+      "content"  : "Article to follow\n\nI followed article given below to setup &amp; start Jekyll server\n\nCreate Static Site using Jekyll and Github Pages\n\nAfter installing Jekyll\n\nAfter installing Jekyll &amp; Ruby, I make sure to run following command to ensure I’m using valid Ruby version.\n\nsource ~/.rvm/scripts/rvm\n\n\n\nStarting Jekyll Server\n\nRun following command to start Jekyll Server\n\nbundle exec jekyll serve\n\n\n",
+      "snippet"  : "Article to follow"
+    } ,
+  
+    {
+      "title"    : "Change UISearchBar Keyboard Appearance",
+      "category" : "",
+      "tags"     : "Code, ObjectiveC, UIKit, UISearchBar, UIKeyboardAppearance, Alert",
+      "url"      : "http://localhost:4000/2017/02/23/Change-UISearchBar-Appearance/",
+      "date"     : "February 23, 2017",
+      "content"  : "How to change UISearchBar Keyboard Appearance?\n\nJust paste following code snip &amp; call function\n\nSwift code\n\nextension ViewController: UISearchBarDelegate {\n\n    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {\n        ViewController.changeSearchBarKeyboardColor(searchBar)\n    }\n\n    public class func changeSearchBarKeyboardColor(_ searchBar: UISearchBar) {\n        for subview in searchBar.subviews {\n            for innerView in subview.subviews {\n                if let _ = innerView as? UITextInputTraits,\n                    let textField = innerView as? UITextField {\n                    textField.keyboardAppearance = .alert\n                }\n            }\n        }\n    }\n}\n\n\n\nObjective-C code\n\n+ (void)changeSearchBarColor:(UISearchBar *)searchBar {\n   for (UIView *subview in searchBar.subviews) {\n       for (UIView *subSubview in subview.subviews) {\n           if ([subSubview conformsToProtocol:@protocol(UITextInputTraits)]) {\n               UITextField *textField = (UITextField *)subSubview;\n               [textField setKeyboardAppearance: UIKeyboardAppearanceAlert];\n               break;\n           }\n       }\n   }\n}\n\n\n",
+      "snippet"  : "How to change UISearchBar Keyboard Appearance?"
+    } ,
+  
+    {
+      "title"    : "GitHooks with SwiftLint",
+      "category" : "",
+      "tags"     : "Code, Lint, Syntax, Correction, Valid, Language, Git, GitHooks, Hooks",
+      "url"      : "http://localhost:4000/2017/02/22/Githooks-with-SwiftLint/",
+      "date"     : "February 22, 2017",
+      "content"  : "Pre-commit script for iOS projects for automated code review\n\nStep 1. Navigate to project directory using terminal\n\nExample\n\ncd ~/myProjectsFolder/XYZProjectGitCheckout/\n\n\n\nStep 2. Further navigate to .git folders\n\nExample\n\ncd .git/\n\n\n\nYou must have .git folder inside your local check-out. If it’s not there, you must be at wrong place.\n\nStep 3. Check if hooks folder exists or not. If not create one and move inside that folder.\n\nmkdir .hooks # optional step\ncd .hooks\n\n\n\nStep 4. Make sure that you’re at valid directory.\n\npwd\n# output should be as follows\n# ~/myProjectsFolder/XYZProjectGitCheckout/.git/hooks\n\n\n\nStep 5. Create a file named pre-commit\n\n(Yes. Without any extension)\nand put following contents inside that file.\n\ncount=`swiftlint lint --enable-all-rules --quiet | wc -l | awk '{print $1}' | bc`\n\nif [ $count -gt 0 ]\nthen\n        echo \"Please correct swift-lint errors\"\n        echo \"\\n--------------------------------\\n\"\n        swiftlint lint --quiet\n        exit 1\nelse\n        echo \"Code quality check done.\"\n        echo \"\\nThank you for keeping the code clean.\"\n        echo \"\\nCommiting code\"\n        exit 0\nfi\n\n\n\nStep 6. Apply executable permissions.\n\nchmod 777 pre-commit\n\n# Example output\n# total 16\n# drwxr-xr-x   4 sagar  Other Users\t136 Apr  4 12:29 .\n# drwxr-xr-x  12 sagar  Other Users\t408 Apr  4 12:19 ..\n# -rwxr-xr-x   1 sagar  Other Users\t177 Apr  4 11:42 README.sample\n# -rwxrwxrwx   1 sagar  Other Users\t300 Apr  4 12:29 pre-commit\n\n\n\nStep 7. Try to commit the code. In my case it shows following errors because code in not well organized.\n\nsagar (master +) ADemoProject $ git commit -m \"Removing files a b c\"\n\nPlease correct swift-lint errors\n\n--------------------------------\n\n/Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:23: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)\n/Users/sagar/Desktop/ADemoProject/ADemoProject/ViewController.swift:25: warning: Trailing Newline Violation: Files should have a single trailing newline. (trailing_newline)\n\n\n\n",
+      "snippet"  : "Pre-commit script for iOS projects for automated code review"
+    } ,
+  
+    {
+      "title"    : "Swiftlint - Installation, Usage, Examples",
+      "category" : "",
+      "tags"     : "Code, Lint, Syntax, Correction, Valid, Language",
+      "url"      : "http://localhost:4000/2017/02/21/SwiftLint-CodeLint-Tool/",
+      "date"     : "February 21, 2017",
+      "content"  : "Installation\n\nUsing Homebrew\n\nbrew install swiftlint\n\n\n\nYou can also install SwiftLint by downloading SwiftLint.pkg from the latest “GitHub release and running it.\n\nhttps://github.com/realm/SwiftLint/releases/latest\n\n\n\nUsage\n\nXcode\n\n\n  Integrate SwiftLint into an Xcode scheme to get warnings and errors displayed in the IDE.\n  Just add a new “Run Script Phase” with:\n\n\nif which swiftlint &gt;/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n\n\nIgnore some rules\n\n\n  Navigate to your project directory in finder.\n  Create a file named .swiftlint.yml\n  Put contents as follows.\n\n\ndisabled_rules:\n  - line_length\nexcluded:\n  - Carthage\n  - Pods\n\n\n\nAuto-correct code / auto-format code\n\n\n  Open terminal\n  Navigate to your project directory in terminal.\n  Run following command\n\n\nswiftlint autocorrect\n\n\n\nMore info\n\n\n  Github\n\n\n\n",
+      "snippet"  : "Installation"
+    } ,
+  
+    {
+      "title"    : "Sample Fastlane File with crashlytics and slack integration",
+      "category" : "",
+      "tags"     : "Fabric, Crashlytics, Fastlane, Beta, Slack, CI, Continuous, Integration",
+      "url"      : "http://localhost:4000/2017/02/19/Sample-FastLane-Code/",
+      "date"     : "February 19, 2017",
+      "content"  : "fastlane_version \"1.106.2\"\n\ndefault_platform :ios\n\nplatform :ios do\n  lane :beta do |values|\n    ensure_git_status_clean\n    increment_build_number(xcodeproj: \"myApplication.xcodeproj\")\n    commit_version_bump(xcodeproj: \"myApplication.xcodeproj\")\n    gym(scheme: 'myApplication', export_method: 'ad-hoc')\n\n    emails = values[:test_email] ? values[:test_email] : ['sag333ar@gmail.com', 'sagar.digicorp@gmail.com'] # You can list more emails here\n    groups = values[:test_email] ? nil : nil # You can define groups on the web and reference them here\n\n    crashlytics(api_token: 'crashlytics_api_token',\n             build_secret: 'crashlytics_build_secret',\n                   emails: emails,\n                   groups: groups,\n                    notes: 'Distributed with fastlane', # Check out the changelog_from_git_commits action\n            notifications: true) # Should this distribution notify your testers via email?\n\n    # for all available options run `fastlane action crashlytics`\n\n    # You can notify your team in chat that a beta build has been uploaded\n\n    slack(\n      slack_url: \"https://hooks.slack.com/services/SOME/SLACK/HOOKID\",\n      message: \"Successfully uploaded a beta release For myApplication - see it at https://fabric.io/_/beta\",\n      channel: \"#my_slack_Channel\", \n      payload: {\n        \"Build Date\" =&gt; Time.new.to_s,\n        \"Built by\" =&gt; \"Fastlane, Fabric &amp; Crashlytics\",\n      },\n      default_payloads: [:git_branch, :git_author, :last_git_commit_message]\n    )    \n\n    push_to_git_remote\n  end\nend\n\n\n",
+      "snippet"  : "```rubyfastlane_version “1.106.2”"
+    } ,
+  
+    {
+      "title"    : "Tailor.sh installing and using",
+      "category" : "",
+      "tags"     : "Tailor, CodeLint, Syntax, Installation, Usage",
+      "url"      : "http://localhost:4000/2017/02/18/TailorSH-CodeLintTool/",
+      "date"     : "February 18, 2017",
+      "content"  : "Installation\n\nbrew install tailor\n\n\n\nor\n\ncurl -fsSL https://tailor.sh/install.sh | sh\n\n\n\nUsage Guide\n\nRun following command to integrate tailor\n\ntailor --xcode /path/to/demo.xcodeproj/\n\n\n\nFind more details\n\n\n  On github\n  Tailor.sh\n\n\n\n",
+      "snippet"  : "Installation"
+    } ,
+  
+    {
+      "title"    : "Reverse Geo-coding",
+      "category" : "",
+      "tags"     : "placemarks, CLGeocoder, reverse, geocoding",
+      "url"      : "http://localhost:4000/2017/02/17/ReverseGeoCode/",
+      "date"     : "February 17, 2017",
+      "content"  : "Reverse Geo-coding - Get address from latitude and longitude\n\nSource code to retrieve address from Latitude and Longitude\n\nfunc reverseGeocodeLocation(location: CLLocation) {\n    CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -&gt; Void in\n        if error != nil {\n            print(\"Reverse geocoder failed with error \\(error!.localizedDescription)\")\n        }\n        if (placemarks?.count)! &gt; 0 {\n            let pm = placemarks![0]\n            if let country = pm.country {\n                print(\"Country is \\(country)\")\n            }\n        } else {\n            print(\"Reverse geocoder failed\")\n        }\n    })\n}\n\n\n\nAddress components\n\nAbove code has country component, which you can replace with any of followings.\n\nName of location\n\nif let country = pm.name {\n    print(\"name is \\(name)\")\n}\n// eg. Apple Inc.\n\n\n\nName of Street name\n\nif let thoroughfare = pm.name {\n    print(\"thoroughfare is \\(thoroughfare)\")\n}\n// street name, eg. Infinite Loop\n\n\n\nNumber of Street\n\nif let subThoroughfare = pm.subThoroughfare {\n    print(\"subThoroughfare is \\(subThoroughfare)\")\n}\n// subThoroughfare, eg. 1\n\n\n\nCity\n\nif let locality = pm.locality {\n    print(\"locality is \\(locality)\")\n}\n// city, eg. Cupertino\n\n\n\nDistrict\n\nif let subLocality = pm.subLocality {\n    print(\"subLocality is \\(subLocality)\")\n}\n// neighborhood, common name, eg. Mission District\n\n\n\nState\n\nif let administrativeArea = pm.administrativeArea {\n    print(\"administrativeArea is \\(administrativeArea)\")\n}\n// state, eg. CA\n\n\n\nCounty\n\nif let subAdministrativeArea = pm.subAdministrativeArea {\n    print(\"subAdministrativeArea is \\(subAdministrativeArea)\")\n}\n// county, eg. Santa Clara\n\n\n\nZip Code\n\nif let postalCode = pm.postalCode {\n    print(\"postalCode is \\(postalCode)\")\n}\n// zip code, eg. 95014\n\n\n\nISO Country Code\n\nif let isoCountryCode = pm.isoCountryCode {\n    print(\"isoCountryCode is \\(isoCountryCode)\")\n}\n// eg. US\n\n\n\nFull Country name\n\nif let country = pm.country {\n    print(\"country is \\(country)\")\n}\n// eg. United States\n\n\n\nInland water\n\nif let inlandWater = pm.inlandWater {\n    print(\"inlandWater is \\(inlandWater)\")\n}\n// eg. Lake Tahoe\n\n\n\nOcen\n\nif let ocean = pm.ocean {\n    print(\"ocean is \\(ocean)\")\n}\n// eg. Pacific Ocean\n\n\n\nAreas of interest\n\nif let areasOfInterest = pm.areasOfInterest {\n    print(\"areasOfInterest is \\(areasOfInterest)\")\n}\n// eg. Golden Gate Park\n\n\n",
+      "snippet"  : "Reverse Geo-coding - Get address from latitude and longitude"
+    } ,
+  
+    {
+      "title"    : "Singleton for obtaining device location",
+      "category" : "",
+      "tags"     : "CoreLocation, LocationManager, CLLocation, CLLocationManager",
+      "url"      : "http://localhost:4000/2017/02/16/Swift-Device-Location/",
+      "date"     : "February 16, 2017",
+      "content"  : "Following is custom class for getting iOS Device Location.\n\nSource code of Singleton class for Location\n\nimport Foundation\nimport CoreLocation\n\npublic class LocationManager: NSObject {\n\n    internal let locMgr = CLLocationManager()\n    internal var handlerForLocation: ((CLLocation?) -&gt; Void)?\n\n    override init() {\n        super.init()\n        self.locMgr.delegate = self\n        self.locMgr.desiredAccuracy = kCLLocationAccuracyBest\n        self.locMgr.requestWhenInUseAuthorization()\n    }\n\n    public class var shared: LocationManager {\n        get {\n            struct Single {\n                static var shared = LocationManager()\n            }\n            return Single.shared\n        }\n    }\n\n}\n\nextension LocationManager: CLLocationManagerDelegate {\n\n    public func getLocation(_ handler: @escaping (_ location: CLLocation?) -&gt; Void) {\n        self.handlerForLocation = nil\n        self.handlerForLocation = handler\n        self.locMgr.requestLocation()\n    }\n\n    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {\n        if self.handlerForLocation != nil {\n            self.handlerForLocation?(locations[0])\n        }\n        self.locMgr.stopUpdatingLocation()\n    }\n\n    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {\n        if self.handlerForLocation != nil {\n            self.handlerForLocation?(nil)\n        }\n        self.locMgr.stopUpdatingLocation()\n    }\n\n}\n\n\n\nCode to use above class\n\nLocationManager.shared.getLocation { (location: CLLocation?) in\n    print(\"Location lat=\\(location?.coordinate.latitude) and lng=\\(location?.coordinate.longitude)\")\n}\n\n\n",
+      "snippet"  : "Following is custom class for getting iOS Device Location."
+    } ,
+  
+    {
+      "title"    : "Example of Lazy Computed Properties",
+      "category" : "",
+      "tags"     : "computed, lazy, properties",
+      "url"      : "http://localhost:4000/2017/02/15/Swift-Lazy-Computed-Properties/",
+      "date"     : "February 15, 2017",
+      "content"  : "Example of Lazy properties with tuples\n\nIn this wiki-page, I have illustrated Lazy property, tuples and computed properties.\n\nLazy Property\n\nclass MyViewController: UIViewController {\n\n\tlazy var arrayOfData: [(name String, fullName: String)] = {\n\t\treturn self.names\n\t}()\n}\n\n\nComputed property returning array of tuples\n\nextension MyViewController {\n\tvar names: [(name: String, fullName: String)] {\n\t\treturn [\n\t\t\t(\"Sagar\", \"Sagar Rajesh Kothari\"),\n\t\t\t(\"Amit\", \"Amit Rajesh Kothari\"),\n\t\t\t(\"Vishal\", \"Vishal Rajesh Kothari\")\n\t\t]\n\t}\n\n\n",
+      "snippet"  : "Example of Lazy properties with tuples"
+    } ,
+  
+    {
+      "title"    : "Implementing Reachability with Singleton",
+      "category" : "",
+      "tags"     : "Reachability, WiFi",
+      "url"      : "http://localhost:4000/2017/02/14/Implementing-Reachability/",
+      "date"     : "February 14, 2017",
+      "content"  : "Download Reachability class\n\nClick to download\n\nRechability Checker\n\nimport Foundation\n\npublic class ReachabilityChkr: NSObject {\n    \n    let reachability = Reachability()!\n    \n    override init() {\n        super.init()\n        reachability.whenReachable = { reachability in\n            performUIUpdatesOnMain({\n                if reachability.isReachableViaWiFi {\n                    print(\"Reachable via WiFi\")\n                } else {\n                    print(\"Reachable via Cellular\")\n                }\n            })\n        }\n\n        reachability.whenUnreachable = { reachability in\n            performUIUpdatesOnMain({\n                print(\"Not reachable\")\n            })\n        }\n\n        do {\n            try reachability.startNotifier()\n        } catch {\n            print(\"Unable to start notifier\")\n        }\n    }\n\n    public class var shared: Reachability {\n        get {\n            struct Single {\n                static var shared = ReachabilityChkr()\n            }\n            return Single.shared.reachability\n        }\n    }\n\n}\n\n\n\nUse above class\n\nif ReachabilityChkr.shared.isReachableViaWiFi == true || ReachabilityChkr.shared.isReachableViaWWAN == true {\n    print(\"Connected to Internet\")    \n} else {\n    print(\"=== NOT Connected to Internet ===\")\n}\n\n\n\n",
+      "snippet"  : "Download Reachability class"
+    } ,
+  
+    {
+      "title"    : "Generate with URL Components like host, path, params",
+      "category" : "",
+      "tags"     : "URL, Components, Generator",
+      "url"      : "http://localhost:4000/2017/02/13/Generate-URL/",
+      "date"     : "February 13, 2017",
+      "content"  : "Code snippet for generating URL using scheme, host, path, parameters and path extension\n\nfunc formURL(scheme: String, \n               host: String,\n               path: String,\n             params: [String:String]?, \n      pathExtension: String? = nil) -&gt; URL {\n\n        let components = NSURLComponents()\n\n        // 1. http or https\n        components.scheme = scheme \n\n        // 2. host (eg. api.google.com)\n        components.host = host\n\n        // 3. path (eg. /index)\n        // and 4. path extension (eg. php)\n        components.path = path + (pathExtension ?? \"\")\n\n        // 5. query parameters\n        components.queryItems = [NSURLQueryItem]() as [URLQueryItem]?\n\n        // for-loop to set \n        if  params != nil {\n            for (key, value) in (params)! {\n                let queryItem = NSURLQueryItem(name: key, value: \"\\(value)\")\n                components.queryItems!.append(queryItem as URLQueryItem)\n            }\n        }\n        print(\"Generated URL is \\(components.url!)\")\n        return components.url!\n}\n\n\n\n",
+      "snippet"  : "Code snippet for generating URL using scheme, host, path, parameters and path extension"
+    } ,
+  
+    {
+      "title"    : "Convert UnixTimeStamp Date",
+      "category" : "",
+      "tags"     : "Date, Format, UnixTimeStamp",
+      "url"      : "http://localhost:4000/2017/02/12/Convert-Unix-TimeStamp/",
+      "date"     : "February 12, 2017",
+      "content"  : "Put following code snippet to convert UnixTimeStamp Date with Specified Timezone.\n\nExample Date\n\n/Date(1395486890000+0530)/\n\n\n\n// Convert UnixTimeStamp Date with specified Timezone. Example \"/Date(1395486890000+0530)/\" as a sample value.\n+ (NSDate *)DateFromJSONString:(NSString *)string {\n    static NSRegularExpression *dateRegEx = nil;\n    static dispatch_once_t onceToken;\n    dispatch_once(&amp;onceToken, ^{\n        dateRegEx = [[NSRegularExpression alloc] initWithPattern:@\"^\\\\/date\\\\((-?\\\\d++)(?:([+-])(\\\\d{2})(\\\\d{2}))?\\\\)\\\\/$\" options:NSRegularExpressionCaseInsensitive error:nil];\n    });\n    NSTextCheckingResult *regexResult = [dateRegEx firstMatchInString:string options:0 range:NSMakeRange(0, [string length])];\n\n    if (regexResult) {\n        // milliseconds\n        NSTimeInterval seconds = [[string substringWithRange:[regexResult rangeAtIndex:1]] doubleValue] / 1000.0;\n        // timezone offset\n        if ([regexResult rangeAtIndex:2].location != NSNotFound) {\n            NSString *sign = [string substringWithRange:[regexResult rangeAtIndex:2]];\n            // hours\n            seconds += [[NSString stringWithFormat:@\"%@%@\", sign, [string substringWithRange:[regexResult rangeAtIndex:3]]] doubleValue] * 60.0 * 60.0;\n            // minutes\n            seconds += [[NSString stringWithFormat:@\"%@%@\", sign, [string substringWithRange:[regexResult rangeAtIndex:4]]] doubleValue] * 60.0;\n        }\n\n        return [NSDate dateWithTimeIntervalSince1970:seconds];\n    }\n    return nil;\n}\n\n\n\n",
+      "snippet"  : "Put following code snippet to convert UnixTimeStamp Date with Specified Timezone."
+    } ,
+  
+    {
+      "title"    : "Format JSON Pretty Print",
+      "category" : "",
+      "tags"     : "String, JSON, Format",
+      "url"      : "http://localhost:4000/2017/02/11/Format-JSON-Pretty-Print/",
+      "date"     : "February 11, 2017",
+      "content"  : "Put following code-snippet for formatting a JSON string to pretty print JSON.\n\n+ (NSString*) formatJSONPretty:(NSData *)data {\n    id obj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];\n    if (obj) {\n        NSData* d = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:nil];\n        return [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];\n    } else {\n        return nil;\n    }\n}\n\n\n\n",
+      "snippet"  : "Put following code-snippet for formatting a JSON string to pretty print JSON."
+    } ,
+  
+    {
+      "title"    : "Format XML Pretty Print",
+      "category" : "",
+      "tags"     : "XML, Format, String",
+      "url"      : "http://localhost:4000/2017/02/10/FormatXML-Pretty-Print/",
+      "date"     : "February 10, 2017",
+      "content"  : "Put following code snippet for XML Pretty Print\n\n#import &lt;libxml/tree.h&gt;\n\n+ (NSString *)prettyPrintXML:(NSString *)rawXML {\n    const char *utf8Str = [rawXML UTF8String];\n    xmlDocPtr doc = xmlReadMemory(utf8Str, (int)strlen(utf8Str), NULL, NULL, XML_PARSE_NOCDATA | XML_PARSE_NOBLANKS);\n    xmlNodePtr root = xmlDocGetRootElement(doc);\n    xmlNodePtr xmlNode = xmlCopyNode(root, 1);\n    xmlFreeDoc(doc);\n\n    NSString *str = nil;\n\n    xmlBufferPtr buff = xmlBufferCreate();\n    doc = NULL;\n    int level = 0;\n    int format = 1;\n\n    int result = xmlNodeDump(buff, doc, xmlNode, level, format);\n\n    if (result &gt; -1) {\n        str = [[NSString alloc] initWithBytes:(xmlBufferContent(buff))\n                                       length:(NSUInteger)(xmlBufferLength(buff))\n                                     encoding:NSUTF8StringEncoding];\n    }\n    xmlBufferFree(buff);\n\n    NSCharacterSet *ws = [NSCharacterSet whitespaceAndNewlineCharacterSet];\n    NSString *trimmed = [str stringByTrimmingCharactersInSet:ws];\n    return trimmed;\n}\n\n\n",
+      "snippet"  : "Put following code snippet for XML Pretty Print"
+    } ,
+  
+    {
+      "title"    : "Validate Email",
+      "category" : "",
+      "tags"     : "Email, Validation, String, Regex, Predicate",
+      "url"      : "http://localhost:4000/2017/02/09/Validate-Email/",
+      "date"     : "February 09, 2017",
+      "content"  : "Code snippet to validate an email\n\n- (BOOL) validateEmail: (NSString *) candidate {\n  NSString *emailRegex = @\"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,4}\";\n  NSPredicate *emailTest = [NSPredicate predicateWithFormat:@\"SELF MATCHES %@\", emailRegex];\n  return [emailTest evaluateWithObject:candidate];\n}\n\n\n\n",
+      "snippet"  : "Code snippet to validate an email"
+    } ,
+  
+    {
+      "title"    : "Convert Date To 2DaysAgo",
+      "category" : "",
+      "tags"     : "extension, Date, String, Format",
+      "url"      : "http://localhost:4000/2017/02/08/Convert-Date-To-2DaysAgo/",
+      "date"     : "February 08, 2017",
+      "content"  : "Insert following date extension to your project.\n\nextension Date {\n  func years(from date: Date) -&gt; Int {\n    return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0\n  }\n  func months(from date: Date) -&gt; Int {\n    return Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0\n  }\n  func weeks(from date: Date) -&gt; Int {\n    return Calendar.current.dateComponents([.weekOfYear], from: date, to: self).weekOfYear ?? 0\n  }\n  func days(from date: Date) -&gt; Int {\n    return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0\n  }\n  func hours(from date: Date) -&gt; Int {\n    return Calendar.current.dateComponents([.hour], from: date, to: self).hour ?? 0\n  }\n  func minutes(from date: Date) -&gt; Int {\n    return Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0\n  }\n  func seconds(from date: Date) -&gt; Int {\n    return Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0\n  }\n  var relativeTime: String {\n    let now = Date()\n    if now.years(from: self)   &gt; 0 {\n      return now.years(from: self).description  + \" year\"  + { return now.years(from: self)   &gt; 1 ? \"s\" : \"\" }() + \" ago\"\n    }\n    if now.months(from: self)  &gt; 0 {\n      return now.months(from: self).description + \" month\" + { return now.months(from: self)  &gt; 1 ? \"s\" : \"\" }() + \" ago\"\n    }\n    if now.weeks(from:self)   &gt; 0 {\n      return now.weeks(from: self).description  + \" week\"  + { return now.weeks(from: self)   &gt; 1 ? \"s\" : \"\" }() + \" ago\"\n    }\n    if now.days(from: self)  &gt; 0 {\n      if now.days(from:self) == 1 { return \"Yesterday\" }\n      return now.days(from: self).description + \" days ago\"\n    }\n    if now.hours(from: self)   &gt; 0 {\n      return \"\\(now.hours(from: self)) hour\"   + { return now.hours(from: self)   &gt; 1 ? \"s\" : \"\" }() + \" ago\"\n    }\n    if now.minutes(from: self) &gt; 0 {\n      return \"\\(now.minutes(from: self)) minute\" + { return now.minutes(from: self) &gt; 1 ? \"s\" : \"\" }() + \" ago\"\n    }\n    if now.seconds(from: self) &gt; 0 {\n      if now.seconds(from: self) &lt; 15 { return \"Just now\"  }\n      return \"\\(now.seconds(from: self)) second\" + { return now.seconds(from: self) &gt; 1 ? \"s\" : \"\" }() + \" ago\"\n    }\n    return \"\"\n  }\n}\n\n\n\n",
+      "snippet"  : "Insert following date extension to your project."
+    } ,
+  
+    {
+      "title"    : "Swift dial phone number",
+      "category" : "",
+      "tags"     : "IBAction, dial, phone, canOpenURL, openURL",
+      "url"      : "http://localhost:4000/2017/02/07/Swift-dial-phone-number/",
+      "date"     : "February 07, 2017",
+      "content"  : "Following is a code snippet for dialing phone number through code in iOS Swift\n\n@IBAction func btnDialPhone(_ sender: AnyObject) {\n  if let url = URL(string: \"tel://123456789\"), UIApplication.shared.canOpenURL(url) {\n      UIApplication.shared.openURL(url)\n  }\n}\n\n\n",
+      "snippet"  : "Following is a code snippet for dialing phone number through code in iOS Swift"
+    } ,
+  
+    {
+      "title"    : "Swift open email composer",
+      "category" : "",
+      "tags"     : "IBAction, email, MessageUI, MFMailComposeViewController, canSendMail",
+      "url"      : "http://localhost:4000/2017/02/06/Swift-open-email-composer/",
+      "date"     : "February 06, 2017",
+      "content"  : "Following is code snippet for opening email composer.\n\nimport MessageUI\n\n@IBAction func btnOpenEmail(_ sender: AnyObject) {\n  self.sendEmail()\n}\n\nfunc sendEmail() {\n  if MFMailComposeViewController.canSendMail() {\n    let mail = MFMailComposeViewController()\n    mail.mailComposeDelegate = self\n    mail.setToRecipients([self.lblEmail.text!.trimmingCharacters(in: CharacterSet.whitespaces)])\n    present(mail, animated: true)\n  } else {\n    // show failure alert\n  }\n}\n\nfunc mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {\n  controller.dismiss(animated: true)\n}\n\n\n",
+      "snippet"  : "Following is code snippet for opening email composer."
+    } 
+  
+  ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+        "title"    : "Archive",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "http://localhost:4000/Archive/",
+        "date"     : " ",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Categories",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "http://localhost:4000/Categories/",
+        "date"     : " ",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Tags",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "http://localhost:4000/Tags/",
+        "date"     : " ",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "About",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "http://localhost:4000/about/",
+        "date"     : "October 13, 2017",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+        "title"    : "Say Hello",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "http://localhost:4000/contact/",
+        "date"     : " ",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+        "title"    : "Search",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "http://localhost:4000/search/",
+        "date"     : " ",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+        "title"    : "Thanks For Your Message",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "http://localhost:4000/thanks.html",
+        "date"     : " ",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } 
+  
+]

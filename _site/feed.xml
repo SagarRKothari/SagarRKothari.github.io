@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-10T15:44:10+05:30</updated><id>http://localhost:4000/</id><title type="html">Sagar R Kothari</title><subtitle>Passionate and enthusiastic iOS application developer having 8 years of experience.</subtitle><entry><title type="html">Using Radio buttons in iOS application Swift - SKRadioButton</title><link href="http://localhost:4000/illustration/2017/11/10/Using-Radio-Buttons-iOS-Swift.html" rel="alternate" type="text/html" title="Using Radio buttons in iOS application Swift - SKRadioButton" /><published>2017-11-10T15:30:00+05:30</published><updated>2017-11-10T15:30:00+05:30</updated><id>http://localhost:4000/illustration/2017/11/10/Using-Radio-Buttons-iOS-Swift</id><content type="html" xml:base="http://localhost:4000/illustration/2017/11/10/Using-Radio-Buttons-iOS-Swift.html">&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sagar R Kothari</title>
+    <description>Passionate and enthusiastic iOS application developer having 8 years of experience.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Using Radio buttons in iOS application Swift - SKRadioButton</title>
+        <description>&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;h4 id=&quot;cocoapods&quot;&gt;CocoaPods&lt;/h4&gt;
 &lt;p&gt;You can use &lt;a href=&quot;http://cocoapods.org/&quot;&gt;CocoaPods&lt;/a&gt; to install &lt;a href=&quot;https://github.com/sag333ar/SKRadioButton&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SKRadioButton&lt;/code&gt;&lt;/a&gt; by adding it to your &lt;code class=&quot;highlighter-rouge&quot;&gt;Podfile&lt;/code&gt;:&lt;/p&gt;
@@ -77,7 +87,16 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Cheers.&lt;/p&gt;</content><author><name></name></author><category term="Radio" /><category term="Button" /><summary type="html">Installation</summary></entry><entry><title type="html">Generating Table of Contents for Markdown</title><link href="http://localhost:4000/scripts/2017/11/09/Generating-Table-of-Contents-for-Markdown.html" rel="alternate" type="text/html" title="Generating Table of Contents for Markdown" /><published>2017-11-09T15:30:00+05:30</published><updated>2017-11-09T15:30:00+05:30</updated><id>http://localhost:4000/scripts/2017/11/09/Generating-Table-of-Contents-for-Markdown</id><content type="html" xml:base="http://localhost:4000/scripts/2017/11/09/Generating-Table-of-Contents-for-Markdown.html">&lt;h3 id=&quot;installing-utility-which-generates-markdown&quot;&gt;Installing Utility which generates markdown&lt;/h3&gt;
+&lt;p&gt;Cheers.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/10/Using-Radio-Buttons-iOS-Swift/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/10/Using-Radio-Buttons-iOS-Swift/</guid>
+      </item>
+    
+      <item>
+        <title>Generating Table of Contents for Markdown</title>
+        <description>&lt;h3 id=&quot;installing-utility-which-generates-markdown&quot;&gt;Installing Utility which generates markdown&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g doctoc
 &lt;/code&gt;&lt;/pre&gt;
@@ -106,7 +125,16 @@
 
 &amp;lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Script" /><category term="NPM" /><category term="TOC" /><category term="TableOfContents" /><category term="Markdown" /><category term="doctoc" /><summary type="html">Installing Utility which generates markdown</summary></entry><entry><title type="html">Animate view on updating constraint values</title><link href="http://localhost:4000/codesnippet/2017/11/08/Animate-on-update-constraints.html" rel="alternate" type="text/html" title="Animate view on updating constraint values" /><published>2017-11-08T17:30:00+05:30</published><updated>2017-11-08T17:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/11/08/Animate-on-update-constraints</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/11/08/Animate-on-update-constraints.html">&lt;p&gt;Add following method inside your &lt;code class=&quot;highlighter-rouge&quot;&gt;view controller&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 09 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/09/Generating-Table-of-Contents-for-Markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/09/Generating-Table-of-Contents-for-Markdown/</guid>
+      </item>
+    
+      <item>
+        <title>Animate view on updating constraint values</title>
+        <description>&lt;p&gt;Add following method inside your &lt;code class=&quot;highlighter-rouge&quot;&gt;view controller&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animateListView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setNeedsUpdateConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -117,7 +145,16 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;After updating constraint value, invoke above method.&lt;/p&gt;</content><author><name></name></author><category term="UIView" /><category term="Animation" /><category term="Animate" /><category term="Constraint" /><summary type="html">Add following method inside your view controller.</summary></entry><entry><title type="html">Writing Test case for UIAlertController</title><link href="http://localhost:4000/codesnippet/2017/11/08/Writing-test-case-for-UIAlertController.html" rel="alternate" type="text/html" title="Writing Test case for UIAlertController" /><published>2017-11-08T15:30:00+05:30</published><updated>2017-11-08T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/11/08/Writing-test-case-for-UIAlertController</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/11/08/Writing-test-case-for-UIAlertController.html">&lt;h3 id=&quot;code-snippet-to-show-view-controller&quot;&gt;Code Snippet to show view controller&lt;/h3&gt;
+&lt;p&gt;After updating constraint value, invoke above method.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Nov 2017 12:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/08/Animate-on-update-constraints/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/08/Animate-on-update-constraints/</guid>
+      </item>
+    
+      <item>
+        <title>Writing Test case for UIAlertController</title>
+        <description>&lt;h3 id=&quot;code-snippet-to-show-view-controller&quot;&gt;Code Snippet to show view controller&lt;/h3&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyCustomViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showAlertView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -176,7 +213,16 @@
   &lt;span class=&quot;nf&quot;&gt;waitForExpectations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="UIAlertView" /><category term="UIAlertController" /><category term="Test" /><category term="Testing" /><category term="XCTest" /><category term="TestCase" /><summary type="html">Code Snippet to show view controller</summary></entry><entry><title type="html">Shellscript to generate AppIcons from 1024x1024.png Image</title><link href="http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024.html" rel="alternate" type="text/html" title="Shellscript to generate AppIcons from 1024x1024.png Image" /><published>2017-11-07T17:30:00+05:30</published><updated>2017-11-07T17:30:00+05:30</updated><id>http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024</id><content type="html" xml:base="http://localhost:4000/scripts/2017/11/07/Generate-AppIcons-From-1024.html">&lt;h2 id=&quot;download-shellscript&quot;&gt;Download Shellscript&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 08 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/08/Writing-test-case-for-UIAlertController/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/08/Writing-test-case-for-UIAlertController/</guid>
+      </item>
+    
+      <item>
+        <title>Shellscript to generate AppIcons from 1024x1024.png Image</title>
+        <description>&lt;h2 id=&quot;download-shellscript&quot;&gt;Download Shellscript&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/2017-11-08/GenerateAppIcons.sh&quot;&gt;Click here to download&lt;/a&gt;&lt;/p&gt;
 
@@ -361,7 +407,16 @@ mv AppIcon-512@2x.png AppIcon.appiconset/AppIcon-512@2x.png
 
 mv Contents.json AppIcon.appiconset/Contents.json
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Xcode" /><category term="ShellScript" /><category term="Automated" /><category term="generate" /><category term="AppIcon" /><category term="Icons" /><summary type="html">Download Shellscript</summary></entry><entry><title type="html">UIImage Rotate Flip - code snippet</title><link href="http://localhost:4000/codesnippet/2017/11/06/UIImage-Flip-rotate.html" rel="alternate" type="text/html" title="UIImage Rotate Flip - code snippet" /><published>2017-11-06T15:30:00+05:30</published><updated>2017-11-06T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/11/06/UIImage-Flip-rotate</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/11/06/UIImage-Flip-rotate.html">&lt;h3 id=&quot;put-following-swift-extension-of-uiimage-class-in-project&quot;&gt;Put following swift extension of &lt;code class=&quot;highlighter-rouge&quot;&gt;UIImage&lt;/code&gt; class in project&lt;/h3&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 07 Nov 2017 12:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/07/Generate-AppIcons-From-1024/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/07/Generate-AppIcons-From-1024/</guid>
+      </item>
+    
+      <item>
+        <title>UIImage Rotate Flip - code snippet</title>
+        <description>&lt;h3 id=&quot;put-following-swift-extension-of-uiimage-class-in-project&quot;&gt;Put following swift extension of &lt;code class=&quot;highlighter-rouge&quot;&gt;UIImage&lt;/code&gt; class in project&lt;/h3&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   
@@ -409,7 +464,17 @@ mv Contents.json AppIcon.appiconset/Contents.json
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Swift" /><summary type="html">Put following swift extension of UIImage class in project</summary></entry><entry><title type="html">Taking Screenshot programmatically</title><link href="http://localhost:4000/codesnippet/2017/11/05/Taking-Screen-shot.html" rel="alternate" type="text/html" title="Taking Screenshot programmatically" /><published>2017-11-05T15:30:00+05:30</published><updated>2017-11-05T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/11/05/Taking-Screen-shot</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/11/05/Taking-Screen-shot.html">&lt;p&gt;Please find the code snippet as follows for taking screenshot programmatically.&lt;/p&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 06 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/06/UIImage-Flip-rotate/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/06/UIImage-Flip-rotate/</guid>
+      </item>
+    
+      <item>
+        <title>Taking Screenshot programmatically</title>
+        <description>&lt;p&gt;Please find the code snippet as follows for taking screenshot programmatically.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;screenShotMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//Create the UIImage&lt;/span&gt;
@@ -421,7 +486,16 @@ mv Contents.json AppIcon.appiconset/Contents.json
     &lt;span class=&quot;kt&quot;&gt;UIImageWriteToSavedPhotosAlbum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Swift" /><category term="UIScreen" /><category term="ScreenShot" /><summary type="html">Please find the code snippet as follows for taking screenshot programmatically.</summary></entry><entry><title type="html">Step by Step Core Data Implementation for iOS 10 and above</title><link href="http://localhost:4000/illustration/2017/11/04/CoreData-For-iOS10-And-Above.html" rel="alternate" type="text/html" title="Step by Step Core Data Implementation for iOS 10 and above" /><published>2017-11-04T15:30:00+05:30</published><updated>2017-11-04T15:30:00+05:30</updated><id>http://localhost:4000/illustration/2017/11/04/CoreData-For-iOS10-And-Above</id><content type="html" xml:base="http://localhost:4000/illustration/2017/11/04/CoreData-For-iOS10-And-Above.html">&lt;p&gt;Please find steps for core Data implementation as follows.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 05 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/05/Taking-Screen-shot/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/05/Taking-Screen-shot/</guid>
+      </item>
+    
+      <item>
+        <title>Step by Step Core Data Implementation for iOS 10 and above</title>
+        <description>&lt;p&gt;Please find steps for core Data implementation as follows.&lt;/p&gt;
 
 &lt;h4 id=&quot;step-1-create-data-model&quot;&gt;Step 1: Create Data model&lt;/h4&gt;
 
@@ -575,7 +649,16 @@ Office name is Mumbai
 
 &lt;h1 id=&quot;download-source-code&quot;&gt;Download Source code&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/2017-11-04/CoreDataDemo.zip&quot;&gt;Download Source Code&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="CoreData" /><category term="Data" /><category term="Storage" /><category term="iOS" /><category term="SQLite" /><summary type="html">Please find steps for core Data implementation as follows.</summary></entry><entry><title type="html">Code Snippet for Local Authentication</title><link href="http://localhost:4000/codesnippet/2017/11/03/Local-Authentication.html" rel="alternate" type="text/html" title="Code Snippet for Local Authentication" /><published>2017-11-03T15:30:00+05:30</published><updated>2017-11-03T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/11/03/Local-Authentication</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/11/03/Local-Authentication.html">&lt;p&gt;Insert following code snippet for local authentication.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/2017-11-04/CoreDataDemo.zip&quot;&gt;Download Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 04 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/04/CoreData-For-iOS10-And-Above/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/04/CoreData-For-iOS10-And-Above/</guid>
+      </item>
+    
+      <item>
+        <title>Code Snippet for Local Authentication</title>
+        <description>&lt;p&gt;Insert following code snippet for local authentication.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buttonTapped&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
  &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;userAuthenticationRequired&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -613,10 +696,27 @@ Office name is Mumbai
  
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="LAContext" /><category term="Authentication" /><category term="Auth" /><category term="Device" /><category term="FingerPrint" /><summary type="html">Insert following code snippet for local authentication.</summary></entry><entry><title type="html">UIView Flip Animation Code</title><link href="http://localhost:4000/codesnippet/2017/11/02/UIView-Flip-Animation-Code.html" rel="alternate" type="text/html" title="UIView Flip Animation Code" /><published>2017-11-02T15:30:00+05:30</published><updated>2017-11-02T15:30:00+05:30</updated><id>http://localhost:4000/codesnippet/2017/11/02/UIView-Flip-Animation-Code</id><content type="html" xml:base="http://localhost:4000/codesnippet/2017/11/02/UIView-Flip-Animation-Code.html">&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 03 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/03/Local-Authentication/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/03/Local-Authentication/</guid>
+      </item>
+    
+      <item>
+        <title>UIView Flip Animation Code</title>
+        <description>&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UIView.transition(with: view, duration: 0.5, options: .transitionFlipFromRight, animations: {
   self.flipSideView.isHidden = !self.flipSideView.isHidden
 }, completion: nil)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="UIView" /><category term="Flip" /><category term="Animation" /><category term="Code" /><summary type="html">Swift Code Snippet</summary></entry></feed>
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 02 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/02/UIView-Flip-Animation-Code/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/02/UIView-Flip-Animation-Code/</guid>
+      </item>
+    
+  </channel>
+</rss>

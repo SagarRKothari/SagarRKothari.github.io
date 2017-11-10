@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Header: begin -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        
+            Integrating Charts in iOS Application &#8211;
+        
+        Sagar R Kothari
+    </title>
+
+    <!-- Meta information for search engines -->
+    <meta name="author" content="">
+    <meta name="description" content="Passionate and enthusiastic iOS application developer having 8 years of experience.">
+    
+        <meta name="keywords" content="Illustration">
+    
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:creator" content="@sag333ar" />
+    
+    <meta name="twitter:title" content="Integrating Charts in iOS Application" />
+    <meta name="twitter:description" content="Step 1.
+
+" />
+    <meta name="twitter:url" content="http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Integrating Charts in iOS Application" />
+    <meta property="og:description" content="Step 1.
+
+" />
+    <meta property="og:url" content="http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/" />
+    <meta property="og:site_name" content="Sagar R Kothari">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://localhost:4000/css/trio.css">
+
+    <!-- Social buttons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Set the canonical URL for search engines -->
+    <link rel="canonical" href="http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Sagar R Kothari" href="http://localhost:4000/feed.xml" />
+
+    <!-- Icons -->
+    <!-- The ?v=8jjamLzmpR simply forces the browser to reload the favicon. Remove after a long time. -->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/apple-touch-icon-57x57.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/apple-touch-icon-60x60.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/apple-touch-icon-72x72.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/apple-touch-icon-76x76.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/apple-touch-icon-114x114.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/apple-touch-icon-120x120.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/apple-touch-icon-144x144.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/apple-touch-icon-152x152.png?v=8jjamLzmpR">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/apple-touch-icon-180x180.png?v=8jjamLzmpR">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-32x32.png?v=8jjamLzmpR" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-194x194.png?v=8jjamLzmpR" sizes="194x194">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-96x96.png?v=8jjamLzmpR" sizes="96x96">
+    <link rel="icon" type="image/png" href="http://localhost:4000/android-chrome-192x192.png?v=8jjamLzmpR" sizes="192x192">
+    <link rel="icon" type="image/png" href="http://localhost:4000/favicon-16x16.png?v=8jjamLzmpR" sizes="16x16">
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=8jjamLzmpR">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="http://localhost:4000/mstile-144x144.png?v=8jjamLzmpR">
+</head>
+<!-- Header: end -->
+
+<body>
+<div class="wrapper-for-content-outside-of-footer">
+    <div class="site-title">
+        <a href="http://localhost:4000">Sagar R Kothari</a>
+    </div>
+    <div class = "container">
+        <br/>
+
+<div class="post-title">
+    <div class="logo">
+        
+            <i class="fa fa-question-circle fa-fw"></i>
+        
+    </div>
+    <div class="title">
+        <h2>Integrating Charts in iOS Application</h2>
+        
+        <span>
+            <time datetime="2017-10-27T15:30:00+05:30">
+                October 27, 2017
+                
+                    &middot;
+                    <a href="http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/index.html#disqus_thread" data-disqus-identifier="/2017/10/27/Integrate-charts-in-iOS-App/"></a>
+                    
+                
+            </time>
+        </span>
+        
+    </div>
+</div>
+
+<div>
+    <br/>
+</div>
+
+<h3 id="step-1">Step 1.</h3>
+
+<p>Open your project’s Podfile and add following line.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pod 'Charts'
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="step-2">Step 2.</h3>
+
+<p>Open terminal and jump to your project directory.
+Run following command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pod install
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="step-3">Step 3.</h3>
+
+<p>Open your <code class="highlighter-rouge">viewController.swift</code> and make sure you import chart library.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Charts</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="step-4">Step 4.</h3>
+
+<ul>
+  <li>Open your storyboard file</li>
+  <li>Drag-drop an object of <code class="highlighter-rouge">UIView</code>.</li>
+  <li>Select it</li>
+  <li>Go to <code class="highlighter-rouge">Identity Inspector</code></li>
+  <li>Change class to your chart you want.</li>
+</ul>
+
+<p>In this article, I’ll show using <code class="highlighter-rouge">BarChartView</code>.</p>
+
+<hr />
+
+<h3 id="step-5">Step 5.</h3>
+
+<p>Set up chart on <code class="highlighter-rouge">viewDidLoad</code>.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">Charts</span>
+
+<span class="kd">class</span> <span class="kt">MyViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+  <span class="c1">// MARK:- IBOutlets</span>
+  <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">barChartView</span><span class="p">:</span> <span class="kt">BarChartView</span><span class="o">!</span>
+
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="n">barChartView</span><span class="o">.</span><span class="n">noDataText</span> <span class="o">=</span> <span class="s">"You need to provide data for the chart."</span>
+    <span class="n">barChartView</span><span class="o">.</span><span class="n">xAxis</span><span class="o">.</span><span class="n">labelPosition</span> <span class="o">=</span> <span class="o">.</span><span class="n">bottom</span> <span class="c1">// position of xAxis labels</span>
+    <span class="n">barChartView</span><span class="o">.</span><span class="n">chartDescription</span><span class="p">?</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Provide chart description here."</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="step-6">Step 6.</h3>
+
+<p>Make sure you have valid data array.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// Labels</span>
+<span class="k">var</span> <span class="nv">months</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Jan"</span><span class="p">,</span> <span class="s">"Feb"</span><span class="p">,</span> <span class="s">"Mar"</span><span class="p">,</span> <span class="s">"Apr"</span><span class="p">,</span> <span class="s">"May"</span><span class="p">,</span> <span class="s">"Jun"</span><span class="p">,</span> <span class="s">"Jul"</span><span class="p">,</span> <span class="s">"Aug"</span><span class="p">,</span> <span class="s">"Sep"</span><span class="p">,</span> <span class="s">"Oct"</span><span class="p">,</span> <span class="s">"Nov"</span><span class="p">,</span> <span class="s">"Dec"</span><span class="p">]</span>
+
+<span class="c1">// Values</span>
+<span class="k">var</span> <span class="nv">soldUnits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+
+<span class="c1">// Colors array if you want to colorize </span>
+<span class="k">var</span> <span class="nv">colors</span> <span class="o">=</span> <span class="p">[</span><span class="kt">UIColor</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">black</span><span class="p">,</span>
+	<span class="kt">UIColor</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">brown</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">green</span><span class="p">,</span>
+	<span class="kt">UIColor</span><span class="o">.</span><span class="n">yellow</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">lightGray</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">magenta</span><span class="p">,</span>
+	<span class="kt">UIColor</span><span class="o">.</span><span class="n">orange</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">purple</span><span class="p">,</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">darkGray</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="step-7">Step 7.</h3>
+
+<p>Create Chart Data. In this case, we’ll be creating bar chart data.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">dataEntries</span><span class="p">:</span> <span class="p">[</span><span class="kt">BarChartDataEntry</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">soldUnits</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">dataEntry</span> <span class="o">=</span> <span class="kt">BarChartDataEntry</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Double</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nv">yValues</span><span class="p">:</span> <span class="p">[</span><span class="kt">Double</span><span class="p">(</span><span class="n">soldUnits</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span>
+  <span class="n">dataEntries</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">dataEntry</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">chartDataSet</span> <span class="o">=</span> <span class="kt">BarChartDataSet</span><span class="p">(</span><span class="nv">values</span><span class="p">:</span> <span class="n">dataEntries</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span> <span class="s">"Sold Units"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">chartColorsData</span> <span class="o">=</span> <span class="n">colors</span>
+<span class="k">let</span> <span class="nv">chartData</span> <span class="o">=</span> <span class="kt">BarChartData</span><span class="p">(</span><span class="nv">dataSet</span><span class="p">:</span> <span class="n">chartDataSet</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="step-8">Step 8.</h3>
+
+<p>Create Bar Chart Formatter. This formatter will apply X-Axis values to Chart.
+IMPORTANT: If we don’t do this, chart will not show anything on X-Axis.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import UIKit
+import Charts
+
+@objc(BarChartFormatter)
+public class BarChartFormatter: NSObject, IAxisValueFormatter {
+  var xAxisData: [String] = []
+  public func stringForValue(_ value: Double, axis: AxisBase?) -&gt; String {
+    return xAxisData[Int(value)]
+  }
+}
+</code></pre>
+</div>
+
+<h3 id="step-9">Step 9.</h3>
+
+<p>Supply Chart Data to <code class="highlighter-rouge">ChartView</code>.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// Supply chart data to Bar Chart</span>
+<span class="n">barChartView</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">chartData</span> <span class="c1">// From Step 7</span>
+
+<span class="c1">// Create Formatter</span>
+<span class="k">let</span> <span class="nv">formato</span> <span class="o">=</span> <span class="kt">BarChartFormatter</span><span class="p">()</span> <span class="c1">// From Step 8</span>
+
+<span class="c1">// Apply customization to createdFormatter for X Axis</span>
+<span class="n">formato</span><span class="o">.</span><span class="n">xAxisData</span> <span class="o">=</span> <span class="n">months</span> 
+<span class="k">let</span> <span class="nv">xaxis</span><span class="p">:</span><span class="kt">XAxis</span> <span class="o">=</span> <span class="kt">XAxis</span><span class="p">()</span>
+<span class="n">xaxis</span><span class="o">.</span><span class="n">valueFormatter</span> <span class="o">=</span> <span class="n">formato</span>
+
+<span class="c1">// Apply Formatter to BarChart</span>
+<span class="n">barChartView</span><span class="o">.</span><span class="n">xAxis</span><span class="o">.</span><span class="n">valueFormatter</span> <span class="o">=</span> <span class="n">xaxis</span><span class="o">.</span><span class="n">valueFormatter</span>
+</code></pre>
+</div>
+
+<h3 id="sample-code">Sample Code</h3>
+
+<p><a href="https://github.com/sag333ar/TMEStockExchange">Check out this repository for sample code for above</a>.</p>
+
+
+<div class="sharing">
+    <br/>
+    <br/>
+<!-- Make an animated slide out drawer later -->
+    <ul>
+        <li><i class="fa fa-share-square-o"></i></li>
+        
+        <li><a href="https://twitter.com/intent/tweet?text=Integrating Charts in iOS Application&url=http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="fa fa-twitter-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="http://www.linkedin.com/shareArticle?url=http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/&title=Integrating Charts in iOS Application" rel="nofollow" target="_blank" title="Share on LinkedIn">
+                <i class="fa fa-linkedin-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="https://facebook.com/sharer.php?u=http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="fa fa-facebook-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="https://plus.google.com/share?url=http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/" rel="nofollow" target="_blank" title="Share on Google+">
+                <i class="fa fa-google-plus-square"></i>
+        </a></li>
+        
+
+        
+        <li><a href="http://reddit.com/submit?url=http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/&title=Integrating Charts in iOS Application" rel="nofollow" target="_blank" title="Share on Reddit">
+                <i class="fa fa-reddit-square"></i>
+        </a></li>
+        
+    </ul>
+</div>
+
+<br/>
+<br/>
+
+<div id="disqus_thread"></div>
+<!-- Add Disqus comments (not comment count) -->
+<script type="text/javascript">
+    var disqus_shortname  = 'sagarrkothari-com';
+    var disqus_identifier = '/2017/10/27/Integrate-charts-in-iOS-App/';
+    var disqus_title      = 'Integrating Charts in iOS Application';
+    var disqus_url        = 'http://localhost:4000/2017/10/27/Integrate-charts-in-iOS-App/';
+    // var disqus_developer = 1; // Comment out when the site is live
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<!-- Add Disqus comment count (not the comments) -->
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES * * */
+  var disqus_shortname  = 'sagarrkothari-com';
+  // var disqus_developer = 1; // Comment out when the site is live
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+
+<noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+
+    </div>
+</div>
+
+
+<!-- Some empty space between the page counter and footer -->
+<div>
+    <br/><br/><br/><br/>
+</div>
+
+
+<!-- Footer: begin -->
+<footer class="stickyfooter" role="contentinfo">
+  <div class="footer-logo">
+    <a href="http://localhost:4000"><i class="fa fa-cog fa-spin"></i></a>
+  </div>
+    <ul>
+      <li><a href="http://localhost:4000/about/">About</a></li>
+      <li><a href="http://localhost:4000/contact/">Contact</a></li>
+      <li><a href="http://localhost:4000/search/">Search</a></li>
+      <li><a href="http://localhost:4000/Categories/">Categories</a></li>
+      <li><a href="http://localhost:4000/Tags/">Tags</a></li>
+      <li><a href="http://localhost:4000/Archive/">Archive</a></li>
+    </ul>
+
+    <div class="footer-secondary-links">
+        <!--
+      <ul>
+        <li>Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+        using the <a href="http://localhost:4000">Trio</a> theme
+        </li>
+      </ul>
+        -->
+
+      <ul class="footer-social">
+        <li><a href="http://localhost:4000/feed.xml">
+                <i class="fa fa-rss-square"></i>
+        </a></li>
+        
+            <li><a href="http://github.com/sag333ar">
+                <i class="fa fa-github-square"></i>
+            </a></li>
+        
+
+        
+            <li><a href="http://twitter.com/sag333ar">
+                <i class="fa fa-twitter-square"></i>
+            </a></li>
+        
+
+        
+            <li><a href="http://linkedin.com/in/sagar-kothari-65a59047">
+                <i class="fa fa-linkedin-square"></i>
+            </a></li>
+        
+
+        
+
+        
+
+        
+            <li><a href="http://github.com/sag333ar">
+                <i class="fa fa-youtube-square"></i>
+            </a></li>
+        
+      </ul>
+    </div>
+    <!-- This removes the small sliver of whitespace at the end of the page -->
+    <br/>
+</footer>
+<!-- Footer: end -->
+
+</body>
+</html>
