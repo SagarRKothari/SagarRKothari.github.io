@@ -4,6 +4,7 @@ title:  "Setting up SonarQube for swift on Mac OSX"
 date:   2017-11-01 10:00:00
 categories: Illustration
 tags: SonarCube Swift CodeCoverage
+comments: true
 ---
 
 ### Step 1. Download and setup `SonarCube`

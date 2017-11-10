@@ -4,6 +4,7 @@ title:  "Writing Test cases to test web service"
 date:   2017-10-24 10:00:00
 categories: CodeSnippet
 tags: XCTest testing test expectation fulfill
+comments: true
 ---
 
 ### Put following swift test function and replace with your web-service call code.

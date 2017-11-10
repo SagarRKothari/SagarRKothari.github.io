@@ -4,6 +4,7 @@ title:  "UIView Flip Animation Code"
 date:   2017-11-02 10:00:00
 categories: CodeSnippet
 tags: UIView Flip Animation Code
+comments: true
 ---
 
 ### Swift Code Snippet

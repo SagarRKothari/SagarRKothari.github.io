@@ -4,6 +4,7 @@ title:  "Format XML Pretty Print"
 date:   2017-02-10 09:00:00
 categories: CodeSnippet
 tags: XML Format String
+comments: true
 ---
 
 Put following code snippet for XML Pretty Print

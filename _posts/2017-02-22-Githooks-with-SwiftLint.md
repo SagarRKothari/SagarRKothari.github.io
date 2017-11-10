@@ -4,6 +4,7 @@ title:  "GitHooks with SwiftLint"
 date:   2017-02-22 11:00:00
 categories: Tools Scripts
 tags: Code Lint Syntax Correction Valid Language Git GitHooks Hooks
+comments: true
 ---
 
 ### Pre-commit script for iOS projects for automated code review

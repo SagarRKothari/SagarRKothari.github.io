@@ -4,6 +4,7 @@ title:  "Swift dial phone number"
 date:   2017-02-07 11:00:00
 categories: CodeSnippet
 tags: IBAction dial phone canOpenURL openURL
+comments: true
 ---
 
 Following is a code snippet for dialing phone number through code in iOS Swift

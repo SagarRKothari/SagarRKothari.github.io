@@ -4,6 +4,7 @@ title:  "Format JSON Pretty Print"
 date:   2017-02-11 11:00:00
 categories: CodeSnippet
 tags: String JSON Format
+comments: true
 ---
 
 Put following code-snippet for formatting a JSON string to pretty print JSON.

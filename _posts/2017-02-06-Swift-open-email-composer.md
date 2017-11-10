@@ -3,6 +3,7 @@ layout: post
 title:  "Swift open email composer"
 date:   2017-02-06 11:00:00
 categories: CodeSnippet
+comments: true
 tags: IBAction email MessageUI MFMailComposeViewController canSendMail
 ---
 

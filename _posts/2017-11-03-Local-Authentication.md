@@ -4,6 +4,7 @@ title:  "Code Snippet for Local Authentication"
 date:   2017-11-03 10:00:00
 categories: CodeSnippet
 tags: LAContext Authentication Auth Device FingerPrint
+comments: true
 ---
 
 Insert following code snippet for local authentication.

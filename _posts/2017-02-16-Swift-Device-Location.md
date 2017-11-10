@@ -4,6 +4,7 @@ title:  "Singleton for obtaining device location"
 date:   2017-02-16 11:00:00
 categories: CodeSnippet
 tags: CoreLocation LocationManager CLLocation CLLocationManager
+comments: true
 ---
 
 Following is custom class for getting iOS Device Location.

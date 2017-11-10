@@ -4,6 +4,7 @@ title:  "Disabling App Transport Security"
 date:   2017-10-25 10:00:00
 categories: CodeSnippet
 tags: Application Transport Security
+comments: true
 ---
 
 ### Step 1.

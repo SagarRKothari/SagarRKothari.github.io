@@ -4,6 +4,7 @@ title:  "Generating Category wise article list"
 date:   2017-10-30 10:00:00
 categories: Scripts
 tags: Jekyll Customization Github Pages
+comments: true
 ---
 
 ### Step 1.

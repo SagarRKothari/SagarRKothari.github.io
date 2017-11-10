@@ -4,6 +4,7 @@ title:  "Change UISearchBar Keyboard Appearance"
 date:   2017-02-23 11:00:00
 categories: CodeSnippet
 tags: Code ObjectiveC UIKit UISearchBar UIKeyboardAppearance Alert
+comments: true
 ---
 
 ## How to change UISearchBar Keyboard Appearance?

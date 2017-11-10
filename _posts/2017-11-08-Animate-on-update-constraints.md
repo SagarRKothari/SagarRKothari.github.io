@@ -4,6 +4,7 @@ title:  "Animate view on updating constraint values"
 date:   2017-11-08 12:00:00
 categories: CodeSnippet
 tags: UIView Animation Animate Constraint
+comments: true
 ---
 
 Add following method inside your `view controller`.

@@ -4,6 +4,7 @@ title:  "Generate with URL Components like host, path, params"
 date:   2017-02-13 10:00:00
 categories: CodeSnippet
 tags: URL Components Generator
+comments: true
 ---
 
 Code snippet for generating URL using scheme, host, path, parameters and path extension

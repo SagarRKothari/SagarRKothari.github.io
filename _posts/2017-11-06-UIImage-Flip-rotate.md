@@ -4,6 +4,7 @@ title:  "UIImage Rotate Flip - code snippet"
 date:   2017-11-06 10:00:00
 categories: CodeSnippet
 tags: Swift 
+comments: true
 ---
 
 ### Put following swift extension of `UIImage` class in project

@@ -4,6 +4,7 @@ title:  "Shellscript to generate AppIcons from 1024x1024.png Image"
 date:   2017-11-07 12:00:00
 categories: Scripts
 tags: Xcode ShellScript Automated generate AppIcon Icons
+comments: true
 ---
 
 ## Download Shellscript

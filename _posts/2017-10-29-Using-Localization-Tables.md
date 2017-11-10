@@ -4,6 +4,7 @@ title:  "Using Localization Tables for supporting internationalization"
 date:   2017-10-29 10:00:00
 categories: CodeSnippet
 tags: internationalization Localization Swift
+comments: true
 ---
 
 #### Step 1.

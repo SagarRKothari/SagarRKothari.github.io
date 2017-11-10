@@ -4,6 +4,7 @@ title:  "Generating Table of Contents for Markdown"
 date:   2017-11-09 10:00:00
 categories: Scripts
 tags: Script NPM TOC TableOfContents Markdown doctoc
+comments: true
 ---
 
 ### Installing Utility which generates markdown

@@ -4,6 +4,7 @@ title:  "Example of Lazy Computed Properties"
 date:   2017-02-15 09:00:00
 categories: CodeSnippet
 tags: computed lazy properties
+comments: true
 ---
 
 ### Example of Lazy properties with tuples

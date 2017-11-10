@@ -4,6 +4,7 @@ title:  "Generating Archive - list of Articles"
 date:   2017-10-28 10:00:00
 categories: Scripts
 tags: Jekyll Customization Github Pages
+comments: true
 ---
 
 ### Step 1.

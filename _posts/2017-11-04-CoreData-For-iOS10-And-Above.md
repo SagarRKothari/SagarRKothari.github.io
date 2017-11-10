@@ -4,6 +4,7 @@ title:  "Step by Step Core Data Implementation for iOS 10 and above"
 date:   2017-11-04 10:00:00
 categories: Illustration
 tags: CoreData Data Storage iOS SQLite
+comments: true
 ---
 
 Please find steps for core Data implementation as follows.

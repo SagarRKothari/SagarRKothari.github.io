@@ -4,6 +4,7 @@ title:  "Convert Date To 2DaysAgo"
 date:   2017-02-08 11:00:00
 categories: CodeSnippet
 tags: extension Date String Format
+comments: true
 ---
 
 Insert following date extension to your project.

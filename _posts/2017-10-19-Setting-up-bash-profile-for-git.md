@@ -4,6 +4,7 @@ title:  "Setting up .bash_profile for Git Terminal Mac OSX"
 date:   2017-10-19 10:00:00
 categories: Scripts
 tags: bash profile git mac osx
+comments: true
 ---
 
 ### Step 1. Download

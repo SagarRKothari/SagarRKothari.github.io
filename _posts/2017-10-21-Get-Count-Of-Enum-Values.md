@@ -4,6 +4,7 @@ title:  "Get Count of Swift Enum Values"
 date:   2017-10-21 13:00:00
 categories: CodeSnippet
 tags: Enum Enumeration Count Total 
+comments: true
 ---
 
 In following enum example, I have added a static variable named `count` which calculates and returns count of the given enum.

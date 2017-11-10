@@ -4,6 +4,7 @@ title:  "Sample Fastlane File with crashlytics and slack integration"
 date:   2017-02-19 11:00:00
 categories: Scripts Tools
 tags: Fabric Crashlytics Fastlane Beta Slack CI Continuous Integration
+comments: true
 ---
 
 ```ruby

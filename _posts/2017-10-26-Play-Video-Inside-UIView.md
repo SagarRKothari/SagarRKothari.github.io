@@ -4,6 +4,7 @@ title:  "Play video inside UIView"
 date:   2017-10-26 10:00:00
 categories: CodeSnippet
 tags: Swift Video UIView Play
+comments: true
 ---
 
 In this case, `SagarRKothari.mp4` is the video which is part of Application.
