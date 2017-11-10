@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing Test case for UIAlertController"
-date:   2017-11-07 10:00:00
+date:   2017-11-08 10:00:00
 categories: CodeSnippet
 tags: UIAlertView UIAlertController Test Testing XCTest TestCase 
 ---
