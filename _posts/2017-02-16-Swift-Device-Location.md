@@ -5,6 +5,7 @@ date:   2017-02-16 11:00:00
 categories: CodeSnippet
 tags: CoreLocation LocationManager CLLocation CLLocationManager
 comments: true
+logo: hand-o-up
 ---
 
 Following is custom class for getting iOS Device Location.

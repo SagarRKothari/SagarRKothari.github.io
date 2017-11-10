@@ -5,6 +5,7 @@ date:   2017-11-08 12:00:00
 categories: CodeSnippet
 tags: UIView Animation Animate Constraint
 comments: true
+logo: magic
 ---
 
 Add following method inside your `view controller`.

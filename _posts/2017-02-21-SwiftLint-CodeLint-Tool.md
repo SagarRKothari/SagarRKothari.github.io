@@ -5,6 +5,7 @@ date:   2017-02-21 11:00:00
 categories: Scripts
 tags: Code Lint Syntax Correction Valid Language
 comments: true
+logo: terminal
 ---
 
 ### Installation

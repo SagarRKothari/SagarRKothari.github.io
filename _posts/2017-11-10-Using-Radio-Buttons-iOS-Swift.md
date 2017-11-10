@@ -5,7 +5,7 @@ date:   2017-11-10 10:00:00
 categories: Illustration
 tags: Radio Button
 comments: true
-logo: eercast
+logo: dot-circle-o
 ---
 
 ## Installation

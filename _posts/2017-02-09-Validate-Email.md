@@ -5,6 +5,7 @@ date:   2017-02-09 10:00:00
 categories: CodeSnippet
 tags: Email Validation String Regex Predicate
 comments: true
+logo: shield
 ---
 
 Code snippet to validate an email

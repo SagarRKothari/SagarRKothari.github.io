@@ -5,6 +5,7 @@ date:   2017-02-10 09:00:00
 categories: CodeSnippet
 tags: XML Format String
 comments: true
+logo: check-circle
 ---
 
 Put following code snippet for XML Pretty Print

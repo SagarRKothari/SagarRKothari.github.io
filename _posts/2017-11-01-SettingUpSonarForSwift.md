@@ -5,6 +5,7 @@ date:   2017-11-01 10:00:00
 categories: Illustration
 tags: SonarCube Swift CodeCoverage
 comments: true
+logo: wrench
 ---
 
 ### Step 1. Download and setup `SonarCube`

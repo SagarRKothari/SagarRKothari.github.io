@@ -5,6 +5,7 @@ date:   2017-10-27 10:00:00
 categories: Illustration
 tags: Charts Library iOS Swift Customization UserInterface
 comments: true
+logo: bar-chart
 ---
 
 ### Step 1.

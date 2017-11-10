@@ -5,6 +5,7 @@ date:   2017-10-22 10:00:00
 categories: Illustration
 tags: iOS Application Register APNS Push Notification
 comments: true
+logo: paper-plane-o
 ---
 
 Following function will help you to registering for Push notification on an iOS Application.

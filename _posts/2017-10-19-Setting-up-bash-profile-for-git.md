@@ -5,6 +5,7 @@ date:   2017-10-19 10:00:00
 categories: Scripts
 tags: bash profile git mac osx
 comments: true
+logo: terminal
 ---
 
 ### Step 1. Download

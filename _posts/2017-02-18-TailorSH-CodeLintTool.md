@@ -5,6 +5,7 @@ date:   2017-02-18 11:00:00
 categories: Tools
 tags: Tailor CodeLint Syntax Installation Usage
 comments: true
+logo: terminal
 ---
 
 ### Installation

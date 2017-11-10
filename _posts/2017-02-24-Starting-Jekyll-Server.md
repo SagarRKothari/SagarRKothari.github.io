@@ -5,6 +5,7 @@ date:   2017-02-24 10:00:00
 categories: Scripts
 tags: Jekyll Server Github Pages
 comments: true
+logo: terminal
 ---
 
 ### Article to follow

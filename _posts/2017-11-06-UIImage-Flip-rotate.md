@@ -5,6 +5,7 @@ date:   2017-11-06 10:00:00
 categories: CodeSnippet
 tags: Swift 
 comments: true
+logo: clone
 ---
 
 ### Put following swift extension of `UIImage` class in project

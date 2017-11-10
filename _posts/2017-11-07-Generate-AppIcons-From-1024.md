@@ -5,6 +5,7 @@ date:   2017-11-07 12:00:00
 categories: Scripts
 tags: Xcode ShellScript Automated generate AppIcon Icons
 comments: true
+logo: keyboard-o
 ---
 
 ## Download Shellscript

@@ -5,6 +5,7 @@ date:   2017-11-04 10:00:00
 categories: Illustration
 tags: CoreData Data Storage iOS SQLite
 comments: true
+logo: database
 ---
 
 Please find steps for core Data implementation as follows.

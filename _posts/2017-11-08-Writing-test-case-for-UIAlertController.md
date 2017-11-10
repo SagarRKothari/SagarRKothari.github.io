@@ -5,6 +5,7 @@ date:   2017-11-08 10:00:00
 categories: CodeSnippet
 tags: UIAlertView UIAlertController Test Testing XCTest TestCase 
 comments: true
+logo: wrench
 ---
 
 ### Code Snippet to show view controller

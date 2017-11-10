@@ -5,6 +5,7 @@ date:   2017-02-15 09:00:00
 categories: CodeSnippet
 tags: computed lazy properties
 comments: true
+logo: chain-broken
 ---
 
 ### Example of Lazy properties with tuples

@@ -5,6 +5,7 @@ date:   2017-02-06 11:00:00
 categories: CodeSnippet
 comments: true
 tags: IBAction email MessageUI MFMailComposeViewController canSendMail
+logo: share
 ---
 
 Following is code snippet for opening email composer.

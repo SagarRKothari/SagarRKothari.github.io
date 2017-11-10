@@ -5,6 +5,7 @@ date:   2017-10-28 10:00:00
 categories: Scripts
 tags: Jekyll Customization Github Pages
 comments: true
+logo: indent
 ---
 
 ### Step 1.

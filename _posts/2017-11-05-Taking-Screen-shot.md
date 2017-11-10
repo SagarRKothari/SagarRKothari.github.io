@@ -5,6 +5,7 @@ date:   2017-11-05 10:00:00
 categories: CodeSnippet
 tags: Swift UIScreen ScreenShot
 comments: true
+logo: image
 ---
 
 Please find the code snippet as follows for taking screenshot programmatically.

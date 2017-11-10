@@ -5,6 +5,7 @@ date:   2017-10-31 10:00:00
 categories: CodeSnippet
 tags: DispatchQueue main async
 comments: true
+logo: refresh
 ---
 
 ### Swift Code Snippet

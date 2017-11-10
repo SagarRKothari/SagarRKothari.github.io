@@ -5,6 +5,7 @@ date:   2017-02-08 11:00:00
 categories: CodeSnippet
 tags: extension Date String Format
 comments: true
+logo: calendar
 ---
 
 Insert following date extension to your project.

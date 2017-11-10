@@ -5,6 +5,7 @@ date:   2017-02-17 11:00:00
 categories: CodeSnippet
 tags: placemarks CLGeocoder reverse geocoding
 comments: true
+logo: map-signs
 ---
 
 Reverse Geo-coding - Get address from latitude and longitude

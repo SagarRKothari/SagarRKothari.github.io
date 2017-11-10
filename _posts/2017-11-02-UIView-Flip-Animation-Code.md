@@ -5,6 +5,7 @@ date:   2017-11-02 10:00:00
 categories: CodeSnippet
 tags: UIView Flip Animation Code
 comments: true
+logo: unsorted
 ---
 
 ### Swift Code Snippet
