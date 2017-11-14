@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "Using FontAwesome Icon Picker in swift for iOS Apps - SKFontAwesomeIconPickerView",
+      "category" : "",
+      "tags"     : "Font, Awesome, Icon, Picker, View, Custom",
+      "url"      : "http://localhost:4000/2017/11/13/Using-FontAwesome-Icon-Picker/",
+      "date"     : "November 13, 2017",
+      "content"  : "SKFontAwesomeIconPickerView\n\n\n  An icon picker view which will show list of icons from Font Awesome.\n\n\nDemo GIF\n\n\n\nWith the help of Icon Picker View, Icon picker funcationality can be achieved easily.\n\nFeatures\n\n\n  [x] Customizable Icon Color\n  [x] Customizable Icon Border Color\n  [x] Customizable Icon Border Size\n  [x] Customizable Icon Border corner radius\n  [x] Customizable Icon Background color\n  [x] Customizable Selected Icon Color\n  [x] Customizable Selected Icon Border Color\n  [x] Customizable Selected Icon Border Size\n  [x] Customizable Selected Icon Border corner radius\n  [x] Customizable Selected Icon Background color\n\n\nRequirements\n\n\n  iOS 9.0+\n  Xcode 9\n\n\nInstallation\n\nCocoaPods\nYou can use CocoaPods to install SKFontAwesomeIconPickerView by adding it to your Podfile:\n\nplatform :ios, '9.0'\nuse_frameworks!\npod 'SKFontAwesomeIconPickerView', :git =&gt; 'https://github.com/sag333ar/SKFontAwesomeIconPickerView.git', :branch =&gt; 'master'\n\n\n\nTo get the full benefits import SKRadioButton wherever you import UIKit\n\nimport UIKit\nimport SKFontAwesomeIconPickerView\n\n\n\nUsage example\n\nStep 1: Download FontAwesome from here or here\n\nStep 2: Drag &amp; drop font into your Xcode project.\n\nStep 3: Open Info.plist and add an entry as indicated below.\n\n\n\nStep 4: Open your project’s Storyboard. Drag &amp; drop a view. Select it &amp; change Class name to SKFontAwesomePickerView as indicated below from Identity Inspector.\n\n\n\nStep 5: Change your view controller’s code as indicated below. Also apply necessary connections to Storyboard.\n\nimport UIKit\nimport SKFontAwesomeIconPickerView\n\nclass ViewController: UIViewController {\n\n  @IBOutlet var iconPicker: SKFontAwesomePickerView!\n  @IBOutlet var label: UILabel!\n  \n  override func viewDidLoad() {\n    super.viewDidLoad()\n    iconPicker.didSelectClosure = { icon in\n      DispatchQueue.main.async {\n        self.label.text = icon\n      }\n    }\n  }\n\n}\n\n\n\nHope that helps.\n\nIf it does not, download sample project from here for more reference.\n\n",
+      "snippet"  : "SKFontAwesomeIconPickerView"
+    } ,
+  
+    {
       "title"    : "Using Radio buttons in iOS application Swift - SKRadioButton",
       "category" : "",
       "tags"     : "Radio, Button",

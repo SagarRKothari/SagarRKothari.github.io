@@ -7,6 +7,107 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Using FontAwesome Icon Picker in swift for iOS Apps - SKFontAwesomeIconPickerView</title>
+        <description>&lt;h1 id=&quot;skfontawesomeiconpickerview&quot;&gt;&lt;a href=&quot;https://github.com/sag333ar/SKFontAwesomeIconPickerView&quot;&gt;SKFontAwesomeIconPickerView&lt;/a&gt;&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;An icon picker view which will show list of icons from Font Awesome.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;demo-gif&quot;&gt;Demo GIF&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKFontAwesomeIconPickerView/master/ReadmeAssets/GifDemo.gif&quot; alt=&quot;Demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the help of Icon Picker View, Icon picker funcationality can be achieved easily.&lt;/p&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[x] Customizable Icon Color&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Icon Border Color&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Icon Border Size&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Icon Border corner radius&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Icon Background color&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Selected Icon Color&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Selected Icon Border Color&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Selected Icon Border Size&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Selected Icon Border corner radius&lt;/li&gt;
+  &lt;li&gt;[x] Customizable Selected Icon Background color&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;iOS 9.0+&lt;/li&gt;
+  &lt;li&gt;Xcode 9&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;h4 id=&quot;cocoapods&quot;&gt;CocoaPods&lt;/h4&gt;
+&lt;p&gt;You can use &lt;a href=&quot;http://cocoapods.org/&quot;&gt;CocoaPods&lt;/a&gt; to install &lt;code class=&quot;highlighter-rouge&quot;&gt;SKFontAwesomeIconPickerView&lt;/code&gt; by adding it to your &lt;code class=&quot;highlighter-rouge&quot;&gt;Podfile&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;platform&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:ios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'9.0'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;use_frameworks!&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'SKFontAwesomeIconPickerView'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://github.com/sag333ar/SKFontAwesomeIconPickerView.git'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To get the full benefits import &lt;code class=&quot;highlighter-rouge&quot;&gt;SKRadioButton&lt;/code&gt; wherever you import UIKit&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SKFontAwesomeIconPickerView&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage-example&quot;&gt;Usage example&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 1:&lt;/em&gt;&lt;/strong&gt; Download &lt;code class=&quot;highlighter-rouge&quot;&gt;FontAwesome&lt;/code&gt; from &lt;a href=&quot;https://github.com/sag333ar/SKFontAwesomeIconPickerView/raw/master/fontawesome-webfont.ttf&quot;&gt;here&lt;/a&gt; or &lt;a href=&quot;http://fontawesome.io/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 2:&lt;/em&gt;&lt;/strong&gt; Drag &amp;amp; drop font into your Xcode project.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 3:&lt;/em&gt;&lt;/strong&gt; Open &lt;code class=&quot;highlighter-rouge&quot;&gt;Info.plist&lt;/code&gt; and add an entry as indicated below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKFontAwesomeIconPickerView/master/ReadmeAssets/AddFont.png&quot; alt=&quot;AddFont.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 4:&lt;/em&gt;&lt;/strong&gt; Open your project’s Storyboard. Drag &amp;amp; drop a view. Select it &amp;amp; change Class name to &lt;code class=&quot;highlighter-rouge&quot;&gt;SKFontAwesomePickerView&lt;/code&gt; as indicated below from Identity Inspector.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKFontAwesomeIconPickerView/master/ReadmeAssets/CustomClass.png&quot; alt=&quot;CustomClass.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 5:&lt;/em&gt;&lt;/strong&gt; Change your view controller’s code as indicated below. Also apply necessary connections to Storyboard.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SKFontAwesomeIconPickerView&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;iconPicker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SKFontAwesomePickerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UILabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;iconPicker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;didSelectClosure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;icon&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;DispatchQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;icon&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hope that helps.&lt;/p&gt;
+
+&lt;p&gt;If it does not, download sample project from &lt;a href=&quot;https://raw.githubusercontent.com/sag333ar/SKFontAwesomeIconPickerView/master/ReadmeAssets/SamplePickerView.zip&quot;&gt;here&lt;/a&gt; for more reference.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 13 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/13/Using-FontAwesome-Icon-Picker/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/13/Using-FontAwesome-Icon-Picker/</guid>
+      </item>
+    
+      <item>
         <title>Using Radio buttons in iOS application Swift - SKRadioButton</title>
         <description>&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
@@ -701,21 +802,6 @@ Office name is Mumbai
         <pubDate>Fri, 03 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/03/Local-Authentication/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/03/Local-Authentication/</guid>
-      </item>
-    
-      <item>
-        <title>UIView Flip Animation Code</title>
-        <description>&lt;h3 id=&quot;swift-code-snippet&quot;&gt;Swift Code Snippet&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UIView.transition(with: view, duration: 0.5, options: .transitionFlipFromRight, animations: {
-  self.flipSideView.isHidden = !self.flipSideView.isHidden
-}, completion: nil)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 02 Nov 2017 10:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/11/02/UIView-Flip-Animation-Code/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/02/UIView-Flip-Animation-Code/</guid>
       </item>
     
   </channel>
