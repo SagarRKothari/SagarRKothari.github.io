@@ -11,6 +11,25 @@ logo: plug
 ### Put following swift test function and replace with your web-service call code.
 
 ```swift
+func testWebService() {
+  let string = "http://www.mocky.io/v2/5a1409093100002923b33fc0"
+  // create expectation
+  let exp = expectation(description: "Some web service expectation")
+  let task = URLSession.shared.dataTask(with: URL(string: string)!) { (data, response, error) in
+    if error != nil && data != nil && data!.count > 0 {
+      exp.fulfill()
+    } else {
+      XCTFail("Webservice failed.")
+    }
+  }
+  task.resume()
+  waitForExpectations(timeout: 30, handler: nil)
+}
+```
+
+Here is another example.
+
+```swift
 func testSomeWebService() {
   // create expectation
   let exp = expectation(description: "Some web service expectation")
@@ -21,4 +40,3 @@ func testSomeWebService() {
   waitForExpectations(timeout: 30, handler: nil)
 }
 ```
-

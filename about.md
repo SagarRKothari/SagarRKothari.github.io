@@ -20,6 +20,7 @@ I've total 8 years of experience in building native iOS applications.
   - [iOS Lead App Developer (Feb-2013 to Apr-2014)](#ios-lead-app-developer-feb-2013-to-apr-2014)
   - [iOS App Developer (October 2011 – July 2012)](#ios-app-developer-october-2011--july-2012)
   - [iOS App Devloper (Feb 2010 – Oct-2011)](#ios-app-devloper-feb-2010--oct-2011)
+  - [Software Engineer (May 2009 – Jan 2010)](#software-engineer-may-2009--jan-2010)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -110,16 +111,31 @@ Currently working for Mastercard (through vendor Altimetrik)
 
 ***Company:*** Valtech India Software Services Pvt Ltd (CMMI Level 5), Bangalore, Karnataka
 
-* Working as a Software Engineer in Valtech India Software Services Pvt Ltd, Bangalore from August 2011
-* Developing iPhone/iPad Applications on iPhone OS 5.0, and XCode 4.3. on Mac OS 10.7.3 and conducting business analysis & Documentation, client communications & Coordination, Client Requirement Gathering, Project Effort Estimation & Costing, Project Follow-up & Review.
+* Worked as a Software Engineer in Valtech India Software Services Pvt Ltd, Bangalore
+* Developing iPhone/iPad Applications on iPhone OS 5.0, and XCode 4.3. on Mac OS 10.7.3
+* Conducting business analysis & Documentation
+* Client communications & Coordination
+* Client Requirement Gathering
+* Project Effort Estimation & Costing
+* Project Follow-up & Review.
 
 #### iOS App Devloper (Feb 2010 – Oct-2011)
 
 ***Company:*** Digicorp Information System P. Ltd, Ahmedabad, Gujarat
 
-* Working as a Software Engineer in Digicorp Information System P. Ltd, Ahmedabad from Feb 2010 and developing iPhone/iPad Applications on iPhone OS 4.2, and XCode 3.2.5 on Mac OS 10.6.5 and conducting business analysis & Documentation, client communications & Coordination, Client Requirement Gathering, Project Effort Estimation & Costing, Project Follow-up & Review
+* Worked as a Software Engineer in Digicorp Information System P. Ltd, Ahmedabad
+* Developing iPhone/iPad Applications on iPhone OS 4.2, and XCode 3.2.5 on Mac OS 10.6.5
+* Conducting business analysis & Documentation
+* Client communications & Coordination
+* Client Requirement Gathering
+* Project Effort Estimation & Costing
+* Project Follow-up & Review
      
-Software Engineer (May 2009 – Jan 2010)
-Hidden Brains Infotech Ltd., Ahmedabad, Gujarat
-Worked as a Software Engineer in Hidden Brains Infotech Ltd., Ahmedabad  Gained experience in developing iPhone Applications on iPhone OS 3.1.2, and XCode 3.1.4 on Mac OS 10.5.8. During this time I worked on different frameworks like UIKit, MapKit, MPMediaPlayer, Foundation, AudioToolbox, CoreLocation, CFNetwork, GData (Youtube, calander), JSON, AVFramework, AVFoundation, MessageUIframework, CFNetwork.
+#### Software Engineer (May 2009 – Jan 2010)
+
+***Company:*** Hidden Brains Infotech Ltd., Ahmedabad, Gujarat
+
+* Worked as a Software Engineer in Hidden Brains Infotech Ltd., Ahmedabad  
+* Gained experience in developing iPhone Applications on iPhone OS 3.1.2, and XCode 3.1.4 on Mac OS 10.5.8. 
+* Frameworks used - UIKit, MapKit, MPMediaPlayer, Foundation, AudioToolbox, CoreLocation, CFNetwork, GData (Youtube, calander), JSON, AVFramework, AVFoundation, MessageUIframework, CFNetwork.
 

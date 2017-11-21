@@ -7,6 +7,201 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Mocking A web-service response with Mocky</title>
+        <description>&lt;p&gt;I personally recommend using &lt;a href=&quot;https://www.mocky.io/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Mocky&lt;/code&gt;&lt;/a&gt; to Mock your HTTP responses to test your REST API.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of sample web-service which I just created at &lt;code class=&quot;highlighter-rouge&quot;&gt;Mocky&lt;/code&gt; which returns JSON as indicated below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-21/Sample.png&quot; alt=&quot;Sample API&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the piece of code, which you might be needing in iOS Application to run above mock service.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;http://www.mocky.io/v2/5a1409093100002923b33fc0&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// create expectation&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shared&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// no error &amp;amp; data received&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// either error or no data.&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 21 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/21/Mocking-A-Web-service-response-with-Mocky/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/21/Mocking-A-Web-service-response-with-Mocky/</guid>
+      </item>
+    
+      <item>
+        <title>Important Locations for iOS Application Development</title>
+        <description>&lt;p&gt;Here, I’ve added list of locations which can be used frequently for iOS Application Development.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Where to locate Provisioning Profiles?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Library/MobileDevice/Provisioning Profiles/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Where to locate iOS Simulators?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Library/Developer/CoreSimulator/Devices/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Where to locate Derived Data?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Library/Developer/Xcode/DerivedData
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Where to locate Archives?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Library/Developer/Xcode/Archives
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Where to locate &lt;code class=&quot;highlighter-rouge&quot;&gt;App Records&lt;/code&gt; which are shown under Xcode -&amp;gt; Organizer?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Library/Developer/Xcode/Products
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 20 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/20/Important-Locations/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/20/Important-Locations/</guid>
+      </item>
+    
+      <item>
+        <title>Performance Testing with measure block - Xcode</title>
+        <description>&lt;p&gt;For performance testing, Xcode provides measure block with the help of which we can execute performance testing.&lt;/p&gt;
+
+&lt;p&gt;The measured block is executed ten times and the test output shows the average execution time as well as individual run times and standard deviation:&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testDateFormatterPerformance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dateFormatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;dateFormatter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dateStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;long&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;dateFormatter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;short&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  
+  &lt;span class=&quot;n&quot;&gt;measure&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateFormatter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-19/Step0.png&quot; alt=&quot;Step 0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on the gray button, once you’re done executing test case.
+It will open pop-over and show the results of those 10 executions.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-19/Step1.png&quot; alt=&quot;Step 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-19/Step2.png&quot; alt=&quot;Step 2&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/19/Performance-Testing-with-measure/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/19/Performance-Testing-with-measure/</guid>
+      </item>
+    
+      <item>
+        <title>Wireless Debugging using XCode9</title>
+        <description>&lt;p&gt;Choose any of your iOS or tvOS devices on the local network to install, run, and debug your apps — without a USB cord plugged into your Mac.&lt;/p&gt;
+
+&lt;p&gt;Simply click the ‘Connect via Network’ checkbox the first time you use a new iOS device, and that device will be available over the network from that point forward.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-18/Step1.png&quot; alt=&quot;Step 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wireless development also works in other apps, including Instruments, Accessibility Inspector, Quicktime Player, and Console.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-18/Step2.png&quot; alt=&quot;Step 2&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/18/Wireless-debugging-xcode9/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/18/Wireless-debugging-xcode9/</guid>
+      </item>
+    
+      <item>
+        <title>Locate SQLite file for Core Data application</title>
+        <description>&lt;p&gt;If you’re using coredata in your application, sometimes you might need to open database &amp;amp; check actuall values. I prefer to use &lt;a href=&quot;http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/&quot;&gt;DB Browser For SQLite&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-locate-sqlite-file&quot;&gt;How to locate SQLite file?&lt;/h3&gt;
+
+&lt;p&gt;Put following piece of code under &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;didFinishLaunching&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSSearchPathForDirectoriesInDomains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;applicationSupportDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userDomainMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Above code will simply print the path of &lt;code class=&quot;highlighter-rouge&quot;&gt;Library-ApplicationSupport&lt;/code&gt; of your application, which should look like following.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&quot;/Users/sagar/Library/Developer/CoreSimulator/Devices/4A09A062-C286-4B9A-A60C-4D664E7CF451/data/Containers/Data/Application/48F17B59-8876-4FDF-AEF9-BDDD533079E7/Library/Application Support&quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As you can see, there are two identifiers in the folder-structure-path. One is identifier of the Simulator &amp;amp; the other one is of your-application.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 1.&lt;/em&gt;&lt;/strong&gt; Copy the message from console, after running the application on iOS Simulator.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 2.&lt;/em&gt;&lt;/strong&gt; Open finder &amp;amp; press &lt;code class=&quot;highlighter-rouge&quot;&gt;CMD+G&lt;/code&gt; to open &lt;code class=&quot;highlighter-rouge&quot;&gt;Go To Folder&lt;/code&gt; as indicated below &amp;amp; paste the copied path.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-17/step1.png&quot; alt=&quot;Step2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 3.&lt;/em&gt;&lt;/strong&gt; You should be able to locate &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; file now. In my case it is &lt;code class=&quot;highlighter-rouge&quot;&gt;SampleData.sqlite&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-17/step2.png&quot; alt=&quot;Step3&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/17/Locate-SQLite-For-CoreData/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/17/Locate-SQLite-For-CoreData/</guid>
+      </item>
+    
+      <item>
+        <title>SQLite Browser of my choice for Mac OSX</title>
+        <description>&lt;p&gt;DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/sqlitebrowser/sqlitebrowser/raw/master/images/sqlitebrowser.png&quot; alt=&quot;Sample Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sqlitebrowser.org/&quot;&gt;Download SQLiteBrowser from here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-1.png&quot; alt=&quot;Screenshot 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-2.png&quot; alt=&quot;Screenshot 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-3.png&quot; alt=&quot;Screenshot 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-4.png&quot; alt=&quot;Screenshot 4&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/</guid>
+      </item>
+    
+      <item>
         <title>Using Travis-CI for your components - Cocoapods</title>
         <description>&lt;p&gt;&lt;a href=&quot;https://github.com/sag333ar/SKRadioButton/blob/master/.travis.yml&quot;&gt;Source Of Travis Config&lt;/a&gt;&lt;/p&gt;
 
@@ -317,472 +512,6 @@ Usually, you’ll find that by default under same file if you’ve followed step
         <pubDate>Sun, 12 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/12/CoreData-Xcode9/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/12/CoreData-Xcode9/</guid>
-      </item>
-    
-      <item>
-        <title>Using Radio buttons in iOS application Swift - SKRadioButton</title>
-        <description>&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;h4 id=&quot;cocoapods&quot;&gt;CocoaPods&lt;/h4&gt;
-&lt;p&gt;You can use &lt;a href=&quot;http://cocoapods.org/&quot;&gt;CocoaPods&lt;/a&gt; to install &lt;a href=&quot;https://github.com/sag333ar/SKRadioButton&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SKRadioButton&lt;/code&gt;&lt;/a&gt; by adding it to your &lt;code class=&quot;highlighter-rouge&quot;&gt;Podfile&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;platform&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:ios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'9.0'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;use_frameworks!&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'SKRadioButton'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;To get the full benefits import &lt;code class=&quot;highlighter-rouge&quot;&gt;SKRadioButton&lt;/code&gt; wherever you import UIKit&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SKRadioButton&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;manually&quot;&gt;Manually&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Download and drop &lt;code class=&quot;highlighter-rouge&quot;&gt;SKRadioButton.swift&lt;/code&gt; in your project.&lt;/li&gt;
-  &lt;li&gt;Congratulations!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;usage-example&quot;&gt;Usage example&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 1:&lt;/em&gt;&lt;/strong&gt; Open &lt;code class=&quot;highlighter-rouge&quot;&gt;Storyboard&lt;/code&gt;, Drag and drop a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIButton&lt;/code&gt; inside your view of &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step1.png&quot; alt=&quot;Drag &amp;amp; Drop Button&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 2:&lt;/em&gt;&lt;/strong&gt; Change the &lt;code class=&quot;highlighter-rouge&quot;&gt;Class&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Module&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Class inspector&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;UIbutton&lt;/code&gt;s which you want to convert to Radio button.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step2.png&quot; alt=&quot;Change Class&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 3:&lt;/em&gt;&lt;/strong&gt; Select your buttons, Change &lt;code class=&quot;highlighter-rouge&quot;&gt;Type&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Custom&lt;/code&gt;, remove button &lt;code class=&quot;highlighter-rouge&quot;&gt;Title&lt;/code&gt; + &lt;code class=&quot;highlighter-rouge&quot;&gt;Image&lt;/code&gt; + &lt;code class=&quot;highlighter-rouge&quot;&gt;Background&lt;/code&gt;. Apply Radio buttons customization.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step3-1.png&quot; alt=&quot;Change Attributes&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step3-2.png&quot; alt=&quot;Change Attributes2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 4:&lt;/em&gt;&lt;/strong&gt; Place your Radio buttons inside a stack view (recommended) &amp;amp; apply necessary constraints as per your needs.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step4.png&quot; alt=&quot;Use Stackview&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 5:&lt;/em&gt;&lt;/strong&gt; One by one, select your Radio buttons &amp;amp; connect with &lt;code class=&quot;highlighter-rouge&quot;&gt;Outlet Collection&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;viewController&lt;/code&gt; as indicated below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step5.png&quot; alt=&quot;Outlet Collection&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 6:&lt;/em&gt;&lt;/strong&gt; One by one, select your Radio buttons &amp;amp; connect same &lt;code class=&quot;highlighter-rouge&quot;&gt;Action&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;viewController&lt;/code&gt;s &lt;code class=&quot;highlighter-rouge&quot;&gt;IBAction&lt;/code&gt; as indicated below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step6.png&quot; alt=&quot;IBAction Connection&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 7:&lt;/em&gt;&lt;/strong&gt; Add following piece of code &amp;amp; you’re done.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SKRadioButton&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Step 1. Import SKRadioButton&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// Step 2. collection of radio buttons&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;genderRadioButtons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;SKRadioButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// Step 3. On tap update 'isSelected' attributes&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;genderRadioButtonsTapped&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SKRadioButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;genderRadioButtons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;forEach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isSelected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isSelected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Cheers.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 10 Nov 2017 10:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/11/10/Using-Radio-Buttons-iOS-Swift/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/10/Using-Radio-Buttons-iOS-Swift/</guid>
-      </item>
-    
-      <item>
-        <title>Generating Table of Contents for Markdown</title>
-        <description>&lt;h3 id=&quot;installing-utility-which-generates-markdown&quot;&gt;Installing Utility which generates markdown&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g doctoc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;generating-toc&quot;&gt;Generating TOC&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;doctoc about.md
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It will generate toc as follows.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&amp;gt;
-&amp;lt;!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&amp;gt;
-**Table of Contents**
-
-- [Professional Synopsis](#professional-synopsis)
-- [Experience](#experience)
-  - [Mentor &amp;amp; Lead for iOS Apps Dev @ Altimetrik (Aug-2015)](#mentor--lead-for-ios-apps-dev--altimetrik-aug-2015)
-  - [System Analyst in Mobile Apps (May-2014 to Aug-2015)](#system-analyst-in-mobile-apps-may-2014-to-aug-2015)
-  - [iOS Lead App Developer (Feb-2013 to Apr-2014)](#ios-lead-app-developer-feb-2013-to-apr-2014)
-  - [iOS App Developer (October 2011 – July 2012)](#ios-app-developer-october-2011--july-2012)
-  - [iOS App Devloper (Feb 2010 – Oct-2011)](#ios-app-devloper-feb-2010--oct-2011)
-- [Skills](#skills)
-
-&amp;lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 09 Nov 2017 10:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/11/09/Generating-Table-of-Contents-for-Markdown/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/09/Generating-Table-of-Contents-for-Markdown/</guid>
-      </item>
-    
-      <item>
-        <title>Animate view on updating constraint values</title>
-        <description>&lt;p&gt;Add following method inside your &lt;code class=&quot;highlighter-rouge&quot;&gt;view controller&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animateListView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setNeedsUpdateConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;layoutIfNeeded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;After updating constraint value, invoke above method.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 08 Nov 2017 12:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/11/08/Animate-on-update-constraints/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/08/Animate-on-update-constraints/</guid>
-      </item>
-    
-      <item>
-        <title>Writing Test case for UIAlertController</title>
-        <description>&lt;h3 id=&quot;code-snippet-to-show-view-controller&quot;&gt;Code Snippet to show view controller&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyCustomViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showAlertView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Title of the Alert&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Message for Alert&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;actions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;UIAlertAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Yes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertActionStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// piece of code if user taps on yes.&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;UIAlertAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;no&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertActionStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// piece of code if user taps on no.&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;alert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;preferredStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertControllerStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;action&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;viewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;present&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;code-snippet-to-test-above-code&quot;&gt;Code Snippet to test above code&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testshowAlertView_DidShowValidAlert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// SUT is System under test&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// here, SUT is an instance of 'MyCustomViewController'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;sut&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;showAlertView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;exp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;expectation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Show AlertView Controller Expectation&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;DispatchQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;asyncAfter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;deadline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;seconds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// access root view controller&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shared&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rootViewController&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// check if it presented AlertController or not&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;XCTAssertTrue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentedViewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// access alertController&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;alertController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;presentedViewController&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertController&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// Check if it has valid title or not&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;XCTAssertEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alertController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Title of the Alert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// Check if it has valid message or nots&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;XCTAssertEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alertController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Message for Alert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// Check if it has valid number of actions or not&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;actions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alertController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;XCTAssertTrue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// Check if actions has valid titles or not&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;XCTAssertEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Yes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;XCTAssertEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;No&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fulfill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;nf&quot;&gt;waitForExpectations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 08 Nov 2017 10:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/11/08/Writing-test-case-for-UIAlertController/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/08/Writing-test-case-for-UIAlertController/</guid>
-      </item>
-    
-      <item>
-        <title>Shellscript to generate AppIcons from 1024x1024.png Image</title>
-        <description>&lt;h2 id=&quot;download-shellscript&quot;&gt;Download Shellscript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/2017-11-08/GenerateAppIcons.sh&quot;&gt;Click here to download&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;manually-manage-shellscript&quot;&gt;Manually manage Shellscript&lt;/h2&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cp 1024x1024.png AppIcon-20.png
-sips -Z 20 AppIcon-20.png
-
-cp 1024x1024.png AppIcon-20@2x.png
-sips -Z 40 AppIcon-20@2x.png
-
-cp 1024x1024.png AppIcon-20@3x.png
-sips -Z 60 AppIcon-20@3x.png
-
-cp 1024x1024.png AppIcon-29.png
-sips -Z 29 AppIcon-29.png
-
-cp 1024x1024.png AppIcon-29@2x.png
-sips -Z 58 AppIcon-29@2x.png
-
-cp 1024x1024.png AppIcon-29@3x.png
-sips -Z 87 AppIcon-29@3x.png
-
-cp 1024x1024.png AppIcon-40.png
-sips -Z 40 AppIcon-40.png
-
-cp 1024x1024.png AppIcon-40@2x.png
-sips -Z 80 AppIcon-40@2x.png
-
-cp 1024x1024.png AppIcon-40@3x.png
-sips -Z 120 AppIcon-40@3x.png
-
-cp 1024x1024.png AppIcon-60@3x.png
-sips -Z 180 AppIcon-60@3x.png
-
-cp 1024x1024.png AppIcon-76.png
-sips -Z 76 AppIcon-76.png
-
-cp 1024x1024.png AppIcon-76@2x.png
-sips -Z 152 AppIcon-76@2x.png
-
-cp 1024x1024.png AppIcon-83.5@2x.png
-sips -Z 167 AppIcon-83.5@2x.png
-
-cp 1024x1024.png AppIcon-512@2x.png
-
-rm 1024x1024.png
-
-mkdir AppIcon.appiconset
-
-mv AppIcon-20.png AppIcon.appiconset/AppIcon-20.png
-mv AppIcon-20@2x.png AppIcon.appiconset/AppIcon-20@2x.png
-mv AppIcon-20@3x.png AppIcon.appiconset/AppIcon-20@3x.png
-mv AppIcon-29.png AppIcon.appiconset/AppIcon-29.png
-mv AppIcon-29@2x.png AppIcon.appiconset/AppIcon-29@2x.png
-mv AppIcon-29@3x.png AppIcon.appiconset/AppIcon-29@3x.png
-mv AppIcon-40.png AppIcon.appiconset/AppIcon-40.png
-mv AppIcon-40@2x.png AppIcon.appiconset/AppIcon-40@2x.png
-mv AppIcon-40@3x.png AppIcon.appiconset/AppIcon-40@3x.png
-mv AppIcon-60@3x.png AppIcon.appiconset/AppIcon-60@3x.png
-mv AppIcon-76.png AppIcon.appiconset/AppIcon-76.png
-mv AppIcon-76@2x.png AppIcon.appiconset/AppIcon-76@2x.png
-mv AppIcon-83.5@2x.png AppIcon.appiconset/AppIcon-83.5@2x.png
-mv AppIcon-512@2x.png AppIcon.appiconset/AppIcon-512@2x.png
-
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{
-  &quot;images&quot; : [
-    {
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;size&quot; : &quot;20x20&quot;,
-    &quot;filename&quot; : &quot;AppIcon-20@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;size&quot; : &quot;20x20&quot;,
-    &quot;filename&quot; : &quot;AppIcon-20@3x.png&quot;,
-      &quot;scale&quot; : &quot;3x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;29x29&quot;,
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;filename&quot; : &quot;AppIcon-29@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;29x29&quot;,
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;filename&quot; : &quot;AppIcon-29@3x.png&quot;,
-      &quot;scale&quot; : &quot;3x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;40x40&quot;,
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;filename&quot; : &quot;AppIcon-40@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;40x40&quot;,
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;filename&quot; : &quot;AppIcon-40@3x.png&quot;,
-      &quot;scale&quot; : &quot;3x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;60x60&quot;,
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;filename&quot; : &quot;AppIcon-40@3x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;60x60&quot;,
-      &quot;idiom&quot; : &quot;iphone&quot;,
-      &quot;filename&quot; : &quot;AppIcon-60@3x.png&quot;,
-      &quot;scale&quot; : &quot;3x&quot;
-    },
-    {
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;size&quot; : &quot;20x20&quot;,
-    &quot;filename&quot; : &quot;AppIcon-20.png&quot;,
-      &quot;scale&quot; : &quot;1x&quot;
-    },
-    {
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;size&quot; : &quot;20x20&quot;,
-    &quot;filename&quot; : &quot;AppIcon-20@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;29x29&quot;,
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;filename&quot; : &quot;AppIcon-29.png&quot;,
-      &quot;scale&quot; : &quot;1x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;29x29&quot;,
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;filename&quot; : &quot;AppIcon-29@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;40x40&quot;,
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;filename&quot; : &quot;AppIcon-40.png&quot;,
-      &quot;scale&quot; : &quot;1x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;40x40&quot;,
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;filename&quot; : &quot;AppIcon-40@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;76x76&quot;,
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;filename&quot; : &quot;AppIcon-76.png&quot;,
-      &quot;scale&quot; : &quot;1x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;76x76&quot;,
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;filename&quot; : &quot;AppIcon-76@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;idiom&quot; : &quot;ipad&quot;,
-      &quot;size&quot; : &quot;83.5x83.5&quot;,
-      &quot;filename&quot; : &quot;AppIcon-83.5@2x.png&quot;,
-      &quot;scale&quot; : &quot;2x&quot;
-    },
-    {
-      &quot;size&quot; : &quot;1024x1024&quot;,
-      &quot;idiom&quot; : &quot;ios-marketing&quot;,
-      &quot;filename&quot; : &quot;AppIcon-512@2x.png&quot;,
-      &quot;scale&quot; : &quot;1x&quot;
-    }
-  ],
-  &quot;info&quot; : {
-    &quot;version&quot; : 1,
-    &quot;author&quot; : &quot;xcode&quot;
-  }
-}'&lt;/span&gt; &amp;gt; Contents.json
-
-mv Contents.json AppIcon.appiconset/Contents.json
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 07 Nov 2017 12:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/11/07/Generate-AppIcons-From-1024/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/07/Generate-AppIcons-From-1024/</guid>
-      </item>
-    
-      <item>
-        <title>UIImage Rotate Flip - code snippet</title>
-        <description>&lt;h3 id=&quot;put-following-swift-extension-of-uiimage-class-in-project&quot;&gt;Put following swift extension of &lt;code class=&quot;highlighter-rouge&quot;&gt;UIImage&lt;/code&gt; class in project&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIImage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;imageRotatedByDegrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;degrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;flip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;radiansToDegrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;180.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;M_PI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;degreesToRadians&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;180.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;M_PI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;// calculate the size of the rotated view's containing box for our drawing space&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rotatedViewBox&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;origin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGAffineTransform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;rotationAngle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;degreesToRadians&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;degrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rotatedViewBox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rotatedSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rotatedViewBox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;// Create the bitmap context&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;UIGraphicsBeginImageContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotatedSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bitmap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIGraphicsGetCurrentContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;// Move the origin to the middle of the image so we will rotate and scale around the center.&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;bitmap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;translateBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rotatedSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rotatedSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;//   // Rotate the image context&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;bitmap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;degreesToRadians&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;degrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;// Now, draw the rotated/scaled image into the context&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;yFlip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;yFlip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;yFlip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;bitmap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scaleBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yFlip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;bitmap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cgImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;newImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIGraphicsGetImageFromCurrentImageContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;UIGraphicsEndImageContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newImage&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 06 Nov 2017 10:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/11/06/UIImage-Flip-rotate/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/06/UIImage-Flip-rotate/</guid>
       </item>
     
   </channel>

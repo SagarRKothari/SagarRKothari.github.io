@@ -130,6 +130,25 @@
 
 <h3 id="put-following-swift-test-function-and-replace-with-your-web-service-call-code">Put following swift test function and replace with your web-service call code.</h3>
 
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">testWebService</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">string</span> <span class="o">=</span> <span class="s">"http://www.mocky.io/v2/5a1409093100002923b33fc0"</span>
+  <span class="c1">// create expectation</span>
+  <span class="k">let</span> <span class="nv">exp</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"Some web service expectation"</span><span class="p">)</span>
+  <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">string</span><span class="p">)</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="n">data</span><span class="o">!.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+      <span class="n">exp</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="kt">XCTFail</span><span class="p">(</span><span class="s">"Webservice failed."</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+  <span class="nf">waitForExpectations</span><span class="p">(</span><span class="nv">timeout</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Here is another example.</p>
+
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">testSomeWebService</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// create expectation</span>
   <span class="k">let</span> <span class="nv">exp</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"Some web service expectation"</span><span class="p">)</span>
@@ -141,7 +160,6 @@
 <span class="p">}</span>
 </code></pre>
 </div>
-
 
 
 <div class="sharing">

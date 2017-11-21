@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Travis-CI for your components - Cocoapods"
 date:   2017-11-15 10:00:00
-categories: Illustration
+categories: CodeSnippet
 tags: TravisCI Continuous Integration CI
 comments: true
 logo: cogs

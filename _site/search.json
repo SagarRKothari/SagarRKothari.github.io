@@ -1,6 +1,66 @@
 [
   
     {
+      "title"    : "Mocking A web-service response with Mocky",
+      "category" : "",
+      "tags"     : "Mock, WebService, Response, Request, MockData, Sample, API, JSON",
+      "url"      : "http://localhost:4000/2017/11/21/Mocking-A-Web-service-response-with-Mocky/",
+      "date"     : "November 21, 2017",
+      "content"  : "I personally recommend using Mocky to Mock your HTTP responses to test your REST API.\n\nHere is an example of sample web-service which I just created at Mocky which returns JSON as indicated below.\n\n\n\nHere is the piece of code, which you might be needing in iOS Application to run above mock service.\n\nlet string = \"http://www.mocky.io/v2/5a1409093100002923b33fc0\"\n// create expectation\nlet task = URLSession.shared.dataTask(with: URL(string: string)!) { (data, response, error) in\n  if error != nil &amp;&amp; data != nil &amp;&amp; data!.count &gt; 0 {\n    // no error &amp; data received\n  } else {\n    // either error or no data.\n  }\n}\ntask.resume()\n\n\n",
+      "snippet"  : "I personally recommend using Mocky to Mock your HTTP responses to test your REST API."
+    } ,
+  
+    {
+      "title"    : "Important Locations for iOS Application Development",
+      "category" : "",
+      "tags"     : "Folder, Location, Finder, Xcode, iOS, Application, Development",
+      "url"      : "http://localhost:4000/2017/11/20/Important-Locations/",
+      "date"     : "November 20, 2017",
+      "content"  : "Here, I’ve added list of locations which can be used frequently for iOS Application Development.\n\n\n  Where to locate Provisioning Profiles?\n\n\n~/Library/MobileDevice/Provisioning Profiles/\n\n\n\n\n  Where to locate iOS Simulators?\n\n\n~/Library/Developer/CoreSimulator/Devices/\n\n\n\n\n  Where to locate Derived Data?\n\n\n~/Library/Developer/Xcode/DerivedData\n\n\n\n\n  Where to locate Archives?\n\n\n~/Library/Developer/Xcode/Archives\n\n\n\n\n  Where to locate App Records which are shown under Xcode -&gt; Organizer?\n\n\n~/Library/Developer/Xcode/Products\n\n\n",
+      "snippet"  : "Here, I’ve added list of locations which can be used frequently for iOS Application Development."
+    } ,
+  
+    {
+      "title"    : "Performance Testing with measure block - Xcode",
+      "category" : "",
+      "tags"     : "Testing, Performance, Xcode, Test, Testcase, Unit",
+      "url"      : "http://localhost:4000/2017/11/19/Performance-Testing-with-measure/",
+      "date"     : "November 19, 2017",
+      "content"  : "For performance testing, Xcode provides measure block with the help of which we can execute performance testing.\n\nThe measured block is executed ten times and the test output shows the average execution time as well as individual run times and standard deviation:\n\nfunc testDateFormatterPerformance() {\n  let dateFormatter = DateFormatter()\n  dateFormatter.dateStyle = .long\n  dateFormatter.timeStyle = .short\n  \n  let date = Date()\n  \n  measure {\n    let string = dateFormatter.string(from: date)\n    print(string)\n  }\n}\n\n\n\n\n\nClick on the gray button, once you’re done executing test case.\nIt will open pop-over and show the results of those 10 executions.\n\n\n\n\n\n\n\n",
+      "snippet"  : "For performance testing, Xcode provides measure block with the help of which we can execute performance testing."
+    } ,
+  
+    {
+      "title"    : "Wireless Debugging using XCode9",
+      "category" : "",
+      "tags"     : "Wireless, Debugging, XCode9",
+      "url"      : "http://localhost:4000/2017/11/18/Wireless-debugging-xcode9/",
+      "date"     : "November 18, 2017",
+      "content"  : "Choose any of your iOS or tvOS devices on the local network to install, run, and debug your apps — without a USB cord plugged into your Mac.\n\nSimply click the ‘Connect via Network’ checkbox the first time you use a new iOS device, and that device will be available over the network from that point forward.\n\n\n\nWireless development also works in other apps, including Instruments, Accessibility Inspector, Quicktime Player, and Console.\n\n\n",
+      "snippet"  : "Choose any of your iOS or tvOS devices on the local network to install, run, and debug your apps —..."
+    } ,
+  
+    {
+      "title"    : "Locate SQLite file for Core Data application",
+      "category" : "",
+      "tags"     : "CoreData, Database, SQLite, File, Locate",
+      "url"      : "http://localhost:4000/2017/11/17/Locate-SQLite-For-CoreData/",
+      "date"     : "November 17, 2017",
+      "content"  : "If you’re using coredata in your application, sometimes you might need to open database &amp; check actuall values. I prefer to use DB Browser For SQLite.\n\nHow to locate SQLite file?\n\nPut following piece of code under AppDelegate - didFinishLaunching method.\n\nlet path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)\nprint(\"\\(path)\")\n\n\n\nAbove code will simply print the path of Library-ApplicationSupport of your application, which should look like following.\n\n[\"/Users/sagar/Library/Developer/CoreSimulator/Devices/4A09A062-C286-4B9A-A60C-4D664E7CF451/data/Containers/Data/Application/48F17B59-8876-4FDF-AEF9-BDDD533079E7/Library/Application Support\"]\n\n\n\nAs you can see, there are two identifiers in the folder-structure-path. One is identifier of the Simulator &amp; the other one is of your-application.\n\nStep 1. Copy the message from console, after running the application on iOS Simulator.\n\nStep 2. Open finder &amp; press CMD+G to open Go To Folder as indicated below &amp; paste the copied path.\n\n\n\nStep 3. You should be able to locate SQLite file now. In my case it is SampleData.sqlite\n\n\n",
+      "snippet"  : "If you’re using coredata in your application, sometimes you might need to open database &amp; check actuall values. I prefer..."
+    } ,
+  
+    {
+      "title"    : "SQLite Browser of my choice for Mac OSX",
+      "category" : "",
+      "tags"     : "CoreData, Database, SQLite, SQLiteBrowser",
+      "url"      : "http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/",
+      "date"     : "November 16, 2017",
+      "content"  : "DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.\n\n\n\nDownload SQLiteBrowser from here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "snippet"  : "DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible..."
+    } ,
+  
+    {
       "title"    : "Using Travis-CI for your components - Cocoapods",
       "category" : "",
       "tags"     : "TravisCI, Continuous, Integration, CI",
@@ -226,7 +286,7 @@
       "tags"     : "XCTest, testing, test, expectation, fulfill",
       "url"      : "http://localhost:4000/2017/10/24/Writing-Test-Case-to-test-webservice/",
       "date"     : "October 24, 2017",
-      "content"  : "Put following swift test function and replace with your web-service call code.\n\nfunc testSomeWebService() {\n  // create expectation\n  let exp = expectation(description: \"Some web service expectation\")\n  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {\n    // got response\n    exp.fulfill()\n  }\n  waitForExpectations(timeout: 30, handler: nil)\n}\n\n\n\n",
+      "content"  : "Put following swift test function and replace with your web-service call code.\n\nfunc testWebService() {\n  let string = \"http://www.mocky.io/v2/5a1409093100002923b33fc0\"\n  // create expectation\n  let exp = expectation(description: \"Some web service expectation\")\n  let task = URLSession.shared.dataTask(with: URL(string: string)!) { (data, response, error) in\n    if error != nil &amp;&amp; data != nil &amp;&amp; data!.count &gt; 0 {\n      exp.fulfill()\n    } else {\n      XCTFail(\"Webservice failed.\")\n    }\n  }\n  task.resume()\n  waitForExpectations(timeout: 30, handler: nil)\n}\n\n\n\nHere is another example.\n\nfunc testSomeWebService() {\n  // create expectation\n  let exp = expectation(description: \"Some web service expectation\")\n  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {\n    // got response\n    exp.fulfill()\n  }\n  waitForExpectations(timeout: 30, handler: nil)\n}\n\n\n",
       "snippet"  : "Put following swift test function and replace with your web-service call code."
     } ,
   
@@ -573,6 +633,14 @@
         "date"     : " ",
         "content"  : "",
         "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
      
    } ,
   

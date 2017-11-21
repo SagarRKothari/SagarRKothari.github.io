@@ -2,7 +2,7 @@
 layout: post
 title:  "Sorting Elements to Support re-arrangement with core data having sortIndex as attribute"
 date:   2017-11-14 10:00:00
-categories: Illustration
+categories: CodeSnippet
 tags: Sort Rearrange Arrange Index SortIndex CoreData
 comments: true
 logo: compress
