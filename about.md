@@ -15,12 +15,6 @@ I've total 8 years of experience in building native iOS applications.
 - [Professional Synopsis](#professional-synopsis)
 - [Skills](#skills)
 - [Experience](#experience)
-  - [Mentor & Lead for iOS Apps Dev @ Altimetrik (Aug-2015)](#mentor--lead-for-ios-apps-dev--altimetrik-aug-2015)
-  - [System Analyst in Mobile Apps (May-2014 to Aug-2015)](#system-analyst-in-mobile-apps-may-2014-to-aug-2015)
-  - [iOS Lead App Developer (Feb-2013 to Apr-2014)](#ios-lead-app-developer-feb-2013-to-apr-2014)
-  - [iOS App Developer (October 2011 – July 2012)](#ios-app-developer-october-2011--july-2012)
-  - [iOS App Devloper (Feb 2010 – Oct-2011)](#ios-app-devloper-feb-2010--oct-2011)
-  - [Software Engineer (May 2009 – Jan 2010)](#software-engineer-may-2009--jan-2010)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -86,56 +80,116 @@ I've total 8 years of experience in building native iOS applications.
 
 ### Experience
 
-#### Mentor & Lead for iOS Apps Dev @ Altimetrik (Aug-2015)
+***Summary***
+
+| Designation | Company | Duration |
+|-------------|---------|----------|
+| Mentor & Lead for iOS Apps Dev | Mastercard (Via Altimetrik) | Aug-2015 to till date |
+| System Analyst in Mobile Apps | UST Global | May-2014 to Aug-2015 |
+| iOS Lead App Developer | Helios Solutions | October 2011 – July 2012 |
+| iOS App Developer | Valtech India Software Services Pvt Ltd | October 2011 – July 2012 |
+| iOS App Devloper | Digicorp Information System P. Ltd | Feb 2010 – Oct-2011 |
+| Software Engineer | Hidden Brains Infotech Ltd. | May 2009 – Jan 2010 |
+
+***Details***
+
+##### Mentor & Lead for iOS Apps Dev @ Altimetrik (Aug-2015)
 
 ***Company:*** Altimetrik, Business Bay, Yerwada, Pune, Maharashtra
 
 Currently working for Mastercard (through vendor Altimetrik)
 
+Project Management
+
+* Communication with client & requirements gathering.
+* Preparing estimates & defining scopes, tracking progress of each tasks via ticket-management in redmine.
+
+Responsibilities as Development lead
+
+* Repository management using SVN or Github
+* Communication with team-mates, API developers, Project manager, Designer as per requirement.
+* Frequent code-review & tracking quality of the code as per the coding standards
+* Managing development & production app-releases.
+* Tracking time & sending time-logs of each developer involved in project.
+* Dependencies management
+Responsibilities as Developer & Tester
+* Hands-on experience in Native CoreData, SQLite, UIKit, MessageUI, CoreLocation, AddressBook, Accounts, iAd, EventKit, MapKit, MediaPlayer frameworks.
+* Manual testing of each Modules developed in different simulators & devices with different conditions for stress testing.
+
 #### System Analyst in Mobile Apps (May-2014 to Aug-2015)
 
 ***Company:*** UST Global, Prestige Shantiniketan, Whitefield, Bangalore, Karnataka.
 
-* Project Management, Communication with Project Manager, Solution Architect & Client, Providing estimates, technical documents, defining scopes, tracking progress of each task, preparing release & sharing with client.
-* Responsibilities, Code repository management, Code review, Application developer level testing, App build & distribution, Merging, reviewing, resolving code conflicts, Developing mockups for Apps, Describing development requirements to developers, Assigning tasks, Support on technical challenges, Research and development
+Project Management
+
+* Communication with Project Manager, Solution Architect & Client
+* Providing estimates, technical documents, defining scopes, tracking progress of each task, preparing release & sharing with client.
+
+Responsibilities
+
+* Code repository management
+* Code review
+* Application developer level testing
+* App build & distribution
+* Merging, reviewing, resolving code conflicts
+* Developing mockups for Apps
+* Describing development requirements to developers
+* Assigning tasks
+* Support on technical challenges
+* Research and development
+* Scheduling & taking Knowledge sharing sessions
 
 #### iOS Lead App Developer (Feb-2013 to Apr-2014)
 
 ***Company:*** Helios Solutions, Gotri road, Baroda, Gujarat.
 
-* Project Management, Communication with client & requirements gathering., Preparing estimates & defining scopes, tracking progress of each tasks via ticket-management in redmine.
-* Responsibilities as Development lead, Repository management using SVN or Github, Communication with team-mates, API developers, Project manager, Designer as per requirement., Frequent code-review & tracking quality of the code as per the coding standards, Managing development & production app-releases., Tracking time & sending time-logs of each developer involved in project., Dependencies management
-* Responsibilities as Developer & Tester, Hands-on experience in Native CoreData, SQLite, UIKit, MessageUI, CoreLocation, AddressBook, Accounts, iAd, EventKit, MapKit, MediaPlayer frameworks., Manual testing of each Modules developed in different simulators & devices with different conditions for stress testing.
+* Designated to lead the mobile-team of 2 members for development of specific product
+* Managing project requirements
+* Video/Audio conferences with client
+* Estimations management, Project management using Red-mine open-source tool.
+* Team collaboration using Github, Smart-SVN
+* Managing code-standards & frequent code-review
+* Communication with project-manager for planning, designer for design-stuff
+* Arranging & attending daily meetings for planned tasks for the day
+* Managing tickets over sticky-board / scrum-board - reflection of red-mine tickets.
 
 #### iOS App Developer (October 2011 – July 2012)
 
 ***Company:*** Valtech India Software Services Pvt Ltd (CMMI Level 5), Bangalore, Karnataka
 
-* Worked as a Software Engineer in Valtech India Software Services Pvt Ltd, Bangalore
-* Developing iPhone/iPad Applications on iPhone OS 5.0, and XCode 4.3. on Mac OS 10.7.3
-* Conducting business analysis & Documentation
-* Client communications & Coordination
-* Client Requirement Gathering
-* Project Effort Estimation & Costing
-* Project Follow-up & Review.
+* Discussion with other iOS developer, dividing task & working simultaneously.
+* Grabbing the requirements from Project Manger.
+* Creating rough mock-ups for the application.
+* Reviewing the code of other developers
+* Guidance to other developers for improvements in App-Development.
+* Communication with designers, web-service developers, tester & other members as per need.
+* Developing application from scratch to end.
+* Knowledge sharing sessions on each week-ends.
 
 #### iOS App Devloper (Feb 2010 – Oct-2011)
 
 ***Company:*** Digicorp Information System P. Ltd, Ahmedabad, Gujarat
 
-* Worked as a Software Engineer in Digicorp Information System P. Ltd, Ahmedabad
-* Developing iPhone/iPad Applications on iPhone OS 4.2, and XCode 3.2.5 on Mac OS 10.6.5
-* Conducting business analysis & Documentation
-* Client communications & Coordination
-* Client Requirement Gathering
-* Project Effort Estimation & Costing
-* Project Follow-up & Review
+* Grabbing the requirements from Project Manger.
+* Creating rough mock-ups for the application.
+* Preparing documents like Functional documents, Technical specification documents, Effort Estimation documents.
+* Reviewing the code of other developers.
+* Managing entire code-base in sub-version systems.
+* Sending project code-base, archives, .iPA files & other different distribution methods.
+* App Store upload process responsibility
+* Interacting with other teams like Android Team.
+* Communication with designers, web-service developers, tester & other members as per need.
+* Developing application from scratch to end
      
 #### Software Engineer (May 2009 – Jan 2010)
 
 ***Company:*** Hidden Brains Infotech Ltd., Ahmedabad, Gujarat
 
-* Worked as a Software Engineer in Hidden Brains Infotech Ltd., Ahmedabad  
-* Gained experience in developing iPhone Applications on iPhone OS 3.1.2, and XCode 3.1.4 on Mac OS 10.5.8. 
-* Frameworks used - UIKit, MapKit, MPMediaPlayer, Foundation, AudioToolbox, CoreLocation, CFNetwork, GData (Youtube, calander), JSON, AVFramework, AVFoundation, MessageUIframework, CFNetwork.
+* Allocating time for giving training to new iOS developers.
+* Giving training to freshers & assigning tasks to them.
+* Grabbing the requirements from Project Manger.
+* Creating rough mock-ups for the application.
+* Communication with designers, web-service developers, tester & other members as per need.
+* Developing application from scratch to end.
+* Apple store approval process for an application.
 
