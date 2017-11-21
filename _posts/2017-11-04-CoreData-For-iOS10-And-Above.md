@@ -8,6 +8,14 @@ comments: true
 logo: database
 ---
 
+***NOTE:*** This article is outdated. Please [click here]({{"2017/11/12/CoreData-Xcode9/" | absolute_url}}) to read updated article.
+
+---
+
+***OUTDATED*** article. Please [click here]({{"2017/11/12/CoreData-Xcode9/" | absolute_url}})
+
+---
+
 Please find steps for core Data implementation as follows.
 
 #### Step 1: Create Data model 

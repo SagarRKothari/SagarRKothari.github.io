@@ -51,7 +51,7 @@ kramdown:
 #   use_coderay: false
 
 # Gems
-plugins: ['jekyll-paginate']
+plugins: ['jekyll-paginate', 'jekyll-seo-tag']
 
 # Exclude
 exclude: ['README.md']
