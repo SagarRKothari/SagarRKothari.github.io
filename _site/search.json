@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "npm install throws error - UNABLE TO GET ISSUER CERT LOCALLY",
+      "category" : "",
+      "tags"     : "tools, ReactNative, npm, install, error, Nodejs",
+      "url"      : "http://localhost:4000/2017/11/22/UNABLE-TO-GET-ISSUER-CERT-LOCALLY/",
+      "date"     : "November 22, 2017",
+      "content"  : "While installing npm modules, I was getting following error.\nPlease find the solution which I’ve used below error message.\n\nnpm ERR! fetch failed https://github.com/expo/node-websql/archive/18.0.0.tar.gz\nnpm WARN retry will retry, error on last attempt: Error: unable to get local issuer certificate\nnpm ERR! fetch failed https://github.com/expo/node-websql/archive/18.0.0.tar.gz\nnpm WARN retry will retry, error on last attempt: Error: unable to get local issuer certificate\nnpm ERR! fetch failed https://github.com/expo/node-websql/archive/18.0.0.tar.gz\nnpm ERR! Darwin 16.7.0\nnpm ERR! argv \"/usr/local/bin/node\" \"/usr/local/bin/npm\" \"install\" \"--save\"\nnpm ERR! node v6.10.0\nnpm ERR! npm  v3.10.10\nnpm ERR! code UNABLE_TO_GET_ISSUER_CERT_LOCALLY\n\nnpm ERR! unable to get local issuer certificate\nnpm ERR! \nnpm ERR! If you need help, you may report this error at:\nnpm ERR!     &lt;https://github.com/npm/npm/issues&gt;\n\n\n\nAfter receiving such errors &amp; tried to find out the root cause. \nI came to know that due to strict SSL downloads, npm downloads were failing.\nFirewalls were causing issues &amp; downloads from npm were being rejected.\n\nI executed following command to disable strict SSL checks.\n\nnpm config set strict-ssl false\n\n\n\nAfter this, I was able to download npm commands correctly.\n\nHere are the set of commands which I was trying to execute.\n\n$ npm install -g create-react-native-app\n$ create-react-native-app my-app\n$ cd my-app/\n$ npm start\n\n\n",
+      "snippet"  : "While installing npm modules, I was getting following error.Please find the solution which I’ve used below error message."
+    } ,
+  
+    {
       "title"    : "Mocking A web-service response with Mocky",
       "category" : "",
       "tags"     : "Mock, WebService, Response, Request, MockData, Sample, API, JSON",
