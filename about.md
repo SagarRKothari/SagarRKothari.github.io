@@ -8,6 +8,14 @@ permalink: /about/
 I'm a software engineer working at `mastercard, Pune, India` via vendor `Altimetrik India Pvt. Ltd., Pune, India`.
 I've total 8 years of experience in building native iOS applications.
 
+<hr>
+***Download Resume***
+
+* [In word document format]({{"/assets/Resume/SagarRKothari-Resume.docx" | absolute_url}})
+* [In PDF format]({{"/assets/Resume/SagarRKothari-Resume.pdf" | absolute_url}})
+
+<hr>
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
