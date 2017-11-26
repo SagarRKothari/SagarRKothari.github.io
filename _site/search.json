@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - JSON Conversion",
+      "category" : "",
+      "tags"     : "nodejs, js, javascripting, javascript",
+      "url"      : "http://localhost:4000/2017/11/24/NodeJS-JSON-Conversion/",
+      "date"     : "November 24, 2017",
+      "content"  : "In this post, I’ll explain about converting JSON to String and from String to JSON.\n\nConvert from JSON to String\n\n// Get your object\nvar obj = {\n    name: 'Sagar'\n};\n// convert it to string\nvar stringObj = JSON.stringify(obj);\nconsole.log(typeof stringObj);\nconsole.log(stringObj);\n\n\n\nConvert from String to JSON\n\n// Get your string\nvar personString = '{ \\\n    \"name\": \"Sagar\", \\\n    \"age\": 29 \\\n}';\n// convert it to JSON\nvar person = JSON.parse(personString);\nconsole.log(typeof person);\nconsole.log(person)\n\n\n",
+      "snippet"  : "In this post, I’ll explain about converting JSON to String and from String to JSON."
+    } ,
+  
+    {
       "title"    : "NodeJS - lodash utility",
       "category" : "",
       "tags"     : "nodejs, js, javascripting, javascript, lodash",
@@ -663,6 +673,10 @@
         "date"     : " ",
         "content"  : "",
         "snippet"  : " "
+     
+   } ,
+  
+   {
      
    } ,
   

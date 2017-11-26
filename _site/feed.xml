@@ -7,6 +7,42 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>NodeJS - JSON Conversion</title>
+        <description>&lt;p&gt;In this post, I’ll explain about converting &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; and from &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;convert-from-json-to-string&quot;&gt;Convert from &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;&lt;/h5&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Get your object&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Sagar'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// convert it to string&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stringObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stringObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;convert-from-string-to-json&quot;&gt;Convert from &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt;&lt;/h5&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Get your string&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;personString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{ \
+    &quot;name&quot;: &quot;Sagar&quot;, \
+    &quot;age&quot;: 29 \
+}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// convert it to JSON&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;personString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 24 Nov 2017 15:30:00 +0530</pubDate>
+        <link>http://localhost:4000/2017/11/24/NodeJS-JSON-Conversion/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/24/NodeJS-JSON-Conversion/</guid>
+      </item>
+    
+      <item>
         <title>NodeJS - lodash utility</title>
         <description>&lt;p&gt;Example of &lt;a href=&quot;https://lodash.com/docs/4.17.4&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lodash&lt;/code&gt;&lt;/a&gt; module utilities.&lt;/p&gt;
 
@@ -479,54 +515,6 @@ It will open pop-over and show the results of those 10 executions.&lt;/p&gt;
         <pubDate>Thu, 16 Nov 2017 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/</guid>
-      </item>
-    
-      <item>
-        <title>Using Travis-CI for your components - Cocoapods</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/sag333ar/SKRadioButton/blob/master/.travis.yml&quot;&gt;Source Of Travis Config&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Language:&lt;/em&gt;&lt;/strong&gt; Define which &lt;code class=&quot;highlighter-rouge&quot;&gt;language&lt;/code&gt; to use. Here, we’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;swift&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;osx_image:&lt;/em&gt;&lt;/strong&gt; Define which &lt;code class=&quot;highlighter-rouge&quot;&gt;osx_image&lt;/code&gt; to use. Here, we’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;Xcode9&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;branches:&lt;/em&gt;&lt;/strong&gt; Define which &lt;code class=&quot;highlighter-rouge&quot;&gt;branches&lt;/code&gt; of repository to run CI. Here, we’ve specified only &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; to run CI.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;env:&lt;/em&gt;&lt;/strong&gt; Define environment. We’ve set it to &lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;script:&lt;/em&gt;&lt;/strong&gt; Define scripts to be executed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If  pipefail  is  enabled,  the  pipeline’s return status is the value of the last (rightmost) command to exit with a non-zero status, or zero if all commands exit successfully.&lt;/p&gt;
-
-&lt;p&gt;Here, we’re enabling &lt;code class=&quot;highlighter-rouge&quot;&gt;pipefail&lt;/code&gt; flag by providing following script.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set -o pipefail
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here, we’re building xcode project with &lt;code class=&quot;highlighter-rouge&quot;&gt;xcodebuild&lt;/code&gt; command.
-Please make sure to replace your project’s name &amp;amp; scheme name before executing.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcodebuild -project SKRadioButton.xcodeproj -scheme SKRadioButton -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;swift&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;osx_image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;xcode9&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;set -o pipefail&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;xcodebuild -project SKRadioButton.xcodeproj -scheme SKRadioButton -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 15 Nov 2017 15:30:00 +0530</pubDate>
-        <link>http://localhost:4000/2017/11/15/Travis-CI-for-Cocoapods/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/15/Travis-CI-for-Cocoapods/</guid>
       </item>
     
   </channel>
