@@ -1,6 +1,36 @@
 [
   
     {
+      "title"    : "NodeJS - Nodemon for server or error monitoring",
+      "category" : "",
+      "tags"     : "nodejs, js, nodemon, server, error, monitoring",
+      "url"      : "http://localhost:4000/2017/11/27/NodeJS-Nodemon/",
+      "date"     : "November 27, 2017",
+      "content"  : "About\n\nnodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.\n\nnodemon does not require any changes to your code or method of development. nodemon simply wraps your node application and keeps an eye on any files that have changed. Remember that nodemon is a replacement wrapper for node, think of it as replacing the word “node” on the command line when you run your script.\n\nInstallation\n\nnpm install -g nodemon\n\n\n\nUsage\n\nnodemon app.js\n\n\n\nExample output\n\n$ nodemon app.js \n[nodemon] 1.12.1\n[nodemon] to restart at any time, enter `rs`\n[nodemon] watching: *.*\n[nodemon] starting `node app.js`\nCommand not recognized\n[nodemon] clean exit - waiting for changes before restart\n\n\n",
+      "snippet"  : "About"
+    } ,
+  
+    {
+      "title"    : "NodeJS - Using fs module to read write to files",
+      "category" : "",
+      "tags"     : "nodejs, js, fs, file, read, write",
+      "url"      : "http://localhost:4000/2017/11/26/NodeJS-fs-sync-file-read-write/",
+      "date"     : "November 26, 2017",
+      "content"  : "About\n\nfs is provided by simple wrappers around standard POSIX functions. To use this module do require(‘fs’). All the methods have asynchronous and synchronous forms.\n\nDeleting file\n\nASync Version\n\nconst fs = require('fs');\n\nfs.unlink('/tmp/hello', (err) =&gt; {\n  if (err) throw err;\n  console.log('successfully deleted /tmp/hello');\n});\n\n\n\nSync Version\n\nconst fs = require('fs');\n\nfs.unlinkSync('/tmp/hello');\nconsole.log('successfully deleted /tmp/hello');\n\n\n\nReading file\n\nSync Version\n\nvar notesString = fs.readFileSync('notes-data.json');\nvar notesFromFile = JSON.parse(notesString);\n\n\n\nWriting to file\n\nSync Version\n\n// notes loaded from memory\nvar myNotesInMemory = JSON.parse(fs.readFileSync('notes-data.json')); \n// notes being written to file\nfs.writeFileSync('notes-data.json', JSON.stringify(notes));\n\n\n",
+      "snippet"  : "About"
+    } ,
+  
+    {
+      "title"    : "NodeJS - yargs utility for command line help",
+      "category" : "",
+      "tags"     : "nodejs, js, yargs, commandline, arguments",
+      "url"      : "http://localhost:4000/2017/11/25/NodeJS-yargs-utility/",
+      "date"     : "November 25, 2017",
+      "content"  : "About\n\nYargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.\n\nIt gives you:\n\n\n  commands and (grouped) options (my-program.js serve –port=5000).\n  a dynamically generated help menu based on your arguments.\n\n\nExample:\n\n\n\nInstallation\n\nnpm install yargs --save\n\n\n\n\n\nUsage\n\n\n\nImporting yargs\nconst yargs = require('yargs');\n\n\n\nExample terminal commands, to accept, are as follows, for a terminal-based-notes application.\n\n$node app.js list # which will list all the notes\n$node app.js read --title='My Secret Note'\n$node app.js add -t=\"Note Title\" -b=\"Note body section\"\n$node app.js add --title=\"My Personal Note title\" --body=\"Custom note body\"\n\n\n\nSetting up yargs\nconst titleOptions = {\n  describe: 'Title of note',\n  demand: true,\n  alias: 't'\n};\nconst bodyOptions = {\n  describe: 'Body of note',\n  demand: true,\n  alias: 'b'\n};\nconst argv = yargs\n  .command('add', 'Add a new note', {\n    title: titleOptions,\n    body: bodyOptions\n  })\n  .command('list', 'List all notes')\n  .command('read', 'Read a note', {\n    title: titleOptions,\n  })\n  .command('remove', 'Remove a note', {\n    title: titleOptions\n  })\n  .help()\n  .argv;\nvar command = argv._[0];\n\n\n\nUsing yargs variable\n\nif (command === 'add') {\n  // do something to add a note\n  // argv.title \n  // argv.body\n} else if (command === 'list') {\n  // do something to list all notes\n} else if (command === 'read') {\n  // do something to read a specific note\n  // argv.title = requested note title\n} else if (command === 'remove') {\n  // do something to remove a specific note\n  // argv.title = requested note title\n}\n\n\n\nNeed more examples? Click here.\n",
+      "snippet"  : "About"
+    } ,
+  
+    {
       "title"    : "NodeJS - JSON Conversion",
       "category" : "",
       "tags"     : "nodejs, js, javascripting, javascript",

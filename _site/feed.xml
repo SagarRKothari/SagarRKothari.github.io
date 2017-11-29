@@ -7,6 +7,193 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>NodeJS - Nodemon for server or error monitoring</title>
+        <description>&lt;h5 id=&quot;about&quot;&gt;About&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/nodemon&quot;&gt;nodemon&lt;/a&gt; will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.&lt;/p&gt;
+
+&lt;p&gt;nodemon does not require any changes to your code or method of development. nodemon simply wraps your node application and keeps an eye on any files that have changed. Remember that nodemon is a replacement wrapper for node, think of it as replacing the word “node” on the command line when you run your script.&lt;/p&gt;
+
+&lt;h5 id=&quot;installation&quot;&gt;Installation&lt;/h5&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g nodemon
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;usage&quot;&gt;Usage&lt;/h5&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nodemon app.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;example-output&quot;&gt;Example output&lt;/h5&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;nodemon app.js 
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] 1.12.1
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] to restart at any &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;, enter &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;rs&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] watching: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] starting &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;node app.js&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+Command not recognized
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] clean &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt; - waiting &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;changes before restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 27 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/27/NodeJS-Nodemon/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/27/NodeJS-Nodemon/</guid>
+      </item>
+    
+      <item>
+        <title>NodeJS - Using fs module to read write to files</title>
+        <description>&lt;h5 id=&quot;about&quot;&gt;About&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/api/fs.html&quot;&gt;fs&lt;/a&gt; is provided by simple wrappers around standard POSIX functions. To use this module do require(‘fs’). All the methods have asynchronous and synchronous forms.&lt;/p&gt;
+
+&lt;h4 id=&quot;deleting-file&quot;&gt;Deleting file&lt;/h4&gt;
+
+&lt;p&gt;ASync Version&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unlink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/tmp/hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'successfully deleted /tmp/hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sync Version&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unlinkSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/tmp/hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'successfully deleted /tmp/hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;reading-file&quot;&gt;Reading file&lt;/h4&gt;
+
+&lt;p&gt;Sync Version&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;notesString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFileSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'notes-data.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;notesFromFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notesString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;writing-to-file&quot;&gt;Writing to file&lt;/h5&gt;
+
+&lt;p&gt;Sync Version&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// notes loaded from memory&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myNotesInMemory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFileSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'notes-data.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;// notes being written to file&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeFileSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'notes-data.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 26 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/26/NodeJS-fs-sync-file-read-write/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/26/NodeJS-fs-sync-file-read-write/</guid>
+      </item>
+    
+      <item>
+        <title>NodeJS - yargs utility for command line help</title>
+        <description>&lt;h5 id=&quot;about&quot;&gt;About&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/yargs&quot;&gt;Yargs&lt;/a&gt; helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.&lt;/p&gt;
+
+&lt;p&gt;It gives you:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;commands and (grouped) options (my-program.js serve –port=5000).&lt;/li&gt;
+  &lt;li&gt;a dynamically generated help menu based on your arguments.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/yargs/yargs/HEAD/screen.png&quot; alt=&quot;ScreenShot&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;installation&quot;&gt;Installation&lt;/h5&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install yargs --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;usage&quot;&gt;Usage&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;importing-yargs&quot;&gt;Importing &lt;code class=&quot;highlighter-rouge&quot;&gt;yargs&lt;/code&gt;&lt;/h6&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yargs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'yargs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Example terminal commands, to accept, are as follows, for a terminal-based-notes application.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt; app.js list &lt;span class=&quot;c&quot;&gt;# which will list all the notes&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt; app.js &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt; --title&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'My Secret Note'&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt; app.js add -t&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Note Title&quot;&lt;/span&gt; -b&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Note body section&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt; app.js add --title&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;My Personal Note title&quot;&lt;/span&gt; --body&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Custom note body&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h6 id=&quot;setting-up-yargs&quot;&gt;Setting up &lt;code class=&quot;highlighter-rouge&quot;&gt;yargs&lt;/code&gt;&lt;/h6&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;titleOptions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Title of note'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;demand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'t'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bodyOptions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Body of note'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;demand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'b'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yargs&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'add'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Add a new note'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;titleOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bodyOptions&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'list'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'List all notes'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'read'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Read a note'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;titleOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'remove'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Remove a note'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;titleOptions&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h6 id=&quot;using-yargs-variable&quot;&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;yargs&lt;/code&gt; variable&lt;/h6&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (command === 'add') {
+  // do something to add a note
+  // argv.title 
+  // argv.body
+} else if (command === 'list') {
+  // do something to list all notes
+} else if (command === 'read') {
+  // do something to read a specific note
+  // argv.title = requested note title
+} else if (command === 'remove') {
+  // do something to remove a specific note
+  // argv.title = requested note title
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Need more examples? &lt;a href=&quot;https://github.com/yargs/yargs/blob/HEAD/docs/examples.md&quot;&gt;Click here.&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 25 Nov 2017 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2017/11/25/NodeJS-yargs-utility/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/25/NodeJS-yargs-utility/</guid>
+      </item>
+    
+      <item>
         <title>NodeJS - JSON Conversion</title>
         <description>&lt;p&gt;In this post, I’ll explain about converting &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; and from &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt;.&lt;/p&gt;
 
@@ -37,7 +224,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Fri, 24 Nov 2017 15:30:00 +0530</pubDate>
+        <pubDate>Fri, 24 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/24/NodeJS-JSON-Conversion/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/24/NodeJS-JSON-Conversion/</guid>
       </item>
@@ -78,7 +265,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Thu, 23 Nov 2017 15:30:00 +0530</pubDate>
+        <pubDate>Thu, 23 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/23/NodeJS-lodash-utility/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/23/NodeJS-lodash-utility/</guid>
       </item>
@@ -268,7 +455,7 @@ I also did the same &amp;amp; I have added solutions for &lt;a href=&quot;https:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 22 Nov 2017 15:30:00 +0530</pubDate>
+        <pubDate>Wed, 22 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/22/NodeSchool.io-javascripting/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/22/NodeSchool.io-javascripting/</guid>
       </item>
@@ -317,7 +504,7 @@ $ npm start
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 22 Nov 2017 07:30:00 +0530</pubDate>
+        <pubDate>Wed, 22 Nov 2017 02:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/22/UNABLE-TO-GET-ISSUER-CERT-LOCALLY/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/22/UNABLE-TO-GET-ISSUER-CERT-LOCALLY/</guid>
       </item>
@@ -345,7 +532,7 @@ $ npm start
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Tue, 21 Nov 2017 15:30:00 +0530</pubDate>
+        <pubDate>Tue, 21 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/21/Mocking-A-Web-service-response-with-Mocky/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/21/Mocking-A-Web-service-response-with-Mocky/</guid>
       </item>
@@ -394,7 +581,7 @@ $ npm start
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Mon, 20 Nov 2017 15:30:00 +0530</pubDate>
+        <pubDate>Mon, 20 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/20/Important-Locations/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/20/Important-Locations/</guid>
       </item>
@@ -432,89 +619,9 @@ It will open pop-over and show the results of those 10 executions.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-19/Step2.png&quot; alt=&quot;Step 2&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 19 Nov 2017 15:30:00 +0530</pubDate>
+        <pubDate>Sun, 19 Nov 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/11/19/Performance-Testing-with-measure/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/11/19/Performance-Testing-with-measure/</guid>
-      </item>
-    
-      <item>
-        <title>Wireless Debugging using XCode9</title>
-        <description>&lt;p&gt;Choose any of your iOS or tvOS devices on the local network to install, run, and debug your apps — without a USB cord plugged into your Mac.&lt;/p&gt;
-
-&lt;p&gt;Simply click the ‘Connect via Network’ checkbox the first time you use a new iOS device, and that device will be available over the network from that point forward.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-18/Step1.png&quot; alt=&quot;Step 1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Wireless development also works in other apps, including Instruments, Accessibility Inspector, Quicktime Player, and Console.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-18/Step2.png&quot; alt=&quot;Step 2&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 18 Nov 2017 15:30:00 +0530</pubDate>
-        <link>http://localhost:4000/2017/11/18/Wireless-debugging-xcode9/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/18/Wireless-debugging-xcode9/</guid>
-      </item>
-    
-      <item>
-        <title>Locate SQLite file for Core Data application</title>
-        <description>&lt;p&gt;If you’re using coredata in your application, sometimes you might need to open database &amp;amp; check actuall values. I prefer to use &lt;a href=&quot;http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/&quot;&gt;DB Browser For SQLite&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;how-to-locate-sqlite-file&quot;&gt;How to locate SQLite file?&lt;/h3&gt;
-
-&lt;p&gt;Put following piece of code under &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;didFinishLaunching&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSSearchPathForDirectoriesInDomains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;applicationSupportDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userDomainMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Above code will simply print the path of &lt;code class=&quot;highlighter-rouge&quot;&gt;Library-ApplicationSupport&lt;/code&gt; of your application, which should look like following.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[&quot;/Users/sagar/Library/Developer/CoreSimulator/Devices/4A09A062-C286-4B9A-A60C-4D664E7CF451/data/Containers/Data/Application/48F17B59-8876-4FDF-AEF9-BDDD533079E7/Library/Application Support&quot;]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As you can see, there are two identifiers in the folder-structure-path. One is identifier of the Simulator &amp;amp; the other one is of your-application.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 1.&lt;/em&gt;&lt;/strong&gt; Copy the message from console, after running the application on iOS Simulator.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 2.&lt;/em&gt;&lt;/strong&gt; Open finder &amp;amp; press &lt;code class=&quot;highlighter-rouge&quot;&gt;CMD+G&lt;/code&gt; to open &lt;code class=&quot;highlighter-rouge&quot;&gt;Go To Folder&lt;/code&gt; as indicated below &amp;amp; paste the copied path.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-17/step1.png&quot; alt=&quot;Step2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 3.&lt;/em&gt;&lt;/strong&gt; You should be able to locate &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; file now. In my case it is &lt;code class=&quot;highlighter-rouge&quot;&gt;SampleData.sqlite&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-17/step2.png&quot; alt=&quot;Step3&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 17 Nov 2017 15:30:00 +0530</pubDate>
-        <link>http://localhost:4000/2017/11/17/Locate-SQLite-For-CoreData/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/17/Locate-SQLite-For-CoreData/</guid>
-      </item>
-    
-      <item>
-        <title>SQLite Browser of my choice for Mac OSX</title>
-        <description>&lt;p&gt;DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/sqlitebrowser/sqlitebrowser/raw/master/images/sqlitebrowser.png&quot; alt=&quot;Sample Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://sqlitebrowser.org/&quot;&gt;Download SQLiteBrowser from here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-1.png&quot; alt=&quot;Screenshot 1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-2.png&quot; alt=&quot;Screenshot 2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-3.png&quot; alt=&quot;Screenshot 3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-11-16/screenshot-4.png&quot; alt=&quot;Screenshot 4&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 16 Nov 2017 15:30:00 +0530</pubDate>
-        <link>http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/11/16/SQLite-Browser-For-mac/</guid>
       </item>
     
   </channel>
