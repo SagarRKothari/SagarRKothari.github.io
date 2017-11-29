@@ -94,4 +94,23 @@ if (command === 'add') {
 }
 ```
 
+###### Another Example.
+
+If you want user to provide address, you can configure `yargs` as follows.
+
+```javascript
+const argv = yargs
+    .options({
+        a: { // name of parameter
+            demand: true, // requires true
+            alias: 'address', // alias - another name
+            describe: 'Address to fetch weather for', // description of command. It will be displayed in help
+            string: true // is it string? 
+        }
+    })
+    .help() // generates help
+    .alias('help', 'h') // alias of help command
+    .argv; // argument values
+```
+
 Need more examples? [Click here.](https://github.com/yargs/yargs/blob/HEAD/docs/examples.md)

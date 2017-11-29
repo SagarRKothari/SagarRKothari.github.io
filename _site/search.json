@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Using Request package for sending requests",
+      "category" : "",
+      "tags"     : "nodejs, js, request, http, call, service, server",
+      "url"      : "http://localhost:4000/2017/11/28/NodeJS-Request-utility/",
+      "date"     : "November 28, 2017",
+      "content"  : "About\n\nrequest is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.\n\nInstallation\n\nnpm install request\n\n\n\nUsage\n\nvar request = require('request');\nrequest('http://www.google.com', function (error, response, body) {\n  console.log('error:', error); // Print the error if one occurred\n  console.log('statusCode:', response &amp;&amp; response.statusCode); // Print the response status code if a response was received\n  console.log('body:', body); // Print the HTML for the Google homepage.\n});\n\n\n\nAnother Example.\n\nlet requestedAddress = argv.address;\nlet encodedAddress = encodeURIComponent(requestedAddress);\nlet urlToRequest = 'https://maps.googleapis.com/maps/api/geocode/json?key=YOUR_GOOGLE_MAP_API_KEY&amp;address=' + encodedAddress;\n\nrequest({\n    url: urlToRequest,\n    json: true\n}, (error, response, body) =&gt; {\n    if (error) {\n        console.log('Something went wrong');\n    } else if (body.status === 'OK') {\n        var result = body.results[0];\n        console.log(`Address: ${result.formatted_address}`);\n        console.log(`Address: ${result.geometry.location.lat}`);\n        console.log(`Address: ${result.geometry.location.lng}`);\n    } else if (body.status === 'ZERO_RESULTS') {\n        console.log('Unable to find that address.');\n    } else {\n        console.log('No Results found.');\n    }\n});\n\n\n",
+      "snippet"  : "About"
+    } ,
+  
+    {
       "title"    : "NodeJS - Nodemon for server or error monitoring",
       "category" : "",
       "tags"     : "nodejs, js, nodemon, server, error, monitoring",
@@ -26,7 +36,7 @@
       "tags"     : "nodejs, js, yargs, commandline, arguments",
       "url"      : "http://localhost:4000/2017/11/25/NodeJS-yargs-utility/",
       "date"     : "November 25, 2017",
-      "content"  : "About\n\nYargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.\n\nIt gives you:\n\n\n  commands and (grouped) options (my-program.js serve –port=5000).\n  a dynamically generated help menu based on your arguments.\n\n\nExample:\n\n\n\nInstallation\n\nnpm install yargs --save\n\n\n\n\n\nUsage\n\n\n\nImporting yargs\nconst yargs = require('yargs');\n\n\n\nExample terminal commands, to accept, are as follows, for a terminal-based-notes application.\n\n$node app.js list # which will list all the notes\n$node app.js read --title='My Secret Note'\n$node app.js add -t=\"Note Title\" -b=\"Note body section\"\n$node app.js add --title=\"My Personal Note title\" --body=\"Custom note body\"\n\n\n\nSetting up yargs\nconst titleOptions = {\n  describe: 'Title of note',\n  demand: true,\n  alias: 't'\n};\nconst bodyOptions = {\n  describe: 'Body of note',\n  demand: true,\n  alias: 'b'\n};\nconst argv = yargs\n  .command('add', 'Add a new note', {\n    title: titleOptions,\n    body: bodyOptions\n  })\n  .command('list', 'List all notes')\n  .command('read', 'Read a note', {\n    title: titleOptions,\n  })\n  .command('remove', 'Remove a note', {\n    title: titleOptions\n  })\n  .help()\n  .argv;\nvar command = argv._[0];\n\n\n\nUsing yargs variable\n\nif (command === 'add') {\n  // do something to add a note\n  // argv.title \n  // argv.body\n} else if (command === 'list') {\n  // do something to list all notes\n} else if (command === 'read') {\n  // do something to read a specific note\n  // argv.title = requested note title\n} else if (command === 'remove') {\n  // do something to remove a specific note\n  // argv.title = requested note title\n}\n\n\n\nNeed more examples? Click here.\n",
+      "content"  : "About\n\nYargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.\n\nIt gives you:\n\n\n  commands and (grouped) options (my-program.js serve –port=5000).\n  a dynamically generated help menu based on your arguments.\n\n\nExample:\n\n\n\nInstallation\n\nnpm install yargs --save\n\n\n\n\n\nUsage\n\n\n\nImporting yargs\nconst yargs = require('yargs');\n\n\n\nExample terminal commands, to accept, are as follows, for a terminal-based-notes application.\n\n$node app.js list # which will list all the notes\n$node app.js read --title='My Secret Note'\n$node app.js add -t=\"Note Title\" -b=\"Note body section\"\n$node app.js add --title=\"My Personal Note title\" --body=\"Custom note body\"\n\n\n\nSetting up yargs\nconst titleOptions = {\n  describe: 'Title of note',\n  demand: true,\n  alias: 't'\n};\nconst bodyOptions = {\n  describe: 'Body of note',\n  demand: true,\n  alias: 'b'\n};\nconst argv = yargs\n  .command('add', 'Add a new note', {\n    title: titleOptions,\n    body: bodyOptions\n  })\n  .command('list', 'List all notes')\n  .command('read', 'Read a note', {\n    title: titleOptions,\n  })\n  .command('remove', 'Remove a note', {\n    title: titleOptions\n  })\n  .help()\n  .argv;\nvar command = argv._[0];\n\n\n\nUsing yargs variable\n\nif (command === 'add') {\n  // do something to add a note\n  // argv.title \n  // argv.body\n} else if (command === 'list') {\n  // do something to list all notes\n} else if (command === 'read') {\n  // do something to read a specific note\n  // argv.title = requested note title\n} else if (command === 'remove') {\n  // do something to remove a specific note\n  // argv.title = requested note title\n}\n\n\n\nAnother Example.\n\nIf you want user to provide address, you can configure yargs as follows.\n\nconst argv = yargs\n    .options({\n        a: { // name of parameter\n            demand: true, // requires true\n            alias: 'address', // alias - another name\n            describe: 'Address to fetch weather for', // description of command. It will be displayed in help\n            string: true // is it string? \n        }\n    })\n    .help() // generates help\n    .alias('help', 'h') // alias of help command\n    .argv; // argument values\n\n\n\nNeed more examples? Click here.\n",
       "snippet"  : "About"
     } ,
   
@@ -703,6 +713,10 @@
         "date"     : " ",
         "content"  : "",
         "snippet"  : " "
+     
+   } ,
+  
+   {
      
    } ,
   
