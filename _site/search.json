@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Example of Promises in ES6",
+      "category" : "",
+      "tags"     : "nodejs, js, ES6, javascript, promise, promiese",
+      "url"      : "http://localhost:4000/2017/11/30/NodeJS-Example-of-promise/",
+      "date"     : "November 30, 2017",
+      "content"  : "Here, I’ve added a simple example of usage of Promise in javascript for Node.js.\n\nvar asyncAdd = (a, b) =&gt; {\n    return new Promise((resolve, reject) =&gt; {\n        setTimeout(() =&gt; {\n            if (typeof a === 'number' &amp;&amp; typeof b === 'number') {\n                resolve(a + b);\n            } else {\n                reject('Arguments must be numbers');\n            }\n        }, 1500);\n    });\n}\n\nasyncAdd(10, 15).then((result) =&gt; {\n    console.log('Result: ', result);\n}, (error) =&gt; {\n    console.log(error);\n});\n\n\n\nAbove function can be chained with multiple calls. Here is an example.\n\nasyncAdd(10, 15).then((result) =&gt; {\n    console.log('Result: ', result);\n    return asyncAdd(result, 33); \n}, (error) =&gt; {\n    console.log(error);\n}).then((result) =&gt; {\n    console.log('Result: ', result);\n}, (error) =&gt; {\n    console.log(error);\n});\n\n\n",
+      "snippet"  : "Here, I’ve added a simple example of usage of Promise in javascript for Node.js."
+    } ,
+  
+    {
       "title"    : "NodeJS - Get weather details from given address",
       "category" : "",
       "tags"     : "nodejs, js, request, http, call, service, server",
