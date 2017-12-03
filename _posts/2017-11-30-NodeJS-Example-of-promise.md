@@ -44,3 +44,16 @@ asyncAdd(10, 15).then((result) => {
     console.log(error);
 });
 ```
+
+But such chainings are not recommended. For better usage, use catch block in Promise.
+
+```javascript
+asyncAdd(10, '15').then((result) => {
+    console.log('Result: ', result);
+    return asyncAdd(result, 33); 
+}).then((result) => {
+    console.log('Result: ', result);
+}).catch((error) => {
+    console.log(error)
+});
+```
