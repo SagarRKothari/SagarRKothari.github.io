@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Example of weather fetch with axios",
+      "category" : "",
+      "tags"     : "nodejs, js, axios, promise",
+      "url"      : "http://localhost:4000/2017/12/01/NodeJS-Example-of-weather-fetch-with-axios/",
+      "date"     : "December 01, 2017",
+      "content"  : "Here, I’ve added a simple example of usage of Promise in javascript for Node.js.\nFollowing example also illustrates usage of promise chaining.\n\nconst yargs = require('yargs');\nconst axios = require('axios');\n\nconst argv = yargs\n    .options({\n        a: {\n            demand: true,\n            alias: 'address',\n            string: true,\n            describe: 'Address to fetch weather for'\n        }\n    })\n    .help()\n    .alias('help', 'h')\n    .argv;\n\nvar encodedAddress = encodeURIComponent(argv.address);\nvar geocodeURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&amp;key=YOUR_SERVER_KEY`\n\naxios.get(geocodeURL).then((response) =&gt; {\n    if (response.data.status === 'ZERO_RESULTS') {\n        throw new Error('Unable to find that address');\n    }\n    var lat = response.data.results[0].geometry.location.lat;\n    var lng = response.data.results[0].geometry.location.lng;\n    var darkskyURL = `https://api.darksky.net/forecast/YOUR_KEY/${lat},${lng}`;\n    console.log(response.data.results[0].formatted_address);\n    return axios.get(darkskyURL);\n}).then((response) =&gt; {\n    var temperature = response.data.currently.temperature;\n    var apparant = response.data.currently.apparentTemperature;\n    console.log(`It seems like ${temperature}. It feels like ${apparant}`);\n}).catch((error) =&gt; {\n    if (error.code === 'ENOTFOUND') {\n        console.log('Unable to connect to servers');\n    } else {\n        console.log(error.message);\n    }\n});\n\n\n",
+      "snippet"  : "Here, I’ve added a simple example of usage of Promise in javascript for Node.js. Following example also illustrates usage of..."
+    } ,
+  
+    {
       "title"    : "NodeJS - Example of Promises in ES6",
       "category" : "",
       "tags"     : "nodejs, js, ES6, javascript, promise, promiese",
