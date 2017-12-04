@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NodeJS - First express application with nodejs"
-date:   2017-12-01 10:00:00
+date:   2017-12-02 10:00:00
 categories: nodejs
 tags: nodejs js express javascript
 comments: true

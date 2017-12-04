@@ -4,8 +4,8 @@
       "title"    : "NodeJS - First express application with nodejs",
       "category" : "",
       "tags"     : "nodejs, js, express, javascript",
-      "url"      : "http://localhost:4000/2017/12/01/NodeJS-First-express-application/",
-      "date"     : "December 01, 2017",
+      "url"      : "http://localhost:4000/2017/12/02/NodeJS-First-express-application/",
+      "date"     : "December 02, 2017",
       "content"  : "I started learning node.js. Express is one of the most popular package.\nI created my first express server &amp; hello world of express is as follows.\n\n// Load Express module\nconst express = require('express');\n\n// Create server - variable app is server instance.\nvar app = express();\n\n// Tell sever to use public folder to load static htmls\napp.use(express.static(__dirname + '/public'));\n\n\n// tell server to manage this get request with given response\napp.get('/', (request, response) =&gt; {\n    // response.send('&lt;h1&gt;Hello Express!&lt;/h1&gt;');\n    response.send({\n        name: 'Sagar',\n        likes: [\n            'Programming',\n            'Reading',\n            'Blogging'\n        ]\n    })\n});\n\n// tell server to manage `/about` get request to manage with following response\napp.get('/about', (req, res) =&gt; {\n    res.send('About Sagar Page.');\n});\n\n// tell server to manage `/bad` get request with following request\napp.get('/bad', (req, res) =&gt; {\n    res.send({\n        errorMessage: 'Something went wrong.'\n    });\n});\n\n// tell server to start with port 3000 &amp; log a message when started\napp.listen(3000, () =&gt; {\n    console.log('Server is up on port 3000');\n});\n\n\n",
       "snippet"  : "I started learning node.js. Express is one of the most popular package. I created my first express server &amp; hello..."
     } ,
