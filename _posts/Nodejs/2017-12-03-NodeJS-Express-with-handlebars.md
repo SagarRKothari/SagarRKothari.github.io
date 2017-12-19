@@ -50,6 +50,12 @@ hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 });
 
+// telling handlebars to use this helper function inside handlebar files.
+// if I use { { screamIt welcomeMessage } } = WELCOME TO MY WEBSITE. YAY
+hbs.registerHelper('screamIt', (message) => {
+    return message.toUpperCase();
+});
+
 // telling express application to use `home.hbs` 
 // for rendering & using passed parameters
 app.get('/', (request, response) => {
@@ -118,7 +124,7 @@ Followings are contents for different files.
     </head>
     <body>
         { { > header } }
-        <p> { { welcomeMessage } } </p>
+        <p> { { screamIt welcomeMessage } } </p>
         { { > footer } }
     </body>
 </html>

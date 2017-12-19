@@ -171,6 +171,12 @@ npm install hbs --save
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">();</span>
 <span class="p">});</span>
 
+<span class="c1">// telling handlebars to use this helper function inside handlebar files.</span>
+<span class="c1">// if I use { { screamIt welcomeMessage } } = WELCOME TO MY WEBSITE. YAY</span>
+<span class="nx">hbs</span><span class="p">.</span><span class="nx">registerHelper</span><span class="p">(</span><span class="s1">'screamIt'</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">message</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="p">});</span>
+
 <span class="c1">// telling express application to use `home.hbs` </span>
 <span class="c1">// for rendering &amp; using passed parameters</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -247,7 +253,7 @@ npm install hbs --save
     <span class="nt">&lt;/head&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         { { &gt; header } }
-        <span class="nt">&lt;p&gt;</span> { { welcomeMessage } } <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span> { { screamIt welcomeMessage } } <span class="nt">&lt;/p&gt;</span>
         { { &gt; footer } }
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
