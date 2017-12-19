@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Server.log - Creating logger",
+      "category" : "",
+      "tags"     : "nodejs, js, express, javascript, logger",
+      "url"      : "http://localhost:4000/2017/12/05/NodeJS-Logging-requests-in-file/",
+      "date"     : "December 05, 2017",
+      "content"  : "Following illustrates how to create a logger for nodejs express application.\n\nRun following command to setup &amp; install above specified modules.\n\nnpm init\nnpm install express --save\n\n\n\nFollowing is the code for server.js file. Please find inline comments to understand code.\n\n// load fs module\nconst fs = require('fs');\n\n// load express module\nconst express = require('express');\n\n// create an instance of express and variable name is `app`\nvar app = express();\n\n// following method will be invoked before any request hit.\n// here, we're injecting custom code which will be executed before each request execution.\n// it is known as `MIDDLEWARE`\napp.use((request, response, next) =&gt; {\n    // convert current time stamp to readable string\n    var now = new Date().toString();\n    var logMessage = `${now}: ${request.method} ${request.url}`;\n    // log request-method and request-url with time-stamp\n    console.log(logMessage);\n    // log it to file\n    fs.appendFile('server.log', logMessage + '\\n', (error) =&gt; {\n        if (error) {\n            console.log('Got some error while logging into file. Error: ' + error.message);\n        }\n    });\n    // application continues only if you run next function.\n    // please make sure you run next function or-else every request will fail.\n    next();\n});\n\n// telling express app to listen requests on port 3000\n// and logging custom message once started.\napp.listen(3000, () =&gt; {\n    console.log('Server started on port 3000');\n});\n\n\n\nOnce server is started, upon each request, you’ll see a log in console.\nHere is the sample output.\n\nServer started on port 3000\nTue Dec 19 2017 20:16:48 GMT+0530 (IST): GET /\nTue Dec 19 2017 20:17:00 GMT+0530 (IST): GET /about\nTue Dec 19 2017 20:17:10 GMT+0530 (IST): GET /\n\n\n\nHere is the sample output for server.log file.\n\n\n",
+      "snippet"  : "Following illustrates how to create a logger for nodejs express application."
+    } ,
+  
+    {
       "title"    : "NodeJS - Injecting middleware request logger in express application",
       "category" : "",
       "tags"     : "nodejs, js, express, javascript",
@@ -783,6 +793,10 @@
         "date"     : " ",
         "content"  : "",
         "snippet"  : " "
+     
+   } ,
+  
+   {
      
    } ,
   
