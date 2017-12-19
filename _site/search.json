@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Setting and starting maintenance mode",
+      "category" : "",
+      "tags"     : "nodejs, js, express, javascript, maintenance",
+      "url"      : "http://localhost:4000/2017/12/06/NodeJS-Starting-maintenance-mode/",
+      "date"     : "December 06, 2017",
+      "content"  : "Following illustrates how to create start maintainance mode for nodejs express applications.\n\nRun following command to setup &amp; install above specified modules.\n\nnpm init\nnpm install express --save\nnpm install hbs --save\n\n\n\nFollowing is the code for server.js file. Please find inline comments to understand code.\n\n// load fs module\nconst fs = require('fs');\n\n// load handlebars module\nconst hbs = require('hbs');\n\n// load express module\nconst express = require('express');\n\n// create an instance of express and variable name is `app`\nvar app = express();\n\n// setting the view engine. \n// Telling express app that for view engine we will be using handlebars\napp.set('view engine', 'hbs');\n\n// following method will be invoked before any request hit.\n// here, we're injecting custom code which will be executed before each request execution.\n// it is known as `MIDDLEWARE`\napp.use((request, response, next) =&gt; {\n    // convert current time stamp to readable string\n    var now = new Date().toString();\n    var logMessage = `${now}: ${request.method} ${request.url}`;\n    // log request-method and request-url with time-stamp\n    console.log(logMessage);\n    // log it to file\n    fs.appendFile('server.log', logMessage + '\\n', (error) =&gt; {\n        if (error) {\n            console.log('Got some error while logging into file. Error: ' + error.message);\n        }\n    });\n    // application continues only if you run next function.\n    // please make sure you run next function or-else every request will fail.\n    next();\n});\n\n// following method will be invoked after above fuction for any request hit.\n// here, we're injecting custom code which will be executed after above function &amp; before each request execution.\n// as we are not going to run NEXT function, it will stop all requests.\napp.use((request, response, next) =&gt; {\n    // render from `maintenance.hbs` file.\n    response.render('maintenance.hbs');\n});\n\n// telling express app to listen requests on port 3000\n// and logging custom message once started.\napp.listen(3000, () =&gt; {\n    console.log('Server started on port 3000');\n});\n\n\n\nContents of maintenance.hbs file.\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n    &lt;head&gt;\n        &lt;title&gt;Some Website&lt;/title&gt;\n    &lt;/head&gt;\n    &lt;body&gt;\n        &lt;h1&gt;We'll be right back.&lt;/h1&gt;\n        &lt;p&gt; This site is under update process. &lt;/p&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\n\n\nHere is the sample output.\n\n\n",
+      "snippet"  : "Following illustrates how to create start maintainance mode for nodejs express applications."
+    } ,
+  
+    {
       "title"    : "NodeJS - Server.log - Creating logger",
       "category" : "",
       "tags"     : "nodejs, js, express, javascript, logger",
