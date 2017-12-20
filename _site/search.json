@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Deployment with heroku",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, heroku, deployment",
+      "url"      : "http://localhost:4000/2017/12/10/NodeJS-Deployment-with-heroku/",
+      "date"     : "December 10, 2017",
+      "content"  : "In this article, I’ve added the steps which I’ve followed for deployment to heroku.\n\nStep 1. Update your code as indicated below. Please insert code which takes port number dynamically from process.\n\nconst express = require('express');\n\nconst portFromProcess = process.env.PORT || 3000;\n\nvar app = express();\n\napp.listen(portFromProcess, () =&gt; {\n    console.log(`Server started on ${portFromProcess} port`);\n});\n\n\n\nStep 2. Make sure you have git as version control system &amp; all your changes are commited &amp; pushed to origin.\n\nStep 3. Run heroku login command to login to your heroku account. I assume you’ve heroku account.\n\nsagar (master) node-web-server $ heroku login\n\n\n\nStep 4. Run heroku keys:add command to add key. In my case, I selected id_rsa.pub\n\nsagar (master) node-web-server $ heroku keys:add\n? Which SSH key would you like to upload? (Use arrow keys)\n❯ /Users/sagar/.ssh/id_rsa.pub \n  /Users/sagar/.ssh/id_rsa_assembla.pub \n  /Users/sagar/.ssh/id_rsa_github_sag333ar.pub \n  /Users/sagar/.ssh/id_rsa_github_sagardevices.pub \n\n\n\nStep 5. To ensure, keys are added run following command\n\nsagar (master) node-web-server $ heroku keys\nheroku keys:remo=== sag333ar@gmail.com keys\nssh-rsa AAAAB3NzaC...qOWnTlAw== sag333ar@gmail.com\n\n\n\nStep 6. Now run following command to set-up &amp; authenticate with heroku.\n\nsagar (master) node-web-server $ ssh -v git@heroku.com\n\n\n\nYou should see output as follows. I’ve added last few lines of output here.\n\ndebug1: Server accepts key: pkalg ssh-rsa blen 279\ndebug1: Authentication succeeded (publickey).\nAuthenticated to heroku.com ([50.19.85.154]:22).\ndebug1: channel 0: new [client-session]\ndebug1: Entering interactive session.\ndebug1: pledge: network\ndebug1: Sending environment.\ndebug1: Sending env LC_CTYPE = UTF-8\nPTY allocation request failed on channel 0\nshell request failed on channel 0\n\n\n\nStep 7. Create heroku app.\n\nheroku create\n\n\n\nAfter executing above command, I got following output.\n\nsagar (master) node-web-server $ heroku create\nCreating app... done, ⬢ agile-retreat-76589\nhttps://agile-retreat-76589.herokuapp.com/ | https://git.heroku.com/agile-retreat-76589.git\n\n\n\nStep 8. Push/deploy your app to heroku.\n\ngit push heroku master\n\n\n\nAfter executing above command, I got following output.\n\nremote: -----&gt; Compressing...\nremote:        Done: 18.7M\nremote: -----&gt; Launching...\nremote:        Released v3\nremote:        https://agile-retreat-76589.herokuapp.com/ deployed to Heroku\nremote: \nremote: Verifying deploy... done.\nTo https://git.heroku.com/agile-retreat-76589.git\n\n\n\nHere is the output from heroku-admin-panel &amp; website.\n\n\n\n\n\n\n",
+      "snippet"  : "In this article, I’ve added the steps which I’ve followed for deployment to heroku."
+    } ,
+  
+    {
       "title"    : "NodeJS - Testing with expect and/or jest",
       "category" : "",
       "tags"     : "nodejs, js, javascript, mocha, jest, expect",
