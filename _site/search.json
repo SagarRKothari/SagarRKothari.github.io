@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "NodeJS - Setting up watch to auto execute test cases",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, mocha, scripts",
+      "url"      : "http://localhost:4000/2017/12/08/NodeJS-Set-watch-to-auto-execute-test-cases/",
+      "date"     : "December 08, 2017",
+      "content"  : "In this article, I’m going to illustrate how to auto-execute test cases with scripts of package.json\n\nPlease view part-1 of setting up mocha for testing\n\n{\n  \"name\": \"node-web-server\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"mocha **/*.test.js\",\n    \"test-watch\": \"nodemon --exec 'npm test'\" // this will run `npm test` as soon as code is changed\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"express\": \"^4.16.2\",\n    \"hbs\": \"^4.0.1\"\n  },\n  \"devDependencies\": {\n    \"mocha\": \"^4.0.1\"\n  }\n}\n\n\n\n\nNow go back to terminal &amp; run following command to start auto-execution of test cases.\n\nnpm run test-watch\n\n\n\nAbove should give you the output as follows.\n\nnode-web-server$ npm run test-watch\n\n&gt; node-web-server@1.0.0 test-watch /Users/sagar/LearnNodeJS/node-web-server\n&gt; nodemon --exec 'npm test'\n\n[nodemon] 1.12.1\n[nodemon] to restart at any time, enter `rs`\n[nodemon] watching: *.*\n[nodemon] starting `npm test`\n\n&gt; node-web-server@1.0.0 test /Users/sagar/LearnNodeJS/node-web-server\n&gt; mocha **/*.test.js\n\n\n\n  ✓ should add two numbers\n  ✓ should square a number\n\n  2 passing (6ms)\n\n[nodemon] clean exit - waiting for changes before restart\n^C\nnode-web-server$\n\n\n",
+      "snippet"  : "In this article, I’m going to illustrate how to auto-execute test cases with scripts of package.json"
+    } ,
+  
+    {
+      "title"    : "NodeJS - Testing your Nodejs application with Mocha",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, mocha",
+      "url"      : "http://localhost:4000/2017/12/07/NodeJS-Testing-with-mocha/",
+      "date"     : "December 07, 2017",
+      "content"  : "Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser.\n\nnpm init\nnpm install mocha --save-dev # this will install mocha as developer dependencies.\n\n\n\nHere is the file which we’ll be testing.\n\n// utils.js\nmodule.exports.add = (a, b) =&gt; a + b;\nmodule.exports.square = (a) =&gt; a * a;\n\n\n\nHere is the file which covers code for testing.\n\n// utils.test.js\nconst utils = require('./utils');\n\nit('should add two numbers', () =&gt; {\n    var result = utils.add(10, 20);\n    if (result !== 30) {\n        throw new Error(`Expected 30, got ${result}`);\n    }\n});\n\nit('should square a number', () =&gt; {\n    var result = utils.square(10);\n    if (result !== 100) {\n        throw new Error(`Expected 100, got ${result}`);\n    }\n});\n\n\n\nHere is the partial code of package.json file.\n\n{\n  \"name\": \"node-web-server\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"mocha **/*.test.js\" // this command will run mocha to test our test cases\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"express\": \"^4.16.2\",\n    \"hbs\": \"^4.0.1\"\n  },\n  \"devDependencies\": { // dev-specific dependencies\n    \"mocha\": \"^4.0.1\"\n  }\n}\n\n\n\nTo start executing test cases, run following command from terminal.\n\nnpm test # which will run \"mocha **/*.test.js\" command\n\n\n\nHere is the example output of above command.\n\nnode-web-server$ npm test\n\n&gt; node-web-server@1.0.0 test /Users/sagar/LearnNodeJS/node-web-server\n&gt; mocha **/*.test.js\n\n\n\n  ✓ should add two numbers\n  ✓ should square a number\n\n  2 passing (8ms)\n\nnode-web-server$\n\n\n",
+      "snippet"  : "Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser."
+    } ,
+  
+    {
       "title"    : "NodeJS - Setting and starting maintenance mode",
       "category" : "",
       "tags"     : "nodejs, js, express, javascript, maintenance",
