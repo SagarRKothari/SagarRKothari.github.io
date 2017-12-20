@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Testing with expect and/or jest",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, mocha, jest, expect",
+      "url"      : "http://localhost:4000/2017/12/09/NodeJS-Testing-with-expect-jest/",
+      "date"     : "December 09, 2017",
+      "content"  : "In this article, I’m going to illustrate how to use expect to write test cases.\n\nPlease view part-1 of setting up mocha for testing\n\nnpm init\nnpm install mocha --save-dev # this will install mocha as developer dependencies.\nnpm install expect@1.20.2 --save-dev\nnpm i jest --save-dev\n\n\n\nHere is the sample file to be tested.\n\n// utils.js\nmodule.exports.add = (a, b) =&gt; a + b;\nmodule.exports.square = (a) =&gt; a * a;\n\n\n\nHere is the file for sample code having test cases.\n\nconst expect = require('expect');\nconst utils = require('./utils');\n\nit('should add two numbers', () =&gt; {\n    var result = utils.add(10, 20);\n    expect(result).toBe(30).toBeA('number');\n});\n\nit('should square a number', () =&gt; {\n    var result = utils.square(10);\n    expect(result).toBe(100).toBeA('number');\n});\n\n// Extra test function demonstrating different functions of expect library.\n\nit('should expect some values', () =&gt; {\n    // if both the objects are same\n    expect({name: 'Sagar'}).toEqual({name: 'Sagar'});\n\n    // if both the objects are not same\n    expect({name: 'Sagar'}).toNotEqual({name: 'Amit'});\n\n    // if it has\n    expect([2,3,4]).toInclude(4);\n\n    // if it doesn't have\n    expect([2,3,4]).toExclude(5);\n\n    // if object has a specific property\n    expect({\n        name: 'Sagar',\n        age: 29,\n        location: 'Hyderabad'\n    }).toInclude({\n        name: 'Sagar'\n    });\n\n    // if object does NOT have a specific property\n    expect({\n        name: 'Sagar',\n        age: 29,\n        location: 'Hyderabad'\n    }).toExclude({\n        name: 'Amit'\n    });\n});\n\n\n\n",
+      "snippet"  : "In this article, I’m going to illustrate how to use expect to write test cases."
+    } ,
+  
+    {
       "title"    : "NodeJS - Setting up watch to auto execute test cases",
       "category" : "",
       "tags"     : "nodejs, js, javascript, mocha, scripts",
@@ -823,6 +833,10 @@
         "date"     : " ",
         "content"  : "",
         "snippet"  : " "
+     
+   } ,
+  
+   {
      
    } ,
   
