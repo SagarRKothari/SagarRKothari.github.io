@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Testing Async Code",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, testing, test, expect, jest",
+      "url"      : "http://localhost:4000/2017/12/11/NodeJS-Testing-async-code/",
+      "date"     : "December 11, 2017",
+      "content"  : "In this article, I’ve added the a sample code for testing async code.\n\n// utils.js file\nmodule.exports.add = (a, b) =&gt; a + b;\nmodule.exports.square = (a) =&gt; a * a;\n\n// a method for which test case has been added\nmodule.exports.asyncAdd = (a, b, callback) =&gt; {\n    setTimeout(() =&gt; {\n        callback(a + b);\n    }, 1000);\n};\n\n\n\nTest-case for above function.\n\n// utils.test.js\nit('should async add two numbers', (done) =&gt; {\n    utils.asyncAdd(10, 20, (result) =&gt; {\n        expect(result).toBe(30);\n        expect(result).toBeA('number');\n        done();\n    });\n});\n\n\n",
+      "snippet"  : "In this article, I’ve added the a sample code for testing async code."
+    } ,
+  
+    {
       "title"    : "NodeJS - Deployment with heroku",
       "category" : "",
       "tags"     : "nodejs, js, javascript, heroku, deployment",
