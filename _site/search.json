@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Testing express application with supertest and mocha",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, testing, test, expect, supertest, mocha",
+      "url"      : "http://localhost:4000/2017/12/12/NodeJS-Testing-express-with-supertest-mocha/",
+      "date"     : "December 12, 2017",
+      "content"  : "Install dependencies.\n\nnpm init\nnpm install express --save\nnpm install mocha --save-dev # this will install mocha as developer dependencies.\nnpm install supertest --save-dev # this will supertest mocha as developer dependencies.\n\n\n\nHere is the sample file to be tested.\n\n// server.js\nconst express = require('express');\nvar app = express();\n\napp.get('/', (req, res) =&gt; {\n    res.send('Hello World!');\n});\n\napp.listen(3000);\n\nmodule.exports.app = app; // exporting app so that it can be easily accessible from test classes.\n\n\n\nHere is the file for sample code having test case.\n\n// server.test.js\nconst request = require('supertest');\n\nvar app = require('./server').app;\n\nit('should return hello world response', (done) =&gt; {\n    request(app)\n        .get('/')\n        .expect(200)\n        .expect('Hello World!')\n        .end(done);\n});\n\n\n",
+      "snippet"  : "Install dependencies."
+    } ,
+  
+    {
       "title"    : "NodeJS - Testing Async Code",
       "category" : "",
       "tags"     : "nodejs, js, javascript, testing, test, expect, jest",
