@@ -7,6 +7,103 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>List of most commonly used git commands</title>
+        <description>&lt;p&gt;List of most commonly used commands of git (if you’re a fan of using git using terminal)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git init&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Create an empty Git repository or reinitialize an existing one&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Clone a repository into a new directory&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add fileA fileB&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add changeset of files - &lt;code class=&quot;highlighter-rouge&quot;&gt;fileA&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;fileB&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add .&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add all changesets.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m &quot;Message of commit&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Commit your changes with message &lt;code class=&quot;highlighter-rouge&quot;&gt;Message of commit&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git reset --hard&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Reset everything &amp;amp; checkout the most recent revision.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Push your changes to master branch of origin = remote repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin feature/siri&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Push your changes to &lt;code class=&quot;highlighter-rouge&quot;&gt;feature/siri&lt;/code&gt; branch of &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt; = remote repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git pull origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Pull changes from remote &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;’s master branch to your local branch.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git pull origin some/branch&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Pull changes from remote &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;some/branch&lt;/code&gt; branch to your local branch.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout some/branch&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Switch to &lt;code class=&quot;highlighter-rouge&quot;&gt;some/branch&lt;/code&gt; from current branch on local.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout some-revision&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Checkout the specific revision.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git log -1&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Show most recent commit log.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git log -2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Show most 2 recent commit log.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Show current changesets in list format showing files.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git show&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Show changesets in detailed view.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git fetch --all&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Fetch everything from every remotes.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git tag Version1Tag&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Apply a tag to current status.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin --mirror&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Push everything from local. Create a replica of local to remote.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push -u origin some/branch&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Push local branched named &lt;code class=&quot;highlighter-rouge&quot;&gt;some/branch&lt;/code&gt; to remote origin.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin --tags&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Push all local tags to remote origin.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin refs/tags/tag_a&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Push a specific tag to remote origin.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Jan 2018 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2018/01/02/Commonly-used-git-commands/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/02/Commonly-used-git-commands/</guid>
+      </item>
+    
+      <item>
         <title>RxSwift Basics - understanding observables and observers</title>
         <description>&lt;p&gt;Before we jump into basic fundaments of Reactive Programming, I woule like to share an real-life example here.&lt;/p&gt;
 
@@ -703,60 +800,6 @@ Tue Dec 19 2017 20:17:10 GMT+0530 (IST): GET /
         <pubDate>Tue, 05 Dec 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/12/05/NodeJS-Logging-requests-in-file/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/12/05/NodeJS-Logging-requests-in-file/</guid>
-      </item>
-    
-      <item>
-        <title>NodeJS - Injecting middleware request logger in express application</title>
-        <description>&lt;p&gt;In this article, I’m going to illustrate how to inject middleware which can be used for logging each request details.
-Run following command to setup &amp;amp; install above specified modules.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm init
-npm install express --save
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Following is the code for &lt;code class=&quot;highlighter-rouge&quot;&gt;server.js&lt;/code&gt; file. Please find inline comments to understand code.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// load express module&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'express'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// create an instance of express and variable name is `app`&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// following method will be invoked before any request hit.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// here, we're injecting custom code which will be executed before each request execution.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// it is known as `MIDDLEWARE`&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// convert current time stamp to readable string&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// log request-method and request-url with time-stamp&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// application continues only if you run next function.&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// please make sure you run next function or-else every request will fail.&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// telling express app to listen requests on port 3000&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// and logging custom message once started.&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Server started on port 3000'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Once server is started, upon each request, you’ll see a log in console.
-Here is the sample output.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Server started on port 3000
-Tue Dec 19 2017 20:16:48 GMT+0530 (IST): GET /
-Tue Dec 19 2017 20:17:00 GMT+0530 (IST): GET /about
-Tue Dec 19 2017 20:17:10 GMT+0530 (IST): GET /
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Mon, 04 Dec 2017 10:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/12/04/NodeJS-Injecting-middleware-request-logger/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/12/04/NodeJS-Injecting-middleware-request-logger/</guid>
       </item>
     
   </channel>

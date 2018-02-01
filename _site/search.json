@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "List of most commonly used git commands",
+      "category" : "",
+      "tags"     : "git, github, commands, terminal, command, promt",
+      "url"      : "http://localhost:4000/2018/01/02/Commonly-used-git-commands/",
+      "date"     : "January 02, 2018",
+      "content"  : "List of most commonly used commands of git (if you’re a fan of using git using terminal)\n\ngit init\n\nCreate an empty Git repository or reinitialize an existing one\n\ngit clone\n\nClone a repository into a new directory\n\ngit add fileA fileB\n\nAdd changeset of files - fileA and fileB.\n\ngit add .\n\nAdd all changesets.\n\ngit commit -m \"Message of commit\"\n\nCommit your changes with message Message of commit.\n\ngit reset --hard\n\nReset everything &amp; checkout the most recent revision.\n\ngit push origin master\n\nPush your changes to master branch of origin = remote repository.\n\ngit push origin feature/siri\n\nPush your changes to feature/siri branch of origin = remote repository.\n\ngit pull origin master\n\nPull changes from remote origin’s master branch to your local branch.\n\ngit pull origin some/branch\n\nPull changes from remote origin’s some/branch branch to your local branch.\n\ngit checkout some/branch\n\nSwitch to some/branch from current branch on local.\n\ngit checkout some-revision\n\nCheckout the specific revision.\n\ngit log -1\n\nShow most recent commit log.\n\ngit log -2\n\nShow most 2 recent commit log.\n\ngit status\n\nShow current changesets in list format showing files.\n\ngit show\n\nShow changesets in detailed view.\n\ngit fetch --all\n\nFetch everything from every remotes.\n\ngit tag Version1Tag\n\nApply a tag to current status.\n\ngit push origin --mirror\n\nPush everything from local. Create a replica of local to remote.\n\ngit push -u origin some/branch\n\nPush local branched named some/branch to remote origin.\n\ngit push origin --tags\n\nPush all local tags to remote origin.\n\ngit push origin refs/tags/tag_a\n\nPush a specific tag to remote origin.\n",
+      "snippet"  : "List of most commonly used commands of git (if you’re a fan of using git using terminal)"
+    } ,
+  
+    {
       "title"    : "RxSwift Basics - understanding observables and observers",
       "category" : "",
       "tags"     : "Reactive, ReactiveX, Swift, RxSwift, ReactiveSwift, FRP, Functional",
