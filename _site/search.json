@@ -516,7 +516,7 @@
       "tags"     : "Application, Transport, Security",
       "url"      : "http://localhost:4000/2017/10/25/Disable-App-Transport-Security/",
       "date"     : "October 25, 2017",
-      "content"  : "Step 1.\n\nOpen your project.\n\nStep 2.\n\nOpen Info.plist as source code (right click on Info.plist).\n\nStep 3.\n\nBefore (look for end of file)\n\n&lt;/dict&gt;\n&lt;/plist&gt;\n\n\n\nInsert following\n\n&lt;code class=\"xml\"&gt;\n&lt;dict&gt;\n    &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;\n    &lt;true/&gt;\n&lt;/dict&gt;\n&lt;/code&gt;\n\n\n",
+      "content"  : "Step 1.\n\nOpen your project.\n\nStep 2.\n\nOpen Info.plist as source code (right click on Info.plist).\n\nStep 3.\n\nBefore (look for end of file)\n\n&lt;/dict&gt;\n&lt;/plist&gt;\n\n\n\nInsert following\n\n&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;\n&lt;dict&gt;\n\t&lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;\n\t&lt;true/&gt;\n&lt;/dict&gt;\n\n\n",
       "snippet"  : "Step 1."
     } ,
   

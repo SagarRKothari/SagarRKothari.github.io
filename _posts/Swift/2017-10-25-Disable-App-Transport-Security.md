@@ -28,10 +28,9 @@ Before (look for end of file)
 Insert following
 
 ```xml
-<code class="xml">
+<key>NSAppTransportSecurity</key>
 <dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
 </dict>
-</code>
 ```
