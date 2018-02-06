@@ -138,6 +138,15 @@
 </code></pre>
 </div>
 
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code>
+  <span class="kd">func</span> <span class="nf">validateEmail</span><span class="p">(</span><span class="n">_</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">emailRegEx</span> <span class="o">=</span> <span class="s">"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span class="se">\\</span><span class="s">.[A-Za-z]{2,64}"</span>
+    <span class="k">let</span> <span class="nv">emailTest</span> <span class="o">=</span> <span class="kt">NSPredicate</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span><span class="s">"SELF MATCHES %@"</span><span class="p">,</span> <span class="n">emailRegEx</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">emailTest</span><span class="o">.</span><span class="nf">evaluate</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">email</span><span class="p">)</span>
+  <span class="p">}</span>
+
+</code></pre>
+</div>
 
 
 <div class="sharing">
