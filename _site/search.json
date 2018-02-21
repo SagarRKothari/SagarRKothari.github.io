@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "RxSwift Basics - Empty Operator",
+      "category" : "",
+      "tags"     : "Reactive, ReactiveX, Swift, RxSwift, ReactiveSwift, FRP, Functional",
+      "url"      : "http://localhost:4000/2018/01/04/RxSwift-Basics-Empty-operator/",
+      "date"     : "January 04, 2018",
+      "content"  : "In this page, we’ll discuss about empty operator.\n\nLet’s start with sample code.\n\n// 1.\nlet bag = DisposeBag()\n\n// 2.\nlet observable = Observable&lt;Void&gt;.empty()\n\n// 3.\nobservable.subscribe(onNext: { element in\n    print(element)\n}, onCompleted: {\n    print(\"Completed\")\n}).disposed(by: bag)\n\n\n\n\n  Here, we’ve created a dispose bag. We’ve discussed about this earlier.\n  We’ve created observable of empty type.\n  Observer is subsribing to empty-typed-observable.\n  We’re disposing observer.\n\n\nLet’s take one real-life example.\n\n\n  Professor gets call while giving lecture.\n  He/she goes to corner of the class\n  He/she speaks silently (doesn’t emit anything).\n  Once done, he/she is back and says I’m done with my call.\n\n\nLet’s transform &amp; add little jargons of Reactive programming.\n\n\n  Professor - observable - takes the call. Students-observers are waiting for his/her call-completion.\n  Professor - completes his/her call. Students-observers gets notified - via - onComplete.\n  Professor - observable - doesn’t emit any kind of data.\n  Now, time to check the code. See the code written below &amp; try to map above example.\n\n\nlet bag = DisposeBag()\n\nlet observable = Observable&lt;Void&gt;.empty() // Professor who is on call\n\nobservable.subscribe(onNext: { element in\nprint(element) // professor won't transfer data to students\n\n}, onCompleted: {\n\nprint(\"Completed\") // professor will inform students once call is complete.\n\n}).disposed(by: bag)\n\n\n\nNote: I knew, you being eagle-eyed reader, cant’ resist to ask why have I used word operator for empty.\n\nYou may continue with another question, Isn’t it a function? Yes, You’re right.\nIt is a function, but in Reactive programming, It’s known as an operator.\n\nSo far, we’ve covered following Reactive programming operators.\n\n\n  .just(one) - creates an observable with just one element\n  .of(one, two, three, many) - creates an observable with multiple elements\n  .empty() - creates an observable which just emits completed &amp; not next.\n\n\n\n",
+      "snippet"  : "In this page, we’ll discuss about empty operator."
+    } ,
+  
+    {
+      "title"    : "RxSwift Basics - Events",
+      "category" : "",
+      "tags"     : "Reactive, ReactiveX, Swift, RxSwift, ReactiveSwift, FRP, Functional",
+      "url"      : "http://localhost:4000/2018/01/03/RxSwift-Basics-Events/",
+      "date"     : "January 03, 2018",
+      "content"  : "Let’s assume, in a classroom, Professor is giving lecture.\n\n\n  Students are listening/observing/paying attention to Professor’s explanation.\n  Bell peals as lecture duration is complete.\n  Professor ends his/her lecture. Class is dismissed.\n\n\nNow, let’s consider one error scenario here.\n\n\n  \n    During lecture, Dean calls professor to meat him immediately.\n  \n  Professor is observable.\n  Students are observers.\n  Professor is emitting words/knowledge\n\n\nNormal scenario\n\n\n  Students are receiving.\n  On lecture completion, class is dismissed.\n\n\nError scenario\n\n\n  Dean call professor. (An error occurred)\n  Lecture is over. Class dismissed.\n  Now, I’ll say the same set of things in complete Reactive terms.\n\n\nEvents\n\n\n  onNext - Students receiving knowledge.\n  onError - Dean calls professor. (An error occurred).\n  onComplete - Lecture is over.\n  onDispose - Class dismissed.\n\n\nHere is how code looks like.\n\nlet bag = DisposeBag() // 1. Dispose bag\n\n// 2. Lecture data / Objects to be emitted\nlet one = 1\nlet two = 2\nlet three = 3\n\n// 3. Observable/Professor\nlet observable = Observable&lt;Int&gt;.of(one, two, three)\n\n// 4. Set of events in Reactive format\nobservable.subscribe(\n\nonNext: { print($0) }, // Student receiving data. Observer printing data on receiving.\n\nonError: { print($0) }, // Dean calls professor. If error occurs, onError gets called.\n\nonCompleted: { print(\"Complete\") }, // This gets called once lecture is complete.\n\nonDisposed: { print(\"Disposed\") } // This gets called when class is dismissed.\n\n).disposed(by: bag)\n\n\n",
+      "snippet"  : "Let’s assume, in a classroom, Professor is giving lecture."
+    } ,
+  
+    {
       "title"    : "List of most commonly used git commands",
       "category" : "",
       "tags"     : "git, github, commands, terminal, command, promt",
