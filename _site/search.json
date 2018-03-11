@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Connecting To MongoDB",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, MongoDB, database, connection",
+      "url"      : "http://localhost:4000/2018/03/10/NodeJS-connecting-to-mongodb/",
+      "date"     : "March 10, 2018",
+      "content"  : "Install dependencies.\n\nnpm init\nnpm install mongodb@2.2.5 --save\n\n\n\nDownload &amp; Run MongoDB\n\nsh ~/mongo/bin/mongod --dbpath ~/mongo-data\n\n\n\n// 1. Load MongoDB library\n// Get Mongo Client\nconst MongoClient = require('mongodb').MongoClient;\n\n// 2. Connect to Database with MongoDB Client\nMongoClient.connect('mongodb://localhost:27017/TodoApp', (error, db) =&gt; {\n    // 3. If received an error, log error &amp; return\n    if (error) {\n        return console.log('Unable to connect to MongoDB Server');\n    }\n    // 4. Log success message of MongoDB connected.\n    console.log('Connected to MongoDB server');\n    // 5. Insert a record to A collection named `ToDos`\n    // 6. Pass a javascript object. In this case, object has text &amp; completed.\n    db.collection('Todos').insertOne({\n        text: 'Something to do',\n        completed: false\n    // 7. Handle insertion response.\n    }, (error, result) =&gt; {\n        // 8. If error received do something.\n        if (error) {\n            return console.log('Unable to insert todo', error);\n        }\n        // 9. If record inserted successfully, do somehthing\n        console.log(JSON.stringify(result.ops, undefined, 2));\n    });\n    // 10. Close the connection now\n    db.close();\n});\n\n\n\nDownload &amp; launch Robo 3T\nYou should see output as follows.\n\n\n\nI agree, screenshot above &amp; code given above are not matching.\nThere you go.\n\n    db.collection('Users').insertOne({\n        name: 'Sagar R. Kothari',\n        age: 30,\n        location: 'Hyderabad, Telangana, India'\n    }), (error, result) =&gt; {\n        if (error) {\n            return console.log('Unable to insert User', error);\n        }\n        console.log(JSON.stringify(result.ops, undefined, 2));\n    }\n\n\n",
+      "snippet"  : "Install dependencies."
+    } ,
+  
+    {
       "title"    : "RxSwift Basics - Empty Operator",
       "category" : "",
       "tags"     : "Reactive, ReactiveX, Swift, RxSwift, ReactiveSwift, FRP, Functional",
@@ -903,6 +913,10 @@
         "date"     : " ",
         "content"  : "",
         "snippet"  : " "
+     
+   } ,
+  
+   {
      
    } ,
   
