@@ -7,6 +7,53 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Clear User defaults before launching XCUITests</title>
+        <description>&lt;p&gt;Open your application delegate file &amp;amp; update &lt;code class=&quot;highlighter-rouge&quot;&gt;didFinishLaunching&lt;/code&gt; method as follows.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;resetStateIfUITesting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 3.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ProcessInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;processInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;contains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UI-Testing&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;UserDefaults&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;standard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;removePersistentDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bundleIdentifier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 1.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplicationLaunchOptionsKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;resetStateIfUITesting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Step 1. Your application is launched.&lt;/li&gt;
+  &lt;li&gt;Step 2. It invokes a function named &lt;code class=&quot;highlighter-rouge&quot;&gt;resetStateIfUITesting&lt;/code&gt; which is defined above here.&lt;/li&gt;
+  &lt;li&gt;Step 3. Function checks for process-argument named &lt;code class=&quot;highlighter-rouge&quot;&gt;UI-Testing&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;Step 4. If it has such argument, it will clear user-defaults.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Question is how to pass such process-argument from XCUItests?&lt;/p&gt;
+
+&lt;p&gt;And here is the example for it.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCTest&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCTestCase&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;XCUIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;launchArguments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UI-Testing&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;launch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 14 Mar 2018 10:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2018/03/14/CleanUserDefaults-UITesting/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/14/CleanUserDefaults-UITesting/</guid>
+      </item>
+    
+      <item>
         <title>NodeJS - Connecting To MongoDB</title>
         <description>&lt;p&gt;Install dependencies.&lt;/p&gt;
 
@@ -74,7 +121,7 @@ There you go.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Sat, 10 Mar 2018 15:30:00 +0530</pubDate>
+        <pubDate>Sat, 10 Mar 2018 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2018/03/10/NodeJS-connecting-to-mongodb/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/03/10/NodeJS-connecting-to-mongodb/</guid>
       </item>
@@ -155,7 +202,7 @@ It is a function, but in Reactive programming, It’s known as an operator.&lt;/
 
 &lt;hr /&gt;
 </description>
-        <pubDate>Thu, 04 Jan 2018 16:30:00 +0530</pubDate>
+        <pubDate>Thu, 04 Jan 2018 11:00:00 +0000</pubDate>
         <link>http://localhost:4000/2018/01/04/RxSwift-Basics-Empty-operator/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/04/RxSwift-Basics-Empty-operator/</guid>
       </item>
@@ -232,7 +279,7 @@ It is a function, but in Reactive programming, It’s known as an operator.&lt;/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 03 Jan 2018 16:30:00 +0530</pubDate>
+        <pubDate>Wed, 03 Jan 2018 11:00:00 +0000</pubDate>
         <link>http://localhost:4000/2018/01/03/RxSwift-Basics-Events/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/03/RxSwift-Basics-Events/</guid>
       </item>
@@ -329,7 +376,7 @@ It is a function, but in Reactive programming, It’s known as an operator.&lt;/
 
 &lt;p&gt;Push a specific tag to remote origin.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 02 Jan 2018 15:30:00 +0530</pubDate>
+        <pubDate>Tue, 02 Jan 2018 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2018/01/02/Commonly-used-git-commands/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/02/Commonly-used-git-commands/</guid>
       </item>
@@ -437,7 +484,7 @@ Completed
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Mon, 01 Jan 2018 16:30:00 +0530</pubDate>
+        <pubDate>Mon, 01 Jan 2018 11:00:00 +0000</pubDate>
         <link>http://localhost:4000/2018/01/01/RxSwift-Basics-understanding-observables-observers/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/01/RxSwift-Basics-understanding-observables-observers/</guid>
       </item>
@@ -486,7 +533,7 @@ npm install supertest --save-dev # this will supertest mocha as developer depend
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Tue, 12 Dec 2017 15:30:00 +0530</pubDate>
+        <pubDate>Tue, 12 Dec 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/12/12/NodeJS-Testing-express-with-supertest-mocha/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/12/12/NodeJS-Testing-express-with-supertest-mocha/</guid>
       </item>
@@ -521,7 +568,7 @@ npm install supertest --save-dev # this will supertest mocha as developer depend
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Mon, 11 Dec 2017 15:30:00 +0530</pubDate>
+        <pubDate>Mon, 11 Dec 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/12/11/NodeJS-Testing-async-code/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/12/11/NodeJS-Testing-async-code/</guid>
       </item>
@@ -633,7 +680,7 @@ To https://git.heroku.com/agile-retreat-76589.git
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-12-10/webapp.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 10 Dec 2017 15:30:00 +0530</pubDate>
+        <pubDate>Sun, 10 Dec 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/12/10/NodeJS-Deployment-with-heroku/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/12/10/NodeJS-Deployment-with-heroku/</guid>
       </item>
@@ -711,77 +758,9 @@ npm i jest --save-dev
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Sat, 09 Dec 2017 15:30:00 +0530</pubDate>
+        <pubDate>Sat, 09 Dec 2017 10:00:00 +0000</pubDate>
         <link>http://localhost:4000/2017/12/09/NodeJS-Testing-with-expect-jest/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/12/09/NodeJS-Testing-with-expect-jest/</guid>
-      </item>
-    
-      <item>
-        <title>NodeJS - Setting up watch to auto execute test cases</title>
-        <description>&lt;p&gt;In this article, I’m going to illustrate how to auto-execute test cases with scripts of &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Please &lt;a href=&quot;/2017/12/07/NodeJS-Testing-with-mocha/&quot;&gt;view part-1 of setting up mocha for testing&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node-web-server&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mocha **/*.test.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;test-watch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;nodemon --exec 'npm test'&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;will&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`npm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;test`&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;soon&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;changed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ISC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;express&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.16.2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;hbs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.0.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;devDependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;mocha&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.0.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now go back to terminal &amp;amp; run following command to start auto-execution of test cases.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run test-watch
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Above should give you the output as follows.&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;node-web-server$ &lt;/span&gt;npm run &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;-watch
-
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;node-web-server@1.0.0 &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;-watch /Users/sagar/LearnNodeJS/node-web-server
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;nodemon --exec &lt;span class=&quot;s1&quot;&gt;'npm test'&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] 1.12.1
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] to restart at any &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;, enter &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;rs&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] watching: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] starting &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;node-web-server@1.0.0 &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; /Users/sagar/LearnNodeJS/node-web-server
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;mocha &lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.test.js
-
-
-
-  ✓ should add two numbers
-  ✓ should square a number
-
-  2 passing &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;6ms&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;nodemon] clean &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt; - waiting &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;changes before restart
-^C
-node-web-server&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 08 Dec 2017 15:30:00 +0530</pubDate>
-        <link>http://localhost:4000/2017/12/08/NodeJS-Set-watch-to-auto-execute-test-cases/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/12/08/NodeJS-Set-watch-to-auto-execute-test-cases/</guid>
       </item>
     
   </channel>
