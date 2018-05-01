@@ -1,6 +1,16 @@
 [
   
     {
+      "title"    : "NodeJS - Sending JSON Response with http",
+      "category" : "",
+      "tags"     : "nodejs, js, javascript, JSON, http",
+      "url"      : "http://localhost:4000/2018/04/30/NodeJS-http-json-response/",
+      "date"     : "April 30, 2018",
+      "content"  : "Install dependencies.\n\nnpm init\nnpm install http --save\n\n\n\nconst http = require('http');\n\nconst hostname = 'localhost';\nconst port = 3000;\n\nconst server = http.createServer((req, res) =&gt; {\n    const { url } = req;\n    console.log(url);\n    if (url === '/translation') {\n        const translation = {\n            1: \"One\",\n            2: \"Two\",\n            3: \"Three\"\n        };\n        res.setHeader('Content-Type', 'application/json');\n        res.write(JSON.stringify(translation));\n        res.end();\n    }\n    res.end('Welcome to Node.');\n});\n\nserver.listen(port, hostname, () =&gt; {\n    console.log(`Server Started at ${hostname}:${port}`);\n});\n\n\n",
+      "snippet"  : "Install dependencies."
+    } ,
+  
+    {
       "title"    : "Clear User defaults before launching XCUITests",
       "category" : "",
       "tags"     : "Testing, Performance, Xcode, Test, Testcase, XCUI",
@@ -354,7 +364,7 @@
       "title"    : "Sorting Elements to Support re-arrangement with core data having sortIndex as attribute",
       "category" : "",
       "tags"     : "Sort, Rearrange, Arrange, Index, SortIndex, CoreData",
-      "url"      : "http://localhost:4000/2017/11/14/Sorting-Elements-to-support-rearrangement-copy/",
+      "url"      : "http://localhost:4000/2017/11/14/Sorting-Elements-to-support-rearrangement/",
       "date"     : "November 14, 2017",
       "content"  : "\n\nIn this article, I’ve added logic for sorting elements and storing the sort index in core data.\n\nimport CoreData\n\nlet appDel = (UIApplication.shared.delegate as? AppDelegate)!\nlet context = appDel.persistentContainer.viewContext\n\n// code which whould be part of table-view-controller\n\n  func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {\n    offices[fromIndexPath.row].sortIndex = Int64(to.row)\n    var startIndex = 0\n    var endIndex = offices.count-1\n    if fromIndexPath.row &gt; to.row {\n      startIndex = to.row\n      endIndex = fromIndexPath.row\n    } else {\n      startIndex = fromIndexPath.row\n      endIndex = to.row\n    }\n    for i in startIndex..&lt;endIndex {\n      offices[i].sortIndex = Int64(i)\n    }\n    save()\n  }\n\n  func save() {\n    do {\n      try context.save()\n    } catch {\n      \n    }\n  }\n\n\n\n\nData Structure is as shown in below image.\n\n\n",
       "snippet"  : ""
