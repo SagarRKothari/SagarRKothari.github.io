@@ -7,6 +7,235 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Flutter My First demo application</title>
+        <description>&lt;h2 id=&quot;download-source-code&quot;&gt;&lt;a href=&quot;https://github.com/sag333ar/DartFetchPicsExample&quot;&gt;Download Source code&lt;/a&gt;&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;sample-screen-shots&quot;&gt;Sample Screen shots&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2018-08-19/Screenshot_1534729780.png&quot; alt=&quot;Demo Output for Android&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/2018-08-19/ScreenShot_2018-08-20_7.33.56.png&quot; alt=&quot;Demo Output for iOS&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;main-file&quot;&gt;Main file&lt;/h3&gt;
+
+&lt;p&gt;File Location - &lt;code class=&quot;highlighter-rouge&quot;&gt;pics/lib/main.dart&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// It imports material from flutter package&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'package:flutter/material.dart'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// It imports app class from src folder. This file is added below.&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'src/app.dart'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Main function - from where app launches.&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// in order to launch app use runApp function.&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// it accepts `MaterialApp` as an argument.&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;runApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here &lt;code class=&quot;highlighter-rouge&quot;&gt;runApp&lt;/code&gt; function takes an instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialApp&lt;/code&gt; as an argument.
+We’ve created an instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;App&lt;/code&gt; class, which returns &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialApp&lt;/code&gt; widget.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;app-class-in-appdart-file&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;App&lt;/code&gt; class in &lt;code class=&quot;highlighter-rouge&quot;&gt;app.dart&lt;/code&gt; file.&lt;/h3&gt;
+
+&lt;p&gt;Following is &lt;code class=&quot;highlighter-rouge&quot;&gt;app.dart&lt;/code&gt; file which has &lt;code class=&quot;highlighter-rouge&quot;&gt;App&lt;/code&gt; class.
+File Location - &lt;code class=&quot;highlighter-rouge&quot;&gt;pics/lib/src/main.dart&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// It imports material from flutter package&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'package:flutter/material.dart'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// It only imports get function from http from http-package.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// It is used here to make GET calls.&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'package:http/http.dart'&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;show&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// It imports model class from models folder. This file is added below.&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'models/image_model.dart'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// It imports dart standard library. It is used here for JSON to object conversion.&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'dart:convert'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// It imports `ImageList` class from widgets folder.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// This is used here to create custom widget.&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'widgets/image_list.dart'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Following `App` class is a `StatefulWidget` provider.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// It generates `StatefulWidget` with instance of `AppState` class which is defined below.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StatefulWidget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// required to override following method&lt;/span&gt;
+  &lt;span class=&quot;nd&quot;&gt;@override&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;createState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// It should return a state-based-widget.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;appstate-class-in-appdart-file&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AppState&lt;/code&gt; class in &lt;code class=&quot;highlighter-rouge&quot;&gt;app.dart&lt;/code&gt; file.&lt;/h3&gt;
+
+&lt;p&gt;File Location - &lt;code class=&quot;highlighter-rouge&quot;&gt;pics/lib/src/main.dart&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// `AppState class basically creates a widget as a state.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// It provides widget to `App` class.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// It holds variable which changes, for example, &lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppState&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;State&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// On click, counter will be increased&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// A list of Custom Models for images which we will receive from server&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ImageModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imageModels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[];&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// An async function which will fetch image data from server with get request.&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fetchImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// counter is increased by 1.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// we're trying to get image model using count&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// e.g. https://jsonplaceholder.typicode.com/photos/1&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'https://jsonplaceholder.typicode.com/photos/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$count&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Creating new instance of `ImageModel` from JSON response&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ImageModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fromJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// With following function, we're asking to UI to reload with new Data.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Update image models List.&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;imageModels&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Following method builds the actual User Interface.&lt;/span&gt;
+  &lt;span class=&quot;nd&quot;&gt;@override&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Widget&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// We're creatng an instance of `MaterialApp` widget&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MaterialApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// For home, we're creating &amp;amp; supplying `Scaffold` type widget&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;home:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scaffold&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// For body, we're creating `ImageList` type widget. &lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;body:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ImageList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageModels&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// For appBar, we're creating `AppBar` type widget.&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;appBar:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;title:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Yo ! Let's see some images.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// we're creating floatingActionButton here.&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;floatingActionButton:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FloatingActionButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// onPressed, we're invoking `fetchImage` async function.&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;onPressed:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fetchImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// with a custom add icon.&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;child:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Icons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;custom-widget---image-list&quot;&gt;Custom Widget - Image List&lt;/h3&gt;
+
+&lt;p&gt;File Location - &lt;code class=&quot;highlighter-rouge&quot;&gt;pics/lib/src/widgets/image_list.dart&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'package:flutter/material.dart'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'../models/image_model.dart'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ImageList&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StatelessWidget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ImageModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imageModels&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;ImageList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;imageModels&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;nd&quot;&gt;@override&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Widget&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BuildContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;itemCount:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imageModels&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;itemBuilder:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buildImageContainer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageModels&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;Widget&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buildImageContainer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ImageModel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;decoration:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BoxDecoration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;border:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+              &lt;span class=&quot;nl&quot;&gt;color:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Colors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;grey&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;padding:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EdgeInsets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;20.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;margin:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EdgeInsets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;20.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;child:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buildColumnChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;Widget&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buildColumnChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ImageModel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;children:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;[&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;padding:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EdgeInsets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;bottom:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;child:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;network&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;textAlign:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextAlign&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;data-model---image&quot;&gt;Data Model - Image&lt;/h3&gt;
+
+&lt;p&gt;File Location - &lt;code class=&quot;highlighter-rouge&quot;&gt;pics/lib/src/models/image_model.dart&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ImageModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;albumId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;thumbnailUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;ImageModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;albumId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;thumbnailUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;ImageModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fromJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;dynamic&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsedJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;albumId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsedJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'albumId'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsedJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsedJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsedJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'url'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;thumbnailUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsedJson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'thumbnailUrl'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nd&quot;&gt;@override&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;{&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;albumId: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$albumId&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;id: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$id&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;title: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;url: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$url&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;thumbnailUrl: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$thumbnailUrl&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 19 Aug 2018 15:30:00 +0530</pubDate>
+        <link>http://localhost:4000/2018/08/19/Flutter-First-App/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/19/Flutter-First-App/</guid>
+      </item>
+    
+      <item>
         <title>NodeJS - Sending JSON Response with http</title>
         <description>&lt;p&gt;Install dependencies.&lt;/p&gt;
 
@@ -612,118 +841,6 @@ npm install supertest --save-dev # this will supertest mocha as developer depend
         <pubDate>Mon, 11 Dec 2017 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2017/12/11/NodeJS-Testing-async-code/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/12/11/NodeJS-Testing-async-code/</guid>
-      </item>
-    
-      <item>
-        <title>NodeJS - Deployment with heroku</title>
-        <description>&lt;p&gt;In this article, I’ve added the steps which I’ve followed for deployment to &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 1.&lt;/em&gt;&lt;/strong&gt; Update your code as indicated below. Please insert code which takes port number dynamically from process.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'express'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;portFromProcess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;portFromProcess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Server&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;started&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;portFromProcess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 2.&lt;/em&gt;&lt;/strong&gt; Make sure you have &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; as version control system &amp;amp; all your changes are commited &amp;amp; pushed to origin.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 3.&lt;/em&gt;&lt;/strong&gt; Run &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku login&lt;/code&gt; command to login to your heroku account. I assume you’ve heroku account.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sagar (master) node-web-server $ heroku login
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 4.&lt;/em&gt;&lt;/strong&gt; Run &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku keys:add&lt;/code&gt; command to add key. In my case, I selected &lt;code class=&quot;highlighter-rouge&quot;&gt;id_rsa.pub&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sagar (master) node-web-server $ heroku keys:add
-? Which SSH key would you like to upload? (Use arrow keys)
-❯ /Users/sagar/.ssh/id_rsa.pub 
-  /Users/sagar/.ssh/id_rsa_assembla.pub 
-  /Users/sagar/.ssh/id_rsa_github_sag333ar.pub 
-  /Users/sagar/.ssh/id_rsa_github_sagardevices.pub 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 5.&lt;/em&gt;&lt;/strong&gt; To ensure, keys are added run following command&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sagar (master) node-web-server $ heroku keys
-heroku keys:remo=== sag333ar@gmail.com keys
-ssh-rsa AAAAB3NzaC...qOWnTlAw== sag333ar@gmail.com
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 6.&lt;/em&gt;&lt;/strong&gt; Now run following command to set-up &amp;amp; authenticate with heroku.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sagar (master) node-web-server $ ssh -v git@heroku.com
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You should see output as follows. I’ve added last few lines of output here.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;debug1: Server accepts key: pkalg ssh-rsa blen 279
-debug1: Authentication succeeded (publickey).
-Authenticated to heroku.com ([50.19.85.154]:22).
-debug1: channel 0: new [client-session]
-debug1: Entering interactive session.
-debug1: pledge: network
-debug1: Sending environment.
-debug1: Sending env LC_CTYPE = UTF-8
-PTY allocation request failed on channel 0
-shell request failed on channel 0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 7.&lt;/em&gt;&lt;/strong&gt; Create &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku&lt;/code&gt; app.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;heroku create
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;After executing above command, I got following output.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sagar (master) node-web-server $ heroku create
-Creating app... done, ⬢ agile-retreat-76589
-https://agile-retreat-76589.herokuapp.com/ | https://git.heroku.com/agile-retreat-76589.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Step 8.&lt;/em&gt;&lt;/strong&gt; Push/deploy your app to heroku.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push heroku master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;After executing above command, I got following output.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;remote: -----&amp;gt; Compressing...
-remote:        Done: 18.7M
-remote: -----&amp;gt; Launching...
-remote:        Released v3
-remote:        https://agile-retreat-76589.herokuapp.com/ deployed to Heroku
-remote: 
-remote: Verifying deploy... done.
-To https://git.heroku.com/agile-retreat-76589.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here is the output from heroku-admin-panel &amp;amp; website.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-12-10/heroku.png&quot; alt=&quot;Heroku-admin-panel&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2017-12-10/webapp.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 10 Dec 2017 15:30:00 +0530</pubDate>
-        <link>http://localhost:4000/2017/12/10/NodeJS-Deployment-with-heroku/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/12/10/NodeJS-Deployment-with-heroku/</guid>
       </item>
     
   </channel>
