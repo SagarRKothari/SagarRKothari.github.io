@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Android Basics - How to show back button on an Activity?"
-date:   2018-09-24 10:15:00
+date:   2018-09-23 10:15:00
 categories: CodeSnippet
 tags: Android Kotlin Activity
 comments: true

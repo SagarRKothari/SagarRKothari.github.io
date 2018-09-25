@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Android Basics - How to use Timer to show splash screen?"
-date:   2018-09-24 10:00:00
+date:   2018-09-23 10:00:00
 categories: CodeSnippet
 tags: Android Kotlin Timer
 comments: true
