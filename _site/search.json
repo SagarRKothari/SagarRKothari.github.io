@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Android Basics - How to show back button on an Activity?",
+      "category" : "",
+      "tags"     : "Android, Kotlin, Activity",
+      "url"      : "http://localhost:4000/2018/09/24/Android-Basics-Show-Back-button/",
+      "date"     : "September 24, 2018",
+      "content"  : "You should have at-least two activities.\n\n\n  Parent activity from which another activity is getting displayed.\n  Another activity which is shown from parent activity.\n\n\nExample:\n\n\n  Login activity = Parent activity = LoginActivity\n  Forgot Password activity = Child activity = ForgotPasswordActivity\n\n\nHow to set up?\n\n\n  Open AndroidManifest.xml\n  Locate child activity, in my case it is ForgotPasswordActivity &amp; replace it as follows.\n\n\n&lt;activity android:name=\".LoginActivity\" /&gt;\n\n&lt;activity android:name=\".ForgotPasswordActivity\"&gt;\n    &lt;meta-data\n        android:name=\"android.support.PARENT_ACTIVITY\"\n        android:value=\".LoginActivity\" /&gt;\n&lt;/activity&gt;\n\n\n\n\n",
+      "snippet"  : "You should have at-least two activities."
+    } ,
+  
+    {
+      "title"    : "Android Basics - How to use Timer to show splash screen?",
+      "category" : "",
+      "tags"     : "Android, Kotlin, Timer",
+      "url"      : "http://localhost:4000/2018/09/24/Android-Basics-Timer/",
+      "date"     : "September 24, 2018",
+      "content"  : "Here, I’ve created an example of a splash creen just like LaunchScreen.storyboard for iOS.\nIt stays on screen for 3 seconds &amp; it shows login screen. One can refer following example to implement similar spash screen in his/her/their android application.\n\n// 1. to import java utlilities\nimport java.util.*\n// 2. to import timer tasks\nimport kotlin.concurrent.timerTask\n\nclass MainActivity : AppCompatActivity() {\n\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.activity_main)\n        \n        // 3. Create timer\n        val timer = Timer()\n        \n        // 4. Schedule timer. TimerTask is to call function nextTapped.\n        // It will execute that block after 3 seconds.\n        timer.schedule(timerTask{ nextTapped() }, 3000)\n    }\n\n    // 5. after 3 seconds, app will launch login screen\n    fun nextTapped() {\n        // 6. Start login screen.\n        val intent = Intent(this, LoginActivity::class.java)\n        startActivity(intent)\n        // 7. Finish this activity so that when user presses back button, \n        // this screen won't appear.\n        finish()\n    }\n\n}\n\n\n\n\n\n",
+      "snippet"  : "Here, I’ve created an example of a splash creen just like LaunchScreen.storyboard for iOS. It stays on screen for 3..."
+    } ,
+  
+    {
       "title"    : "Flutter My First demo application",
       "category" : "",
       "tags"     : "Flutter, Dart, Demo, Cross, Platform",
@@ -943,6 +963,10 @@
         "date"     : " ",
         "content"  : "",
         "snippet"  : " "
+     
+   } ,
+  
+   {
      
    } ,
   
