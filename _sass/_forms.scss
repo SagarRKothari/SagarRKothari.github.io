@@ -1,63 +1,106 @@
-/* This is a partial SCSS file */
-
-form.contact, div.contact {
-  $button-color: lighten($theme-color, 15%);
-  $border-radius: 3px !default;
-  $border-width: 1px !default;
-  $border-color: #444 !default;
-
-  input, label, select {
-    display: block;
-  }
-
-  input[type="text"], textarea[type="text"] {
-    width: 100%;
-    vertical-align: middle;
-    margin-top: 0.25em;
-    margin-bottom: 0.5em;
-    padding: 0.75em;
-    font-weight: lighter;
-
-    border-style: solid;
-    border-color: $border-color;
-    border-width: $border-width;
-    border-radius: $border-radius;
-    transition: box-shadow .2s ease;
-
-    &:focus {
-      outline: none;
-      border-color: $theme-color;
-      box-shadow: 0 0 2px $button-color;
-    }
-  }
-
-  input[type="submit"], a.button {
-    outline: none;
-    color: white;
-    background-color: $button-color;
-    border-radius: $border-radius;
-    padding: 0.5em;
-    margin: 0.25em 0 0 0;
-    border: 1px solid transparent;
-    height: auto;
-    font-weight: lighter;
-
-    transition-duration: 0.1s;
-    transition-timing-function: ease-out;
-    transition-property: box-shadow, background-color;
-
-    &:hover, &:focus, &:active {
-      background-color: $theme-color;
-      text-decoration: none;
-    }
-  }
+input,
+select,
+textarea,
+fieldset {
+  font-size: $form-field-font-size;
+  margin-top: 0;
+  margin-bottom: $space-1;
 }
 
-div.contact, h2.contact, span.contact {
-  text-align: center;
+input[type=text],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=url],
+input[type=week] {
+  box-sizing: border-box;
+  height: $form-field-height;
+  padding: $form-field-padding-y $form-field-padding-x;
+  vertical-align: middle;
+  -webkit-appearance: none;
 }
 
-div.contact {
-  padding: 2em;
+select {
+  box-sizing: border-box;
+  line-height: 1.75;
+  padding: $form-field-padding-y $form-field-padding-x;
 }
 
+select:not([multiple]) {
+  height: $form-field-height;
+  vertical-align: middle;
+}
+
+textarea {
+  box-sizing: border-box;
+  line-height: 1.75;
+  padding: $form-field-padding-y $form-field-padding-x;
+}
+
+.form-stacked input,
+.form-stacked textarea,
+.form-stacked select {
+  width: 100%;
+}
+
+.field-light {
+  background-color: white;
+  transition: box-shadow .2s ease;
+  border-style: solid;
+  border-width: $border-width;
+  border-color: $border-color;
+  border-radius: $border-radius;
+}
+
+.field-light:focus {
+  outline: none;
+  border-color: $blue;
+  box-shadow: 0 0 2px rgba($blue,.5);
+}
+
+.field-light:disabled {
+  color: $mid-gray;
+  background-color: $darken-2;
+}
+
+.field-light:read-only:not(select) {
+  background-color: $darken-2;
+}
+
+.field-light:invalid {
+  border-color: $red;
+}
+
+.field-light.is-success {
+  border-color: $green;
+}
+
+.field-light.is-warning {
+  border-color: $yellow;
+}
+
+.field-light.is-error {
+  border-color: $red;
+}
+
+
+.radio-light,
+.checkbox-light {
+  transition: box-shadow .2s ease;
+}
+
+.radio-light {
+  border-radius: 50%;
+}
+
+.radio-light:focus,
+.checkbox-light:focus {
+  outline: none;
+  box-shadow: 0 0 2px rgba($blue, .5);
+}

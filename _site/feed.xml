@@ -41,7 +41,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2018-09-24/backButton.png&quot; alt=&quot;Demo Output for Android&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 23 Sep 2018 10:15:00 +0000</pubDate>
+        <pubDate>Sun, 23 Sep 2018 15:45:00 +0530</pubDate>
         <link>http://localhost:4000/2018/09/23/Android-Basics-Show-Back-button/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/09/23/Android-Basics-Show-Back-button/</guid>
       </item>
@@ -87,7 +87,7 @@ It stays on screen for 3 seconds &amp;amp; it shows login screen. One can refer 
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2018-09-24/loginAnimation.gif&quot; alt=&quot;Demo Output for Android&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 23 Sep 2018 10:00:00 +0000</pubDate>
+        <pubDate>Sun, 23 Sep 2018 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/09/23/Android-Basics-Timer/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/09/23/Android-Basics-Timer/</guid>
       </item>
@@ -316,7 +316,7 @@ File Location - &lt;code class=&quot;highlighter-rouge&quot;&gt;pics/lib/src/mai
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Sun, 19 Aug 2018 10:00:00 +0000</pubDate>
+        <pubDate>Sun, 19 Aug 2018 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/08/19/Flutter-First-App/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/08/19/Flutter-First-App/</guid>
       </item>
@@ -357,7 +357,7 @@ npm install http --save
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Mon, 30 Apr 2018 10:00:00 +0000</pubDate>
+        <pubDate>Mon, 30 Apr 2018 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/04/30/NodeJS-http-json-response/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/04/30/NodeJS-http-json-response/</guid>
       </item>
@@ -404,7 +404,7 @@ npm install http --save
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 14 Mar 2018 10:00:00 +0000</pubDate>
+        <pubDate>Wed, 14 Mar 2018 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/03/14/CleanUserDefaults-UITesting/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/03/14/CleanUserDefaults-UITesting/</guid>
       </item>
@@ -477,7 +477,7 @@ There you go.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Sat, 10 Mar 2018 10:00:00 +0000</pubDate>
+        <pubDate>Sat, 10 Mar 2018 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/03/10/NodeJS-connecting-to-mongodb/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/03/10/NodeJS-connecting-to-mongodb/</guid>
       </item>
@@ -558,7 +558,7 @@ It is a function, but in Reactive programming, It’s known as an operator.&lt;/
 
 &lt;hr /&gt;
 </description>
-        <pubDate>Thu, 04 Jan 2018 11:00:00 +0000</pubDate>
+        <pubDate>Thu, 04 Jan 2018 16:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/01/04/RxSwift-Basics-Empty-operator/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/04/RxSwift-Basics-Empty-operator/</guid>
       </item>
@@ -635,7 +635,7 @@ It is a function, but in Reactive programming, It’s known as an operator.&lt;/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 03 Jan 2018 11:00:00 +0000</pubDate>
+        <pubDate>Wed, 03 Jan 2018 16:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/01/03/RxSwift-Basics-Events/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/03/RxSwift-Basics-Events/</guid>
       </item>
@@ -732,7 +732,7 @@ It is a function, but in Reactive programming, It’s known as an operator.&lt;/
 
 &lt;p&gt;Push a specific tag to remote origin.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 02 Jan 2018 10:00:00 +0000</pubDate>
+        <pubDate>Tue, 02 Jan 2018 15:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/01/02/Commonly-used-git-commands/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/02/Commonly-used-git-commands/</guid>
       </item>
@@ -840,7 +840,7 @@ Completed
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Mon, 01 Jan 2018 11:00:00 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 2018 16:30:00 +0530</pubDate>
         <link>http://localhost:4000/2018/01/01/RxSwift-Basics-understanding-observables-observers/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/01/01/RxSwift-Basics-understanding-observables-observers/</guid>
       </item>
